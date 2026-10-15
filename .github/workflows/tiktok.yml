@@ -1,0 +1,85 @@
+name: OùVa TikTok — 3 vidéos / jour
+
+on:
+  schedule:
+    # GitHub cron = UTC. Runs start ~2 h before each slot; the post is scheduled
+    # on Blotato at exactly 12:00 / 18:00 / 21:00 Europe/Paris (DST handled in run.mjs).
+    - cron: '0 9 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Créneau (12, 18 ou 21) — vide = prochain créneau'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Test sans publier (1 = oui)'
+        required: false
+        default: '1'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ouva-tiktok
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: System deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji > /dev/null
+
+      - name: Python deps
+        run: pip install -q numpy scipy pedalboard
+
+      - name: Node deps
+        run: |
+          npm ci --no-audit --no-fund
+          npx remotion browser ensure
+
+      - name: Make & publish video
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          BLOTATO_API_KEY: ${{ secrets.BLOTATO_API_KEY }}
+          BLOTATO_TIKTOK_ACCOUNT_ID: ${{ secrets.BLOTATO_TIKTOK_ACCOUNT_ID }}
+          STORY_MODEL: ${{ vars.STORY_MODEL }}
+          SLOT: ${{ github.event.inputs.slot }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || (vars.PAUSED == '1' && '1') || '0' }}
+        run: node pipeline/run.mjs
+
+      - name: Keep the video (7 days)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ github.run_id }}
+          path: |
+            out/OuVa_*.mp4
+            data/stories/*.json
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Save history
+        if: always()
+        run: |
+          git config user.name "ouva-bot"
+          git config user.email "ouva-bot@users.noreply.github.com"
+          git add data/history.json data/stories || true
+          git diff --cached --quiet || (git commit -m "post: $(date -u +%F_%H%M)" && git push)

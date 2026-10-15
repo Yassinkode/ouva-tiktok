@@ -1,0 +1,27 @@
+{
+  "name": "ouva-ad",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "render:ad": "remotion render OuvaAd out/ouva-ad.mp4",
+    "run": "node pipeline/run.mjs",
+    "test:dry": "DRY_RUN=1 STORY_FILE=data/backlog/b02_semaines.json node pipeline/run.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@huggingface/transformers": "^4.3.1",
+    "@remotion/bundler": "4.0.300",
+    "@remotion/cli": "4.0.300",
+    "@remotion/renderer": "4.0.300",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.300",
+    "sts-whisper-base": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^5.6.3"
+  },
+  "type": "module"
+}

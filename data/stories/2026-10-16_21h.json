@@ -1,0 +1,135 @@
+{
+ "seed": 880,
+ "title": "Pourquoi c'est tout rouge",
+ "beats": [
+  {
+   "text": "Attends, pourquoi c'est tout rouge là?",
+   "scene": "heatmap_reveal",
+   "cap": "tout rouge ?",
+   "accent": "rouge",
+   "sync": {
+    "punch": "rouge"
+   }
+  },
+  {
+   "text": "Hein? Ça, c'est chez moi!",
+   "scene": "place_pin",
+   "params": {
+    "place": "home",
+    "label": "Maison"
+   },
+   "sync": {
+    "pin": "ça"
+   }
+  },
+  {
+   "text": "30 jours de carte de chaleur, et je passe ma vie à la maison. Ha!",
+   "scene": "counter_map",
+   "params": {
+    "value": 30,
+    "unit": "jours",
+    "bottom": "à la maison",
+    "place": "home"
+   },
+   "sync": {
+    "count": "30",
+    "bottom": "maison"
+   }
+  },
+  {
+   "text": "Bon, regardez les chiffres. 62% de montants à la maison.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 62,
+    "place": "home"
+   },
+   "cap": "Les chiffres.",
+   "accent": "chiffres.",
+   "sync": {
+    "count": "62",
+    "tile": "maison"
+   }
+  },
+  {
+   "text": "La salle? 4%, ha! 4. Ha!",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "home",
+     "value": 62
+    },
+    "b": {
+     "place": "gym",
+     "value": 4
+    }
+   },
+   "cap": "La salle ?",
+   "sync": {
+    "b": "4%",
+    "punch": "4."
+   }
+  },
+  {
+   "text": "Faudrait peut-être pas que je devienne trop ces d'entères quand même.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "sédentaire",
+    "small": "trop"
+   },
+   "sync": {
+    "word": "ces"
+   }
+  },
+  {
+   "text": "Et le pire, c'est que j'ai jamais rien noté. Le téléphone a tout compté, tout seul.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "home"
+   },
+   "cap": "Aucun suivi manuel.",
+   "accent": "manuel.",
+   "cap2": "Tout se fait automatiquement.",
+   "sync": {
+    "line2": "téléphone"
+   }
+  },
+  {
+   "text": "Mardi par exemple, 14 heures à la maison, 0 sorti.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mardi",
+    "sub": "par exemple",
+    "value": 14,
+    "place": "home",
+    "caption": "à la maison",
+    "chip": {
+     "value": 0,
+     "label": "sortie"
+    }
+   },
+   "sync": {
+    "count": "14",
+    "chip": "0"
+   }
+  },
+  {
+   "text": "Ok, cette semaine, objectif, sortir un peu plus.",
+   "scene": "goal",
+   "params": {
+    "barLabel": "Temps dehors"
+   },
+   "cap": "Sortir un peu plus.",
+   "accent": "plus.",
+   "sync": {}
+  },
+  {
+   "text": "On verra bien si la carte change de couleur.",
+   "scene": "outro_map",
+   "cap": "change de couleur ?",
+   "accent": "couleur",
+   "sync": {
+    "cool": "change"
+   }
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+node_modules/
+out/
+public/runs/
+public/mix.wav
+test/*.json
+!test/story_orig.json
+audio/stems/
+*.zip
+audio/voice.mp3

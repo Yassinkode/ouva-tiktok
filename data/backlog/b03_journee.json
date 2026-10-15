@@ -1,0 +1,12 @@
+{"title":"Revivre mon lundi","angle":"revivre ma journée","caption":"J'ai regardé ma journée en replay sur la carte… j'aurais pas dû. C'est quoi ton lieu le plus squatté ?","hashtags":["#ouva","#lundi","#dailyvlog","#iphone"],
+"beats":[
+{"text":"J'ai revu mon lundi en accéléré sur la carte. C'était violent.","scene":"heatmap_reveal","cap":"mon lundi","accent":"lundi","sync":{"punch":"lundi"}},
+{"text":"8 heures 40, je pars au taf.","scene":"place_pin","params":{"place":"work","label":"Travail"},"sync":{"pin":"taf"}},
+{"text":"Et je ressors à 19 heures. 10 heures au même endroit.","scene":"day_timeline","params":{"day":"lundi","value":10,"place":"work","caption":"au travail","chip":{"value":0,"label":"pause dehors"}},"sync":{"count":"10","chip":"endroit"}},
+{"text":"Sur le mois, le travail c'est 41 % de mon temps.","scene":"ring_stat","params":{"value":41,"place":"work","sub":"au travail"},"sync":{"count":"41","tile":"temps"}},
+{"text":"Le parc juste à côté ? 1 %. 1.","scene":"compare","params":{"a":{"place":"work","value":41},"b":{"place":"park","value":1,"label":"Parc"}},"cap":"Le parc ?","sync":{"b":"1","punch":"1."}},
+{"text":"Bon. Je crois que je vis au bureau.","scene":"wipe_word","params":{"word":"bureau","small":"je vis au"},"sync":{"word":"bureau"}},
+{"text":"Et j'ai jamais rien rentré à la main, l'appli détecte tout.","scene":"phone_auto","params":{"place":"work","others":["park","home"]},"cap":"Rien à la main.","accent":"main.","cap2":"Tout est détecté.","sync":{"line2":"appli"}},
+{"text":"Nouvelle règle : 20 minutes au parc à midi.","scene":"goal","params":{"title":"Objectif par lieu","pill":"Tous les midis","barLabel":"Parc"},"cap":"20 minutes au parc.","accent":"parc.","sync":{}},
+{"text":"Rendez-vous lundi prochain pour le replay.","scene":"outro_map","params":{"place":"work"},"cap":"lundi prochain","accent":"prochain","sync":{"cool":"replay"}}
+]}
