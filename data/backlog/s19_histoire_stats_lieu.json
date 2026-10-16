@@ -1,0 +1,115 @@
+{
+ "format": "histoire",
+ "feature": "stats_lieu",
+ "title": "Étudiant pas barista",
+ "angle": "histoire/stats_lieu",
+ "caption": "18 % de mon temps au café… je suis étudiant, pas barista ☕ Ton QG c'est où ?",
+ "hashtags": [
+  "#ouva",
+  "#cafe",
+  "#etudiant",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "18 %. C'est le temps que je passe au café.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 18,
+    "place": "cafe",
+    "label": "Le café d'en bas",
+    "sub": "au café"
+   },
+   "sync": {
+    "count": "18",
+    "tile": "café."
+   }
+  },
+  {
+   "text": "Et je suis étudiant. Pas barista.",
+   "scene": "big_word",
+   "params": {
+    "place": "cafe"
+   },
+   "cap": "Pas barista.",
+   "accent": "barista.",
+   "sync": {}
+  },
+  {
+   "text": "La bibliothèque ? 3 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "cafe",
+     "value": 18,
+     "label": "Café"
+    },
+    "b": {
+     "place": "school",
+     "value": 3,
+     "label": "Bibliothèque"
+    }
+   },
+   "cap": "La bibliothèque ?",
+   "accent": "bibliothèque",
+   "sync": {
+    "b": "3"
+   }
+  },
+  {
+   "text": "Mercredi : 4 heures au café, 0 page révisée.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mercredi",
+    "value": 4,
+    "place": "cafe",
+    "caption": "au café",
+    "chip": {
+     "value": 0,
+     "label": "page révisée"
+    }
+   },
+   "sync": {
+    "count": "4",
+    "chip": "0"
+   }
+  },
+  {
+   "text": "Le pire, c'est que le compteur me le rappelle en direct.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "cafe",
+    "label": "Café",
+    "minutes": 128
+   },
+   "cap": "en direct.",
+   "accent": "direct.",
+   "sync": {
+    "expand": "compteur"
+   }
+  },
+  {
+   "text": "Objectif : 1 heure de bibliothèque par jour.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "barLabel": "Bibliothèque"
+   },
+   "cap": "1 heure par jour.",
+   "accent": "jour.",
+   "sync": {}
+  },
+  {
+   "text": "Le café va me manquer.",
+   "scene": "outro_map",
+   "params": {
+    "place": "cafe"
+   },
+   "cap": "va me manquer.",
+   "accent": "manquer.",
+   "sync": {
+    "cool": "manquer."
+   }
+  }
+ ]
+}

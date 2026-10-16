@@ -1,0 +1,110 @@
+{
+ "format": "pitch",
+ "feature": "general",
+ "title": "Voici OùVa",
+ "angle": "pitch/general",
+ "caption": "Le temps d'écran, tout le monde connaît. Le temps par lieu, beaucoup moins. Tu passerais combien de temps chez toi selon toi ?",
+ "hashtags": [
+  "#ouva",
+  "#app",
+  "#iphone",
+  "#productivite"
+ ],
+ "beats": [
+  {
+   "text": "Voici une appli qui compte ton temps par lieu.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "ton temps par lieu.",
+   "accent": "lieu.",
+   "sync": {}
+  },
+  {
+   "text": "Maison, travail, salle de sport : elle détecte où tu es, toute seule.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "home",
+    "others": [
+     "work",
+     "gym"
+    ]
+   },
+   "cap": "Elle détecte où tu es.",
+   "cap2": "Toute seule.",
+   "accent": "détecte",
+   "sync": {
+    "line2": "toute"
+   }
+  },
+  {
+   "text": "Et elle te dit combien de temps tu y passes. 47 % à la maison, par exemple.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 47,
+    "place": "home",
+    "sub": "à la maison"
+   },
+   "sync": {
+    "count": "47",
+    "tile": "maison,"
+   }
+  },
+  {
+   "text": "Sur 30 jours, ça te fait une carte de chaleur de ta vie.",
+   "scene": "heatmap_reveal",
+   "cap": "une carte de chaleur",
+   "accent": "chaleur",
+   "sync": {
+    "punch": "chaleur"
+   }
+  },
+  {
+   "text": "Tu peux même te fixer un objectif par lieu.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectifs par lieu",
+    "barLabel": "Salle de sport"
+   },
+   "cap": "Un objectif par lieu.",
+   "accent": "lieu.",
+   "sync": {}
+  },
+  {
+   "text": "Aucune saisie, aucun chrono, tout est automatique.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "clock",
+      "title": "Aucune saisie"
+     },
+     {
+      "icon": "signal",
+      "title": "Aucun chrono à lancer"
+     },
+     {
+      "icon": "pin",
+      "title": "Tout est automatique"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "aucune",
+    "i2": "aucun",
+    "i3": "automatique."
+   }
+  },
+  {
+   "text": "Ça s'appelle OùVa.",
+   "scene": "big_word",
+   "params": {
+    "place": "home"
+   },
+   "cap": "OùVa.",
+   "accent": "OùVa.",
+   "sync": {}
+  }
+ ]
+}

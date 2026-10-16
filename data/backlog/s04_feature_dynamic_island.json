@@ -1,0 +1,106 @@
+{
+ "format": "feature",
+ "feature": "dynamic_island",
+ "title": "Le petit truc en haut",
+ "angle": "feature/dynamic_island",
+ "caption": "Ce petit compteur en haut de mon écran… je l'ai jamais lancé. Tu l'avais remarqué ?",
+ "hashtags": [
+  "#ouva",
+  "#dynamicisland",
+  "#iphone",
+  "#astuce"
+ ],
+ "beats": [
+  {
+   "text": "Tu vois ce petit truc en haut de mon écran ? C'est mon temps au travail, en direct.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "work",
+    "label": "Travail",
+    "minutes": 222
+   },
+   "cap": "en direct",
+   "accent": "direct.",
+   "sync": {
+    "expand": "travail,"
+   }
+  },
+  {
+   "text": "Je ne l'ai pas lancé. Il s'est déclenché tout seul quand je suis arrivé.",
+   "scene": "big_word",
+   "params": {
+    "place": "work"
+   },
+   "cap": "tout seul",
+   "accent": "seul",
+   "sync": {}
+  },
+  {
+   "text": "Parce qu'un jour, j'ai juste dessiné la zone du bureau dans OùVa.",
+   "scene": "add_place",
+   "params": {
+    "place": "work",
+    "label": "Bureau"
+   },
+   "sync": {
+    "name": "zone",
+    "done": "OùVa."
+   }
+  },
+  {
+   "text": "Résultat : je sais que le boulot, c'est 38 % de ma semaine.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 38,
+    "place": "work",
+    "title": "Cette semaine",
+    "sub": "de ma semaine"
+   },
+   "sync": {
+    "count": "38",
+    "tile": "semaine."
+   }
+  },
+  {
+   "text": "Et le parc d'à côté ? 2 %. Va falloir changer ça.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "work",
+     "value": 38
+    },
+    "b": {
+     "place": "park",
+     "value": 2,
+     "label": "Parc"
+    }
+   },
+   "cap": "Et le parc ?",
+   "accent": "parc",
+   "sync": {
+    "b": "2"
+   }
+  },
+  {
+   "text": "Objectif de la semaine : 20 minutes de parc à midi.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "barLabel": "Parc"
+   },
+   "cap": "20 minutes de parc",
+   "accent": "parc",
+   "sync": {}
+  },
+  {
+   "text": "Et le petit compteur en haut me surveille.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "me surveille.",
+   "accent": "surveille.",
+   "sync": {}
+  }
+ ]
+}

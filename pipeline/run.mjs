@@ -72,9 +72,17 @@ async function main() {
   const backlog = fs.existsSync('data/backlog') ? fs.readdirSync('data/backlog').filter((f) => f.endsWith('.json') && !used.has(f)).sort() : [];
   const fromBacklog = () => {
     if (!backlog.length) throw new Error('Plus aucune histoire en réserve (data/backlog)');
-    const st = JSON.parse(fs.readFileSync(path.join('data/backlog', backlog[0]), 'utf8'));
-    st._backlog = backlog[0];
-    return st;
+    // rotation: avoid the formats of the last 2 videos, the features of the last 3 and the same opening scene
+    const recent = history.filter((h) => h.status !== 'failed');
+    const lastFormats = recent.slice(-2).map((h) => h.format);
+    const lastFeatures = recent.slice(-3).map((h) => h.feature);
+    const lastOpener = recent.slice(-1).map((h) => (h.scenes ?? [])[0])[0];
+    const load = (f) => ({ f, s: JSON.parse(fs.readFileSync(path.join('data/backlog', f), 'utf8')) });
+    const all = backlog.map(load);
+    const score = ({ s }) => (lastFormats.includes(s.format) ? 4 : 0) + (lastFeatures.includes(s.feature) ? 2 : 0) + (s.beats?.[0]?.scene === lastOpener ? 1 : 0);
+    const best = all.reduce((a, b) => (score(b) < score(a) ? b : a));
+    best.s._backlog = best.f;
+    return best.s;
   };
   if (process.env.STORY_FILE) story = JSON.parse(fs.readFileSync(process.env.STORY_FILE, 'utf8'));
   else if (!process.env.ANTHROPIC_API_KEY) story = fromBacklog();
@@ -153,7 +161,7 @@ async function main() {
   /* 5. publish */
   const caption = `${story.caption ?? ''}\n\n${(story.hashtags ?? ['#ouva']).join(' ')}`.trim();
   const hook = story.beats[0].text;
-  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, hook, caption, backlog: story._backlog, scenes: story.beats.map((b) => b.scene) };
+  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, format: story.format, feature: story.feature, hook, caption, backlog: story._backlog, scenes: story.beats.map((b) => b.scene) };
   const tg = !!process.env.TELEGRAM_BOT_TOKEN;
   if (DRY && !tg) {
     entry.status = 'dry-run';

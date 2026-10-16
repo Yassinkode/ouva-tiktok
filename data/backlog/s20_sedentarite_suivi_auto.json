@@ -1,0 +1,116 @@
+{
+ "format": "sedentarite",
+ "feature": "suivi_auto",
+ "title": "8 heures assis",
+ "angle": "sedentarite/suivi_auto",
+ "caption": "9 heures assis au bureau, 0 pause dehors. Le seuil de risque de l'ANSES, c'est 8. Tu en es où ?",
+ "hashtags": [
+  "#ouva",
+  "#sedentarite",
+  "#bureau",
+  "#sante"
+ ],
+ "beats": [
+  {
+   "text": "Lundi : 9 heures assis au bureau.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "lundi",
+    "value": 9,
+    "place": "work",
+    "caption": "au bureau",
+    "chip": {
+     "value": 0,
+     "label": "pause dehors"
+    }
+   },
+   "sync": {
+    "count": "9",
+    "chip": "bureau."
+   }
+  },
+  {
+   "text": "Selon l'ANSES, plus de 8 heures assis par jour, c'est un risque pour la santé.",
+   "scene": "fact",
+   "params": {
+    "value": 8,
+    "suffix": "h",
+    "label": "assis par jour : au-delà, c'est un risque",
+    "source": "ANSES, 2022"
+   },
+   "sync": {
+    "count": "8"
+   }
+  },
+  {
+   "text": "Et on ne s'en rend même pas compte.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "même pas compte.",
+   "accent": "compte.",
+   "sync": {}
+  },
+  {
+   "text": "OùVa, si. Elle mesure ton temps dans chaque lieu, automatiquement.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "work",
+    "label": "Travail",
+    "others": [
+     "park",
+     "home"
+    ]
+   },
+   "cap": "chaque lieu,",
+   "cap2": "automatiquement.",
+   "accent": "lieu,",
+   "sync": {
+    "line2": "automatiquement."
+   }
+  },
+  {
+   "text": "Bureau : 41 %. Dehors : 3 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "work",
+     "value": 41,
+     "label": "Bureau"
+    },
+    "b": {
+     "place": "park",
+     "value": 3,
+     "label": "Dehors"
+    }
+   },
+   "sync": {
+    "b": "3"
+   }
+  },
+  {
+   "text": "Mon objectif : une vraie pause dehors chaque midi.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif de la semaine",
+    "barLabel": "Temps dehors"
+   },
+   "cap": "une pause dehors",
+   "accent": "dehors",
+   "sync": {}
+  },
+  {
+   "text": "Ma carte va enfin respirer.",
+   "scene": "outro_map",
+   "params": {
+    "place": "work"
+   },
+   "cap": "enfin respirer.",
+   "accent": "respirer.",
+   "sync": {
+    "cool": "respirer."
+   }
+  }
+ ]
+}

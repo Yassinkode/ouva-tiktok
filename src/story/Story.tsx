@@ -6,6 +6,7 @@ import { StoryProps, Seg } from './types';
 import { CounterMap, HeatmapReveal, OutroMap, PlacePin } from './MapScenes';
 import { Bento, Compare, RingStat } from './StatScenes';
 import { BigWord, DayTimeline, EndCard, Goal, PhoneAuto, WipeWord } from './MiscScenes';
+import { AddPlace, DynamicIsland, Fact, FeatureList, ReplayDay, ThemeSwitch, Versus, WeekCompare } from './AppScenes';
 
 const SCENES: Record<string, React.FC<{ seg: Seg; seed: number }>> = {
   heatmap_reveal: HeatmapReveal,
@@ -20,6 +21,14 @@ const SCENES: Record<string, React.FC<{ seg: Seg; seed: number }>> = {
   day_timeline: DayTimeline as any,
   goal: Goal as any,
   big_word: BigWord as any,
+  dynamic_island: DynamicIsland as any,
+  versus: Versus as any,
+  add_place: AddPlace as any,
+  replay_day: ReplayDay as any,
+  week_compare: WeekCompare as any,
+  theme_switch: ThemeSwitch as any,
+  feature_list: FeatureList as any,
+  fact: Fact as any,
 };
 
 export const Story: React.FC<StoryProps> = ({ seed, audio, segments, endStart, tagline }: StoryProps & { tagline?: string }) => {

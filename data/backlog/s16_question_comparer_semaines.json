@@ -1,0 +1,127 @@
+{
+ "format": "question",
+ "feature": "comparer_semaines",
+ "title": "Grise ou verte",
+ "angle": "question/comparer_semaines",
+ "caption": "Partiels vs vacances : deux semaines, deux vies. Ta semaine, elle est grise ou verte ?",
+ "hashtags": [
+  "#ouva",
+  "#partiels",
+  "#vacances",
+  "#etudiant"
+ ],
+ "beats": [
+  {
+   "text": "Ta semaine, elle ressemble à quoi ? Moi, j'ai comparé deux semaines.",
+   "scene": "big_word",
+   "cap": "deux semaines.",
+   "accent": "semaines.",
+   "sync": {}
+  },
+  {
+   "text": "La grise, c'est une semaine de partiels. La verte, une semaine de vacances.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures dehors / jour",
+    "before": [
+     1,
+     1,
+     2,
+     1,
+     1,
+     2,
+     1
+    ],
+    "after": [
+     3,
+     4,
+     2,
+     5,
+     4,
+     6,
+     5
+    ],
+    "labelA": "Partiels",
+    "labelB": "Vacances",
+    "rows": [
+     {
+      "place": "park",
+      "delta": "+9 h",
+      "good": true
+     },
+     {
+      "place": "school",
+      "delta": "−24 h",
+      "good": true
+     }
+    ]
+   },
+   "sync": {
+    "b": "verte,",
+    "rows": "vacances."
+   }
+  },
+  {
+   "text": "Le parc : 1 % contre 9 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "park",
+     "value": 9,
+     "label": "Vacances"
+    },
+    "b": {
+     "place": "park",
+     "value": 1,
+     "label": "Partiels"
+    }
+   },
+   "cap": "Le parc",
+   "accent": "parc",
+   "sync": {
+    "b": "1"
+   }
+  },
+  {
+   "text": "Le mardi des partiels : 12 heures à la bibliothèque.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mardi",
+    "value": 12,
+    "place": "school",
+    "caption": "à la bibliothèque",
+    "chip": {
+     "value": 0,
+     "label": "pause dehors"
+    }
+   },
+   "sync": {
+    "count": "12",
+    "chip": "bibliothèque."
+   }
+  },
+  {
+   "text": "En vacances, chez moi, à peine 35 %.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 35,
+    "place": "home",
+    "sub": "chez moi"
+   },
+   "sync": {
+    "count": "35",
+    "tile": "moi,"
+   }
+  },
+  {
+   "text": "Et toi, ta semaine, elle est grise ou verte ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "grise ou verte ?",
+   "accent": "verte",
+   "sync": {}
+  }
+ ]
+}

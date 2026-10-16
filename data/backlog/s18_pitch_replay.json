@@ -1,0 +1,109 @@
+{
+ "format": "pitch",
+ "feature": "replay",
+ "title": "Ta journée comme un film",
+ "angle": "pitch/replay",
+ "caption": "Imagine revoir ta journée comme un petit film sur la carte 🎬 Tu la partagerais en story ?",
+ "hashtags": [
+  "#ouva",
+  "#replay",
+  "#story",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Imagine revoir ta journée comme un petit film.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "comme un petit film.",
+   "accent": "film.",
+   "sync": {}
+  },
+  {
+   "text": "OùVa rejoue tes déplacements sur la carte, lieu après lieu.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:05"
+     },
+     {
+      "place": "work",
+      "time": "09:00"
+     },
+     {
+      "place": "gym",
+      "time": "18:30"
+     },
+     {
+      "place": "home",
+      "time": "20:10"
+     }
+    ]
+   },
+   "cap": "lieu après lieu.",
+   "accent": "lieu.",
+   "sync": {}
+  },
+  {
+   "text": "Avec l'heure d'arrivée, l'heure de départ, et le temps passé.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "aujourd'hui",
+    "value": 9,
+    "place": "work",
+    "caption": "au travail"
+   },
+   "sync": {
+    "count": "temps"
+   }
+  },
+  {
+   "text": "Tu peux même télécharger la vidéo pour la partager.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "play",
+      "title": "La vidéo de ta journée"
+     },
+     {
+      "icon": "signal",
+      "title": "À partager en story"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "télécharger",
+    "i2": "partager."
+   }
+  },
+  {
+   "text": "Et tout ça, sans jamais rien noter.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "work",
+    "others": [
+     "gym",
+     "home"
+    ]
+   },
+   "cap": "sans rien noter.",
+   "accent": "noter.",
+   "sync": {}
+  },
+  {
+   "text": "Ta journée, en replay.",
+   "scene": "big_word",
+   "params": {
+    "place": "home"
+   },
+   "cap": "Ta journée, en replay.",
+   "accent": "replay.",
+   "sync": {}
+  }
+ ]
+}

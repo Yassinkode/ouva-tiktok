@@ -1,0 +1,105 @@
+{
+ "format": "tuto",
+ "feature": "ajout_lieu",
+ "title": "3 étapes",
+ "angle": "tuto/ajout_lieu",
+ "caption": "Comment OùVa sait où tu es ? 3 étapes, zéro effort. Tu ajouterais quel lieu en premier ?",
+ "hashtags": [
+  "#ouva",
+  "#tuto",
+  "#iphone",
+  "#app"
+ ],
+ "beats": [
+  {
+   "text": "Comment OùVa sait où tu es ? En 3 étapes.",
+   "scene": "big_word",
+   "cap": "en 3 étapes.",
+   "accent": "étapes.",
+   "sync": {}
+  },
+  {
+   "text": "Un : tu dessines ta zone avec 4 points sur la carte. Deux : tu lui donnes un nom.",
+   "scene": "add_place",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport"
+   },
+   "sync": {
+    "name": "deux",
+    "done": "nom."
+   }
+  },
+  {
+   "text": "Trois : tu y vas. Le compteur démarre tout seul.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport",
+    "minutes": 3
+   },
+   "cap": "tout seul.",
+   "accent": "seul.",
+   "sync": {
+    "expand": "compteur"
+   }
+  },
+  {
+   "text": "Tu ressors ? Il s'arrête. Tu n'as jamais rien à lancer.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport",
+    "others": [
+     "home",
+     "work"
+    ]
+   },
+   "cap": "Il s'arrête.",
+   "cap2": "Rien à lancer.",
+   "accent": "s'arrête.",
+   "sync": {
+    "line2": "jamais"
+   }
+  },
+  {
+   "text": "Et en fin de semaine, tu vois exactement ton temps à la salle.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 9,
+    "place": "gym",
+    "title": "Cette semaine",
+    "sub": "à la salle"
+   },
+   "sync": {
+    "count": "exactement",
+    "tile": "salle."
+   }
+  },
+  {
+   "text": "Simple, automatique, lieu par lieu.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "pin",
+      "title": "Tu dessines tes lieux"
+     },
+     {
+      "icon": "signal",
+      "title": "Détection automatique"
+     },
+     {
+      "icon": "chart",
+      "title": "Ton temps, lieu par lieu"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "simple,",
+    "i2": "automatique,",
+    "i3": "lieu"
+   }
+  }
+ ]
+}

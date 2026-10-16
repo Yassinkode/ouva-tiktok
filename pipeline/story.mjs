@@ -9,9 +9,9 @@ export function validateStory(st) {
   const errs = [];
   if (!st || !Array.isArray(st.beats)) return ['beats manquant'];
   const n = st.beats.length;
-  if (n < 7 || n > 12) errs.push(`il faut 8 à 11 beats (reçu ${n})`);
+  if (n < 6 || n > 12) errs.push(`il faut 6 à 11 beats (reçu ${n})`);
   const total = st.beats.reduce((a, b) => a + String(b.text ?? '').length, 0);
-  if (total < 340 || total > 720) errs.push(`texte total ${total} caractères (attendu 450–620)`);
+  if (total < 250 || total > 720) errs.push(`texte total ${total} caractères (attendu 450–620)`);
   const kinds = new Set();
   let wipes = 0, phones = 0;
   st.beats.forEach((b, i) => {
@@ -32,14 +32,14 @@ export function validateStory(st) {
     if (b.scene === 'wipe_word' && (!p.word || String(p.word).length > 13)) errs.push(`${where}: params.word requis (≤ 12 lettres)`);
     if (b.scene === 'compare' && (!p.a || !p.b)) errs.push(`${where}: params.a et params.b requis`);
     if (['ring_stat', 'counter_map', 'day_timeline'].includes(b.scene) && typeof p.value !== 'number') errs.push(`${where}: params.value (nombre) requis`);
+    if (b.scene === 'fact' && typeof p.value !== 'number') errs.push(`${where}: params.value requis`);
+    if (b.scene === 'feature_list' && (!Array.isArray(p.items) || !p.items.length)) errs.push(`${where}: params.items requis`);
     if (b.scene === 'bento' && (!Array.isArray(p.places) || p.places.length < 3)) errs.push(`${where}: params.places (4 lieux) requis`);
     if (b.cap && tokens(b.cap).length > 6) errs.push(`${where}: cap trop long`);
   });
-  if (kinds.size < 6) errs.push(`seulement ${kinds.size} types de scènes (min 6)`);
+  if (kinds.size < 5) errs.push(`seulement ${kinds.size} types de scènes (min 5)`);
   if (wipes > 1) errs.push('wipe_word plus d’une fois');
   if (phones > 1) errs.push('phone_auto plus d’une fois');
-  const last = st.beats[n - 1]?.scene;
-  if (!['outro_map', 'big_word'].includes(last)) errs.push('le dernier beat doit être outro_map ou big_word');
   if (!st.caption) errs.push('caption manquante');
   return errs;
 }

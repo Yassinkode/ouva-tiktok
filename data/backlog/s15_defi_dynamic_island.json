@@ -1,0 +1,115 @@
+{
+ "format": "defi",
+ "feature": "dynamic_island",
+ "title": "7 jours",
+ "angle": "defi/dynamic_island",
+ "caption": "J'ai testé OùVa pendant 7 jours. Verdict à la fin. Tu tiendrais une semaine à te regarder vivre ?",
+ "hashtags": [
+  "#ouva",
+  "#test",
+  "#7jours",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Je teste OùVa pendant 7 jours. Jour 1.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "7 jours.",
+   "accent": "jours.",
+   "sync": {}
+  },
+  {
+   "text": "J'ajoute mes lieux : maison, école, salle de sport.",
+   "scene": "add_place",
+   "params": {
+    "place": "school",
+    "label": "École"
+   },
+   "sync": {
+    "name": "école,",
+    "done": "sport."
+   }
+  },
+  {
+   "text": "Jour 2 : j'arrive à l'école, et le compteur se lance tout seul.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "school",
+    "label": "École",
+    "minutes": 5
+   },
+   "cap": "tout seul.",
+   "accent": "seul.",
+   "sync": {
+    "expand": "compteur"
+   }
+  },
+  {
+   "text": "Jour 4 : 9 heures à l'école. Record.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "jour 4",
+    "value": 9,
+    "place": "school",
+    "caption": "à l'école",
+    "chip": {
+     "value": 1,
+     "label": "record",
+     "good": true
+    }
+   },
+   "sync": {
+    "count": "9",
+    "chip": "record."
+   }
+  },
+  {
+   "text": "Jour 7 : je vois enfin où est passée ma semaine.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 45
+     },
+     {
+      "place": "school",
+      "value": 30
+     },
+     {
+      "place": "gym",
+      "value": 6
+     },
+     {
+      "place": "cafe",
+      "value": 5
+     }
+    ]
+   },
+   "cap": "où est passée ma semaine.",
+   "accent": "semaine.",
+   "sync": {}
+  },
+  {
+   "text": "Verdict : je garde.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "je garde",
+    "small": "verdict"
+   },
+   "sync": {
+    "word": "garde."
+   }
+  },
+  {
+   "text": "Si tu veux tester, c'est le lien en bio.",
+   "scene": "big_word",
+   "cap": "le lien en bio.",
+   "accent": "bio.",
+   "sync": {}
+  }
+ ]
+}

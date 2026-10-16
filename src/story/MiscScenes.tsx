@@ -382,9 +382,11 @@ export const BigWord: React.FC<{ seg: Seg }> = ({ seg }) => {
   const ic = sp(f, a + 0.05, { damping: 9, stiffness: 180 });
   const len = (seg.cap ?? []).reduce((s, c) => s + c.t.length + 1, 0);
   const size = len > 40 ? 92 : len > 26 ? 112 : 140;
+  const dark = !!seg.params.dark;
   return (
     <AbsoluteFill>
       <Whip seg={seg}>
+        {dark && <AbsoluteFill style={{ background: 'radial-gradient(120% 80% at 50% 45%, #13241E 0%, #0A0E0C 70%)', opacity: clamp01((f / FPS - a) / 0.12) }} />}
         {kind && (
           <div style={{ position: 'absolute', left: 0, right: 0, top: 560, display: 'flex', justifyContent: 'center', transform: `scale(${Math.max(0, ic)}) rotate(${(1 - ic) * -20}deg) translateY(${float(f, 5, 10)}px)`, opacity: clamp01(ic * 2) }}>
             <div style={{ filter: 'drop-shadow(0 30px 40px rgba(10,30,22,0.25))' }}>
@@ -393,7 +395,7 @@ export const BigWord: React.FC<{ seg: Seg }> = ({ seg }) => {
           </div>
         )}
         <div style={{ position: 'absolute', left: 60, right: 60, top: kind ? 900 : 760 }}>
-          {seg.cap && seg.cap.length > 0 && <KineticLine size={size} out={seg.end - 0.25} words={seg.cap.map((c) => ({ t: c.t, at: c.at, accent: c.accent, color: c.color }))} />}
+          {seg.cap && seg.cap.length > 0 && <KineticLine size={size} out={seg.end - 0.25} color={dark ? '#fff' : undefined} accent={dark ? C.mint : undefined} words={seg.cap.map((c) => ({ t: c.t, at: c.at, accent: c.accent, color: c.color }))} />}
         </div>
       </Whip>
     </AbsoluteFill>
@@ -404,8 +406,7 @@ export const BigWord: React.FC<{ seg: Seg }> = ({ seg }) => {
 export const EndCard: React.FC<{ start: number; tagline?: string }> = ({ start, tagline = 'Découvre où passe ton temps.' }) => {
   const f = useCurrentFrame();
   const mark = sp(f, start + 0.15, { damping: 11, stiffness: 150 });
-  const sub = sp(f, start + 0.8, { damping: 16 });
-  const store = sp(f, start + 1.4, { damping: 15 });
+  const store = sp(f, start + 0.9, { damping: 15 });
   const sheen = kf(f, [start + 1.1, start + 2.0], [-0.4, 1.4], EASE.inOut);
   const settle = kf(f, [start + 0.15, start + 2.3], [1.06, 1], EASE.soft);
   return (
@@ -426,9 +427,9 @@ export const EndCard: React.FC<{ start: number; tagline?: string }> = ({ start, 
           );
         })}
       </div>
-      <div style={{ position: 'absolute', top: 1250, fontFamily: FONT, fontWeight: 560, fontSize: 50, color: C.inkSoft, opacity: clamp01(sub * 1.5), transform: `translateY(${(1 - sub) * 40}px)` }}>{tagline}</div>
-      <div style={{ position: 'absolute', top: 1560, opacity: clamp01(store * 1.5), transform: `translateY(${(1 - store) * 40}px)` }}>
-        <Pill style={{ fontSize: 32, padding: '22px 40px' }}>Disponible sur l’App Store</Pill>
+      <div style={{ position: 'absolute', top: 1270, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 26, opacity: clamp01(store * 1.5), transform: `translateY(${(1 - store) * 40}px)` }}>
+        <div style={{ fontFamily: FONT, fontWeight: 600, fontSize: 44, color: C.inkSoft }}>Disponible sur l’App Store</div>
+        <div style={{ padding: '22px 52px', borderRadius: 999, background: '#2F7BF6', color: '#fff', fontFamily: FONT_TIGHT, fontWeight: 800, fontSize: 44, boxShadow: '0 16px 40px rgba(47,123,246,0.35)', transform: `scale(${1 + Math.sin(f * 0.12) * 0.03 * clamp01(store)})` }}>lien en bio</div>
       </div>
     </AbsoluteFill>
   );

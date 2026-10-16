@@ -1,0 +1,89 @@
+{
+ "format": "feature",
+ "feature": "theme_logo",
+ "title": "Change le logo",
+ "angle": "feature/theme_logo",
+ "caption": "Petit détail que j'adore : tu choisis le logo de l'appli. Team vert, bleu, doré ou rose ?",
+ "hashtags": [
+  "#ouva",
+  "#personnalisation",
+  "#iphone",
+  "#homescreen"
+ ],
+ "beats": [
+  {
+   "text": "Petit détail que j'adore dans OùVa : tu peux changer le logo de l'appli.",
+   "scene": "theme_switch",
+   "cap": "changer le logo",
+   "accent": "logo",
+   "sync": {}
+  },
+  {
+   "text": "Vert nuit, bleu, doré, rose… chacun son style.",
+   "scene": "big_word",
+   "cap": "chacun son style.",
+   "accent": "style.",
+   "sync": {}
+  },
+  {
+   "text": "Et derrière ce joli logo, ton temps par lieu se compte tout seul.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "home",
+    "label": "Maison",
+    "minutes": 74
+   },
+   "cap": "tout seul.",
+   "accent": "seul.",
+   "sync": {
+    "expand": "temps"
+   }
+  },
+  {
+   "text": "Maison, école, café, salle : tout est rangé lieu par lieu.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 46
+     },
+     {
+      "place": "school",
+      "value": 22
+     },
+     {
+      "place": "cafe",
+      "value": 9
+     },
+     {
+      "place": "gym",
+      "value": 5
+     }
+    ]
+   },
+   "cap": "lieu par lieu.",
+   "accent": "lieu.",
+   "sync": {}
+  },
+  {
+   "text": "Avec une carte de chaleur pour voir où tu passes ta vie.",
+   "scene": "heatmap_reveal",
+   "cap": "où tu passes ta vie.",
+   "accent": "vie.",
+   "sync": {
+    "punch": "chaleur"
+   }
+  },
+  {
+   "text": "Joli, et utile.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Joli, et utile.",
+   "accent": "utile.",
+   "sync": {}
+  }
+ ]
+}

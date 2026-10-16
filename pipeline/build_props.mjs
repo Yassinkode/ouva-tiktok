@@ -5,6 +5,7 @@ import fs from 'fs';
 export const SCENES = [
   'heatmap_reveal', 'place_pin', 'counter_map', 'ring_stat', 'compare', 'bento',
   'wipe_word', 'phone_auto', 'day_timeline', 'goal', 'outro_map', 'big_word',
+  'dynamic_island', 'versus', 'add_place', 'replay_day', 'week_compare', 'theme_switch', 'feature_list', 'fact',
 ];
 
 export const norm = (w) =>
@@ -158,6 +159,11 @@ export function buildProps(story, words, opts = {}) {
       });
     };
     let cap = makeCap(b.cap, wa, start + 0.1);
+    // statement scenes: never leave the screen empty while the sentence builds up —
+    // non-accent words appear right away, the accent word still lands on its spoken time
+    if (b.scene === 'big_word' && cap.length && cap[0].at > start + 0.7) {
+      cap = cap.map((c, k) => (c.accent ? c : { ...c, at: +(start + 0.15 + k * 0.12).toFixed(3) }));
+    }
     let cap2;
     if (b.scene === 'phone_auto' && b.cap2) {
       const l2 = t.line2 !== undefined ? words.findIndex((w) => w.s >= t.line2 - 1e-6) : Math.round((wa + wb) / 2);
@@ -271,6 +277,58 @@ export function sfxEvents(props) {
       case 'big_word':
         if (s.params.place) add('pop', s.start + 0.05, { f: 520, gain: 0.6 });
         break;
+      case 'dynamic_island': {
+        add('pop', s.start + 0.5, { f: 700, gain: 0.5 });
+        const ex = tOr(s, 'expand', 0.45);
+        add('whoosh', ex - 0.1, { up: true, gain: 0.35 });
+        add('pop', ex, { f: 420, gain: 0.8 });
+        break;
+      }
+      case 'versus': {
+        add('pop', s.start + 0.05, { f: 520, gain: 0.6 });
+        add('pop', s.start + 0.5, { f: 900, gain: 0.5 });
+        add('pop', tOr(s, 'b', 0.35), { f: 600, gain: 0.6 });
+        add('impact', tOr(s, 'reveal', 0.7), { f: 50, gain: 0.85 });
+        add('chimes', tOr(s, 'reveal', 0.7) + 0.1, {});
+        break;
+      }
+      case 'add_place': {
+        [0, 1, 2, 3].forEach((k) => add('pop', s.start + 0.45 + k * 0.32, { f: 700 + k * 90, gain: 0.55 }));
+        const tn = tOr(s, 'name', 0.4);
+        add('whoosh', tn - 0.15, { up: true, gain: 0.35 });
+        const lab = String(s.params.label ?? 'Maison');
+        for (let k = 0; k < lab.length; k++) add('tick', tn + 0.25 + k * 0.06, { gain: 0.12 });
+        const td = tOr(s, 'done', 0.78);
+        add('whoosh', td - 0.15, { up: true, gain: 0.35 });
+        add('pop', td + 0.1, { f: 520, gain: 0.9 });
+        add('impact', td + 0.1, { f: 60, gain: 0.5 });
+        break;
+      }
+      case 'replay_day':
+        (s.params.stops ?? [1, 2, 3]).forEach((_, k) => add('pop', s.start + 0.3 + k * 0.15, { f: 560 + k * 100, gain: 0.5 }));
+        add('blips', s.start + 0.7, { to: s.end - 0.5, n: 14 });
+        break;
+      case 'week_compare':
+        add('riser', s.start + 0.3, { d: 1.0, gain: 0.1 });
+        [0, 1, 2].forEach((k) => add('pop', tOr(s, 'rows', 0.65) + k * 0.15, { f: 700 + k * 100, gain: 0.5 }));
+        break;
+      case 'theme_switch': {
+        const per = Math.max(0.55, (s.end - s.start - 0.8) / 4);
+        for (let k = 0; k < 4; k++) add('pop', s.start + 0.6 + k * per, { f: 600 + k * 120, gain: 0.5 });
+        break;
+      }
+      case 'feature_list': {
+        const n = Math.max(1, (s.params.items ?? []).length);
+        const span = s.end - s.start - 0.6;
+        for (let k = 0; k < n; k++) add('pop', s.t[`i${k + 1}`] ?? s.start + 0.15 + (span / n) * k, { f: 560 + k * 110, gain: 0.6 });
+        break;
+      }
+      case 'fact': {
+        const ct = tOr(s, 'count', 0.15);
+        add('counter', ct, { to: ct + 1.2, n: Math.min(40, Math.max(4, Math.round(s.params.value ?? 30))) });
+        add('impact', ct + 1.15, { f: 46, gain: 0.9 });
+        break;
+      }
     }
   });
   add('whoosh', props.endStart - 0.1, { up: false, gain: 0.6 });

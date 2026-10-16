@@ -12,7 +12,15 @@ export type SceneType =
   | 'day_timeline'
   | 'goal'
   | 'outro_map'
-  | 'big_word';
+  | 'big_word'
+  | 'dynamic_island'
+  | 'versus'
+  | 'add_place'
+  | 'replay_day'
+  | 'week_compare'
+  | 'theme_switch'
+  | 'feature_list'
+  | 'fact';
 
 export type Seg = {
   index: number;

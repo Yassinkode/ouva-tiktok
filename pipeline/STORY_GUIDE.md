@@ -17,12 +17,34 @@ découvre ses propres stats. Ce n'est PAS un tutoriel ni une pub corporate.
 Interdit : suivi d'autres personnes, réseau social, promesses santé/médicales, chiffres présentés comme
 des études réelles. Les chiffres de l'histoire sont des exemples personnels.
 
+## Varier VRAIMENT d'une vidéo à l'autre (le plus important)
+Chaque vidéo a un `format` ET une `feature` différents des précédentes. Change aussi la scène d'ouverture.
+Formats :
+- `pitch` — présentation directe : « Voici une appli qui… ». Pas d'histoire perso.
+- `concept` — le pourquoi : « On connaît le temps d'écran… mais le temps par lieu ? C'est pour ça qu'on l'a créée. »
+- `sedentarite` — sensibilisation avec un fait sourcé (voir faits vérifiés), puis OùVa comme outil.
+- `feature` — UNE fonctionnalité expliquée de façon intrigante (Dynamic Island, replay, thème/logo, ajout de lieu…).
+- `tuto` — comment ça marche en 3 étapes.
+- `liste` — « 3 choses que… ».
+- `defi` — « Je teste pendant 7 jours », « une semaine sans… ».
+- `question` — devinette / interpellation du spectateur (« Devine combien… », « Et toi ? »).
+- `histoire` — petite histoire perso à la première personne (avec parcimonie).
+Features : `general`, `suivi_auto`, `carte_chaleur`, `dynamic_island`, `ajout_lieu`, `replay`, `comparer_semaines`, `objectifs`, `theme_logo`, `stats_lieu`.
+Ne jamais mentionner d'abonnement ni de prix.
+
+Faits vérifiés (à citer avec la source dans `params.source`) :
+- 95 % des adultes en France exposés à un risque par manque d'activité ou excès de sédentarité (ANSES, 2022).
+- Au-delà de 8 h assis par jour : risque pour la santé (ANSES, 2022).
+- 31 % des adultes dans le monde (1,8 milliard) pas assez actifs (OMS, 2024).
+- Recommandation : 150 min d'activité modérée par semaine (OMS).
+N'invente aucun autre chiffre « scientifique ».
+
 ## Structure
-- 8 à 11 « beats ». Chaque beat = 1 phrase (ou 2 très courtes) dite en **2 à 5 secondes** (25 à 95 caractères).
-- Texte total (tous les beats) : **450 à 620 caractères**.
+- 6 à 9 « beats ». Chaque beat = 1 phrase (ou 2 très courtes) dite en **2 à 5 secondes** (25 à 95 caractères).
+- Texte total (tous les beats) : **260 à 450 caractères** (vidéo de 22 à 32 s).
 - Beat 1 = accroche immédiate (question, surprise) — compréhensible en 1,5 s.
 - Un arc : découverte → surprise/chiffres → prise de conscience (drôle) → l'app fait tout seule → exemple concret → objectif/décision → chute.
-- Dernier beat = `outro_map` (la carte qui change de couleur) ou `big_word`. Le logo OùVa est ajouté automatiquement après.
+- La fin peut être n'importe quelle scène. Le logo OùVa + « Disponible sur l'App Store » + « lien en bio » sont ajoutés automatiquement.
 - Français parlé : « j'ai jamais », « faudrait », « bon », « ok », « attends ». Pas d'emojis, pas de balises entre crochets.
 - Écris les nombres en chiffres dans le texte : « 62 % », « 30 jours », « 14 heures », « 0 sortie ».
 
@@ -43,10 +65,18 @@ Les lieux (`place`) possibles : `home` (Maison), `gym` (Salle de sport), `school
 | `day_timeline` | un jour précis : JOUR en gros, compteur d'heures, frise 24 h, puce | `day` (ex. "mardi"), `sub`?, `value` (heures, ≤ 24), `place`, `caption` (ex. "à la maison"), `chip`?: {`value`, `label`, `good`?} | `count`, `chip` |
 | `goal` | carte « Objectif » sur fond menthe | `title` (≤ 24 car.), `pill` (ex. "Cette semaine"), `barLabel` (ex. "Temps dehors") | — |
 | `outro_map` | survol de la carte, les cases rouges deviennent vertes | `place` | `cool` |
-| `big_word` | phrase en typo animée + icône de lieu | `place`? | — |
+| `big_word` | phrase en typo animée (+ icône de lieu, ou fond sombre) | `place`?, `dark`? | — |
+| `dynamic_island` | gros plan iPhone : la Dynamic Island s'ouvre, lieu + chrono en direct | `place`, `label`?, `minutes` | `expand` |
+| `versus` | « Temps d'écran ✓ » vs « Temps par lieu ? » → logo OùVa | `a`?, `b`? | `b`, `reveal` |
+| `add_place` | iPhone : dessiner la zone (4 points) → nom + catégorie → ajouté | `place`, `label` | `name`, `done` |
+| `replay_day` | iPhone : « Ma journée sur la carte », l'avatar suit le trajet | `stops`: [3-4 × {`place`,`time`,`label`?}] | — |
+| `week_compare` | iPhone : « Comparer mes semaines », 2 courbes + écarts par lieu | `metric`?, `before`?, `after`?, `labelA`?, `labelB`?, `rows`: [{`place`,`delta`,`good`?}] | `b`, `rows` |
+| `theme_switch` | iPhone : « Logo et thème », l'icône change de style | — | — |
+| `feature_list` | 2 à 4 cartes fonctionnalités qui arrivent une par une | `items`: [{`icon` (pin, clock, signal, map, chart, play, flag, palette, home), `title`}] | `i1`, `i2`, `i3`, `i4` |
+| `fact` | gros chiffre + phrase + source (sédentarité) | `value`, `suffix`, `label`, `source`, `dark`? | `count` |
 
 Règles :
-- 6 types de scènes différents minimum. Pas deux fois la même scène d'affilée.
+- 5 types de scènes différents minimum. Pas deux fois la même scène d'affilée.
 - `phone_auto` au plus 1 fois, `wipe_word` au plus 1 fois.
 - Chaque mot de `sync` doit apparaître **tel quel** dans le `text` du même beat.
 - `cap` = 1 à 5 mots affichés en gros (mots-clés, pas une phrase entière), de préférence **des mots dits dans le beat**, dans l'ordre. `accent` = le mot de `cap` à colorer. Pas de `cap` pour `place_pin`, `counter_map`, `wipe_word`, `day_timeline` (ils ont déjà leur texte).
@@ -65,7 +95,8 @@ Réponds UNIQUEMENT avec un objet JSON valide :
 ```json
 {
   "title": "titre interne court",
-  "angle": "angle choisi",
+  "format": "pitch",
+  "feature": "dynamic_island",
   "caption": "légende TikTok (≤ 150 caractères, ton perso, 1 question pour les commentaires)",
   "hashtags": ["#ouva", "#…", "#…", "#…"],
   "beats": [

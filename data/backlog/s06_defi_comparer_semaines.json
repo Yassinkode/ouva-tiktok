@@ -1,0 +1,130 @@
+{
+ "format": "defi",
+ "feature": "comparer_semaines",
+ "title": "Une semaine dehors",
+ "angle": "defi/comparer_semaines",
+ "caption": "J'ai tenté une semaine sans rester enfermé. Résultat dans la vidéo 👀 Tu tiens combien de jours ?",
+ "hashtags": [
+  "#ouva",
+  "#defi",
+  "#motivation",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai fait un défi : une semaine sans rester enfermé.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "une semaine",
+   "accent": "semaine",
+   "sync": {}
+  },
+  {
+   "text": "Et l'appli compare automatiquement avec la semaine d'avant.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures à la maison / jour",
+    "rows": [
+     {
+      "place": "park",
+      "delta": "+3 h 20",
+      "good": true
+     },
+     {
+      "place": "home",
+      "delta": "−5 h",
+      "good": true
+     },
+     {
+      "place": "gym",
+      "delta": "+1 h 30",
+      "good": true
+     }
+    ]
+   },
+   "cap": "la semaine d'avant",
+   "accent": "d'avant.",
+   "sync": {
+    "b": "compare",
+    "rows": "d'avant."
+   }
+  },
+  {
+   "text": "Le parc passe de 1 % à 6 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "park",
+     "value": 1,
+     "label": "Avant"
+    },
+    "b": {
+     "place": "park",
+     "value": 6,
+     "label": "Pendant"
+    }
+   },
+   "cap": "1 % → 6 %",
+   "sync": {
+    "b": "6"
+   }
+  },
+  {
+   "text": "Mon meilleur jour : samedi, 4 heures dehors.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "samedi",
+    "value": 4,
+    "place": "park",
+    "caption": "dehors",
+    "chip": {
+     "value": 3,
+     "label": "lieux visités",
+     "good": true
+    }
+   },
+   "sync": {
+    "count": "4",
+    "chip": "dehors."
+   }
+  },
+  {
+   "text": "Et la maison descend à 49 % de mon temps.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 49,
+    "place": "home",
+    "sub": "à la maison"
+   },
+   "sync": {
+    "count": "49",
+    "tile": "temps."
+   }
+  },
+  {
+   "text": "Semaine prochaine : je garde le rythme.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif de la semaine",
+    "barLabel": "Temps dehors"
+   },
+   "cap": "Je garde le rythme.",
+   "accent": "rythme.",
+   "sync": {}
+  },
+  {
+   "text": "Et ma carte commence à virer au vert.",
+   "scene": "outro_map",
+   "params": {
+    "place": "park"
+   },
+   "cap": "virer au vert",
+   "accent": "vert.",
+   "sync": {
+    "cool": "vert."
+   }
+  }
+ ]
+}
