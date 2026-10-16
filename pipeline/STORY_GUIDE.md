@@ -43,7 +43,8 @@ N'invente aucun autre chiffre « scientifique ».
 - 6 à 9 « beats ». Chaque beat = 1 phrase (ou 2 très courtes) dite en **2 à 5 secondes** (25 à 95 caractères).
 - Texte total (tous les beats) : **260 à 450 caractères** (vidéo de 22 à 32 s).
 - Beat 1 = accroche immédiate (question, surprise) — compréhensible en 1,5 s.
-- Un arc : découverte → surprise/chiffres → prise de conscience (drôle) → l'app fait tout seule → exemple concret → objectif/décision → chute.
+- La structure dépend du format (pitch, tuto, liste, devinette…) : ne reprends PAS toujours l'arc « découverte → chiffres → objectif ».
+- Ne parle d'objectifs (et n'utilise la scène `goal`) QUE si la feature est `objectifs`. Ne termine pas par « on verra si la carte change de couleur ».
 - La fin peut être n'importe quelle scène. Le logo OùVa + « Disponible sur l'App Store » + « lien en bio » sont ajoutés automatiquement.
 - Français parlé : « j'ai jamais », « faudrait », « bon », « ok », « attends ». Pas d'emojis, pas de balises entre crochets.
 - Écris les nombres en chiffres dans le texte : « 62 % », « 30 jours », « 14 heures », « 0 sortie ».
@@ -60,7 +61,7 @@ Les lieux (`place`) possibles : `home` (Maison), `gym` (Salle de sport), `school
 | `ring_stat` | anneau + gros % + tuile du lieu | `value` (0–100), `place`, `title` (ex. "30 derniers jours"), `sub` (ex. "de mon temps") | `count`, `tile` |
 | `compare` | 2 barres, contraste comique, zoom sur la petite | `a`:{`place`,`value`,`label`?}, `b`:{…} | `b` (le chiffre de b), `punch` (optionnel : mot répété pour zoomer) |
 | `bento` | 4 cartes de lieux, la 1re domine | `places`: [4 × {`place`,`value`}] (la plus grosse en premier) | — |
-| `wipe_word` | aplat vert plein écran, un mot énorme en italique (1 fois max par vidéo) | `word` (1 mot, ≤ 12 lettres), `small` (≤ 3 mots, optionnel) | `word` |
+| `wipe_word` | aplat vert plein écran, un mot énorme en italique (1 fois max par vidéo) | `word` (1 à 2 mots, ≤ 12 caractères), `small` (≤ 3 mots, optionnel) | `word` |
 | `phone_auto` | iPhone 3D, l'app se remplit toute seule (sujet : suivi automatique) | `place`, `label`?, `others`: [2 places] | `line2` : mot où commence la 2e ligne |
 | `day_timeline` | un jour précis : JOUR en gros, compteur d'heures, frise 24 h, puce | `day` (ex. "mardi"), `sub`?, `value` (heures, ≤ 24), `place`, `caption` (ex. "à la maison"), `chip`?: {`value`, `label`, `good`?} | `count`, `chip` |
 | `goal` | carte « Objectif » sur fond menthe | `title` (≤ 24 car.), `pill` (ex. "Cette semaine"), `barLabel` (ex. "Temps dehors") | — |

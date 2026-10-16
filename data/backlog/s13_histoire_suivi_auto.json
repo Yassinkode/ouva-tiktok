@@ -1,0 +1,87 @@
+{
+ "format": "histoire",
+ "feature": "suivi_auto",
+ "title": "Télétravail",
+ "caption": "Télétravail : 3 pas entre mon lit et mon bureau. Qui est dans le même cas ? 🙋",
+ "hashtags": [
+  "#ouva",
+  "#teletravail",
+  "#humour",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Mon trajet pour aller au travail ? 3 pas.",
+   "scene": "big_word",
+   "cap": "3 pas.",
+   "accent": "pas.",
+   "sync": {}
+  },
+  {
+   "text": "Mon bureau, c'est mon salon.",
+   "scene": "place_pin",
+   "params": {
+    "place": "home",
+    "label": "Mon salon"
+   },
+   "sync": {
+    "pin": "salon."
+   }
+  },
+  {
+   "text": "Résultat : 79 % de mon temps au même endroit.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 79,
+    "place": "home",
+    "sub": "au même endroit"
+   },
+   "sync": {
+    "count": "79",
+    "tile": "endroit."
+   }
+  },
+  {
+   "text": "Même OùVa me le dit gentiment, dès l'accueil.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "Toujours ici"
+   },
+   "sync": {
+    "zoom": "gentiment,"
+   }
+  },
+  {
+   "text": "Mercredi, j'ai battu un record : 23 heures sans sortir.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mercredi",
+    "value": 23,
+    "place": "home",
+    "caption": "à la maison",
+    "chip": {
+     "value": 0,
+     "label": "sortie"
+    }
+   },
+   "sync": {
+    "count": "23",
+    "chip": "sortir."
+   }
+  },
+  {
+   "text": "Prochaine étape : télétravailler depuis un café. Ou au moins depuis le balcon.",
+   "scene": "big_word",
+   "params": {
+    "place": "cafe",
+    "dark": true
+   },
+   "cap": "depuis un café.",
+   "accent": "café.",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/suivi_auto"
+}

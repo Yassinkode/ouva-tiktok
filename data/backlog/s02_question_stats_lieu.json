@@ -1,0 +1,86 @@
+{
+ "format": "question",
+ "feature": "stats_lieu",
+ "title": "Tu bosses vraiment combien ?",
+ "caption": "Tu dirais combien d'heures au boulot cette semaine ? Écris ton chiffre avant de regarder 👇",
+ "hashtags": [
+  "#ouva",
+  "#travail",
+  "#alternance",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Question honnête : tu passes combien d'heures au travail par semaine ?",
+   "scene": "big_word",
+   "params": {
+    "place": "work"
+   },
+   "cap": "combien d'heures ?",
+   "accent": "heures",
+   "sync": {}
+  },
+  {
+   "text": "Tout le monde répond 35. Personne ne compte vraiment.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "35",
+    "small": "tout le monde dit"
+   },
+   "sync": {
+    "word": "35."
+   }
+  },
+  {
+   "text": "Moi, j'ai laissé mon téléphone compter pendant un mois.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "work",
+    "label": "Travail",
+    "minutes": 256
+   },
+   "cap": "pendant un mois.",
+   "accent": "mois.",
+   "sync": {
+    "expand": "compter"
+   }
+  },
+  {
+   "text": "Verdict : 43 heures par semaine en moyenne.",
+   "scene": "counter_map",
+   "params": {
+    "value": 43,
+    "unit": "heures",
+    "bottom": "au travail",
+    "place": "work"
+   },
+   "sync": {
+    "count": "43",
+    "bottom": "moyenne."
+   }
+  },
+  {
+   "text": "Sans pointeuse, sans appli à ouvrir. Juste en arrivant et en partant.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "Détecté automatiquement"
+   },
+   "sync": {
+    "zoom": "arrivant"
+   }
+  },
+  {
+   "text": "Et toi, tu paries sur combien ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "tu paries combien ?",
+   "accent": "combien",
+   "sync": {}
+  }
+ ],
+ "angle": "question/stats_lieu"
+}

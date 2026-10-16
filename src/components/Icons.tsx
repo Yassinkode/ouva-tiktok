@@ -175,3 +175,9 @@ export const BagIcon: React.FC<P> = ({ size = 48, color = '#fff', style }) => (
     <path d="M17 19v-7a7 7 0 0 1 14 0v7" stroke={color} strokeWidth="3.6" fill="none" strokeLinecap="round" />
   </svg>
 );
+
+/** the real OùVa app icon (public/logo.png) */
+import { Img, staticFile } from 'remotion';
+export const LogoIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = ({ size = 200, style }) => (
+  <Img src={staticFile('logo.png')} style={{ width: size, height: size, borderRadius: size * 0.225, display: 'block', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)', ...style }} />
+);

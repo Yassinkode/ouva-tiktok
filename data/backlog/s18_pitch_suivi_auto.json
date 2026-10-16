@@ -1,0 +1,88 @@
+{
+ "format": "pitch",
+ "feature": "suivi_auto",
+ "title": "Une appli qui ne demande rien",
+ "caption": "Une appli de suivi qui ne te demande rien. Ni bouton, ni chrono, ni notes.",
+ "hashtags": [
+  "#ouva",
+  "#productivite",
+  "#iphone",
+  "#app"
+ ],
+ "beats": [
+  {
+   "text": "Les applis de suivi, tu les abandonnes au bout de 3 jours. Normal : il faut tout noter.",
+   "scene": "big_word",
+   "cap": "il faut tout noter.",
+   "accent": "noter.",
+   "sync": {}
+  },
+  {
+   "text": "OùVa ne te demande rien.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "rien",
+    "small": "elle ne demande"
+   },
+   "sync": {
+    "word": "rien."
+   }
+  },
+  {
+   "text": "Tu arrives quelque part, elle le détecte. Tu repars, elle s'arrête.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "school",
+    "others": [
+     "home",
+     "cafe"
+    ]
+   },
+   "cap": "elle le détecte.",
+   "cap2": "elle s'arrête.",
+   "accent": "détecte.",
+   "sync": {
+    "line2": "repars,"
+   }
+  },
+  {
+   "text": "Et toute ta journée se range toute seule.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Tes lieux aujourd'hui"
+   },
+   "sync": {
+    "zoom": "journée"
+   }
+  },
+  {
+   "text": "Même le compteur en haut de ton écran se met à jour en direct.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "school",
+    "label": "École",
+    "minutes": 38
+   },
+   "cap": "en direct.",
+   "accent": "direct.",
+   "sync": {
+    "expand": "compteur"
+   }
+  },
+  {
+   "text": "Avec le détail de chaque lieu, jour par jour.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Cette semaine"
+   },
+   "sync": {
+    "zoom": "détail"
+   }
+  }
+ ],
+ "angle": "pitch/suivi_auto"
+}

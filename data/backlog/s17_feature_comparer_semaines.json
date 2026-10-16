@@ -1,9 +1,8 @@
 {
- "format": "question",
+ "format": "feature",
  "feature": "comparer_semaines",
- "title": "Grise ou verte",
- "angle": "question/comparer_semaines",
- "caption": "Partiels vs vacances : deux semaines, deux vies. Ta semaine, elle est grise ou verte ?",
+ "title": "Deux semaines, deux vies",
+ "caption": "Semaine d'exams vs semaine de vacances : ma carte ne ment pas. Ta semaine ressemble à laquelle ?",
  "hashtags": [
   "#ouva",
   "#partiels",
@@ -12,7 +11,7 @@
  ],
  "beats": [
   {
-   "text": "Ta semaine, elle ressemble à quoi ? Moi, j'ai comparé deux semaines.",
+   "text": "Dans OùVa, il y a une fonction que j'adore : comparer mes semaines.",
    "scene": "app_screen",
    "params": {
     "shot": "home_features",
@@ -20,11 +19,11 @@
     "label": "Comparer mes semaines"
    },
    "sync": {
-    "zoom": "comparé"
+    "zoom": "fonction"
    }
   },
   {
-   "text": "La grise, c'est une semaine de partiels. La verte, une semaine de vacances.",
+   "text": "La grise : semaine de partiels. La verte : semaine de vacances.",
    "scene": "week_compare",
    "params": {
     "metric": "Heures dehors / jour",
@@ -62,12 +61,25 @@
     ]
    },
    "sync": {
-    "b": "verte,",
+    "b": "verte",
     "rows": "vacances."
    }
   },
   {
-   "text": "Le parc : 1 % contre 9 %.",
+   "text": "En partiels : 12 heures par jour à la bibliothèque.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mardi",
+    "value": 12,
+    "place": "school",
+    "caption": "à la bibliothèque"
+   },
+   "sync": {
+    "count": "12"
+   }
+  },
+  {
+   "text": "En vacances : le parc passe de 1 % à 9 %.",
    "scene": "compare",
    "params": {
     "a": {
@@ -81,45 +93,23 @@
      "label": "Partiels"
     }
    },
-   "cap": "Le parc",
-   "accent": "parc",
    "sync": {
     "b": "1"
    }
   },
   {
-   "text": "Le mardi des partiels : 12 heures à la bibliothèque.",
-   "scene": "day_timeline",
+   "text": "Mon nouveau lieu préféré pendant les vacances : le parc d'à côté.",
+   "scene": "place_pin",
    "params": {
-    "day": "mardi",
-    "value": 12,
-    "place": "school",
-    "caption": "à la bibliothèque",
-    "chip": {
-     "value": 0,
-     "label": "pause dehors"
-    }
+    "place": "park",
+    "label": "Parc"
    },
    "sync": {
-    "count": "12",
-    "chip": "bibliothèque."
+    "pin": "parc"
    }
   },
   {
-   "text": "En vacances, chez moi, à peine 35 %.",
-   "scene": "ring_stat",
-   "params": {
-    "value": 35,
-    "place": "home",
-    "sub": "chez moi"
-   },
-   "sync": {
-    "count": "35",
-    "tile": "moi,"
-   }
-  },
-  {
-   "text": "Et toi, ta semaine, elle est grise ou verte ?",
+   "text": "Ta semaine, elle est grise ou verte ?",
    "scene": "big_word",
    "params": {
     "dark": true
@@ -128,5 +118,6 @@
    "accent": "verte",
    "sync": {}
   }
- ]
+ ],
+ "angle": "feature/comparer_semaines"
 }

@@ -1,0 +1,86 @@
+{
+ "format": "tuto",
+ "feature": "ajout_lieu",
+ "title": "Un lieu en 10 secondes",
+ "caption": "Ajouter un lieu dans OùVa prend 10 secondes. Tu ajouterais lequel en premier ?",
+ "hashtags": [
+  "#ouva",
+  "#tuto",
+  "#iphone",
+  "#app"
+ ],
+ "beats": [
+  {
+   "text": "Ajouter un lieu dans OùVa, ça prend 10 secondes. Regarde bien.",
+   "scene": "big_word",
+   "cap": "10 secondes.",
+   "accent": "secondes.",
+   "sync": {}
+  },
+  {
+   "text": "Étape 1 : tu poses 4 points autour de l'endroit, directement sur la carte.",
+   "scene": "add_place",
+   "params": {
+    "place": "cafe",
+    "label": "Café"
+   },
+   "sync": {
+    "name": "autour",
+    "done": "carte."
+   }
+  },
+  {
+   "text": "Étape 2 : tu lui donnes un nom, puis tu choisis une icône.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "name",
+    "label": "Le nom",
+    "region2": "category",
+    "label2": "L'icône"
+   },
+   "sync": {
+    "zoom": "nom,",
+    "zoom2": "icône."
+   }
+  },
+  {
+   "text": "Étape 3 : tu valides, et ton café apparaît sur ta carte.",
+   "scene": "place_pin",
+   "params": {
+    "place": "cafe",
+    "label": "Café"
+   },
+   "sync": {
+    "pin": "café"
+   }
+  },
+  {
+   "text": "La prochaine fois que tu y entres, le compteur démarre tout seul.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "cafe",
+    "label": "Café",
+    "minutes": 2
+   },
+   "cap": "tout seul.",
+   "accent": "seul.",
+   "sync": {
+    "expand": "compteur"
+   }
+  },
+  {
+   "text": "Et le soir, tu retrouves ton temps exact dans la page du lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Page du lieu"
+   },
+   "sync": {
+    "zoom": "soir,"
+   }
+  }
+ ],
+ "angle": "tuto/ajout_lieu"
+}

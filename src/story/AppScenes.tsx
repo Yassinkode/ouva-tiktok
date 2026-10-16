@@ -2,7 +2,7 @@ import React from 'react';
 import { AbsoluteFill, useCurrentFrame } from 'remotion';
 import { C, EASE, FONT, FONT_TIGHT, FPS, clamp01, float, kf, lerp, p, shake, sp, vel } from '../lib';
 import { MBlur, Odometer, StyledMap, shadowDeep, shadowLight } from '../components/Core';
-import { CheckIcon, ClockIcon, FlagIcon, HouseIcon, OuvaMark, PinIcon, SignalIcon } from '../components/Icons';
+import { CheckIcon, ClockIcon, FlagIcon, HouseIcon, LogoIcon, PinIcon, SignalIcon } from '../components/Icons';
 import { IconTile, PLACE, PlaceKind } from '../components/UI';
 import { Caption, Disclaimer, Whip, tOr } from './common';
 import { Seg } from './types';
@@ -215,7 +215,7 @@ export const Versus: React.FC<{ seg: Seg }> = ({ seg }) => {
             <div style={{ position: 'absolute', left: 0, right: 0, top: 150, height: 190, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div style={{ position: 'absolute', fontFamily: FONT_TIGHT, fontWeight: 900, fontSize: 170, color: 'rgba(255,255,255,0.9)', transform: `scale(${q * (1 - rev)}) rotate(${rev * 90}deg)`, opacity: 1 - clamp01(rev * 2) }}>?</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 22, transform: `scale(${Math.max(0, rev)})`, opacity: clamp01(rev * 2) }}>
-                <OuvaMark size={130} t={p(f, tr + 0.2, 0.8)} />
+                <LogoIcon size={130} />
                 <div style={{ fontFamily: FONT_TIGHT, fontWeight: 880, fontSize: 110, letterSpacing: '-0.05em' }}>
                   O<span style={{ color: C.mint }}>ù</span>Va
                 </div>

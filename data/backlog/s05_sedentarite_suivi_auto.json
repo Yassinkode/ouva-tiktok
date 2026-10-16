@@ -1,0 +1,79 @@
+{
+ "format": "sedentarite",
+ "feature": "suivi_auto",
+ "title": "95 %",
+ "caption": "95 % des adultes en France sont exposés à un risque par manque d'activité (ANSES). Le premier pas, c'est de voir.",
+ "hashtags": [
+  "#ouva",
+  "#sedentarite",
+  "#sante",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "95 % des adultes en France sont exposés à un risque pour leur santé.",
+   "scene": "fact",
+   "params": {
+    "value": 95,
+    "suffix": "%",
+    "label": "des adultes en France exposés à un risque par manque d'activité ou trop de temps assis",
+    "source": "ANSES, 2022"
+   },
+   "sync": {
+    "count": "95"
+   }
+  },
+  {
+   "text": "Pas parce qu'ils ne font jamais de sport.",
+   "scene": "big_word",
+   "cap": "jamais de sport.",
+   "accent": "sport.",
+   "sync": {}
+  },
+  {
+   "text": "Mais parce qu'ils passent des heures au même endroit, sans s'en rendre compte.",
+   "scene": "heatmap_reveal",
+   "cap": "au même endroit",
+   "accent": "endroit,",
+   "sync": {
+    "punch": "endroit,"
+   }
+  },
+  {
+   "text": "Une journée de bureau, c'est vite 9 heures presque sans bouger.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "lundi",
+    "value": 9,
+    "place": "work",
+    "caption": "au bureau"
+   },
+   "sync": {
+    "count": "9"
+   }
+  },
+  {
+   "text": "OùVa te le montre noir sur blanc : ton temps, lieu par lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Ton temps, lieu par lieu"
+   },
+   "sync": {
+    "zoom": "montre"
+   }
+  },
+  {
+   "text": "Changer commence souvent par regarder.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "par regarder.",
+   "accent": "regarder.",
+   "sync": {}
+  }
+ ],
+ "angle": "sedentarite/suivi_auto"
+}

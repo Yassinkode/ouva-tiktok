@@ -1,0 +1,100 @@
+{
+ "format": "concept",
+ "feature": "general",
+ "title": "Pourquoi on l'a créée",
+ "caption": "Un soir je me suis demandé où passait vraiment mon temps. Aucune appli ne savait répondre. Alors on l'a créée.",
+ "hashtags": [
+  "#ouva",
+  "#startup",
+  "#founder",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Un soir, je me suis demandé : où passe vraiment mon temps ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "où passe mon temps ?",
+   "accent": "temps",
+   "sync": {}
+  },
+  {
+   "text": "J'ai cherché une appli. Il y en a pour le temps d'écran, le sommeil, les pas.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "clock",
+      "title": "Temps d'écran"
+     },
+     {
+      "icon": "play",
+      "title": "Sommeil"
+     },
+     {
+      "icon": "chart",
+      "title": "Nombre de pas"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "écran,",
+    "i2": "sommeil,",
+    "i3": "pas."
+   }
+  },
+  {
+   "text": "Mais rien pour le temps passé dans chaque lieu.",
+   "scene": "versus",
+   "params": {
+    "a": "Temps d'écran",
+    "b": "Temps par lieu"
+   },
+   "sync": {
+    "b": "rien",
+    "reveal": "lieu."
+   }
+  },
+  {
+   "text": "Alors on l'a créée.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "créée",
+    "small": "alors on l'a"
+   },
+   "sync": {
+    "word": "créée."
+   }
+  },
+  {
+   "text": "Elle s'appelle OùVa.",
+   "scene": "app_tour",
+   "params": {
+    "shots": [
+     "home_now",
+     "places_heatmap",
+     "place_stats"
+    ]
+   },
+   "sync": {
+    "s2": "s'appelle",
+    "s3": "OùVa."
+   }
+  },
+  {
+   "text": "Tu arrives quelque part, et ton temps commence à se compter tout seul.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "Détecté automatiquement"
+   },
+   "sync": {
+    "zoom": "arrives"
+   }
+  }
+ ],
+ "angle": "concept/general"
+}

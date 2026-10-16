@@ -1,0 +1,89 @@
+{
+ "format": "question",
+ "feature": "carte_chaleur",
+ "title": "Le test du dimanche",
+ "caption": "Fais le test ce dimanche : combien d'heures tu passes chez toi ? Réponds en commentaire 👇",
+ "hashtags": [
+  "#ouva",
+  "#dimanche",
+  "#casanier",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Le test du dimanche. Combien d'heures tu passes vraiment chez toi ?",
+   "scene": "big_word",
+   "params": {
+    "place": "home"
+   },
+   "cap": "Le test du dimanche.",
+   "accent": "dimanche.",
+   "sync": {}
+  },
+  {
+   "text": "10 ? 15 ? Moi, j'ai fait le test pour de vrai.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "15 ?",
+    "small": "10 ?"
+   },
+   "sync": {
+    "word": "15"
+   }
+  },
+  {
+   "text": "Dimanche dernier : 22 heures à la maison. Zéro sortie.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "dimanche",
+    "value": 22,
+    "place": "home",
+    "caption": "à la maison",
+    "chip": {
+     "value": 0,
+     "label": "sortie"
+    }
+   },
+   "sync": {
+    "count": "22",
+    "chip": "Zéro"
+   }
+  },
+  {
+   "text": "Et sur le mois, la maison, c'est 62 % de mon temps.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 62,
+    "place": "home",
+    "sub": "de mon temps"
+   },
+   "sync": {
+    "count": "62",
+    "tile": "temps."
+   }
+  },
+  {
+   "text": "Sur la carte de chaleur, la maison est rouge vif.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat",
+    "label": "Carte de chaleur"
+   },
+   "sync": {
+    "zoom": "carte"
+   }
+  },
+  {
+   "text": "Ce dimanche, tu fais le test avec moi ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "tu fais le test ?",
+   "accent": "test",
+   "sync": {}
+  }
+ ],
+ "angle": "question/carte_chaleur"
+}

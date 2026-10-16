@@ -1,0 +1,107 @@
+{
+ "format": "feature",
+ "feature": "replay",
+ "title": "Ta journée en replay",
+ "caption": "Ta journée animée sur la carte, en 20 secondes. Tu la partagerais en story ?",
+ "hashtags": [
+  "#ouva",
+  "#replay",
+  "#story",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Et si tu pouvais revoir ta journée en accéléré ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "en accéléré ?",
+   "accent": "accéléré",
+   "sync": {}
+  },
+  {
+   "text": "Dans OùVa, ça s'appelle Ma journée sur la carte.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "revivre",
+    "label": "Revivre ma journée"
+   },
+   "sync": {
+    "zoom": "s'appelle"
+   }
+  },
+  {
+   "text": "Ton avatar rejoue tes déplacements, lieu après lieu.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "07:45"
+     },
+     {
+      "place": "school",
+      "time": "08:30"
+     },
+     {
+      "place": "cafe",
+      "time": "16:50"
+     },
+     {
+      "place": "home",
+      "time": "19:10"
+     }
+    ]
+   },
+   "cap": "lieu après lieu.",
+   "accent": "lieu.",
+   "sync": {}
+  },
+  {
+   "text": "Avec l'heure d'arrivée et de départ de chaque endroit.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "timeline",
+    "label": "Arrivées et départs"
+   },
+   "sync": {
+    "zoom": "l'heure"
+   }
+  },
+  {
+   "text": "Tu peux la télécharger, ou la partager direct en story.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "play",
+      "title": "Télécharger la vidéo"
+     },
+     {
+      "icon": "map",
+      "title": "Partager en story"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "télécharger,",
+    "i2": "story."
+   }
+  },
+  {
+   "text": "Ta journée devient une petite vidéo.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "ta journée",
+    "small": "en vidéo"
+   },
+   "sync": {
+    "word": "journée"
+   }
+  }
+ ],
+ "angle": "feature/replay"
+}

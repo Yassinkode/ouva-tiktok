@@ -1,0 +1,94 @@
+{
+ "format": "sedentarite",
+ "feature": "suivi_auto",
+ "title": "150 minutes",
+ "caption": "L'OMS recommande 150 minutes d'activité par semaine. Ça fait combien par jour ? Moins que tu crois.",
+ "hashtags": [
+  "#ouva",
+  "#oms",
+  "#sante",
+  "#marche"
+ ],
+ "beats": [
+  {
+   "text": "L'OMS recommande 150 minutes d'activité par semaine.",
+   "scene": "fact",
+   "params": {
+    "value": 150,
+    "suffix": "min",
+    "label": "d'activité modérée par semaine, recommandées",
+    "source": "OMS"
+   },
+   "sync": {
+    "count": "150"
+   }
+  },
+  {
+   "text": "Ça a l'air énorme. En vrai, pas du tout.",
+   "scene": "big_word",
+   "cap": "pas du tout.",
+   "accent": "tout.",
+   "sync": {}
+  },
+  {
+   "text": "Ça fait à peine 22 minutes par jour.",
+   "scene": "fact",
+   "params": {
+    "value": 22,
+    "suffix": "min",
+    "label": "par jour, c'est tout",
+    "dark": false
+   },
+   "sync": {
+    "count": "22"
+   }
+  },
+  {
+   "text": "Un aller-retour à pied jusqu'au parc, et c'est presque fait.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "12:10"
+     },
+     {
+      "place": "park",
+      "time": "12:22"
+     },
+     {
+      "place": "home",
+      "time": "12:40"
+     }
+    ]
+   },
+   "cap": "à pied",
+   "accent": "pied",
+   "sync": {}
+  },
+  {
+   "text": "OùVa compte le temps passé au parc, sans que tu lances quoi que ce soit.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Compté automatiquement"
+   },
+   "sync": {
+    "zoom": "compte"
+   }
+  },
+  {
+   "text": "22 minutes par jour. Tu commences quand ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "22 min",
+    "small": "par jour"
+   },
+   "sync": {
+    "word": "22"
+   }
+  }
+ ],
+ "angle": "sedentarite/suivi_auto"
+}

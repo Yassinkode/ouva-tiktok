@@ -1,0 +1,90 @@
+{
+ "format": "feature",
+ "feature": "dynamic_island",
+ "title": "Le petit compteur",
+ "caption": "Personne ne remarque ce petit compteur en haut de mon écran. Pourtant il fait tout le boulot.",
+ "hashtags": [
+  "#ouva",
+  "#dynamicisland",
+  "#iphone",
+  "#astuce"
+ ],
+ "beats": [
+  {
+   "text": "Regarde en haut de mon écran. Ce petit compteur, c'est le temps que je passe à la salle.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport",
+    "minutes": 47
+   },
+   "cap": "en haut de mon écran",
+   "accent": "écran.",
+   "sync": {
+    "expand": "compteur,"
+   }
+  },
+  {
+   "text": "Il s'est lancé tout seul quand je suis entré.",
+   "scene": "big_word",
+   "params": {
+    "place": "gym"
+   },
+   "cap": "tout seul",
+   "accent": "seul",
+   "sync": {}
+  },
+  {
+   "text": "Et il s'arrêtera tout seul quand je sortirai.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport",
+    "others": [
+     "home",
+     "work"
+    ]
+   },
+   "cap": "Il s'arrêtera tout seul.",
+   "accent": "seul",
+   "sync": {
+    "line2": "sortirai."
+   }
+  },
+  {
+   "text": "Après la séance, le temps est rangé dans la page du lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Page du lieu"
+   },
+   "sync": {
+    "zoom": "rangé"
+   }
+  },
+  {
+   "text": "Moi, j'ai juste dessiné la salle une fois sur la carte.",
+   "scene": "add_place",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport"
+   },
+   "sync": {
+    "name": "dessiné",
+    "done": "carte."
+   }
+  },
+  {
+   "text": "Depuis, je ne pense plus jamais à lancer un chrono.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "plus jamais de chrono.",
+   "accent": "chrono.",
+   "sync": {}
+  }
+ ],
+ "angle": "feature/dynamic_island"
+}

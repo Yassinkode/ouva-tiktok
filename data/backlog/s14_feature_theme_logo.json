@@ -1,0 +1,88 @@
+{
+ "format": "feature",
+ "feature": "theme_logo",
+ "title": "Change l'icône",
+ "caption": "Tu peux changer l'icône d'OùVa. Team vert, bleu, doré ou rose ?",
+ "hashtags": [
+  "#ouva",
+  "#personnalisation",
+  "#iphone",
+  "#homescreen"
+ ],
+ "beats": [
+  {
+   "text": "Petit secret d'OùVa : tu peux changer son icône sur ton écran d'accueil.",
+   "scene": "big_word",
+   "cap": "changer son icône.",
+   "accent": "icône.",
+   "sync": {}
+  },
+  {
+   "text": "Ça se passe ici, dans Logo et thème, tout en bas de l'accueil.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "theme",
+    "label": "Logo et thème"
+   },
+   "sync": {
+    "zoom": "ici,"
+   }
+  },
+  {
+   "text": "Tu choisis ton icône, et la couleur de l'appli suit.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "palette",
+      "title": "Plusieurs icônes"
+     },
+     {
+      "icon": "palette",
+      "title": "Couleur assortie"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "icône,",
+    "i2": "suit."
+   }
+  },
+  {
+   "text": "C'est ton appli, à ton style.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "ton style",
+    "small": "à"
+   },
+   "sync": {
+    "word": "style."
+   }
+  },
+  {
+   "text": "Et tout le reste ne change pas : ton temps, lieu par lieu.",
+   "scene": "app_tour",
+   "params": {
+    "shots": [
+     "home_now",
+     "places_heatmap"
+    ]
+   },
+   "sync": {
+    "s2": "lieu"
+   }
+  },
+  {
+   "text": "Un détail, mais tu la reconnais au premier coup d'œil.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "au premier coup d'œil.",
+   "accent": "d'œil.",
+   "sync": {}
+  }
+ ],
+ "angle": "feature/theme_logo"
+}

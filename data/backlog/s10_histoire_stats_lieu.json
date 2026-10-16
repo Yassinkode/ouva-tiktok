@@ -1,0 +1,109 @@
+{
+ "format": "histoire",
+ "feature": "stats_lieu",
+ "title": "Pas barista",
+ "caption": "Étudiant le jour, client fidèle du café le reste du temps ☕ Ton QG c'est où ?",
+ "hashtags": [
+  "#ouva",
+  "#etudiant",
+  "#cafe",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "18 % de mon temps au café. Je suis étudiant, pas barista.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 18,
+    "place": "cafe",
+    "sub": "au café"
+   },
+   "sync": {
+    "count": "18",
+    "tile": "barista."
+   }
+  },
+  {
+   "text": "La bibliothèque ? 3 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "cafe",
+     "value": 18,
+     "label": "Café"
+    },
+    "b": {
+     "place": "school",
+     "value": 3,
+     "label": "Bibliothèque"
+    }
+   },
+   "cap": "La bibliothèque ?",
+   "accent": "bibliothèque",
+   "sync": {
+    "b": "3"
+   }
+  },
+  {
+   "text": "Le serveur connaît mon prénom. Et ma commande.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "ma commande",
+    "small": "il connaît"
+   },
+   "sync": {
+    "word": "commande."
+   }
+  },
+  {
+   "text": "En vrai, je révise mieux là-bas. C'est juste que je ne le savais pas.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 41
+     },
+     {
+      "place": "cafe",
+      "value": 18
+     },
+     {
+      "place": "school",
+      "value": 12
+     },
+     {
+      "place": "friends",
+      "value": 6
+     }
+    ]
+   },
+   "cap": "je révise mieux là-bas",
+   "accent": "là-bas.",
+   "sync": {}
+  },
+  {
+   "text": "Et c'est OùVa qui me l'a montré, lieu par lieu, sans que je note rien.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Ton temps, lieu par lieu"
+   },
+   "sync": {
+    "zoom": "montré,"
+   }
+  },
+  {
+   "text": "Mon QG officiel.",
+   "scene": "big_word",
+   "params": {
+    "place": "cafe"
+   },
+   "cap": "Mon QG officiel.",
+   "accent": "QG",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/stats_lieu"
+}

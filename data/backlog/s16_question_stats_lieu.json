@@ -1,0 +1,93 @@
+{
+ "format": "question",
+ "feature": "stats_lieu",
+ "title": "Le lieu mystère",
+ "caption": "Un lieu représente 12 % de mon temps et c'est pas le boulot. Devine lequel 👇",
+ "hashtags": [
+  "#ouva",
+  "#devinette",
+  "#amis",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Un lieu représente 12 % de mon temps. Et ce n'est pas le travail.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 12,
+    "place": "friends",
+    "label": "???",
+    "sub": "de mon temps",
+    "tileText": "12 % · lieu mystère"
+   },
+   "sync": {
+    "count": "12",
+    "tile": "travail."
+   }
+  },
+  {
+   "text": "Indice : j'y vais surtout le soir.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "surtout le soir.",
+   "accent": "soir.",
+   "sync": {}
+  },
+  {
+   "text": "Deuxième indice : il y a toujours de la musique, et souvent des pizzas.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "play",
+      "title": "De la musique"
+     },
+     {
+      "icon": "home",
+      "title": "Des pizzas"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "musique,",
+    "i2": "pizzas."
+   }
+  },
+  {
+   "text": "Réponse : chez les potes.",
+   "scene": "place_pin",
+   "params": {
+    "place": "friends",
+    "label": "Chez les potes"
+   },
+   "sync": {
+    "pin": "potes."
+   }
+  },
+  {
+   "text": "Je l'ai ajouté comme un lieu à part. Et OùVa compte tout seul.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "category",
+    "label": "Choisis une catégorie"
+   },
+   "sync": {
+    "zoom": "ajouté"
+   }
+  },
+  {
+   "text": "Toi, ton lieu mystère, c'est quoi ?",
+   "scene": "big_word",
+   "params": {
+    "place": "friends"
+   },
+   "cap": "ton lieu mystère ?",
+   "accent": "mystère",
+   "sync": {}
+  }
+ ],
+ "angle": "question/stats_lieu"
+}

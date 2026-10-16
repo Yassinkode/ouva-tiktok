@@ -1,0 +1,84 @@
+{
+ "format": "liste",
+ "feature": "stats_lieu",
+ "title": "3 lieux qu'on sous-estime",
+ "caption": "3 endroits où tu passes beaucoup plus de temps que tu crois. Le 3e m'a choqué.",
+ "hashtags": [
+  "#ouva",
+  "#routine",
+  "#astuce",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "3 endroits où tu passes plus de temps que tu crois.",
+   "scene": "big_word",
+   "cap": "plus de temps",
+   "accent": "temps",
+   "sync": {}
+  },
+  {
+   "text": "Un : le supermarché. Une heure par-ci, une heure par-là.",
+   "scene": "place_pin",
+   "params": {
+    "place": "shop",
+    "label": "Supermarché"
+   },
+   "sync": {
+    "pin": "supermarché."
+   }
+  },
+  {
+   "text": "Deux : les transports. Sur une semaine, ça fait vite une journée entière.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "semaine",
+    "sub": "en transports",
+    "value": 8,
+    "place": "work",
+    "caption": "dans les transports"
+   },
+   "sync": {
+    "count": "journée"
+   }
+  },
+  {
+   "text": "Trois : ton canapé. Le champion toutes catégories.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 44,
+    "place": "home",
+    "sub": "chez moi"
+   },
+   "cap": "ton canapé.",
+   "accent": "canapé.",
+   "sync": {
+    "count": "champion",
+    "tile": "catégories."
+   }
+  },
+  {
+   "text": "Moi, je l'ai vu ici : 10 h 33 à la maison en une journée.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "home",
+    "label": "10 h 33 à la maison"
+   },
+   "sync": {
+    "zoom": "ici"
+   }
+  },
+  {
+   "text": "Et toi, c'est lequel ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "c'est lequel ?",
+   "accent": "lequel",
+   "sync": {}
+  }
+ ],
+ "angle": "liste/stats_lieu"
+}

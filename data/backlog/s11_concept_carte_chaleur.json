@@ -1,0 +1,88 @@
+{
+ "format": "concept",
+ "feature": "carte_chaleur",
+ "title": "Lire sa carte de chaleur",
+ "caption": "Rouge, jaune, vert : voilà comment lire ta carte de chaleur OùVa.",
+ "hashtags": [
+  "#ouva",
+  "#cartedechaleur",
+  "#data",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Voilà ma carte de chaleur des 30 derniers jours.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "legend",
+    "label": "30 derniers jours"
+   },
+   "sync": {
+    "zoom": "chaleur"
+   }
+  },
+  {
+   "text": "Chaque case, c'est un bout de quartier.",
+   "scene": "heatmap_reveal",
+   "cap": "un bout de quartier",
+   "accent": "quartier.",
+   "sync": {
+    "punch": "case,"
+   }
+  },
+  {
+   "text": "Rouge : tu y passes beaucoup de temps. Vert : presque jamais.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "home",
+     "value": 44,
+     "label": "Rouge"
+    },
+    "b": {
+     "place": "park",
+     "value": 2,
+     "label": "Vert"
+    }
+   },
+   "sync": {
+    "b": "vert"
+   }
+  },
+  {
+   "text": "La case la plus rouge, sans surprise : chez moi.",
+   "scene": "place_pin",
+   "params": {
+    "place": "home",
+    "label": "Maison"
+   },
+   "sync": {
+    "pin": "moi."
+   }
+  },
+  {
+   "text": "Et en bas, le détail de chaque lieu, en heures et en pourcentage.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Le détail par lieu"
+   },
+   "sync": {
+    "zoom": "détail"
+   }
+  },
+  {
+   "text": "Une carte qui dit la vérité sur tes habitudes.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "la vérité.",
+   "accent": "vérité",
+   "sync": {}
+  }
+ ],
+ "angle": "concept/carte_chaleur"
+}

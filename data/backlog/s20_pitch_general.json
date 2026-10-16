@@ -1,0 +1,115 @@
+{
+ "format": "pitch",
+ "feature": "general",
+ "title": "L'appli en 20 secondes",
+ "caption": "OùVa en 20 secondes : ton temps, lieu par lieu. Lien en bio 📍",
+ "hashtags": [
+  "#ouva",
+  "#app",
+  "#iphone",
+  "#decouverte"
+ ],
+ "beats": [
+  {
+   "text": "OùVa en 20 secondes.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "20 secondes.",
+   "accent": "secondes.",
+   "sync": {}
+  },
+  {
+   "text": "L'accueil : où tu es, depuis combien de temps.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "En ce moment"
+   },
+   "sync": {
+    "zoom": "accueil"
+   }
+  },
+  {
+   "text": "Le chrono te suit même en haut de ton écran.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "home",
+    "label": "Maison",
+    "minutes": 26
+   },
+   "cap": "en haut de ton écran.",
+   "accent": "écran.",
+   "sync": {
+    "expand": "chrono"
+   }
+  },
+  {
+   "text": "Les lieux : ta carte de chaleur sur 30 jours, et le détail de chaque endroit.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat",
+    "label": "Carte de chaleur",
+    "region2": "places",
+    "label2": "Le détail par lieu"
+   },
+   "sync": {
+    "zoom": "carte"
+   }
+  },
+  {
+   "text": "Et le replay de ta journée, animé sur la carte.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:10"
+     },
+     {
+      "place": "work",
+      "time": "09:00"
+     },
+     {
+      "place": "gym",
+      "time": "18:30"
+     },
+     {
+      "place": "home",
+      "time": "20:05"
+     }
+    ]
+   },
+   "cap": "le replay",
+   "accent": "replay",
+   "sync": {}
+  },
+  {
+   "text": "Que tu peux télécharger en vidéo.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "download",
+    "label": "Télécharger la vidéo"
+   },
+   "sync": {
+    "zoom": "télécharger"
+   }
+  },
+  {
+   "text": "Ton temps, par lieu.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "par lieu",
+    "small": "ton temps"
+   },
+   "sync": {
+    "word": "lieu."
+   }
+  }
+ ],
+ "angle": "pitch/general"
+}

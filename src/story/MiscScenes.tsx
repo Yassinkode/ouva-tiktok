@@ -2,7 +2,7 @@ import React from 'react';
 import { AbsoluteFill, useCurrentFrame } from 'remotion';
 import { C, EASE, FONT, FONT_TIGHT, FPS, clamp01, float, kf, lerp, p, shake, sp, vel } from '../lib';
 import { KineticLine, MBlur, Odometer, Pill, Ring, shadowDeep, shadowLight } from '../components/Core';
-import { CheckIcon, ClockIcon, FlagIcon, HouseIcon, OuvaMark, PinIcon, SignalIcon, WalkIcon } from '../components/Icons';
+import { CheckIcon, ClockIcon, FlagIcon, HouseIcon, LogoIcon, PinIcon, SignalIcon, WalkIcon } from '../components/Icons';
 import { IconTile, PLACE, PlaceKind } from '../components/UI';
 import { Caption, Disclaimer, Whip, tOr } from './common';
 import { Seg } from './types';
@@ -43,6 +43,7 @@ export const WipeWord: React.FC<{ seg: Seg }> = ({ seg }) => {
             )}
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', fontFamily: FONT_TIGHT, fontStyle: 'italic', fontWeight: 900, fontSize: size, letterSpacing: '-0.05em', color: '#08241B', padding: '0 40px' }}>
               {word.split('').map((ch, i) => {
+                if (ch === ' ') return <span key={i} style={{ display: 'inline-block', width: '0.28em' }} />;
                 const k = sp(f, wt + i * 0.028, { damping: 11, stiffness: 230 });
                 const st = kf(f, [wt + i * 0.028, wt + 0.25 + i * 0.028], [2.2, 1], EASE.out);
                 return (
@@ -412,7 +413,7 @@ export const EndCard: React.FC<{ start: number; tagline?: string }> = ({ start, 
   return (
     <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center', transform: `scale(${settle})` }}>
       <div style={{ position: 'relative', transform: `translateY(${-150 + (1 - mark) * 120}px) scale(${lerp(0.2, 1, mark)}) rotate(${(1 - mark) * -25}deg)`, opacity: clamp01(mark * 2), filter: 'drop-shadow(0 30px 50px rgba(10,30,22,0.28))' }}>
-        <OuvaMark size={250} t={p(f, start + 0.4, 0.9)} />
+        <LogoIcon size={260} />
         <div style={{ position: 'absolute', inset: 0, borderRadius: 60, overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: -60, bottom: -60, width: 90, left: `${sheen * 100}%`, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent)', transform: 'rotate(20deg)' }} />
         </div>

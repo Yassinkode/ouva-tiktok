@@ -1,0 +1,94 @@
+{
+ "format": "histoire",
+ "feature": "objectifs",
+ "title": "Avant / après",
+ "caption": "J'ai fixé un seul objectif dans OùVa pendant un mois. Voilà l'avant / après.",
+ "hashtags": [
+  "#ouva",
+  "#objectif",
+  "#avantapres",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Il y a un mois, j'ai testé les objectifs par lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "objectifs",
+    "label": "Objectifs par lieu"
+   },
+   "sync": {
+    "zoom": "objectifs"
+   }
+  },
+  {
+   "text": "Un seul : aller à la salle 3 fois par semaine.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "pill": "Il y a un mois",
+    "barLabel": "Salle de sport"
+   },
+   "cap": "3 fois par semaine.",
+   "accent": "semaine.",
+   "sync": {}
+  },
+  {
+   "text": "Avant : 1 % de mon temps à la salle. Après : 6 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "gym",
+     "value": 6,
+     "label": "Après"
+    },
+    "b": {
+     "place": "gym",
+     "value": 1,
+     "label": "Avant"
+    }
+   },
+   "cap": "Avant / après",
+   "sync": {
+    "b": "1"
+   }
+  },
+  {
+   "text": "Jeudi, j'ai même fait 2 heures à la salle. Moi.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "jeudi",
+    "value": 2,
+    "place": "gym",
+    "caption": "à la salle"
+   },
+   "sync": {
+    "count": "2"
+   }
+  },
+  {
+   "text": "Chaque séance s'est enregistrée toute seule.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Salle de sport"
+   },
+   "sync": {
+    "zoom": "séance"
+   }
+  },
+  {
+   "text": "Le plus dur, c'était de commencer.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "de commencer.",
+   "accent": "commencer.",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/objectifs"
+}

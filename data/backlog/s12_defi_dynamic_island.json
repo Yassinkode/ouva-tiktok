@@ -1,0 +1,90 @@
+{
+ "format": "defi",
+ "feature": "dynamic_island",
+ "title": "7 jours",
+ "caption": "J'ai laissé OùVa tourner 7 jours sans y toucher. Voilà ce que j'ai appris.",
+ "hashtags": [
+  "#ouva",
+  "#test",
+  "#7jours",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai laissé OùVa tourner 7 jours sans y toucher.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "7 jours",
+   "accent": "jours",
+   "sync": {}
+  },
+  {
+   "text": "Jour 1 : j'ajoute l'école, en 10 secondes.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "name",
+    "label": "Nouveau lieu"
+   },
+   "sync": {
+    "zoom": "l'école,"
+   }
+  },
+  {
+   "text": "Jour 3 : le compteur se lance tout seul en arrivant.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "school",
+    "label": "École",
+    "minutes": 4
+   },
+   "cap": "tout seul",
+   "accent": "seul",
+   "sync": {
+    "expand": "compteur"
+   }
+  },
+  {
+   "text": "Jour 5 : je découvre que je passe 9 heures par jour à l'école.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "jour 5",
+    "value": 9,
+    "place": "school",
+    "caption": "à l'école"
+   },
+   "sync": {
+    "count": "9"
+   }
+  },
+  {
+   "text": "Jour 7 : toute ma semaine est rangée, lieu par lieu.",
+   "scene": "app_tour",
+   "params": {
+    "shots": [
+     "home_now",
+     "places_heatmap",
+     "place_stats"
+    ]
+   },
+   "sync": {
+    "s2": "semaine",
+    "s3": "lieu"
+   }
+  },
+  {
+   "text": "Verdict : je la garde.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "je la garde",
+    "small": "verdict"
+   },
+   "sync": {
+    "word": "garde."
+   }
+  }
+ ],
+ "angle": "defi/dynamic_island"
+}
