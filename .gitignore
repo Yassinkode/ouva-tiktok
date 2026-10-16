@@ -13,3 +13,4 @@ assets/map_src.png
 assets/avatar_src.png
 assets/Inter-Var.ttf
 assets/heat_cells.json
+__pycache__/
