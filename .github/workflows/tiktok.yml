@@ -11,6 +11,10 @@ on:
         description: 'Test (1 = la vidéo est marquée [TEST] et ne compte pas dans la réserve)'
         required: false
         default: '1'
+      telegram_only:
+        description: 'Juste tester Telegram (1 = oui, 30 s)'
+        required: false
+        default: '0'
 
 permissions:
   contents: write
@@ -36,19 +40,30 @@ jobs:
           python-version: '3.12'
 
       - name: System deps
+        if: github.event.inputs.telegram_only != '1'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg > /dev/null
 
       - name: Python deps
+        if: github.event.inputs.telegram_only != '1'
         run: pip install -q numpy scipy pedalboard
 
       - name: Node deps
+        if: github.event.inputs.telegram_only != '1'
         run: |
           npm ci --no-audit --no-fund
           npx remotion browser ensure
 
+      - name: Telegram check
+        if: github.event.inputs.telegram_only == '1'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node pipeline/telegram.mjs test
+
       - name: Make & deliver video
+        if: github.event.inputs.telegram_only != '1'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -75,5 +90,5 @@ jobs:
         run: |
           git config user.name "ouva-bot"
           git config user.email "ouva-bot@users.noreply.github.com"
-          git add data/history.json data/stories || true
+          git add data/history.json data/telegram.json || true
           git diff --cached --quiet || (git commit -m "video: $(date -u +%F)" && git pull --rebase -q && git push)

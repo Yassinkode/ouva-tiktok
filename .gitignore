@@ -7,3 +7,4 @@ test/*.json
 audio/stems/
 *.zip
 audio/voice.mp3
+data/stories/
