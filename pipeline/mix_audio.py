@@ -7,6 +7,11 @@ import numpy as np
 from scipy.signal import butter, sosfilt
 
 try:
+    import pyloudnorm
+except Exception:  # optional, falls back to RMS
+    pyloudnorm = None
+
+try:
     from pedalboard import Pedalboard, Reverb, Compressor, Limiter
 except Exception:  # pedalboard optional
     Pedalboard = None
@@ -139,6 +144,22 @@ def load_bg(path, start, N):
     return out
 
 
+def lufs(x):
+    """integrated loudness (LUFS, K-weighted); RMS-based fallback"""
+    x = np.asarray(x, dtype=np.float64)
+    if pyloudnorm is not None and len(x) > SR:
+        v = pyloudnorm.Meter(SR).integrated_loudness(x)
+        if np.isfinite(v):
+            return float(v)
+    return float(20 * np.log10(np.sqrt(np.mean(x ** 2)) + 1e-9) - 0.7)
+
+
+# background level, in LU relative to the voice
+BG_UNDER_VOICE = -17.0  # while the voice speaks (clearly behind, still felt)
+BG_IN_GAPS = -11.0  # pauses and end card
+BG_PHONE_MIN = -19.0  # what's left on a phone speaker (no bass) must stay audible
+
+
 def main(ev_path, voice_path, out_path):
     spec = json.load(open(ev_path))
     dur = spec['duration']
@@ -195,12 +216,25 @@ def main(ev_path, voice_path, out_path):
     bgspec = spec.get('bg')
     bg = load_bg(bgspec['file'], bgspec.get('start', 0), N) if bgspec else None
     if bg is not None:
-        # background track (vocals only, chosen per video): under the voice, louder in the gaps and on the end card
-        rms = np.sqrt(np.mean(bg ** 2)) + 1e-9
-        bg = bg / rms * 10 ** (-31 / 20)
-        duck = 1 - 0.5 * speech  # ~ -6 dB while speaking
+        # background track (vocals only, chosen per video), level set on perceived loudness, not on raw RMS:
+        # a bass-heavy track sounds much quieter on a phone, so we also look at it without its low end.
+        L_voice = lufs(vbuf[np.abs(venv) > 0.2 * np.percentile(venv, 90)])
+        L_full = lufs(bg)
+        L_phone = lufs(hp(hp(bg.mean(1), 180), 180))
+        g_db = L_voice + BG_IN_GAPS - L_full  # nominal level (in the gaps)
+        if L_phone + g_db < L_voice + BG_PHONE_MIN:  # would vanish on a phone speaker: lift it a little
+            g_db = min(g_db + 4.0, L_voice + BG_PHONE_MIN - L_phone)
+        bg = bg * 10 ** (g_db / 20)
+        # smooth ducking (fast attack, slow release) while the voice speaks
+        sm = np.convolve(speech, np.ones(int(SR * 0.35)) / int(SR * 0.35), mode='same')
+        duck_db = (BG_UNDER_VOICE - BG_IN_GAPS) * np.clip(np.maximum(speech, sm) * 1.3, 0, 1)
         fade = np.minimum(1, np.minimum(np.arange(N) / (SR * 0.4), (N - np.arange(N)) / (SR * 1.5)))
-        mix += bg * (duck * fade)[:, None]
+        bg = bg * (10 ** (duck_db / 20) * fade)[:, None]
+        # make room for the voice: carve the 1-4 kHz band of the music a bit
+        bg = bg - 0.3 * np.stack([bp(bg[:, 0], 1000, 4000), bp(bg[:, 1], 1000, 4000)], 1) * np.clip(sm, 0, 1)[:, None]
+        mix += bg
+        print(f'bg level: voice {L_voice:.1f} LUFS, bg {L_full + g_db:.1f} LUFS in gaps ({L_full + g_db - L_voice:+.1f} LU), '
+              f'phone-weighted {L_phone + g_db - L_voice:+.1f} LU')
     else:
         # soft non-musical room tone when no track is available
         amb = ambience(N) * 10 ** (-41 / 20)
@@ -210,9 +244,20 @@ def main(ev_path, voice_path, out_path):
         mix[:, 1] += amb
     mix[:, 0] += vbuf
     mix[:, 1] += vbuf
-    if Pedalboard:
-        mix = Pedalboard([Compressor(threshold_db=-10, ratio=2, attack_ms=10, release_ms=120), Limiter(threshold_db=-1.0)])(mix.T.astype(np.float32), SR).T
-    mix = mix / (np.abs(mix).max() + 1e-9) * 0.89
+    # final loudness: -14 LUFS (TikTok / Reels standard), then a transparent look-ahead peak limiter
+    # (no make-up gain, so the loudness target is kept)
+    mix = mix * 10 ** ((-14.0 - lufs(mix)) / 20)
+    from scipy.ndimage import maximum_filter1d, minimum_filter1d
+    ceiling = 10 ** (-1.5 / 20)
+    env = maximum_filter1d(np.abs(mix).max(1), size=int(SR * 0.005))
+    g = np.minimum(1.0, ceiling / (env + 1e-9))
+    g = minimum_filter1d(g, size=int(SR * 0.004))
+    k = int(SR * 0.06)
+    g = np.minimum(g, np.convolve(g, np.ones(k) / k, mode='same'))
+    mix = mix * g[:, None]
+    peak = np.abs(mix).max()
+    if peak > 0.95:
+        mix = mix / peak * 0.95
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'f32le', '-ar', str(SR), '-ac', '2', '-i', '-', '-c:a', 'pcm_s16le', out_path],
                    input=np.clip(mix, -1, 1).astype(np.float32).tobytes(), check=True)
     print('mix ok', out_path)

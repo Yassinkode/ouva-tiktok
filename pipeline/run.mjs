@@ -35,43 +35,56 @@ const parisToDate = (y, m, d, h) => {
   }
   return new Date(guess);
 };
-function pickSlot() {
-  const now = new Date();
-  const p = parisParts(now);
-  if (process.env.SLOT) {
-    const h = parseInt(process.env.SLOT, 10);
-    return { label: `${h}h`, at: parisToDate(p.y, p.m, p.d, h) };
+/** upcoming slots (12h/17h/21h Paris) from 25 min to HORIZON_H hours ahead, soonest first */
+function upcomingSlots(now = new Date()) {
+  const horizon = parseFloat(process.env.HORIZON_H || '40') * 3600e3;
+  const out = [];
+  for (let k = 0; k < 3; k++) {
+    const p = parisParts(new Date(now.getTime() + k * 86400e3));
+    const date = `${p.y}-${String(p.m).padStart(2, '0')}-${String(p.d).padStart(2, '0')}`;
+    for (const h of SLOTS) {
+      const at = parisToDate(p.y, p.m, p.d, h);
+      const lead = at.getTime() - now.getTime();
+      if (lead > 25 * 60e3 && lead < horizon && !out.some((o) => o.at.getTime() === at.getTime())) out.push({ label: `${h}h`, at, date });
+    }
   }
-  // the next slot that is 25 min to 3 h 15 ahead (cron fires ~1-3 h before each slot)
-  for (const h of SLOTS) {
-    const at = parisToDate(p.y, p.m, p.d, h);
-    const lead = at.getTime() - now.getTime();
-    if (lead > 25 * 60e3 && lead < 195 * 60e3) return { label: `${h}h`, at };
-  }
-  return { label: 'now', at: null };
+  return out.sort((a, b) => a.at - b.at);
 }
 
 const log = (...a) => console.log(`[${new Date().toISOString().slice(11, 19)}]`, ...a);
 
 async function main() {
-  const slot = pickSlot();
-  const p = parisParts();
-  const date = `${p.y}-${String(p.m).padStart(2, '0')}-${String(p.d).padStart(2, '0')}`;
-  const id = `${date}_${slot.label}`;
-  if (slot.label === 'now' && !DRY && process.env.GITHUB_EVENT_NAME === 'schedule') {
-    console.log('aucun créneau (12h/17h/21h) dans les 3 prochaines heures, rien à faire');
-    return;
-  }
-  log('run', id, DRY ? '(dry run)' : '');
   fs.mkdirSync('data/stories', { recursive: true });
   fs.mkdirSync('public/runs', { recursive: true });
   fs.mkdirSync('out', { recursive: true });
   const histPath = 'data/history.json';
   const history = fs.existsSync(histPath) ? JSON.parse(fs.readFileSync(histPath, 'utf8')) : [];
-  if (!DRY && !process.env.FORCE && history.some((h) => h.id === id && h.status !== 'failed')) {
-    log('already posted for this slot, skipping');
-    return;
+  const done = (slot) => history.some((h) => h.id === `${slot.date}_${slot.label}` && h.status !== 'failed');
+  let slots = upcomingSlots();
+  if (process.env.SLOT) slots = slots.filter((s) => s.label === `${parseInt(process.env.SLOT, 10)}h`).slice(0, 1);
+  // GitHub's cron is often late or skipped: every run fills ALL the free slots of the next ~40 h,
+  // and Zernio publishes each video at its exact time.
+  const todo = DRY ? slots.slice(0, 1) : slots.filter((s) => process.env.FORCE || !done(s)).slice(0, parseInt(process.env.MAX_PER_RUN || '3', 10));
+  log('créneaux à préparer :', todo.map((s) => `${s.date} ${s.label}`).join(', ') || 'aucun');
+  if (process.env.LIST_ONLY) return;
+  let failures = 0;
+  for (const slot of todo) {
+    try {
+      const st = await makeOne(slot, history, histPath);
+      if (st === 'failed') failures++;
+    } catch (e) {
+      failures++;
+      console.error(e);
+      if (process.env.TELEGRAM_BOT_TOKEN) await sendText(`OùVa : la vidéo de ${slot.label} (${slot.date}) a échoué.\n${String(e).slice(0, 500)}`).catch(() => {});
+    }
   }
+  if (failures) process.exit(1);
+}
+
+async function makeOne(slot, history, histPath) {
+  const date = slot.date;
+  const id = `${date}_${slot.label}`;
+  log('run', id, DRY ? '(dry run)' : '');
 
   /* 1. story */
   let story;
@@ -184,7 +197,8 @@ async function main() {
       const scheduledFor = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
       const r = await publishZernio({ file: final, caption, scheduledFor });
       Object.assign(entry, { status: r.status, postId: r.id, url: r.publicUrl, scheduledFor, via: 'zernio', where: r.where, voice: voiceModel });
-      const when = scheduledFor ? `programmée pour ${slot.label}` : 'publiée';
+      const isToday = slot.date === new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Paris' });
+      const when = scheduledFor ? `programmée pour ${isToday ? '' : 'demain '}${slot.label}` : 'publiée';
       const warn = r.warnings?.length ? `\n⚠️ ${r.warnings.join(' | ')}` : '';
       if (tg) await sendText(`✅ Vidéo OùVa ${when} sur ${r.where}${r.publicUrl ? ' : ' + r.publicUrl : ''}${warn}\n\n${caption}`).catch(() => {});
     } catch (e) {
@@ -198,7 +212,7 @@ async function main() {
     }
   } else if (!process.env.BLOTATO_API_KEY || DRY) {
     // free mode: deliver to the phone, the owner posts it on TikTok
-    const r = await sendVideo({ file: final, caption: DRY ? `[TEST] ${caption}` : slot.at ? `📌 À poster à ${slot.label}\n\n${caption}` : caption });
+    const r = await sendVideo({ file: final, caption: DRY ? `[TEST] ${caption}` : slot.at ? `📌 À poster le ${slot.date.slice(8)}/${slot.date.slice(5, 7)} à ${slot.label}\n\n${caption}` : caption });
     entry.status = DRY ? 'dry-run' : r.status;
   } else {
     const scheduledTime = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
@@ -219,11 +233,11 @@ async function main() {
     fs.writeFileSync(histPath, JSON.stringify(history, null, 1));
   }
   fs.rmSync(`public/${audioRel}`, { force: true });
-  if (entry.status === 'failed') process.exit(1);
+  return entry.status;
 }
 
 main().catch(async (e) => {
   console.error(e);
-  if (process.env.TELEGRAM_BOT_TOKEN) await sendText(`OùVa : la vidéo du jour a échoué.\n${String(e).slice(0, 600)}`).catch(() => {});
+  if (process.env.TELEGRAM_BOT_TOKEN) await sendText(`OùVa : le lancement a échoué.\n${String(e).slice(0, 600)}`).catch(() => {});
   process.exit(1);
 });

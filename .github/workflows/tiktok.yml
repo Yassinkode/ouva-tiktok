@@ -3,9 +3,9 @@ name: OùVa TikTok
 on:
   schedule:
     # 3 vidéos par jour : 12h, 17h et 21h (heure de Paris).
-    # Lancements 1 à 3 h avant chaque créneau (2 par créneau pour couvrir heure d'été/hiver et les retards
-    # de GitHub) ; le 2e voit que la vidéo est déjà faite et s'arrête. La vidéo est programmée pile à l'heure.
-    - cron: '7 8,9,13,14,17,18 * * *'
+    # Le cron de GitHub est souvent en retard (voire sauté) : chaque lancement prépare donc TOUS les créneaux
+    # libres des 40 prochaines heures et Zernio les publie pile à l'heure. 4 lancements par jour = large marge.
+    - cron: '23 1,7,13,19 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -31,7 +31,7 @@ concurrency:
 jobs:
   video:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    timeout-minutes: 170
     steps:
       - uses: actions/checkout@v4
 
