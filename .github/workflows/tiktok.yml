@@ -52,7 +52,7 @@ jobs:
 
       - name: Python deps
         if: github.event.inputs.telegram_only != '1'
-        run: pip install -q numpy scipy pedalboard edge-tts
+        run: pip install -q numpy scipy pedalboard edge-tts pyloudnorm
 
       - name: Node deps
         if: github.event.inputs.telegram_only != '1'
