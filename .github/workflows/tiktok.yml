@@ -1,20 +1,14 @@
-name: OùVa TikTok — 3 vidéos / jour
+name: OùVa TikTok
 
 on:
   schedule:
-    # GitHub cron = UTC. Runs start ~2 h before each slot; the post is scheduled
-    # on Blotato at exactly 12:00 / 18:00 / 21:00 Europe/Paris (DST handled in run.mjs).
-    - cron: '0 9 * * *'
-    - cron: '0 15 * * *'
-    - cron: '0 18 * * *'
+    # 1 vidéo tous les 2 jours (~15/mois, compatible avec le quota ElevenLabs gratuit).
+    # 15:00 UTC = 17h (été) / 16h (hiver) à Paris → la vidéo arrive sur Telegram vers 17h30-18h.
+    - cron: '0 15 */2 * *'
   workflow_dispatch:
     inputs:
-      slot:
-        description: 'Créneau (12, 18 ou 21) — vide = prochain créneau'
-        required: false
-        default: ''
       dry_run:
-        description: 'Test sans publier (1 = oui)'
+        description: 'Test (1 = la vidéo est marquée [TEST] et ne compte pas dans la réserve)'
         required: false
         default: '1'
 
@@ -44,7 +38,7 @@ jobs:
       - name: System deps
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji > /dev/null
+          sudo apt-get install -y -qq ffmpeg > /dev/null
 
       - name: Python deps
         run: pip install -q numpy scipy pedalboard
@@ -54,14 +48,16 @@ jobs:
           npm ci --no-audit --no-fund
           npx remotion browser ensure
 
-      - name: Make & publish video
+      - name: Make & deliver video
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # optionnels (payants) : écriture auto des histoires + publication directe TikTok
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BLOTATO_API_KEY: ${{ secrets.BLOTATO_API_KEY }}
-          BLOTATO_TIKTOK_ACCOUNT_ID: ${{ secrets.BLOTATO_TIKTOK_ACCOUNT_ID }}
           STORY_MODEL: ${{ vars.STORY_MODEL }}
-          SLOT: ${{ github.event.inputs.slot }}
+          SLOT: '18'
           DRY_RUN: ${{ github.event.inputs.dry_run || (vars.PAUSED == '1' && '1') || '0' }}
         run: node pipeline/run.mjs
 
@@ -70,9 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: video-${{ github.run_id }}
-          path: |
-            out/OuVa_*.mp4
-            data/stories/*.json
+          path: out/OuVa_*.mp4
           retention-days: 7
           if-no-files-found: ignore
 
@@ -82,4 +76,4 @@ jobs:
           git config user.name "ouva-bot"
           git config user.email "ouva-bot@users.noreply.github.com"
           git add data/history.json data/stories || true
-          git diff --cached --quiet || (git commit -m "post: $(date -u +%F_%H%M)" && git push)
+          git diff --cached --quiet || (git commit -m "video: $(date -u +%F)" && git pull --rebase -q && git push)

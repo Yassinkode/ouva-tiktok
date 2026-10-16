@@ -1,0 +1,150 @@
+{
+ "title": "Lundi vs samedi",
+ "angle": "semaine vs week-end",
+ "caption": "Mon lundi et mon samedi n'ont rien à voir. Toi c'est quel jour ton préféré ?",
+ "hashtags": [
+  "#ouva",
+  "#weekend",
+  "#routine",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai comparé mon lundi et mon samedi sur la carte.",
+   "scene": "big_word",
+   "params": {
+    "place": "work"
+   },
+   "cap": "lundi vs samedi",
+   "accent": "samedi",
+   "sync": {}
+  },
+  {
+   "text": "Lundi : 10 heures au travail.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "lundi",
+    "value": 10,
+    "place": "work",
+    "caption": "au travail",
+    "chip": {
+     "value": 0,
+     "label": "sortie"
+    }
+   },
+   "sync": {
+    "count": "10",
+    "chip": "travail."
+   }
+  },
+  {
+   "text": "Samedi : 6 lieux différents. Le parc, les potes, le café.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "friends",
+      "value": 31
+     },
+     {
+      "place": "park",
+      "value": 22
+     },
+     {
+      "place": "cafe",
+      "value": 15
+     },
+     {
+      "place": "shop",
+      "value": 8
+     }
+    ]
+   },
+   "cap": "6 lieux différents",
+   "accent": "différents.",
+   "sync": {}
+  },
+  {
+   "text": "Sur le mois, le samedi c'est mon jour le plus vert.",
+   "scene": "heatmap_reveal",
+   "cap": "le plus vert",
+   "accent": "vert.",
+   "sync": {
+    "punch": "vert."
+   }
+  },
+  {
+   "text": "Mes potes : 4 % en semaine, 31 % le samedi.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "friends",
+     "value": 31,
+     "label": "Samedi"
+    },
+    "b": {
+     "place": "friends",
+     "value": 4,
+     "label": "Semaine"
+    }
+   },
+   "cap": "mes potes",
+   "accent": "potes",
+   "sync": {
+    "b": "4"
+   }
+  },
+  {
+   "text": "Et l'appli détecte tout ça toute seule, je fais rien.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "friends",
+    "others": [
+     "park",
+     "cafe"
+    ]
+   },
+   "cap": "Je fais rien.",
+   "accent": "rien.",
+   "cap2": "Tout est détecté.",
+   "sync": {
+    "line2": "seule,"
+   }
+  },
+  {
+   "text": "Conclusion : je vis vraiment que le week-end.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "week-end",
+    "small": "je vis que le"
+   },
+   "sync": {
+    "word": "week-end."
+   }
+  },
+  {
+   "text": "Objectif : un mini samedi chaque mercredi soir.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif de la semaine",
+    "pill": "Chaque mercredi",
+    "barLabel": "Temps dehors"
+   },
+   "cap": "Un mini samedi.",
+   "accent": "samedi.",
+   "sync": {}
+  },
+  {
+   "text": "On verra si mes lundis prennent des couleurs.",
+   "scene": "outro_map",
+   "params": {
+    "place": "work"
+   },
+   "cap": "des couleurs ?",
+   "accent": "couleurs",
+   "sync": {
+    "cool": "couleurs."
+   }
+  }
+ ]
+}

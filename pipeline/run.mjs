@@ -10,6 +10,7 @@ import { buildProps, wordsProportional } from './build_props.mjs';
 import { writeStory, validateStory } from './story.mjs';
 import { makeVoice } from './voice.mjs';
 import { publish } from './publish.mjs';
+import { sendText, sendVideo } from './telegram.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 process.chdir(ROOT);
@@ -67,17 +68,22 @@ async function main() {
 
   /* 1. story */
   let story;
+  const used = new Set(history.map((h) => h.backlog).filter(Boolean));
+  const backlog = fs.existsSync('data/backlog') ? fs.readdirSync('data/backlog').filter((f) => f.endsWith('.json') && !used.has(f)).sort() : [];
+  const fromBacklog = () => {
+    if (!backlog.length) throw new Error('Plus aucune histoire en réserve (data/backlog)');
+    const st = JSON.parse(fs.readFileSync(path.join('data/backlog', backlog[0]), 'utf8'));
+    st._backlog = backlog[0];
+    return st;
+  };
   if (process.env.STORY_FILE) story = JSON.parse(fs.readFileSync(process.env.STORY_FILE, 'utf8'));
+  else if (!process.env.ANTHROPIC_API_KEY) story = fromBacklog();
   else {
     try {
       story = await writeStory({ history, slot: slot.label });
     } catch (e) {
       log('story API failed, using backlog:', String(e).slice(0, 200));
-      const used = new Set(history.map((h) => h.backlog).filter(Boolean));
-      const files = fs.existsSync('data/backlog') ? fs.readdirSync('data/backlog').filter((f) => f.endsWith('.json') && !used.has(f)) : [];
-      if (!files.length) throw e;
-      story = JSON.parse(fs.readFileSync(path.join('data/backlog', files[0]), 'utf8'));
-      story._backlog = files[0];
+      story = fromBacklog();
     }
   }
   const errs = validateStory(story);
@@ -148,9 +154,17 @@ async function main() {
   const caption = `${story.caption ?? ''}\n\n${(story.hashtags ?? ['#ouva']).join(' ')}`.trim();
   const hook = story.beats[0].text;
   const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, hook, caption, backlog: story._backlog, scenes: story.beats.map((b) => b.scene) };
-  if (DRY) {
+  const tg = !!process.env.TELEGRAM_BOT_TOKEN;
+  if (DRY && !tg) {
     entry.status = 'dry-run';
     log('dry run: not publishing');
+  } else if (!process.env.BLOTATO_API_KEY || DRY) {
+    // free mode: deliver to the phone, the owner posts it on TikTok
+    const r = await sendVideo({ file: final, caption: DRY ? `[TEST] ${caption}` : caption });
+    entry.status = DRY ? 'dry-run' : r.status;
+    const left = backlog.length - (story._backlog ? 1 : 0);
+    if (!DRY && story._backlog && left <= 3)
+      await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa. Demande un nouveau lot à Claude.`).catch(() => {});
   } else {
     const scheduledTime = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
     try {
@@ -170,7 +184,8 @@ async function main() {
   if (entry.status === 'failed') process.exit(1);
 }
 
-main().catch((e) => {
+main().catch(async (e) => {
   console.error(e);
+  if (process.env.TELEGRAM_BOT_TOKEN) await sendText(`OùVa : la vidéo du jour a échoué.\n${String(e).slice(0, 600)}`).catch(() => {});
   process.exit(1);
 });

@@ -7,6 +7,17 @@ const MODELS = (process.env.ELEVEN_MODELS || 'eleven_v4,eleven_v3,eleven_multili
 
 export async function makeVoice(text, outMp3, { apiKey = process.env.ELEVENLABS_API_KEY } = {}) {
   let lastErr = '';
+  // stop early with a clear message if the monthly character quota is too low
+  try {
+    const sub = await (await fetch('https://api.elevenlabs.io/v1/user/subscription', { headers: { 'xi-api-key': apiKey } })).json();
+    if (typeof sub.character_limit === 'number') {
+      const left = sub.character_limit - sub.character_count;
+      console.log(`ElevenLabs: ${left} caractères restants ce mois-ci`);
+      if (left < text.length) throw new Error(`Crédits ElevenLabs insuffisants (${left} restants, ${text.length} nécessaires). Ça repart au renouvellement mensuel.`);
+    }
+  } catch (e) {
+    if (String(e).includes('insuffisants')) throw e;
+  }
   for (const model of MODELS) {
     for (const withLang of [true, false]) {
       const body = {

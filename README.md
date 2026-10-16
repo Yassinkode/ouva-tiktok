@@ -1,7 +1,14 @@
 # OùVa — usine à vidéos TikTok
 
-Chaque jour, 3 vidéos motion design (1080×1920, 60 fps, ~40 s) sont écrites, doublées, montées
-et publiées sur TikTok à **12 h, 18 h et 21 h** (heure de Paris), sans intervention.
+**Mode gratuit (actif)** : une vidéo tous les 2 jours (~15/mois) est doublée avec la voix Paul K (ElevenLabs),
+montée et envoyée sur ton **Telegram** vers 18 h avec sa légende. Tu la postes sur TikTok via « Partager ».
+Les histoires viennent de la réserve `data/backlog/` (écrite par Claude) ; quand il en reste 3, le bot te prévient.
+
+Secrets nécessaires : `ELEVENLABS_API_KEY`, `TELEGRAM_BOT_TOKEN` (créé avec @BotFather, puis envoie /start à ton bot).
+Optionnels (payants) : `ANTHROPIC_API_KEY` (histoires écrites à la volée), `BLOTATO_API_KEY` (publication directe TikTok).
+
+---
+Mode complet (payant) : 3 vidéos/jour publiées directement à 12 h, 18 h et 21 h.
 
 ```
 Claude (Anthropic API)  →  ElevenLabs (voix Paul K + timings au mot)  →  Remotion (scènes animées)

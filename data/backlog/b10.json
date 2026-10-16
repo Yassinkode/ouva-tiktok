@@ -1,0 +1,137 @@
+{
+ "title": "Accro au café",
+ "angle": "café",
+ "caption": "Le café d'en bas me connaît mieux que mes potes. Ton café préféré c'est lequel ?",
+ "hashtags": [
+  "#ouva",
+  "#cafe",
+  "#coffeeaddict",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai regardé ma carte du mois. Il y a un point rouge que je connais par cœur.",
+   "scene": "heatmap_reveal",
+   "cap": "un point rouge",
+   "accent": "rouge",
+   "sync": {
+    "punch": "rouge"
+   }
+  },
+  {
+   "text": "Le café en bas de chez moi.",
+   "scene": "place_pin",
+   "params": {
+    "place": "cafe",
+    "label": "Le café d'en bas"
+   },
+   "sync": {
+    "pin": "café"
+   }
+  },
+  {
+   "text": "19 jours sur 30, j'y suis passé.",
+   "scene": "counter_map",
+   "params": {
+    "value": 19,
+    "unit": "jours",
+    "bottom": "au café",
+    "place": "cafe"
+   },
+   "sync": {
+    "count": "19",
+    "bottom": "30,"
+   }
+  },
+  {
+   "text": "Ça fait 12 % de mon temps. Plus que l'école.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "cafe",
+     "value": 12,
+     "label": "Café"
+    },
+    "b": {
+     "place": "school",
+     "value": 9
+    }
+   },
+   "cap": "plus que l'école",
+   "accent": "l'école.",
+   "sync": {
+    "b": "l'école."
+   }
+  },
+  {
+   "text": "Mercredi : 4 heures au café, 3 cafés, 0 page révisée.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mercredi",
+    "value": 4,
+    "place": "cafe",
+    "caption": "au café",
+    "chip": {
+     "value": 0,
+     "label": "page révisée"
+    }
+   },
+   "sync": {
+    "count": "4",
+    "chip": "0"
+   }
+  },
+  {
+   "text": "Le serveur connaît mon prénom. C'est grave.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "grave",
+    "small": "c'est"
+   },
+   "sync": {
+    "word": "grave."
+   }
+  },
+  {
+   "text": "Et j'ai jamais noté une minute, l'appli fait tout.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "cafe",
+    "label": "Le café d'en bas",
+    "others": [
+     "school",
+     "home"
+    ]
+   },
+   "cap": "Pas une minute notée.",
+   "accent": "notée.",
+   "cap2": "L'appli fait tout.",
+   "sync": {
+    "line2": "l'appli"
+   }
+  },
+  {
+   "text": "Objectif : réviser vraiment quand je suis au café.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "barLabel": "Révisions"
+   },
+   "cap": "Réviser vraiment.",
+   "accent": "vraiment.",
+   "sync": {}
+  },
+  {
+   "text": "On verra si la carte reste couleur expresso.",
+   "scene": "outro_map",
+   "params": {
+    "place": "cafe"
+   },
+   "cap": "couleur expresso ?",
+   "accent": "expresso",
+   "sync": {
+    "cool": "expresso."
+   }
+  }
+ ]
+}

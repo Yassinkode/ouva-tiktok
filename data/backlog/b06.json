@@ -1,0 +1,143 @@
+{
+ "title": "Le taf qui mange tout",
+ "angle": "travail",
+ "caption": "Mes semaines en un chiffre : 46 % au taf. Tu fais combien toi ?",
+ "hashtags": [
+  "#ouva",
+  "#travail",
+  "#alternance",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai découvert où passe vraiment ma semaine.",
+   "scene": "heatmap_reveal",
+   "cap": "ma semaine",
+   "accent": "semaine.",
+   "sync": {
+    "punch": "vraiment"
+   }
+  },
+  {
+   "text": "Et la zone la plus rouge, c'est pas chez moi. C'est le taf.",
+   "scene": "place_pin",
+   "params": {
+    "place": "work",
+    "label": "Travail"
+   },
+   "sync": {
+    "pin": "taf."
+   }
+  },
+  {
+   "text": "46 % de mon temps éveillé au travail.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 46,
+    "place": "work",
+    "sub": "au travail"
+   },
+   "sync": {
+    "count": "46",
+    "tile": "travail."
+   }
+  },
+  {
+   "text": "Mes potes ? 4 %. Je les vois plus qu'en story.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "work",
+     "value": 46
+    },
+    "b": {
+     "place": "friends",
+     "value": 4
+    }
+   },
+   "cap": "Mes potes ?",
+   "sync": {
+    "b": "4"
+   }
+  },
+  {
+   "text": "Ma semaine type : travail, maison, école, et un peu de café.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "work",
+      "value": 46
+     },
+     {
+      "place": "home",
+      "value": 38
+     },
+     {
+      "place": "school",
+      "value": 10
+     },
+     {
+      "place": "cafe",
+      "value": 4
+     }
+    ]
+   },
+   "cap": "ma semaine type",
+   "accent": "type",
+   "sync": {}
+  },
+  {
+   "text": "Jeudi : 11 heures au même endroit.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "jeudi",
+    "value": 11,
+    "place": "work",
+    "caption": "au travail",
+    "chip": {
+     "value": 0,
+     "label": "pause dehors"
+    }
+   },
+   "sync": {
+    "count": "11",
+    "chip": "endroit."
+   }
+  },
+  {
+   "text": "Bon. Il est temps de souffler.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "souffler",
+    "small": "il est temps de"
+   },
+   "sync": {
+    "word": "souffler."
+   }
+  },
+  {
+   "text": "Objectif : voir mes potes au moins 2 soirs par semaine.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif de la semaine",
+    "barLabel": "Chez les potes"
+   },
+   "cap": "2 soirs par semaine.",
+   "accent": "semaine.",
+   "sync": {}
+  },
+  {
+   "text": "Et on regarde si la carte change de couleur.",
+   "scene": "outro_map",
+   "params": {
+    "place": "work"
+   },
+   "cap": "change de couleur ?",
+   "accent": "couleur",
+   "sync": {
+    "cool": "change"
+   }
+  }
+ ]
+}

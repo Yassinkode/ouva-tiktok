@@ -1,0 +1,152 @@
+{
+ "title": "Les potes disparus",
+ "angle": "amis / vie sociale",
+ "caption": "Mes potes = 2 % de mon mois. Tag le pote que tu dois revoir 👇",
+ "hashtags": [
+  "#ouva",
+  "#amis",
+  "#viesociale",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai cherché mes potes sur ma carte. Je les ai pas trouvés.",
+   "scene": "heatmap_reveal",
+   "cap": "mes potes ?",
+   "accent": "potes.",
+   "sync": {
+    "punch": "trouvés."
+   }
+  },
+  {
+   "text": "Chez les potes : 2 % de mon mois. 2.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "home",
+     "value": 58
+    },
+    "b": {
+     "place": "friends",
+     "value": 2
+    }
+   },
+   "cap": "Chez les potes ?",
+   "sync": {
+    "b": "2",
+    "punch": "2."
+   }
+  },
+  {
+   "text": "La dernière fois que j'y suis allé, c'était il y a 17 jours.",
+   "scene": "counter_map",
+   "params": {
+    "value": 17,
+    "unit": "jours",
+    "bottom": "sans les potes",
+    "place": "friends"
+   },
+   "sync": {
+    "count": "17",
+    "bottom": "jours."
+   }
+  },
+  {
+   "text": "Pendant ce temps : maison, travail, maison, travail.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 58
+     },
+     {
+      "place": "work",
+      "value": 31
+     },
+     {
+      "place": "shop",
+      "value": 5
+     },
+     {
+      "place": "friends",
+      "value": 2
+     }
+    ]
+   },
+   "cap": "maison, travail",
+   "accent": "travail,",
+   "sync": {}
+  },
+  {
+   "text": "L'appli a tout compté pendant que je disparaissais.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "home",
+    "others": [
+     "work",
+     "friends"
+    ]
+   },
+   "cap": "Tout est compté.",
+   "accent": "compté.",
+   "cap2": "Même mon absence.",
+   "sync": {
+    "line2": "pendant"
+   }
+  },
+  {
+   "text": "Je suis devenu un fantôme.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "fantôme",
+    "small": "je suis un"
+   },
+   "sync": {
+    "word": "fantôme."
+   }
+  },
+  {
+   "text": "Objectif : un soir chez les potes chaque semaine.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "barLabel": "Chez les potes"
+   },
+   "cap": "Un soir par semaine.",
+   "accent": "semaine.",
+   "sync": {}
+  },
+  {
+   "text": "Et vendredi, on commence. 5 heures chez Malik.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "vendredi",
+    "value": 5,
+    "place": "friends",
+    "caption": "chez les potes",
+    "chip": {
+     "value": 1,
+     "label": "soirée",
+     "good": true
+    }
+   },
+   "sync": {
+    "count": "5",
+    "chip": "malik."
+   }
+  },
+  {
+   "text": "On verra si la carte change de couleur.",
+   "scene": "outro_map",
+   "params": {
+    "place": "friends"
+   },
+   "cap": "change de couleur ?",
+   "accent": "couleur",
+   "sync": {
+    "cool": "change"
+   }
+  }
+ ]
+}

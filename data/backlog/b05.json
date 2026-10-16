@@ -1,0 +1,139 @@
+{
+ "title": "La salle fantôme",
+ "angle": "salle de sport désertée",
+ "caption": "Abonnement salle payé, présence 3 %. Qui d'autre finance sa salle sans y aller ?",
+ "hashtags": [
+  "#ouva",
+  "#salledesport",
+  "#motivation",
+  "#fitness"
+ ],
+ "beats": [
+  {
+   "text": "Je paye la salle depuis 6 mois. J'ai voulu voir combien j'y vais.",
+   "scene": "big_word",
+   "params": {
+    "place": "gym"
+   },
+   "cap": "6 mois",
+   "accent": "mois",
+   "sync": {}
+  },
+  {
+   "text": "Spoiler : la carte est toute verte autour de la salle.",
+   "scene": "heatmap_reveal",
+   "cap": "toute verte",
+   "accent": "verte",
+   "sync": {
+    "punch": "verte"
+   }
+  },
+  {
+   "text": "Ce mois-ci, j'y suis allé 3 jours. 3.",
+   "scene": "counter_map",
+   "params": {
+    "value": 3,
+    "unit": "jours",
+    "bottom": "à la salle",
+    "place": "gym"
+   },
+   "sync": {
+    "count": "3",
+    "bottom": "3."
+   }
+  },
+  {
+   "text": "La salle, c'est 3 % de mon temps. Le café, 14 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "cafe",
+     "value": 14,
+     "label": "Café"
+    },
+    "b": {
+     "place": "gym",
+     "value": 3,
+     "label": "Salle"
+    }
+   },
+   "cap": "3 % vs 14 %",
+   "sync": {
+    "b": "3"
+   }
+  },
+  {
+   "text": "Je donne 30 euros par mois à une salle que je visite en photo.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "mécène",
+    "small": "je suis un"
+   },
+   "sync": {
+    "word": "photo."
+   }
+  },
+  {
+   "text": "Le téléphone a tout compté, sans que je touche à rien.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport",
+    "others": [
+     "cafe",
+     "home"
+    ]
+   },
+   "cap": "Sans rien toucher.",
+   "accent": "toucher.",
+   "cap2": "Tout est compté.",
+   "sync": {
+    "line2": "sans"
+   }
+  },
+  {
+   "text": "Mon record du mois : mardi, 1 heure. Une seule.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mardi",
+    "sub": "record du mois",
+    "value": 1,
+    "place": "gym",
+    "caption": "à la salle",
+    "chip": {
+     "value": 1,
+     "label": "séance",
+     "good": true
+    }
+   },
+   "sync": {
+    "count": "1",
+    "chip": "seule."
+   }
+  },
+  {
+   "text": "Objectif : 3 séances cette semaine.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "pill": "Cette semaine",
+    "barLabel": "Salle de sport"
+   },
+   "cap": "3 séances.",
+   "accent": "séances.",
+   "sync": {}
+  },
+  {
+   "text": "Rendez-vous dans 7 jours pour voir si la salle rougit.",
+   "scene": "outro_map",
+   "params": {
+    "place": "gym"
+   },
+   "cap": "la salle rougit ?",
+   "accent": "rougit",
+   "sync": {
+    "cool": "rougit."
+   }
+  }
+ ]
+}

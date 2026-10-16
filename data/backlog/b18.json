@@ -1,0 +1,138 @@
+{
+ "title": "Mon thème OùVa",
+ "angle": "personnalisation",
+ "caption": "J'ai mis mon app aux couleurs de mon humeur… et j'ai découvert ma vraie routine. Tu prendrais quel thème ?",
+ "hashtags": [
+  "#ouva",
+  "#personnalisation",
+  "#app",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai changé le thème de mon appli. Et j'ai vu un truc.",
+   "scene": "big_word",
+   "params": {
+    "place": "home"
+   },
+   "cap": "le thème",
+   "accent": "thème",
+   "sync": {}
+  },
+  {
+   "text": "Ma carte de chaleur, en plein écran. Rouge partout chez moi.",
+   "scene": "heatmap_reveal",
+   "cap": "rouge partout",
+   "accent": "rouge",
+   "sync": {
+    "punch": "rouge"
+   }
+  },
+  {
+   "text": "Aujourd'hui : 2 heures 30 à la maison, en direct.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "home",
+    "others": [
+     "school",
+     "cafe"
+    ]
+   },
+   "cap": "En direct.",
+   "accent": "direct.",
+   "cap2": "Détecté automatiquement.",
+   "sync": {
+    "line2": "direct."
+   }
+  },
+  {
+   "text": "Sur le mois : 57 % chez moi.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 57,
+    "place": "home",
+    "sub": "chez moi"
+   },
+   "sync": {
+    "count": "57",
+    "tile": "moi."
+   }
+  },
+  {
+   "text": "L'école, 18 %. Le café, 9 %. Le reste, presque rien.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 57
+     },
+     {
+      "place": "school",
+      "value": 18
+     },
+     {
+      "place": "cafe",
+      "value": 9
+     },
+     {
+      "place": "gym",
+      "value": 2
+     }
+    ]
+   },
+   "cap": "presque rien",
+   "accent": "rien.",
+   "sync": {}
+  },
+  {
+   "text": "La salle ? 2 %. Toujours.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "home",
+     "value": 57
+    },
+    "b": {
+     "place": "gym",
+     "value": 2
+    }
+   },
+   "cap": "La salle ?",
+   "sync": {
+    "b": "2"
+   }
+  },
+  {
+   "text": "Belle appli, routine à revoir.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "à revoir",
+    "small": "routine"
+   },
+   "sync": {
+    "word": "revoir."
+   }
+  },
+  {
+   "text": "Objectif : 3 lieux différents par jour.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif de la semaine",
+    "barLabel": "Lieux visités"
+   },
+   "cap": "3 lieux par jour.",
+   "accent": "jour.",
+   "sync": {}
+  },
+  {
+   "text": "Et la carte, elle, va changer de couleur.",
+   "scene": "outro_map",
+   "cap": "changer de couleur",
+   "accent": "couleur.",
+   "sync": {
+    "cool": "changer"
+   }
+  }
+ ]
+}

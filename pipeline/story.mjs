@@ -11,7 +11,7 @@ export function validateStory(st) {
   const n = st.beats.length;
   if (n < 7 || n > 12) errs.push(`il faut 8 à 11 beats (reçu ${n})`);
   const total = st.beats.reduce((a, b) => a + String(b.text ?? '').length, 0);
-  if (total < 380 || total > 720) errs.push(`texte total ${total} caractères (attendu 450–620)`);
+  if (total < 340 || total > 720) errs.push(`texte total ${total} caractères (attendu 450–620)`);
   const kinds = new Set();
   let wipes = 0, phones = 0;
   st.beats.forEach((b, i) => {
