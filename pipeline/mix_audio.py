@@ -1,5 +1,5 @@
 """
-Voice + synthesised sound design: NO music, no instrument, no pitched note (noise-based foley + soft room tone only), driven by an events file from build_props.mjs.
+Voice + synthesised sound design (noise-based foley, no pitched note) + a vocals-only background track chosen per video, driven by an events file from build_props.mjs.
 Usage: python3 pipeline/mix_audio.py events.json voice.mp3 out.wav
 """
 import json, subprocess, sys
@@ -123,6 +123,22 @@ def ambience(N):
     return out / (np.sqrt(np.mean(out ** 2)) + 1e-9)
 
 
+def load_bg(path, start, N):
+    """background track from `start`, looped with a crossfade if the video is longer"""
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-ss', str(start), '-i', path, '-ac', '2', '-ar', str(SR), '-f', 'f32le', '-'],
+                         capture_output=True, check=True).stdout
+    x = np.frombuffer(raw, dtype=np.float32).reshape(-1, 2)
+    if len(x) < SR:
+        return None
+    out = x[:N].copy()
+    xf = int(SR * 1.5)
+    while len(out) < N:  # loop: crossfade the end into the beginning again
+        a = np.linspace(0, 1, xf)[:, None]
+        tail = out[-xf:] * (1 - a) + x[:xf] * a
+        out = np.concatenate([out[:-xf], tail, x[xf:]])[:N] if len(out) > xf else np.concatenate([out, x])[:N]
+    return out
+
+
 def main(ev_path, voice_path, out_path):
     spec = json.load(open(ev_path))
     dur = spec['duration']
@@ -174,14 +190,24 @@ def main(ev_path, voice_path, out_path):
     rms = np.sqrt(np.mean(vbuf[np.abs(vbuf) > 1e-4] ** 2)) + 1e-9
     vbuf *= 10 ** (-20 / 20) / rms
     mix = sfx * 0.8
-    # soft non-musical background, ducked while the voice speaks
-    amb = ambience(N) * 10 ** (-41 / 20)
     venv = np.convolve(np.abs(vbuf), np.ones(int(SR * 0.25)) / int(SR * 0.25), mode='same')
-    duck = 1 - 0.45 * np.clip(venv / (np.percentile(venv, 90) + 1e-9), 0, 1)
-    fade = np.minimum(1, np.minimum(np.arange(N) / (SR * 0.6), (N - np.arange(N)) / (SR * 1.0)))
-    amb *= duck * fade
-    mix[:, 0] += amb
-    mix[:, 1] += amb
+    speech = np.clip(venv / (np.percentile(venv, 90) + 1e-9), 0, 1)
+    bgspec = spec.get('bg')
+    bg = load_bg(bgspec['file'], bgspec.get('start', 0), N) if bgspec else None
+    if bg is not None:
+        # background track (vocals only, chosen per video): under the voice, louder in the gaps and on the end card
+        rms = np.sqrt(np.mean(bg ** 2)) + 1e-9
+        bg = bg / rms * 10 ** (-31 / 20)
+        duck = 1 - 0.5 * speech  # ~ -6 dB while speaking
+        fade = np.minimum(1, np.minimum(np.arange(N) / (SR * 0.4), (N - np.arange(N)) / (SR * 1.5)))
+        mix += bg * (duck * fade)[:, None]
+    else:
+        # soft non-musical room tone when no track is available
+        amb = ambience(N) * 10 ** (-41 / 20)
+        fade = np.minimum(1, np.minimum(np.arange(N) / (SR * 0.6), (N - np.arange(N)) / (SR * 1.0)))
+        amb *= (1 - 0.45 * speech) * fade
+        mix[:, 0] += amb
+        mix[:, 1] += amb
     mix[:, 0] += vbuf
     mix[:, 1] += vbuf
     if Pedalboard:

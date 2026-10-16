@@ -1,0 +1,14 @@
+{
+ "_note": "Fonds sonores choisis par Yassine (voix uniquement, sans instrument). 'fit' = affinité par format/feature (0-3). 'start' = où commencer dans le morceau.",
+ "tracks": [
+  {"id": "losing", "file": "assets/bg/losing.mp3", "title": "losing (slowed + reverb)", "mood": "sombre, lent, introspectif", "start": 0,
+   "fit": {"sedentarite": 3, "concept": 3, "histoire": 2, "question": 2, "defi": 1, "pitch": 1, "feature": 0, "tuto": 0, "liste": 1,
+           "carte_chaleur": 1, "suivi_auto": 1, "objectifs": 1}},
+  {"id": "blinded", "file": "assets/bg/blinded.mp3", "title": "Blinded (vocals only)", "mood": "rythmé, énergique", "start": 0,
+   "fit": {"pitch": 3, "feature": 2, "tuto": 3, "defi": 3, "liste": 2, "question": 2, "histoire": 1, "concept": 1, "sedentarite": 0,
+           "dynamic_island": 1, "ajout_lieu": 1, "stats_lieu": 1}},
+  {"id": "arches", "file": "assets/bg/arches.mp3", "title": "Light through the arches", "mood": "lumineux, aérien, positif", "start": 11.4,
+   "fit": {"feature": 3, "histoire": 3, "pitch": 2, "liste": 2, "tuto": 1, "concept": 2, "defi": 1, "question": 1, "sedentarite": 1,
+           "replay": 1, "theme_logo": 1, "comparer_semaines": 1, "objectifs": 1}}
+ ]
+}

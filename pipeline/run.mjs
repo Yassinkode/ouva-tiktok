@@ -11,6 +11,7 @@ import { writeStory, validateStory } from './story.mjs';
 import { makeVoice } from './voice.mjs';
 import { publish as publishBlotato } from './publish.mjs';
 import { publish as publishZernio } from './zernio.mjs';
+import { pickBg } from './bg.mjs';
 import { sendText, sendVideo } from './telegram.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -132,7 +133,9 @@ async function main() {
   const audioRel = `runs/${id}.wav`;
   const { props, events } = buildProps(story, words, { audio: audioRel });
   fs.writeFileSync(`out/${id}_props.json`, JSON.stringify(props));
-  fs.writeFileSync(`out/${id}_events.json`, JSON.stringify({ duration: props.duration, events }));
+  const bg = pickBg(story, history);
+  if (bg) log('fond sonore:', bg.title);
+  fs.writeFileSync(`out/${id}_events.json`, JSON.stringify({ duration: props.duration, events, bg: bg ? { file: bg.file, start: bg.start ?? 0 } : null }));
   execFileSync('python3', ['pipeline/mix_audio.py', `out/${id}_events.json`, voicePath, `public/${audioRel}`], { stdio: 'inherit' });
 
   /* 4. render */
@@ -170,7 +173,7 @@ async function main() {
   /* 5. publish */
   const caption = `${story.caption ?? ''}\n\n${(story.hashtags ?? ['#ouva']).join(' ')}`.trim();
   const hook = story.beats[0].text;
-  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, format: story.format, feature: story.feature, hook, caption, backlog: story._backlog, scenes: story.beats.map((b) => b.scene) };
+  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, format: story.format, feature: story.feature, hook, caption, backlog: story._backlog, bg: bg?.id, scenes: story.beats.map((b) => b.scene) };
   const tg = !!process.env.TELEGRAM_BOT_TOKEN;
   if (DRY && !tg) {
     entry.status = 'dry-run';
