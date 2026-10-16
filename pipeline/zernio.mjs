@@ -5,7 +5,10 @@ import path from 'path';
 
 const BASE = 'https://zernio.com/api/v1';
 
-async function api(method, p, body, key = process.env.ZERNIO_API_KEY) {
+// the secret may have been pasted with the whole onboarding sentence around it: keep only the sk_ key
+const cleanKey = (k = '') => (String(k).match(/sk_[A-Za-z0-9]+/) ?? [String(k).trim()])[0];
+
+async function api(method, p, body, key = cleanKey(process.env.ZERNIO_API_KEY)) {
   const res = await fetch(BASE + p, {
     method,
     headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
