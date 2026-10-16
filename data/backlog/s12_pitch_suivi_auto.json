@@ -56,30 +56,20 @@
   },
   {
    "text": "Et chaque semaine, tu vois où part vraiment ton temps.",
-   "scene": "bento",
+   "scene": "app_tour",
    "params": {
-    "places": [
-     {
-      "place": "home",
-      "value": 41
-     },
-     {
-      "place": "school",
-      "value": 34
-     },
-     {
-      "place": "cafe",
-      "value": 8
-     },
-     {
-      "place": "friends",
-      "value": 6
-     }
+    "shots": [
+     "home_now",
+     "places_heatmap",
+     "place_stats"
     ]
    },
+   "sync": {
+    "s2": "vois",
+    "s3": "temps."
+   },
    "cap": "où part ton temps.",
-   "accent": "temps.",
-   "sync": {}
+   "accent": "temps."
   },
   {
    "text": "Carte de chaleur, objectifs, replay de ta journée.",

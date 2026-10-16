@@ -36,11 +36,13 @@
   },
   {
    "text": "Moi, je pensais bouger. Ma carte de chaleur m'a dit l'inverse.",
-   "scene": "heatmap_reveal",
-   "cap": "l'inverse.",
-   "accent": "l'inverse.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat"
+   },
    "sync": {
-    "punch": "l'inverse."
+    "zoom": "carte"
    }
   },
   {

@@ -23,19 +23,14 @@
   },
   {
    "text": "Maison, travail, salle de sport : elle détecte où tu es, toute seule.",
-   "scene": "phone_auto",
+   "scene": "app_screen",
    "params": {
-    "place": "home",
-    "others": [
-     "work",
-     "gym"
-    ]
+    "shot": "home_now",
+    "region": "now",
+    "label": "Détecté automatiquement"
    },
-   "cap": "Elle détecte où tu es.",
-   "cap2": "Toute seule.",
-   "accent": "détecte",
    "sync": {
-    "line2": "toute"
+    "zoom": "détecte"
    }
   },
   {
@@ -53,11 +48,14 @@
   },
   {
    "text": "Sur 30 jours, ça te fait une carte de chaleur de ta vie.",
-   "scene": "heatmap_reveal",
-   "cap": "une carte de chaleur",
-   "accent": "chaleur",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat",
+    "label": "Carte de chaleur · 30 jours"
+   },
    "sync": {
-    "punch": "chaleur"
+    "zoom": "carte"
    }
   },
   {

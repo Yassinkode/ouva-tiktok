@@ -20,7 +20,9 @@ export type SceneType =
   | 'week_compare'
   | 'theme_switch'
   | 'feature_list'
-  | 'fact';
+  | 'fact'
+  | 'app_screen'
+  | 'app_tour';
 
 export type Seg = {
   index: number;

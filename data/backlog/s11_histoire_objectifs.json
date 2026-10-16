@@ -13,15 +13,15 @@
  "beats": [
   {
    "text": "Il y a 3 semaines, je me suis fixé un objectif dans OùVa.",
-   "scene": "goal",
+   "scene": "app_screen",
    "params": {
-    "title": "Objectif par lieu",
-    "pill": "Il y a 3 semaines",
-    "barLabel": "Salle de sport"
+    "shot": "home_features",
+    "region": "objectifs",
+    "label": "Objectifs par lieu"
    },
-   "cap": "un objectif",
-   "accent": "objectif",
-   "sync": {}
+   "sync": {
+    "zoom": "objectif"
+   }
   },
   {
    "text": "Aller à la salle. Parce que la salle, c'était 1 % de mon temps.",

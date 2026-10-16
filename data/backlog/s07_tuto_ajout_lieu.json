@@ -64,16 +64,14 @@
   },
   {
    "text": "Et en fin de semaine, tu vois exactement ton temps à la salle.",
-   "scene": "ring_stat",
+   "scene": "app_screen",
    "params": {
-    "value": 9,
-    "place": "gym",
-    "title": "Cette semaine",
-    "sub": "à la salle"
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Ton temps à la salle"
    },
    "sync": {
-    "count": "exactement",
-    "tile": "salle."
+    "zoom": "exactement"
    }
   },
   {

@@ -35,14 +35,17 @@
   },
   {
    "text": "Tu dessines la zone d'un lieu, tu lui donnes un nom, c'est fait.",
-   "scene": "add_place",
+   "scene": "app_screen",
    "params": {
-    "place": "work",
-    "label": "Travail"
+    "shot": "add_place",
+    "region": "name",
+    "label": "Nom du lieu",
+    "region2": "category",
+    "label2": "Catégorie"
    },
    "sync": {
-    "name": "nom,",
-    "done": "fait."
+    "zoom": "nom,",
+    "zoom2": "fait."
    }
   },
   {
@@ -61,30 +64,18 @@
   },
   {
    "text": "À la fin de la semaine, tu sais enfin où passe ton temps.",
-   "scene": "bento",
+   "scene": "app_tour",
    "params": {
-    "places": [
-     {
-      "place": "home",
-      "value": 44
-     },
-     {
-      "place": "work",
-      "value": 31
-     },
-     {
-      "place": "friends",
-      "value": 8
-     },
-     {
-      "place": "gym",
-      "value": 6
-     }
+    "shots": [
+     "home_now",
+     "place_stats",
+     "places_heatmap"
     ]
    },
-   "cap": "où passe ton temps",
-   "accent": "temps.",
-   "sync": {}
+   "sync": {
+    "s2": "semaine,",
+    "s3": "temps."
+   }
   },
   {
    "text": "Le temps d'écran, c'était hier. Voici le temps par lieu.",

@@ -54,20 +54,14 @@
   },
   {
    "text": "OùVa, si. Elle mesure ton temps dans chaque lieu, automatiquement.",
-   "scene": "phone_auto",
+   "scene": "app_screen",
    "params": {
-    "place": "work",
-    "label": "Travail",
-    "others": [
-     "park",
-     "home"
-    ]
+    "shot": "home_now",
+    "region": "places",
+    "label": "Chaque lieu, automatiquement"
    },
-   "cap": "chaque lieu,",
-   "cap2": "automatiquement.",
-   "accent": "lieu,",
    "sync": {
-    "line2": "automatiquement."
+    "zoom": "mesure"
    }
   },
   {

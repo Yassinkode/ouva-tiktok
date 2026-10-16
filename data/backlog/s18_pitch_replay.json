@@ -63,22 +63,14 @@
   },
   {
    "text": "Tu peux même télécharger la vidéo pour la partager.",
-   "scene": "feature_list",
+   "scene": "app_screen",
    "params": {
-    "items": [
-     {
-      "icon": "play",
-      "title": "La vidéo de ta journée"
-     },
-     {
-      "icon": "signal",
-      "title": "À partager en story"
-     }
-    ]
+    "shot": "day_map",
+    "region": "download",
+    "label": "Télécharger la vidéo"
    },
    "sync": {
-    "i1": "télécharger",
-    "i2": "partager."
+    "zoom": "télécharger"
    }
   },
   {

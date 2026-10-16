@@ -83,14 +83,15 @@
   },
   {
    "text": "Objectif de la semaine : 20 minutes de parc à midi.",
-   "scene": "goal",
+   "scene": "app_screen",
    "params": {
-    "title": "Objectif par lieu",
-    "barLabel": "Parc"
+    "shot": "home_features",
+    "region": "objectifs",
+    "label": "Objectifs par lieu"
    },
-   "cap": "20 minutes de parc",
-   "accent": "parc",
-   "sync": {}
+   "sync": {
+    "zoom": "objectif"
+   }
   },
   {
    "text": "Et le petit compteur en haut me surveille.",

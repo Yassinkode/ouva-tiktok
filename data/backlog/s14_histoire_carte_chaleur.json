@@ -20,11 +20,13 @@
   },
   {
    "text": "Normal : tout est rouge au même endroit.",
-   "scene": "heatmap_reveal",
-   "cap": "tout est rouge",
-   "accent": "rouge",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat"
+   },
    "sync": {
-    "punch": "rouge"
+    "zoom": "rouge"
    }
   },
   {

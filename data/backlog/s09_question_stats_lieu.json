@@ -61,19 +61,14 @@
   },
   {
    "text": "Et l'appli a tout compté, sans que je touche à rien.",
-   "scene": "phone_auto",
+   "scene": "app_screen",
    "params": {
-    "place": "home",
-    "others": [
-     "shop",
-     "park"
-    ]
+    "shot": "home_now",
+    "region": "now",
+    "label": "Compté tout seul"
    },
-   "cap": "Tout compté.",
-   "cap2": "Sans rien toucher.",
-   "accent": "compté,",
    "sync": {
-    "line2": "sans"
+    "zoom": "compté,"
    }
   },
   {

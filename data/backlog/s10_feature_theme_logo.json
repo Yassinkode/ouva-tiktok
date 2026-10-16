@@ -20,10 +20,15 @@
   },
   {
    "text": "Vert nuit, bleu, doré, rose… chacun son style.",
-   "scene": "big_word",
-   "cap": "chacun son style.",
-   "accent": "style.",
-   "sync": {}
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "theme",
+    "label": "Logo et thème"
+   },
+   "sync": {
+    "zoom": "chacun"
+   }
   },
   {
    "text": "Et derrière ce joli logo, ton temps par lieu se compte tout seul.",

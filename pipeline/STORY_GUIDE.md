@@ -74,6 +74,17 @@ Les lieux (`place`) possibles : `home` (Maison), `gym` (Salle de sport), `school
 | `theme_switch` | iPhone : « Logo et thème », l'icône change de style | — | — |
 | `feature_list` | 2 à 4 cartes fonctionnalités qui arrivent une par une | `items`: [{`icon` (pin, clock, signal, map, chart, play, flag, palette, home), `title`}] | `i1`, `i2`, `i3`, `i4` |
 | `fact` | gros chiffre + phrase + source (sédentarité) | `value`, `suffix`, `label`, `source`, `dark`? | `count` |
+| `app_screen` | **vraie capture de l'app** dans l'iPhone 3D, zoom + surbrillance d'une zone | `shot`, `region`, `label`?, `region2`?, `label2`? | `zoom`, `zoom2` |
+| `app_tour` | 2 à 4 **vraies captures** en carrousel | `shots`: [ids] | `s2`, `s3`, `s4` |
+
+Captures réelles disponibles (`shot` → `region`s) :
+- `home_now` (accueil, « En ce moment ») → `now`, `places`, `header`, `pause`
+- `home_features` (accueil, « Pour aller plus loin ») → `now`, `objectifs`, `comparer`, `revivre`, `theme`, `features`
+- `places_heatmap` (Mes lieux, carte de chaleur 30 jours) → `heat`, `legend`, `places`, `home`, `add`
+- `day_map` (Ma journée sur la carte) → `map`, `player`, `timeline`, `download`
+- `place_stats` (page d'un lieu : Salle de sport) → `header`, `today`, `week`, `ring`
+- `add_place` (Ajouter un lieu, étape nom + catégorie) → `steps`, `name`, `category`, `continue`
+Chaque vidéo contient **au moins une** vraie capture (idéalement 2). Ne fais pas dire à la voix des chiffres qui contredisent la capture affichée.
 
 Règles :
 - 5 types de scènes différents minimum. Pas deux fois la même scène d'affilée.

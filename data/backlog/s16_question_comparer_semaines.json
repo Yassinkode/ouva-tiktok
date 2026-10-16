@@ -13,10 +13,15 @@
  "beats": [
   {
    "text": "Ta semaine, elle ressemble à quoi ? Moi, j'ai comparé deux semaines.",
-   "scene": "big_word",
-   "cap": "deux semaines.",
-   "accent": "semaines.",
-   "sync": {}
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "comparé"
+   }
   },
   {
    "text": "La grise, c'est une semaine de partiels. La verte, une semaine de vacances.",

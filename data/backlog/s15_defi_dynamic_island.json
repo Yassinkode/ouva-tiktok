@@ -23,14 +23,15 @@
   },
   {
    "text": "J'ajoute mes lieux : maison, école, salle de sport.",
-   "scene": "add_place",
+   "scene": "app_screen",
    "params": {
-    "place": "school",
-    "label": "École"
+    "shot": "add_place",
+    "region": "name",
+    "region2": "category"
    },
    "sync": {
-    "name": "école,",
-    "done": "sport."
+    "zoom": "école,",
+    "zoom2": "sport."
    }
   },
   {

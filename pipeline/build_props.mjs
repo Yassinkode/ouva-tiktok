@@ -5,7 +5,7 @@ import fs from 'fs';
 export const SCENES = [
   'heatmap_reveal', 'place_pin', 'counter_map', 'ring_stat', 'compare', 'bento',
   'wipe_word', 'phone_auto', 'day_timeline', 'goal', 'outro_map', 'big_word',
-  'dynamic_island', 'versus', 'add_place', 'replay_day', 'week_compare', 'theme_switch', 'feature_list', 'fact',
+  'dynamic_island', 'versus', 'add_place', 'replay_day', 'week_compare', 'theme_switch', 'feature_list', 'fact', 'app_screen', 'app_tour',
 ];
 
 export const norm = (w) =>
@@ -321,6 +321,23 @@ export function sfxEvents(props) {
         const n = Math.max(1, (s.params.items ?? []).length);
         const span = s.end - s.start - 0.6;
         for (let k = 0; k < n; k++) add('pop', s.t[`i${k + 1}`] ?? s.start + 0.15 + (span / n) * k, { f: 560 + k * 110, gain: 0.6 });
+        break;
+      }
+      case 'app_screen': {
+        const tz = tOr(s, 'zoom', 0.35);
+        add('whoosh', tz, { up: true, gain: 0.3 });
+        add('pop', tz + 0.55, { f: 760, gain: 0.6 });
+        if (s.params.region2) {
+          const tz2 = tOr(s, 'zoom2', 0.7);
+          add('whoosh', tz2, { up: false, gain: 0.3 });
+          add('pop', tz2 + 0.55, { f: 880, gain: 0.6 });
+        }
+        break;
+      }
+      case 'app_tour': {
+        const n = (s.params.shots ?? [1, 2, 3]).length;
+        const span = s.end - s.start - 0.5;
+        for (let k = 1; k < n; k++) add('whoosh', (s.t[`s${k + 1}`] ?? s.start + 0.2 + (span / n) * k) - 0.1, { up: k % 2 === 0, gain: 0.45 });
         break;
       }
       case 'fact': {

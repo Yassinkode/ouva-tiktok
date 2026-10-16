@@ -90,14 +90,15 @@
   },
   {
    "text": "Objectif : 1 heure de bibliothèque par jour.",
-   "scene": "goal",
+   "scene": "app_screen",
    "params": {
-    "title": "Objectif par lieu",
-    "barLabel": "Bibliothèque"
+    "shot": "home_features",
+    "region": "objectifs",
+    "label": "Objectifs par lieu"
    },
-   "cap": "1 heure par jour.",
-   "accent": "jour.",
-   "sync": {}
+   "sync": {
+    "zoom": "objectif"
+   }
   },
   {
    "text": "Le café va me manquer.",

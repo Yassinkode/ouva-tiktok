@@ -23,11 +23,13 @@
   },
   {
    "text": "Un : là où c'est rouge, c'est là que tu vis vraiment.",
-   "scene": "heatmap_reveal",
-   "cap": "rouge",
-   "accent": "rouge,",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat"
+   },
    "sync": {
-    "punch": "rouge,"
+    "zoom": "rouge,"
    }
   },
   {

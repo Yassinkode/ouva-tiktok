@@ -22,16 +22,16 @@
   },
   {
    "text": "OùVa la construit sur 30 jours, sans que tu fasses rien.",
-   "scene": "counter_map",
+   "scene": "app_screen",
    "params": {
-    "value": 30,
-    "unit": "jours",
-    "bottom": "automatique",
-    "place": "home"
+    "shot": "places_heatmap",
+    "region": "legend",
+    "label": "Temps passé · 30 jours",
+    "region2": "heat"
    },
    "sync": {
-    "count": "30",
-    "bottom": "rien."
+    "zoom": "construit",
+    "zoom2": "rien."
    }
   },
   {

@@ -79,13 +79,14 @@
   },
   {
    "text": "Le replay ne ment pas.",
-   "scene": "wipe_word",
+   "scene": "app_screen",
    "params": {
-    "word": "replay",
-    "small": "il ne ment pas"
+    "shot": "day_map",
+    "region": "timeline",
+    "label": "Arrivées et départs"
    },
    "sync": {
-    "word": "replay"
+    "zoom": "replay"
    }
   },
   {

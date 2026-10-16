@@ -23,32 +23,14 @@
   },
   {
    "text": "Et l'appli compare automatiquement avec la semaine d'avant.",
-   "scene": "week_compare",
+   "scene": "app_screen",
    "params": {
-    "metric": "Heures à la maison / jour",
-    "rows": [
-     {
-      "place": "park",
-      "delta": "+3 h 20",
-      "good": true
-     },
-     {
-      "place": "home",
-      "delta": "−5 h",
-      "good": true
-     },
-     {
-      "place": "gym",
-      "delta": "+1 h 30",
-      "good": true
-     }
-    ]
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
    },
-   "cap": "la semaine d'avant",
-   "accent": "d'avant.",
    "sync": {
-    "b": "compare",
-    "rows": "d'avant."
+    "zoom": "compare"
    }
   },
   {

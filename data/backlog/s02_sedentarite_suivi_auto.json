@@ -58,19 +58,14 @@
   },
   {
    "text": "OùVa le mesure pour toi, automatiquement, lieu par lieu.",
-   "scene": "phone_auto",
+   "scene": "app_screen",
    "params": {
-    "place": "home",
-    "others": [
-     "work",
-     "park"
-    ]
+    "shot": "home_now",
+    "region": "now",
+    "label": "Mesuré automatiquement"
    },
-   "cap": "le mesure pour toi",
-   "cap2": "lieu par lieu.",
-   "accent": "mesure",
    "sync": {
-    "line2": "lieu"
+    "zoom": "mesure"
    }
   },
   {

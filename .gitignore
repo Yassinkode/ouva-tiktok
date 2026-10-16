@@ -8,3 +8,4 @@ audio/stems/
 *.zip
 audio/voice.mp3
 data/stories/
+assets/*.png
