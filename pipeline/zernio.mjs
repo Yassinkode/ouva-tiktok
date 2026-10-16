@@ -24,8 +24,8 @@ export async function findAccounts() {
   const r = await api('GET', '/accounts');
   const list = r.accounts ?? [];
   const tiktok = list.find((a) => a.platform === 'tiktok');
-  // only post on an OùVa account (never on another business connected to the same Zernio)
-  const okName = new RegExp(process.env.ACCOUNT_MATCH || 'ou\\.?va', 'i');
+  // optional filter (e.g. ACCOUNT_MATCH=ouva) if several Instagram accounts get connected one day
+  const okName = new RegExp(process.env.ACCOUNT_MATCH || '.', 'i');
   const instagram = list.find((a) => a.platform === 'instagram' && okName.test(a.username ?? a.displayName ?? ''));
   if (!tiktok && !instagram) throw new Error('Aucun compte TikTok ni Instagram connecté dans Zernio');
   const fmt = (a) => a && { id: a._id, name: a.username ?? a.displayName };
