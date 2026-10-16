@@ -1,0 +1,79 @@
+{
+ "format": "defi",
+ "feature": "carte_chaleur",
+ "title": "Colorier un nouveau quartier",
+ "caption": "Défi de la semaine : faire apparaître une nouvelle case sur ma carte de chaleur. Tu le tentes ?",
+ "hashtags": [
+  "#ouva",
+  "#defi",
+  "#explorer",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Défi de la semaine : faire apparaître une nouvelle case sur ma carte.",
+   "scene": "heatmap_reveal",
+   "cap": "une nouvelle case",
+   "accent": "case",
+   "sync": {
+    "punch": "nouvelle"
+   }
+  },
+  {
+   "text": "Donc aller quelque part où je ne vais jamais.",
+   "scene": "big_word",
+   "cap": "où je ne vais jamais.",
+   "accent": "jamais.",
+   "sync": {}
+  },
+  {
+   "text": "Mercredi, j'ai testé un parc à 15 minutes de chez moi.",
+   "scene": "place_pin",
+   "params": {
+    "place": "park",
+    "label": "Nouveau parc"
+   },
+   "sync": {
+    "pin": "parc"
+   }
+  },
+  {
+   "text": "1 heure là-bas. Et je ne l'avais jamais vu.",
+   "scene": "counter_map",
+   "params": {
+    "value": 1,
+    "unit": "heure",
+    "bottom": "au nouveau parc",
+    "place": "park"
+   },
+   "sync": {
+    "count": "1",
+    "bottom": "vu."
+   }
+  },
+  {
+   "text": "Dimanche, la nouvelle case est bien là, en vert.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat",
+    "label": "Carte de chaleur"
+   },
+   "sync": {
+    "zoom": "case"
+   }
+  },
+  {
+   "text": "Défi validé. Ta carte, tu la colories où ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "validé",
+    "small": "défi"
+   },
+   "sync": {
+    "word": "validé."
+   }
+  }
+ ],
+ "angle": "defi/carte_chaleur"
+}

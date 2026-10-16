@@ -1,0 +1,95 @@
+{
+ "format": "concept",
+ "feature": "dynamic_island",
+ "title": "Pourquoi la Dynamic Island",
+ "caption": "Pourquoi on a mis le chrono d'OùVa dans la Dynamic Island ? Pour que tu n'aies jamais à ouvrir l'appli.",
+ "hashtags": [
+  "#ouva",
+  "#dynamicisland",
+  "#design",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Pourquoi on a mis OùVa dans la Dynamic Island ?",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "school",
+    "label": "École",
+    "minutes": 95
+   },
+   "cap": "Pourquoi ici ?",
+   "accent": "Island",
+   "sync": {
+    "expand": "Island"
+   }
+  },
+  {
+   "text": "Parce qu'une appli que tu dois ouvrir, tu finis par l'oublier.",
+   "scene": "big_word",
+   "cap": "tu finis par l'oublier.",
+   "accent": "l'oublier.",
+   "sync": {}
+  },
+  {
+   "text": "Là, ton lieu et ton temps restent sous tes yeux.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "pin",
+      "title": "Ton lieu"
+     },
+     {
+      "icon": "clock",
+      "title": "Ton temps"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "lieu",
+    "i2": "temps"
+   }
+  },
+  {
+   "text": "Et quand tu veux le détail, il est déjà rangé sur l'accueil.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "En ce moment"
+   },
+   "sync": {
+    "zoom": "détail,"
+   }
+  },
+  {
+   "text": "Toute la journée, sans lever le petit doigt.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "school",
+    "others": [
+     "cafe",
+     "home"
+    ]
+   },
+   "cap": "Sans lever le petit doigt.",
+   "cap2": "Toute la journée.",
+   "accent": "doigt.",
+   "sync": {
+    "line2": "journée,"
+   }
+  },
+  {
+   "text": "L'appli la plus discrète de ton iPhone.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "la plus discrète",
+   "accent": "discrète",
+   "sync": {}
+  }
+ ],
+ "angle": "concept/dynamic_island"
+}

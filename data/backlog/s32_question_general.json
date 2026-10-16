@@ -1,0 +1,106 @@
+{
+ "format": "question",
+ "feature": "general",
+ "title": "Où tu passes le plus de temps ?",
+ "caption": "Sondage : tu passes le plus de temps où ? Maison, taf, école ou café ? Réponds avant de voir le mien 👇",
+ "hashtags": [
+  "#ouva",
+  "#sondage",
+  "#question",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Sondage : tu passes le plus de temps où ? Maison, travail, école ou café ?",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 0
+     },
+     {
+      "place": "work",
+      "value": 0
+     },
+     {
+      "place": "school",
+      "value": 0
+     },
+     {
+      "place": "cafe",
+      "value": 0
+     }
+    ]
+   },
+   "cap": "le plus de temps où ?",
+   "accent": "où",
+   "sync": {}
+  },
+  {
+   "text": "Réponds dans ta tête. Moi, je pensais l'école.",
+   "scene": "big_word",
+   "params": {
+    "place": "school"
+   },
+   "cap": "je pensais l'école.",
+   "accent": "l'école.",
+   "sync": {}
+  },
+  {
+   "text": "Raté. La maison, avec 52 %.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 52,
+    "place": "home",
+    "sub": "de mon temps"
+   },
+   "sync": {
+    "count": "52",
+    "tile": "maison,"
+   }
+  },
+  {
+   "text": "L'école arrive après, avec 27 %.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "home",
+     "value": 52,
+     "label": "Maison"
+    },
+    "b": {
+     "place": "school",
+     "value": 27,
+     "label": "École"
+    }
+   },
+   "sync": {
+    "b": "27"
+   }
+  },
+  {
+   "text": "C'est OùVa qui a fait le calcul, tout seul.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Calculé automatiquement"
+   },
+   "sync": {
+    "zoom": "calcul,"
+   }
+  },
+  {
+   "text": "Et toi, tu avais deviné juste ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "tu avais deviné ?",
+   "accent": "deviné",
+   "sync": {}
+  }
+ ],
+ "angle": "question/general"
+}

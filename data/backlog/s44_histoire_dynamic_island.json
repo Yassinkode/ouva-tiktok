@@ -1,0 +1,89 @@
+{
+ "format": "histoire",
+ "feature": "dynamic_island",
+ "title": "La salle d'attente",
+ "caption": "Le chrono d'OùVa m'a révélé combien de temps j'ai attendu chez le médecin 🙃",
+ "hashtags": [
+  "#ouva",
+  "#attente",
+  "#humour",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Le chrono en haut de mon écran tourne depuis 58 minutes.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "shop",
+    "label": "Salle d'attente",
+    "minutes": 58
+   },
+   "cap": "58 minutes",
+   "accent": "minutes",
+   "sync": {
+    "expand": "chrono"
+   }
+  },
+  {
+   "text": "Je suis… dans une salle d'attente. Et je commence à le sentir.",
+   "scene": "big_word",
+   "cap": "une salle d'attente.",
+   "accent": "d'attente.",
+   "sync": {}
+  },
+  {
+   "text": "Rendez-vous à 14 h. Il est 14 h 58.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "14 h 58",
+    "small": "rendez-vous à 14 h"
+   },
+   "sync": {
+    "word": "58."
+   }
+  },
+  {
+   "text": "OùVa l'a détecté dès que je suis entré, sans que je fasse quoi que ce soit.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "Détecté automatiquement"
+   },
+   "sync": {
+    "zoom": "détecté"
+   }
+  },
+  {
+   "text": "Au moins, maintenant, j'ai la preuve.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "clock",
+      "title": "Arrivée : 13 h 55"
+     },
+     {
+      "icon": "flag",
+      "title": "Appelé : 15 h 02"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "maintenant,",
+    "i2": "preuve."
+   }
+  },
+  {
+   "text": "Ton record d'attente, c'est combien ? Dis-le en commentaire.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "ton record ?",
+   "accent": "record",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/dynamic_island"
+}

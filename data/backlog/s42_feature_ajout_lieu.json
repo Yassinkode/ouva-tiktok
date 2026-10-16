@@ -1,0 +1,97 @@
+{
+ "format": "feature",
+ "feature": "ajout_lieu",
+ "title": "Des lieux à ton nom",
+ "caption": "Tu peux donner n'importe quel nom à tes lieux. Chez mamie, le terrain, le spot…",
+ "hashtags": [
+  "#ouva",
+  "#personnalisation",
+  "#iphone",
+  "#astuce"
+ ],
+ "beats": [
+  {
+   "text": "Dans OùVa, tes lieux portent le nom que tu veux.",
+   "scene": "big_word",
+   "cap": "le nom que tu veux.",
+   "accent": "nom",
+   "sync": {}
+  },
+  {
+   "text": "Chez mamie. Le terrain de foot. Le spot du vendredi.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "home",
+      "title": "Chez mamie"
+     },
+     {
+      "icon": "flag",
+      "title": "Le terrain de foot"
+     },
+     {
+      "icon": "pin",
+      "title": "Le spot du vendredi"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "mamie.",
+    "i2": "terrain",
+    "i3": "spot"
+   }
+  },
+  {
+   "text": "Tu tapes le nom, tu choisis la catégorie qui va avec.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "name",
+    "label": "Le nom",
+    "region2": "category",
+    "label2": "La catégorie"
+   },
+   "sync": {
+    "zoom": "nom,",
+    "zoom2": "catégorie"
+   }
+  },
+  {
+   "text": "Et ce lieu apparaît partout, avec son icône.",
+   "scene": "place_pin",
+   "params": {
+    "place": "friends",
+    "label": "Chez mamie"
+   },
+   "sync": {
+    "pin": "partout,"
+   }
+  },
+  {
+   "text": "Résultat : 3 heures chez mamie dimanche. Elle va être contente.",
+   "scene": "counter_map",
+   "params": {
+    "value": 3,
+    "unit": "heures",
+    "bottom": "chez mamie",
+    "place": "friends"
+   },
+   "sync": {
+    "count": "3",
+    "bottom": "contente."
+   }
+  },
+  {
+   "text": "Toi, tu l'appellerais comment ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "comment ?",
+   "accent": "comment",
+   "sync": {}
+  }
+ ],
+ "angle": "feature/ajout_lieu"
+}

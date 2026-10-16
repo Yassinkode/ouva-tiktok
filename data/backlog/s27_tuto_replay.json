@@ -1,0 +1,105 @@
+{
+ "format": "tuto",
+ "feature": "replay",
+ "title": "Ta journée en story",
+ "caption": "Comment partager ta journée animée en story, en 3 étapes 🎬",
+ "hashtags": [
+  "#ouva",
+  "#tuto",
+  "#story",
+  "#replay"
+ ],
+ "beats": [
+  {
+   "text": "Partager ta journée animée en story, ça se fait en 3 étapes.",
+   "scene": "big_word",
+   "cap": "en story",
+   "accent": "story",
+   "sync": {}
+  },
+  {
+   "text": "Étape 1 : sur l'accueil, tout en bas, appuie sur Revivre ma journée.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "revivre",
+    "label": "Revivre ma journée"
+   },
+   "sync": {
+    "zoom": "Revivre"
+   }
+  },
+  {
+   "text": "Étape 2 : regarde ton avatar refaire ton trajet, lieu après lieu.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:15"
+     },
+     {
+      "place": "school",
+      "time": "09:00"
+     },
+     {
+      "place": "friends",
+      "time": "18:40"
+     }
+    ]
+   },
+   "cap": "ton trajet.",
+   "accent": "trajet.",
+   "sync": {}
+  },
+  {
+   "text": "Étape 3 : télécharge la vidéo sur ton téléphone.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "download",
+    "label": "Télécharger la vidéo"
+   },
+   "sync": {
+    "zoom": "télécharge"
+   }
+  },
+  {
+   "text": "Et tu la postes où tu veux, en story ou à tes potes.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "play",
+      "title": "Story Instagram"
+     },
+     {
+      "icon": "play",
+      "title": "TikTok"
+     },
+     {
+      "icon": "map",
+      "title": "À tes potes"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "postes",
+    "i2": "story",
+    "i3": "potes."
+   }
+  },
+  {
+   "text": "Ta journée, version film.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "version film",
+    "small": "ta journée"
+   },
+   "sync": {
+    "word": "film."
+   }
+  }
+ ],
+ "angle": "tuto/replay"
+}

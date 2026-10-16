@@ -1,0 +1,119 @@
+{
+ "format": "histoire",
+ "feature": "comparer_semaines",
+ "title": "Télétravail vs bureau",
+ "caption": "Une semaine en télétravail vs une semaine au bureau : ma carte ne ment pas.",
+ "hashtags": [
+  "#ouva",
+  "#teletravail",
+  "#bureau",
+  "#travail"
+ ],
+ "beats": [
+  {
+   "text": "Une semaine en télétravail contre une semaine au bureau. J'ai comparé.",
+   "scene": "versus",
+   "params": {
+    "a": "Télétravail",
+    "b": "Bureau"
+   },
+   "sync": {
+    "b": "bureau.",
+    "reveal": "comparé."
+   }
+  },
+  {
+   "text": "Avec la fonction Comparer mes semaines.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "Comparer"
+   }
+  },
+  {
+   "text": "En télétravail : 3 heures dehors sur toute la semaine.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "semaine",
+    "sub": "en télétravail",
+    "value": 3,
+    "place": "park",
+    "caption": "dehors"
+   },
+   "sync": {
+    "count": "3"
+   }
+  },
+  {
+   "text": "Au bureau : 12 heures dehors, juste avec les trajets et les pauses.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures dehors / jour",
+    "before": [
+     0,
+     1,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "after": [
+     2,
+     2,
+     3,
+     2,
+     2,
+     1,
+     0
+    ],
+    "labelA": "Télétravail",
+    "labelB": "Bureau",
+    "rows": [
+     {
+      "place": "work",
+      "delta": "+38 h",
+      "good": false
+     },
+     {
+      "place": "park",
+      "delta": "+9 h",
+      "good": true
+     }
+    ]
+   },
+   "sync": {
+    "b": "12",
+    "rows": "pauses."
+   }
+  },
+  {
+   "text": "Le télétravail, c'est confortable. Mais mon canapé gagne à chaque fois.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 81,
+    "place": "home",
+    "sub": "en télétravail"
+   },
+   "sync": {
+    "count": "confortable.",
+    "tile": "canapé"
+   }
+  },
+  {
+   "text": "Toi, team bureau ou team canapé ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "team canapé ?",
+   "accent": "canapé",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/comparer_semaines"
+}

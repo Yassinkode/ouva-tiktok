@@ -1,0 +1,82 @@
+{
+ "format": "liste",
+ "feature": "suivi_auto",
+ "title": "3 trucs que l'appli fait sans toi",
+ "caption": "3 choses qu'OùVa fait pendant que tu vis ta vie.",
+ "hashtags": [
+  "#ouva",
+  "#automatique",
+  "#iphone",
+  "#app"
+ ],
+ "beats": [
+  {
+   "text": "3 trucs qu'OùVa fait pendant que toi, tu ne fais rien du tout.",
+   "scene": "big_word",
+   "cap": "tu ne fais rien.",
+   "accent": "rien.",
+   "sync": {}
+  },
+  {
+   "text": "Un : elle reconnaît le lieu où tu arrives, sans que tu touches à rien.",
+   "scene": "place_pin",
+   "params": {
+    "place": "work",
+    "label": "Travail"
+   },
+   "sync": {
+    "pin": "arrives,"
+   }
+  },
+  {
+   "text": "Deux : elle lance le chrono, toute seule, en haut de ton écran.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "work",
+    "label": "Travail",
+    "minutes": 1
+   },
+   "cap": "elle lance le chrono",
+   "accent": "chrono,",
+   "sync": {
+    "expand": "chrono,"
+   }
+  },
+  {
+   "text": "Trois : elle range tout, jour après jour, lieu par lieu.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "jeudi",
+    "value": 8,
+    "place": "work",
+    "caption": "au travail"
+   },
+   "sync": {
+    "count": "range"
+   }
+  },
+  {
+   "text": "Toi, tu n'as qu'à regarder le résultat.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Le résultat"
+   },
+   "sync": {
+    "zoom": "résultat."
+   }
+  },
+  {
+   "text": "C'est tout. Vraiment. Tu vis ta vie, elle s'occupe du reste.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Elle s'occupe du reste.",
+   "accent": "reste.",
+   "sync": {}
+  }
+ ],
+ "angle": "liste/suivi_auto"
+}

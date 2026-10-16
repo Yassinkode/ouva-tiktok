@@ -1,0 +1,78 @@
+{
+ "format": "tuto",
+ "feature": "stats_lieu",
+ "title": "Lire ses stats",
+ "caption": "Lire ses stats OùVa en 3 étapes. Simple, rapide.",
+ "hashtags": [
+  "#ouva",
+  "#tuto",
+  "#stats",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Comprendre tes stats OùVa, en 3 étapes.",
+   "scene": "big_word",
+   "cap": "en 3 étapes.",
+   "accent": "étapes.",
+   "sync": {}
+  },
+  {
+   "text": "Étape 1 : l'accueil te montre où tu es en ce moment.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "En ce moment"
+   },
+   "sync": {
+    "zoom": "moment."
+   }
+  },
+  {
+   "text": "Étape 2 : la carte de chaleur te montre ton mois entier.",
+   "scene": "heatmap_reveal",
+   "cap": "ton mois entier",
+   "accent": "mois",
+   "sync": {
+    "punch": "carte"
+   }
+  },
+  {
+   "text": "Étape 3 : touche un lieu pour voir son détail.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Le détail du lieu"
+   },
+   "sync": {
+    "zoom": "détail."
+   }
+  },
+  {
+   "text": "Par exemple : 1 h 40 à la salle aujourd'hui, 7 % de ma journée.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 7,
+    "place": "gym",
+    "sub": "de ma journée"
+   },
+   "sync": {
+    "count": "7",
+    "tile": "journée."
+   }
+  },
+  {
+   "text": "C'est tout. Pas besoin de tableau Excel.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "c'est tout"
+   },
+   "sync": {
+    "word": "tout."
+   }
+  }
+ ],
+ "angle": "tuto/stats_lieu"
+}

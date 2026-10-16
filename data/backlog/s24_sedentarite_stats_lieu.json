@@ -1,0 +1,110 @@
+{
+ "format": "sedentarite",
+ "feature": "stats_lieu",
+ "title": "8 heures assis",
+ "caption": "Au-delà de 8 h assis par jour, c'est un risque pour la santé (ANSES). Et toi, tu es à combien ?",
+ "hashtags": [
+  "#ouva",
+  "#sedentarite",
+  "#bureau",
+  "#sante"
+ ],
+ "beats": [
+  {
+   "text": "Au-delà de 8 heures assis par jour, l'ANSES parle de risque pour la santé.",
+   "scene": "fact",
+   "params": {
+    "value": 8,
+    "suffix": "h",
+    "label": "assis par jour : au-delà, c'est un risque pour la santé",
+    "source": "ANSES, 2022"
+   },
+   "sync": {
+    "count": "8"
+   }
+  },
+  {
+   "text": "8 heures, c'est juste une journée de bureau.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mardi",
+    "value": 8,
+    "place": "work",
+    "caption": "au bureau"
+   },
+   "sync": {
+    "count": "journée"
+   }
+  },
+  {
+   "text": "Ajoute le canapé le soir, et tu dépasses sans t'en rendre compte.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "work",
+      "value": 38
+     },
+     {
+      "place": "home",
+      "value": 44
+     },
+     {
+      "place": "cafe",
+      "value": 5
+     },
+     {
+      "place": "park",
+      "value": 2
+     }
+    ]
+   },
+   "cap": "tu dépasses",
+   "accent": "dépasses",
+   "sync": {}
+  },
+  {
+   "text": "OùVa te montre où passent tes heures, lieu par lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Ton temps aujourd'hui"
+   },
+   "sync": {
+    "zoom": "heures,"
+   }
+  },
+  {
+   "text": "Et tu n'as rien à noter : chaque heure est comptée automatiquement.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "signal",
+      "title": "Rien à noter"
+     },
+     {
+      "icon": "clock",
+      "title": "Compté automatiquement"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "noter",
+    "i2": "automatiquement."
+   }
+  },
+  {
+   "text": "Le premier pas, c'est juste de le voir.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "de le voir.",
+   "accent": "voir.",
+   "sync": {}
+  }
+ ],
+ "angle": "sedentarite/stats_lieu"
+}

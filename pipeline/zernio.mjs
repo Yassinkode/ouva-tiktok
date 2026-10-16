@@ -24,7 +24,7 @@ export async function findTikTokAccount() {
   return { id: acc._id, name: acc.username ?? acc.displayName };
 }
 
-export async function publish({ file, caption }) {
+export async function publish({ file, caption, scheduledFor }) {
   const acc = await findTikTokAccount();
   const accountId = typeof acc === 'string' ? acc : acc.id;
   const size = fs.statSync(file).size;
@@ -45,11 +45,12 @@ export async function publish({ file, caption }) {
       commercialContentType: 'brand_organic', // promoting our own app (TikTok disclosure)
       video_made_with_ai: true, // AI voice-over
     },
-    publishNow: true,
+    ...(scheduledFor ? { scheduledFor, timezone: 'Europe/Paris' } : { publishNow: true }),
   });
   const post = r.post ?? {};
   const pf = (post.platforms ?? [])[0] ?? {};
   if (post.status === 'failed' || pf.status === 'failed') throw new Error(`Publication TikTok échouée: ${pf.errorMessage ?? r.error ?? 'inconnue'}`);
+  if (scheduledFor) return { id: post._id, status: 'scheduled', publicUrl: null };
   let url = pf.platformPostUrl ?? null;
   for (let i = 0; i < 8 && !url && post._id; i++) {
     await new Promise((res) => setTimeout(res, 15000));

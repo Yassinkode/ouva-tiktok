@@ -1,0 +1,77 @@
+{
+ "format": "pitch",
+ "feature": "carte_chaleur",
+ "title": "Ta vie en couleurs",
+ "caption": "Ta vie, en couleurs, sur une carte. Rouge = là où tu passes le plus de temps.",
+ "hashtags": [
+  "#ouva",
+  "#cartedechaleur",
+  "#iphone",
+  "#app"
+ ],
+ "beats": [
+  {
+   "text": "Voilà à quoi ressemble un mois de ma vie.",
+   "scene": "heatmap_reveal",
+   "cap": "un mois de ma vie",
+   "accent": "vie.",
+   "sync": {
+    "punch": "mois"
+   }
+  },
+  {
+   "text": "Chaque case, c'est un endroit. Plus c'est rouge, plus j'y suis resté.",
+   "scene": "big_word",
+   "cap": "plus c'est rouge",
+   "accent": "rouge,",
+   "sync": {}
+  },
+  {
+   "text": "C'est la carte de chaleur d'OùVa, sur les 30 derniers jours.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "legend",
+    "label": "30 derniers jours"
+   },
+   "sync": {
+    "zoom": "chaleur"
+   }
+  },
+  {
+   "text": "La case la plus rouge ? La maison, sans surprise.",
+   "scene": "place_pin",
+   "params": {
+    "place": "home",
+    "label": "Maison"
+   },
+   "sync": {
+    "pin": "maison,"
+   }
+  },
+  {
+   "text": "Et juste en dessous, le temps exact de chaque lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Le détail par lieu"
+   },
+   "sync": {
+    "zoom": "exact"
+   }
+  },
+  {
+   "text": "Et la tienne, elle serait de quelle couleur ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "ta couleur",
+    "small": "et la tienne ?"
+   },
+   "sync": {
+    "word": "couleur"
+   }
+  }
+ ],
+ "angle": "pitch/carte_chaleur"
+}

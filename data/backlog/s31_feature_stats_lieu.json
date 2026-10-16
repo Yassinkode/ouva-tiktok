@@ -1,0 +1,93 @@
+{
+ "format": "feature",
+ "feature": "stats_lieu",
+ "title": "La page d'un lieu",
+ "caption": "Chaque lieu a sa propre page dans OùVa. Voilà celle de ma salle de sport.",
+ "hashtags": [
+  "#ouva",
+  "#salledesport",
+  "#stats",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Dans OùVa, chaque lieu a sa propre page. Voilà celle de ma salle.",
+   "scene": "place_pin",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport"
+   },
+   "sync": {
+    "pin": "salle."
+   }
+  },
+  {
+   "text": "Aujourd'hui : mon temps passé, et le pourcentage de ma journée.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Aujourd'hui",
+    "region2": "ring",
+    "label2": "% de ma journée"
+   },
+   "sync": {
+    "zoom": "Aujourd'hui",
+    "zoom2": "pourcentage"
+   }
+  },
+  {
+   "text": "Avec la différence par rapport à hier.",
+   "scene": "big_word",
+   "cap": "par rapport à hier.",
+   "accent": "hier.",
+   "sync": {}
+  },
+  {
+   "text": "Et en dessous, toute ma semaine, jour par jour.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Cette semaine"
+   },
+   "sync": {
+    "zoom": "semaine,"
+   }
+  },
+  {
+   "text": "Lundi, mercredi, vendredi : la régularité se voit tout de suite.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "vendredi",
+    "value": 2,
+    "place": "gym",
+    "caption": "à la salle"
+   },
+   "sync": {
+    "count": "vendredi"
+   }
+  },
+  {
+   "text": "Une page par lieu. Zéro saisie.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "pin",
+      "title": "Une page par lieu"
+     },
+     {
+      "icon": "signal",
+      "title": "Zéro saisie"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "page",
+    "i2": "Zéro"
+   }
+  }
+ ],
+ "angle": "feature/stats_lieu"
+}

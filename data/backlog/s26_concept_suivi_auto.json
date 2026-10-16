@@ -1,0 +1,91 @@
+{
+ "format": "concept",
+ "feature": "suivi_auto",
+ "title": "Le journal que tu n'écris pas",
+ "caption": "Un journal de ta vie qui s'écrit tout seul. C'est l'idée d'OùVa.",
+ "hashtags": [
+  "#ouva",
+  "#journal",
+  "#iphone",
+  "#concept"
+ ],
+ "beats": [
+  {
+   "text": "Tout le monde a voulu tenir un journal. Personne n'a tenu plus de 3 jours.",
+   "scene": "big_word",
+   "cap": "un journal",
+   "accent": "journal",
+   "sync": {}
+  },
+  {
+   "text": "Alors on a fait un journal qui s'écrit tout seul.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "tout seul",
+    "small": "il s'écrit"
+   },
+   "sync": {
+    "word": "seul."
+   }
+  },
+  {
+   "text": "Où tu étais, à quelle heure, et combien de temps.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Ta journée, écrite pour toi"
+   },
+   "sync": {
+    "zoom": "heure,"
+   }
+  },
+  {
+   "text": "Mardi dernier, par exemple : école, café, salle de sport.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "school",
+      "time": "08:30"
+     },
+     {
+      "place": "cafe",
+      "time": "15:00"
+     },
+     {
+      "place": "gym",
+      "time": "18:00"
+     },
+     {
+      "place": "home",
+      "time": "20:00"
+     }
+    ]
+   },
+   "cap": "Mardi dernier",
+   "accent": "Mardi",
+   "sync": {}
+  },
+  {
+   "text": "Et sur un mois, ça devient une carte de ta vie.",
+   "scene": "heatmap_reveal",
+   "cap": "une carte de ta vie",
+   "accent": "vie.",
+   "sync": {
+    "punch": "carte"
+   }
+  },
+  {
+   "text": "Ton journal, sans écrire une ligne.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "sans écrire une ligne.",
+   "accent": "ligne.",
+   "sync": {}
+  }
+ ],
+ "angle": "concept/suivi_auto"
+}

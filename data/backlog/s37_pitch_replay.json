@@ -1,0 +1,112 @@
+{
+ "format": "pitch",
+ "feature": "replay",
+ "title": "Revis ta journée",
+ "caption": "Ta journée entière, rejouée sur la carte en quelques secondes. C'est dans OùVa.",
+ "hashtags": [
+  "#ouva",
+  "#replay",
+  "#carte",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Imagine pouvoir rejouer ta journée comme une vidéo.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "rejouer ta journée",
+   "accent": "journée",
+   "sync": {}
+  },
+  {
+   "text": "Le matin à l'école, le midi au café, le soir à la salle.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "school",
+      "time": "08:30"
+     },
+     {
+      "place": "cafe",
+      "time": "12:15"
+     },
+     {
+      "place": "gym",
+      "time": "18:00"
+     },
+     {
+      "place": "home",
+      "time": "20:15"
+     }
+    ]
+   },
+   "cap": "le soir à la salle.",
+   "accent": "salle.",
+   "sync": {}
+  },
+  {
+   "text": "Dans OùVa, c'est Ma journée sur la carte.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "map",
+    "label": "Ma journée sur la carte"
+   },
+   "sync": {
+    "zoom": "carte."
+   }
+  },
+  {
+   "text": "Avec un lecteur, comme pour une vraie vidéo.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "play",
+      "title": "Lecture"
+     },
+     {
+      "icon": "clock",
+      "title": "Heures exactes"
+     },
+     {
+      "icon": "map",
+      "title": "Trajet animé"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "lecteur,",
+    "i2": "vraie",
+    "i3": "vidéo."
+   }
+  },
+  {
+   "text": "Et chaque lieu visité, dans l'ordre.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "timeline",
+    "label": "Dans l'ordre"
+   },
+   "sync": {
+    "zoom": "ordre."
+   }
+  },
+  {
+   "text": "Ta journée, en replay.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "replay",
+    "small": "ta journée"
+   },
+   "sync": {
+    "word": "replay."
+   }
+  }
+ ],
+ "angle": "pitch/replay"
+}

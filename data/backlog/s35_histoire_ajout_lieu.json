@@ -1,0 +1,87 @@
+{
+ "format": "histoire",
+ "feature": "ajout_lieu",
+ "title": "La boulangerie",
+ "caption": "J'ai ajouté ma boulangerie dans OùVa. Grosse erreur 🥐",
+ "hashtags": [
+  "#ouva",
+  "#boulangerie",
+  "#humour",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai ajouté ma boulangerie comme lieu dans OùVa. Grosse erreur.",
+   "scene": "big_word",
+   "params": {
+    "place": "shop"
+   },
+   "cap": "Grosse erreur.",
+   "accent": "erreur.",
+   "sync": {}
+  },
+  {
+   "text": "4 points autour de la boutique, et c'est enregistré.",
+   "scene": "add_place",
+   "params": {
+    "place": "shop",
+    "label": "Boulangerie"
+   },
+   "sync": {
+    "name": "autour",
+    "done": "enregistré."
+   }
+  },
+  {
+   "text": "Je l'ai appelée Boulangerie, catégorie courses. Logique.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "name",
+    "label": "Le nom du lieu"
+   },
+   "sync": {
+    "zoom": "appelée"
+   }
+  },
+  {
+   "text": "Une semaine plus tard : 9 passages.",
+   "scene": "counter_map",
+   "params": {
+    "value": 9,
+    "unit": "passages",
+    "bottom": "en 7 jours",
+    "place": "shop"
+   },
+   "sync": {
+    "count": "9",
+    "bottom": "plus"
+   }
+  },
+  {
+   "text": "Le chrono s'affiche même pendant que j'attends mon croissant.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "shop",
+    "label": "Boulangerie",
+    "minutes": 4
+   },
+   "cap": "mon croissant.",
+   "accent": "croissant.",
+   "sync": {
+    "expand": "chrono"
+   }
+  },
+  {
+   "text": "La boulangère me dit bonjour par mon prénom maintenant.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "par mon prénom",
+   "accent": "prénom",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/ajout_lieu"
+}

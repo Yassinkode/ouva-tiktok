@@ -16,7 +16,7 @@ import { sendText, sendVideo } from './telegram.mjs';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 process.chdir(ROOT);
 const DRY = process.env.DRY_RUN === '1' || process.env.DRY_RUN === 'true';
-const SLOTS = [12, 18, 21];
+const SLOTS = [12, 17, 21];
 
 /* ---------- time helpers (Europe/Paris) ---------- */
 const parisParts = (d = new Date()) => {
@@ -41,10 +41,11 @@ function pickSlot() {
     const h = parseInt(process.env.SLOT, 10);
     return { label: `${h}h`, at: parisToDate(p.y, p.m, p.d, h) };
   }
-  // next slot at least 35 min ahead (render time)
+  // the next slot that is 25 min to 3 h 15 ahead (cron fires ~1-3 h before each slot)
   for (const h of SLOTS) {
     const at = parisToDate(p.y, p.m, p.d, h);
-    if (at.getTime() - now.getTime() > 35 * 60e3) return { label: `${h}h`, at };
+    const lead = at.getTime() - now.getTime();
+    if (lead > 25 * 60e3 && lead < 195 * 60e3) return { label: `${h}h`, at };
   }
   return { label: 'now', at: null };
 }
@@ -56,6 +57,10 @@ async function main() {
   const p = parisParts();
   const date = `${p.y}-${String(p.m).padStart(2, '0')}-${String(p.d).padStart(2, '0')}`;
   const id = `${date}_${slot.label}`;
+  if (slot.label === 'now' && !DRY && process.env.GITHUB_EVENT_NAME === 'schedule') {
+    console.log('aucun créneau (12h/17h/21h) dans les 3 prochaines heures, rien à faire');
+    return;
+  }
   log('run', id, DRY ? '(dry run)' : '');
   fs.mkdirSync('data/stories', { recursive: true });
   fs.mkdirSync('public/runs', { recursive: true });
@@ -105,10 +110,13 @@ async function main() {
   /* 2. voice */
   const voicePath = `out/${id}_voice.mp3`;
   let words;
+  let voiceModel = 'file';
   if (process.env.VOICE_FILE) {
     fs.copyFileSync(process.env.VOICE_FILE, voicePath);
   } else {
-    words = (await makeVoice(text, voicePath)).words;
+    const v = await makeVoice(text, voicePath);
+    words = v.words;
+    voiceModel = v.model;
   }
   if (!words || !words.length) {
     try {
@@ -170,9 +178,11 @@ async function main() {
   } else if (!DRY && process.env.ZERNIO_API_KEY) {
     // free automatic posting on TikTok through Zernio, then a heads-up on Telegram
     try {
-      const r = await publishZernio({ file: final, caption });
-      Object.assign(entry, { status: 'published', postId: r.id, url: r.publicUrl, via: 'zernio' });
-      if (tg) await sendText(`✅ Nouvelle vidéo OùVa publiée sur TikTok${r.publicUrl ? ' : ' + r.publicUrl : ''}\n\n${caption}`).catch(() => {});
+      const scheduledFor = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
+      const r = await publishZernio({ file: final, caption, scheduledFor });
+      Object.assign(entry, { status: r.status, postId: r.id, url: r.publicUrl, scheduledFor, via: 'zernio', voice: voiceModel });
+      const when = scheduledFor ? `programmée pour ${slot.label}` : 'publiée';
+      if (tg) await sendText(`✅ Vidéo OùVa ${when} sur TikTok${r.publicUrl ? ' : ' + r.publicUrl : ''}\n\n${caption}`).catch(() => {});
     } catch (e) {
       log('auto-post failed, sending to Telegram instead', e);
       entry.error = String(e).slice(0, 500);
@@ -184,7 +194,7 @@ async function main() {
     }
   } else if (!process.env.BLOTATO_API_KEY || DRY) {
     // free mode: deliver to the phone, the owner posts it on TikTok
-    const r = await sendVideo({ file: final, caption: DRY ? `[TEST] ${caption}` : caption });
+    const r = await sendVideo({ file: final, caption: DRY ? `[TEST] ${caption}` : slot.at ? `📌 À poster à ${slot.label}\n\n${caption}` : caption });
     entry.status = DRY ? 'dry-run' : r.status;
   } else {
     const scheduledTime = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
@@ -198,8 +208,8 @@ async function main() {
     }
   }
   const left = backlog.length - (story._backlog ? 1 : 0);
-  if (!DRY && tg && story._backlog && left <= 3)
-    await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa. Demande un nouveau lot à Claude.`).catch(() => {});
+  if (!DRY && tg && story._backlog && [9, 6, 3, 1].includes(left))
+    await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa (≈ ${Math.ceil(left / 3)} jour(s)). Demande un nouveau lot à Claude.`).catch(() => {});
   if (!DRY) {
     history.push(entry);
     fs.writeFileSync(histPath, JSON.stringify(history, null, 1));

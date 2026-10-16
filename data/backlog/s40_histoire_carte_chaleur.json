@@ -1,0 +1,94 @@
+{
+ "format": "histoire",
+ "feature": "carte_chaleur",
+ "title": "Le déménagement",
+ "caption": "J'ai déménagé et ma carte de chaleur a complètement changé. Nouveau quartier, nouvelles habitudes.",
+ "hashtags": [
+  "#ouva",
+  "#demenagement",
+  "#quartier",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Il y a un mois, j'ai déménagé. Et ma carte de chaleur aussi.",
+   "scene": "heatmap_reveal",
+   "cap": "ma carte aussi.",
+   "accent": "aussi.",
+   "sync": {
+    "punch": "déménagé."
+   }
+  },
+  {
+   "text": "Avant, tout était concentré au même endroit.",
+   "scene": "big_word",
+   "cap": "au même endroit.",
+   "accent": "endroit.",
+   "sync": {}
+  },
+  {
+   "text": "Maintenant, les cases se dispersent : nouveau café, nouveau parc.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 46
+     },
+     {
+      "place": "cafe",
+      "value": 9
+     },
+     {
+      "place": "park",
+      "value": 6
+     },
+     {
+      "place": "shop",
+      "value": 4
+     }
+    ]
+   },
+   "cap": "nouveau café",
+   "accent": "café,",
+   "sync": {}
+  },
+  {
+   "text": "Et j'ai ajouté mes nouveaux lieux en quelques secondes.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "steps",
+    "label": "Ajouter un lieu"
+   },
+   "sync": {
+    "zoom": "ajouté"
+   }
+  },
+  {
+   "text": "Le parc d'à côté, c'est déjà 6 % de mon temps.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 6,
+    "place": "park",
+    "sub": "de mon temps"
+   },
+   "sync": {
+    "count": "6",
+    "tile": "temps."
+   }
+  },
+  {
+   "text": "Nouveau quartier, nouvelle carte.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "nouvelle",
+    "small": "carte"
+   },
+   "sync": {
+    "word": "carte."
+   }
+  }
+ ],
+ "angle": "histoire/carte_chaleur"
+}

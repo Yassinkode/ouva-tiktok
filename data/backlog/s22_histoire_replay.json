@@ -1,0 +1,107 @@
+{
+ "format": "histoire",
+ "feature": "replay",
+ "title": "Mon samedi en replay",
+ "caption": "J'ai rejoué mon samedi sur la carte. Je ne pensais pas avoir autant marché 😅",
+ "hashtags": [
+  "#ouva",
+  "#samedi",
+  "#replay",
+  "#weekend"
+ ],
+ "beats": [
+  {
+   "text": "J'ai rejoué mon samedi sur la carte. Franchement, je ne m'attendais pas à ça.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "mon samedi",
+   "accent": "samedi",
+   "sync": {}
+  },
+  {
+   "text": "10 h : le marché. 12 h : chez les potes. 16 h : le parc.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "shop",
+      "time": "10:00",
+      "label": "Marché"
+     },
+     {
+      "place": "friends",
+      "time": "12:00"
+     },
+     {
+      "place": "park",
+      "time": "16:00"
+     },
+     {
+      "place": "home",
+      "time": "20:00"
+     }
+    ]
+   },
+   "cap": "le parc.",
+   "accent": "parc.",
+   "sync": {}
+  },
+  {
+   "text": "Mon samedi le plus actif depuis des mois.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "actif",
+    "small": "le plus"
+   },
+   "sync": {
+    "word": "actif"
+   }
+  },
+  {
+   "text": "Chaque arrêt, avec l'heure d'arrivée et de départ.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "timeline",
+    "label": "Arrivées et départs"
+   },
+   "sync": {
+    "zoom": "arrêt,"
+   }
+  },
+  {
+   "text": "Total : 4 heures dehors, contre 1 d'habitude.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "park",
+     "value": 4,
+     "label": "Samedi"
+    },
+    "b": {
+     "place": "park",
+     "value": 1,
+     "label": "D'habitude"
+    }
+   },
+   "sync": {
+    "b": "1"
+   }
+  },
+  {
+   "text": "Et j'ai gardé la vidéo pour ma story.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "download",
+    "label": "Télécharger la vidéo"
+   },
+   "sync": {
+    "zoom": "vidéo"
+   }
+  }
+ ],
+ "angle": "histoire/replay"
+}

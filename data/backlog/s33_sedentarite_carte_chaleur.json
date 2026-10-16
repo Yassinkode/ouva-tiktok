@@ -1,0 +1,91 @@
+{
+ "format": "sedentarite",
+ "feature": "carte_chaleur",
+ "title": "1 adulte sur 3",
+ "caption": "Selon l'OMS, près d'1 adulte sur 3 dans le monde ne bouge pas assez. Ta carte te dit si c'est ton cas.",
+ "hashtags": [
+  "#ouva",
+  "#oms",
+  "#sedentarite",
+  "#bouger"
+ ],
+ "beats": [
+  {
+   "text": "Selon l'OMS, 31 % des adultes dans le monde ne bougent pas assez.",
+   "scene": "fact",
+   "params": {
+    "value": 31,
+    "suffix": "%",
+    "label": "des adultes dans le monde ne sont pas assez actifs (1,8 milliard)",
+    "source": "OMS, 2024"
+   },
+   "sync": {
+    "count": "31"
+   }
+  },
+  {
+   "text": "Ça fait 1,8 milliard de personnes.",
+   "scene": "big_word",
+   "cap": "1,8 milliard",
+   "accent": "milliard",
+   "sync": {}
+  },
+  {
+   "text": "Le plus souvent, sans s'en rendre compte : maison, bureau, maison.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:00"
+     },
+     {
+      "place": "work",
+      "time": "09:00"
+     },
+     {
+      "place": "home",
+      "time": "18:30"
+     }
+    ]
+   },
+   "cap": "maison, bureau, maison.",
+   "accent": "bureau,",
+   "sync": {}
+  },
+  {
+   "text": "Ta carte de chaleur, elle, te le montre en un coup d'œil.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat",
+    "label": "Carte de chaleur"
+   },
+   "sync": {
+    "zoom": "coup"
+   }
+  },
+  {
+   "text": "Si une seule case est rouge, c'est peut-être le signe de sortir un peu.",
+   "scene": "place_pin",
+   "params": {
+    "place": "park",
+    "label": "Parc"
+   },
+   "sync": {
+    "pin": "sortir"
+   }
+  },
+  {
+   "text": "Commence par regarder la tienne.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "regarder la tienne.",
+   "accent": "tienne.",
+   "sync": {}
+  }
+ ],
+ "angle": "sedentarite/carte_chaleur"
+}

@@ -1,0 +1,97 @@
+{
+ "format": "liste",
+ "feature": "general",
+ "title": "3 raisons de l'installer",
+ "caption": "3 raisons d'installer OùVa. La 3e, c'est ma préférée.",
+ "hashtags": [
+  "#ouva",
+  "#app",
+  "#iphone",
+  "#astuce"
+ ],
+ "beats": [
+  {
+   "text": "3 raisons d'installer OùVa. Et la dernière, c'est ma préférée.",
+   "scene": "big_word",
+   "cap": "3 raisons.",
+   "accent": "raisons.",
+   "sync": {}
+  },
+  {
+   "text": "Un : tu ne notes rien. Elle détecte tes lieux toute seule.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "work",
+    "others": [
+     "home",
+     "gym"
+    ]
+   },
+   "cap": "Tu ne notes rien.",
+   "cap2": "Elle détecte tout.",
+   "accent": "rien.",
+   "sync": {
+    "line2": "détecte"
+   }
+  },
+  {
+   "text": "Deux : tu vois enfin où part ton temps, lieu par lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Tes lieux aujourd'hui"
+   },
+   "sync": {
+    "zoom": "enfin"
+   }
+  },
+  {
+   "text": "Trois : ta journée rejouée sur la carte, comme un film.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:00"
+     },
+     {
+      "place": "work",
+      "time": "09:10"
+     },
+     {
+      "place": "cafe",
+      "time": "13:00"
+     },
+     {
+      "place": "home",
+      "time": "19:30"
+     }
+    ]
+   },
+   "cap": "comme un film.",
+   "accent": "film.",
+   "sync": {}
+  },
+  {
+   "text": "Et en bonus, une carte de chaleur de ton mois.",
+   "scene": "heatmap_reveal",
+   "cap": "une carte de chaleur",
+   "accent": "chaleur",
+   "sync": {
+    "punch": "chaleur"
+   }
+  },
+  {
+   "text": "Tu commences par laquelle ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "laquelle ?",
+   "accent": "laquelle",
+   "sync": {}
+  }
+ ],
+ "angle": "liste/general"
+}

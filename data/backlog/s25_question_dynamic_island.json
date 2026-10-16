@@ -1,0 +1,93 @@
+{
+ "format": "question",
+ "feature": "dynamic_island",
+ "title": "C'est quoi ce chrono ?",
+ "caption": "On me demande tout le temps c'est quoi le chrono en haut de mon écran. Voilà la réponse.",
+ "hashtags": [
+  "#ouva",
+  "#dynamicisland",
+  "#iphone",
+  "#question"
+ ],
+ "beats": [
+  {
+   "text": "On me demande tout le temps : c'est quoi ce chrono en haut de ton écran ?",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "cafe",
+    "label": "Café",
+    "minutes": 34
+   },
+   "cap": "c'est quoi ce chrono ?",
+   "accent": "chrono",
+   "sync": {
+    "expand": "chrono"
+   }
+  },
+  {
+   "text": "Réponse : c'est le temps que je passe dans le lieu où je suis.",
+   "scene": "big_word",
+   "params": {
+    "place": "cafe"
+   },
+   "cap": "le lieu où je suis.",
+   "accent": "lieu",
+   "sync": {}
+  },
+  {
+   "text": "Il démarre quand j'arrive, il s'arrête quand je pars.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "cafe",
+    "label": "Café",
+    "others": [
+     "work",
+     "home"
+    ]
+   },
+   "cap": "Il démarre seul.",
+   "cap2": "Il s'arrête seul.",
+   "accent": "démarre",
+   "sync": {
+    "line2": "s'arrête"
+   }
+  },
+  {
+   "text": "Et tout atterrit ici, sur l'accueil d'OùVa.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "En ce moment"
+   },
+   "sync": {
+    "zoom": "ici,"
+   }
+  },
+  {
+   "text": "34 minutes au café. Bon, c'était une pause rapide.",
+   "scene": "counter_map",
+   "params": {
+    "value": 34,
+    "unit": "minutes",
+    "bottom": "au café",
+    "place": "cafe"
+   },
+   "sync": {
+    "count": "34",
+    "bottom": "rapide."
+   }
+  },
+  {
+   "text": "Toi aussi, tu le veux ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "tu le veux ?",
+   "accent": "veux",
+   "sync": {}
+  }
+ ],
+ "angle": "question/dynamic_island"
+}

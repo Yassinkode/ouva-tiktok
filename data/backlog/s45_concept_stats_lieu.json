@@ -1,0 +1,94 @@
+{
+ "format": "concept",
+ "feature": "stats_lieu",
+ "title": "Ton temps a une adresse",
+ "caption": "Ton temps a une adresse. OùVa te la montre.",
+ "hashtags": [
+  "#ouva",
+  "#temps",
+  "#concept",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Chaque heure de ta journée se passe quelque part. Sans exception.",
+   "scene": "big_word",
+   "cap": "quelque part.",
+   "accent": "part.",
+   "sync": {}
+  },
+  {
+   "text": "Ton temps a une adresse.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "une adresse",
+    "small": "ton temps a"
+   },
+   "sync": {
+    "word": "adresse."
+   }
+  },
+  {
+   "text": "8 heures ici, 2 heures là, 30 minutes en chemin.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "work",
+      "value": 33
+     },
+     {
+      "place": "home",
+      "value": 50
+     },
+     {
+      "place": "gym",
+      "value": 8
+     },
+     {
+      "place": "cafe",
+      "value": 2
+     }
+    ]
+   },
+   "cap": "8 heures ici",
+   "accent": "ici,",
+   "sync": {}
+  },
+  {
+   "text": "OùVa range chaque minute à la bonne adresse, automatiquement.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Ton temps, lieu par lieu"
+   },
+   "sync": {
+    "zoom": "chaque"
+   }
+  },
+  {
+   "text": "Et sur un mois, tu vois enfin où ta vie se passe vraiment.",
+   "scene": "heatmap_reveal",
+   "cap": "où ta vie se passe",
+   "accent": "vie",
+   "sync": {
+    "punch": "mois,"
+   }
+  },
+  {
+   "text": "Sans rien noter. Jamais. Tu vis, et elle compte pour toi.",
+   "scene": "app_tour",
+   "params": {
+    "shots": [
+     "home_now",
+     "places_heatmap"
+    ]
+   },
+   "sync": {
+    "s2": "Jamais."
+   }
+  }
+ ],
+ "angle": "concept/stats_lieu"
+}

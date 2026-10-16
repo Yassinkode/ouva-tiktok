@@ -1,0 +1,93 @@
+{
+ "format": "defi",
+ "feature": "objectifs",
+ "title": "30 jours, 1 objectif",
+ "caption": "Je me suis fixé un seul objectif dans OùVa : 1 h au parc par semaine. Résultat après 30 jours.",
+ "hashtags": [
+  "#ouva",
+  "#objectif",
+  "#defi",
+  "#parc"
+ ],
+ "beats": [
+  {
+   "text": "Défi 30 jours : un seul objectif, une heure au parc par semaine.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "pill": "30 jours",
+    "barLabel": "Parc"
+   },
+   "cap": "1 h au parc / semaine.",
+   "accent": "parc",
+   "sync": {}
+  },
+  {
+   "text": "Je l'ai réglé dans Objectifs par lieu, en 20 secondes.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "objectifs",
+    "label": "Objectifs par lieu"
+   },
+   "sync": {
+    "zoom": "Objectifs"
+   }
+  },
+  {
+   "text": "Semaine 1 : 20 minutes. Raté.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "raté",
+    "small": "semaine 1"
+   },
+   "sync": {
+    "word": "Raté."
+   }
+  },
+  {
+   "text": "Semaine 4 : 3 heures. Objectif explosé.",
+   "scene": "counter_map",
+   "params": {
+    "value": 3,
+    "unit": "heures",
+    "bottom": "au parc",
+    "place": "park"
+   },
+   "sync": {
+    "count": "3",
+    "bottom": "explosé."
+   }
+  },
+  {
+   "text": "Le parc est passé de presque rien à 4 % de mon temps.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "park",
+     "value": 4,
+     "label": "Semaine 4"
+    },
+    "b": {
+     "place": "park",
+     "value": 0,
+     "label": "Semaine 1"
+    }
+   },
+   "sync": {
+    "b": "rien"
+   }
+  },
+  {
+   "text": "Un objectif, c'est plus facile quand on voit ses chiffres.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "voir ses chiffres.",
+   "accent": "chiffres.",
+   "sync": {}
+  }
+ ],
+ "angle": "defi/objectifs"
+}

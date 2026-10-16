@@ -1,0 +1,112 @@
+{
+ "format": "question",
+ "feature": "comparer_semaines",
+ "title": "Ta meilleure semaine",
+ "caption": "C'était quand ta meilleure semaine ? Moi je peux le prouver avec ma carte.",
+ "hashtags": [
+  "#ouva",
+  "#semaine",
+  "#question",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "C'était quand, ta meilleure semaine de l'année ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "ta meilleure semaine ?",
+   "accent": "meilleure",
+   "sync": {}
+  },
+  {
+   "text": "Moi, je peux te la montrer.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "park",
+    "label": "Parc",
+    "minutes": 52
+   },
+   "cap": "je peux te la montrer.",
+   "accent": "montrer.",
+   "sync": {
+    "expand": "montrer."
+   }
+  },
+  {
+   "text": "Comparer mes semaines : je mets la pire à côté de la meilleure.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "Comparer"
+   }
+  },
+  {
+   "text": "La pire : 3 lieux visités. La meilleure : 11.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Lieux visités / jour",
+    "before": [
+     1,
+     1,
+     2,
+     1,
+     1,
+     2,
+     1
+    ],
+    "after": [
+     3,
+     4,
+     2,
+     4,
+     3,
+     5,
+     4
+    ],
+    "labelA": "La pire",
+    "labelB": "La meilleure",
+    "rows": [
+     {
+      "place": "friends",
+      "delta": "+6 h",
+      "good": true
+     },
+     {
+      "place": "park",
+      "delta": "+5 h",
+      "good": true
+     }
+    ]
+   },
+   "sync": {
+    "b": "meilleure",
+    "rows": "11."
+   }
+  },
+  {
+   "text": "Le point commun des bonnes semaines ? Plus de temps chez les potes.",
+   "scene": "place_pin",
+   "params": {
+    "place": "friends",
+    "label": "Chez les potes"
+   },
+   "sync": {
+    "pin": "potes."
+   }
+  },
+  {
+   "text": "Et toi, c'était quand ?",
+   "scene": "big_word",
+   "cap": "c'était quand ?",
+   "accent": "quand",
+   "sync": {}
+  }
+ ],
+ "angle": "question/comparer_semaines"
+}

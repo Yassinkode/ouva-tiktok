@@ -1,0 +1,84 @@
+{
+ "format": "liste",
+ "feature": "carte_chaleur",
+ "title": "Ce que ma carte m'a appris",
+ "caption": "3 choses que ma carte de chaleur m'a apprises sur moi. La 2e fait mal.",
+ "hashtags": [
+  "#ouva",
+  "#cartedechaleur",
+  "#habitudes",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "3 choses que ma carte de chaleur m'a apprises sur moi.",
+   "scene": "heatmap_reveal",
+   "cap": "3 choses",
+   "accent": "choses",
+   "sync": {
+    "punch": "apprises"
+   }
+  },
+  {
+   "text": "Un : je vais toujours dans le même café. Toujours.",
+   "scene": "place_pin",
+   "params": {
+    "place": "cafe",
+    "label": "Le même café"
+   },
+   "sync": {
+    "pin": "café."
+   }
+  },
+  {
+   "text": "Deux : la salle de sport, je l'ai vue 2 fois ce mois-ci.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "cafe",
+     "value": 12,
+     "label": "Café"
+    },
+    "b": {
+     "place": "gym",
+     "value": 1,
+     "label": "Salle"
+    }
+   },
+   "sync": {
+    "b": "2"
+   }
+  },
+  {
+   "text": "Trois : je ne connais que 4 rues de mon quartier.",
+   "scene": "big_word",
+   "cap": "4 rues",
+   "accent": "rues",
+   "sync": {}
+  },
+  {
+   "text": "Tout ça, je l'ai vu en 10 secondes sur cet écran.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat",
+    "label": "Carte de chaleur"
+   },
+   "sync": {
+    "zoom": "écran."
+   }
+  },
+  {
+   "text": "Ce mois-ci, j'essaie une nouvelle rue.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "nouvelle rue",
+    "small": "j'essaie"
+   },
+   "sync": {
+    "word": "rue."
+   }
+  }
+ ],
+ "angle": "liste/carte_chaleur"
+}

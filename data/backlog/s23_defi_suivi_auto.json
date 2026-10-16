@@ -1,0 +1,94 @@
+{
+ "format": "defi",
+ "feature": "suivi_auto",
+ "title": "Une semaine sans l'ouvrir",
+ "caption": "J'ai installé OùVa et je ne l'ai plus ouverte pendant 7 jours. Elle a quand même tout compté.",
+ "hashtags": [
+  "#ouva",
+  "#defi",
+  "#iphone",
+  "#test"
+ ],
+ "beats": [
+  {
+   "text": "Défi : installer OùVa, puis ne plus l'ouvrir pendant 7 jours.",
+   "scene": "big_word",
+   "cap": "7 jours",
+   "accent": "jours",
+   "sync": {}
+  },
+  {
+   "text": "Pas de bouton, pas de chrono. Je vis ma semaine normalement.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "play",
+      "title": "Pas de bouton"
+     },
+     {
+      "icon": "clock",
+      "title": "Pas de chrono"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "bouton,",
+    "i2": "chrono."
+   }
+  },
+  {
+   "text": "Lundi, mardi, mercredi… je l'oublie complètement.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mercredi",
+    "value": 9,
+    "place": "school",
+    "caption": "à l'école"
+   },
+   "sync": {
+    "count": "oublie"
+   }
+  },
+  {
+   "text": "Dimanche soir, je l'ouvre enfin.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "home",
+    "label": "Maison",
+    "minutes": 12
+   },
+   "cap": "je l'ouvre enfin.",
+   "accent": "enfin.",
+   "sync": {
+    "expand": "l'ouvre"
+   }
+  },
+  {
+   "text": "Tout est là : chaque lieu, chaque heure, toute la semaine.",
+   "scene": "app_tour",
+   "params": {
+    "shots": [
+     "home_now",
+     "places_heatmap",
+     "place_stats"
+    ]
+   },
+   "sync": {
+    "s2": "lieu,",
+    "s3": "heure,"
+   }
+  },
+  {
+   "text": "Défi réussi. Et sans effort.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "sans effort.",
+   "accent": "effort.",
+   "sync": {}
+  }
+ ],
+ "angle": "defi/suivi_auto"
+}
