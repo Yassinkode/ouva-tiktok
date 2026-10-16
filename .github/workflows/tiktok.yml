@@ -68,7 +68,7 @@ jobs:
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
         run: |
           node pipeline/telegram.mjs test
-          if [ -n "$ZERNIO_API_KEY" ]; then node pipeline/zernio.mjs check && node pipeline/telegram.mjs say "Zernio connecté ✅ : les prochaines vidéos seront publiées automatiquement sur TikTok."; fi
+          if [ -n "$ZERNIO_API_KEY" ]; then node pipeline/zernio.mjs check && node pipeline/telegram.mjs say "Zernio connecté ✅ : $(node pipeline/zernio.mjs check)"; fi
 
       - name: Make & deliver video
         if: github.event.inputs.telegram_only != '1'

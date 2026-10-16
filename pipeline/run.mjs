@@ -180,9 +180,10 @@ async function main() {
     try {
       const scheduledFor = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
       const r = await publishZernio({ file: final, caption, scheduledFor });
-      Object.assign(entry, { status: r.status, postId: r.id, url: r.publicUrl, scheduledFor, via: 'zernio', voice: voiceModel });
+      Object.assign(entry, { status: r.status, postId: r.id, url: r.publicUrl, scheduledFor, via: 'zernio', where: r.where, voice: voiceModel });
       const when = scheduledFor ? `programmée pour ${slot.label}` : 'publiée';
-      if (tg) await sendText(`✅ Vidéo OùVa ${when} sur TikTok${r.publicUrl ? ' : ' + r.publicUrl : ''}\n\n${caption}`).catch(() => {});
+      const warn = r.warnings?.length ? `\n⚠️ ${r.warnings.join(' | ')}` : '';
+      if (tg) await sendText(`✅ Vidéo OùVa ${when} sur ${r.where}${r.publicUrl ? ' : ' + r.publicUrl : ''}${warn}\n\n${caption}`).catch(() => {});
     } catch (e) {
       log('auto-post failed, sending to Telegram instead', e);
       entry.error = String(e).slice(0, 500);
