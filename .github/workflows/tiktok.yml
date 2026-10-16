@@ -12,7 +12,7 @@ on:
         required: false
         default: '1'
       telegram_only:
-        description: 'Juste tester Telegram (1 = oui, 30 s)'
+        description: 'Juste tester Telegram / Zernio (1 = oui, 30 s)'
         required: false
         default: '0'
 
@@ -60,7 +60,10 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: node pipeline/telegram.mjs test
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+        run: |
+          node pipeline/telegram.mjs test
+          if [ -n "$ZERNIO_API_KEY" ]; then node pipeline/zernio.mjs check && node pipeline/telegram.mjs say "Zernio connecté ✅ : les prochaines vidéos seront publiées automatiquement sur TikTok."; fi
 
       - name: Make & deliver video
         if: github.event.inputs.telegram_only != '1'
@@ -71,6 +74,8 @@ jobs:
           # optionnels (payants) : écriture auto des histoires + publication directe TikTok
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BLOTATO_API_KEY: ${{ secrets.BLOTATO_API_KEY }}
+          # gratuit : publication automatique sur TikTok via Zernio
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
           STORY_MODEL: ${{ vars.STORY_MODEL }}
           SLOT: '18'
           DRY_RUN: ${{ github.event.inputs.dry_run || (vars.PAUSED == '1' && '1') || '0' }}

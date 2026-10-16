@@ -64,3 +64,11 @@ if (process.argv[1]?.endsWith('telegram.mjs') && process.argv[2] === 'test') {
       process.exit(1);
     });
 }
+
+// `node pipeline/telegram.mjs say "texte"` -> send a message
+if (process.argv[1]?.endsWith('telegram.mjs') && process.argv[2] === 'say') {
+  sendText(process.argv[3] ?? '').catch((e) => {
+    console.error(String(e));
+    process.exit(1);
+  });
+}

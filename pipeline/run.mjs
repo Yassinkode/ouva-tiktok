@@ -9,7 +9,8 @@ import { renderMedia, selectComposition } from '@remotion/renderer';
 import { buildProps, wordsProportional } from './build_props.mjs';
 import { writeStory, validateStory } from './story.mjs';
 import { makeVoice } from './voice.mjs';
-import { publish } from './publish.mjs';
+import { publish as publishBlotato } from './publish.mjs';
+import { publish as publishZernio } from './zernio.mjs';
 import { sendText, sendVideo } from './telegram.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -166,17 +167,29 @@ async function main() {
   if (DRY && !tg) {
     entry.status = 'dry-run';
     log('dry run: not publishing');
+  } else if (!DRY && process.env.ZERNIO_API_KEY) {
+    // free automatic posting on TikTok through Zernio, then a heads-up on Telegram
+    try {
+      const r = await publishZernio({ file: final, caption });
+      Object.assign(entry, { status: 'published', postId: r.id, url: r.publicUrl, via: 'zernio' });
+      if (tg) await sendText(`✅ Nouvelle vidéo OùVa publiée sur TikTok${r.publicUrl ? ' : ' + r.publicUrl : ''}\n\n${caption}`).catch(() => {});
+    } catch (e) {
+      log('auto-post failed, sending to Telegram instead', e);
+      entry.error = String(e).slice(0, 500);
+      if (tg) {
+        await sendText(`⚠️ La publication automatique a échoué (${String(e).slice(0, 300)}). Voici la vidéo à poster toi-même :`).catch(() => {});
+        const r = await sendVideo({ file: final, caption });
+        entry.status = r.status;
+      } else entry.status = 'failed';
+    }
   } else if (!process.env.BLOTATO_API_KEY || DRY) {
     // free mode: deliver to the phone, the owner posts it on TikTok
     const r = await sendVideo({ file: final, caption: DRY ? `[TEST] ${caption}` : caption });
     entry.status = DRY ? 'dry-run' : r.status;
-    const left = backlog.length - (story._backlog ? 1 : 0);
-    if (!DRY && story._backlog && left <= 3)
-      await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa. Demande un nouveau lot à Claude.`).catch(() => {});
   } else {
     const scheduledTime = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
     try {
-      const r = await publish({ file: final, caption, scheduledTime });
+      const r = await publishBlotato({ file: final, caption, scheduledTime });
       Object.assign(entry, { status: r.status, postId: r.id, url: r.publicUrl, scheduledTime });
     } catch (e) {
       entry.status = 'failed';
@@ -184,6 +197,9 @@ async function main() {
       log('publish failed', e);
     }
   }
+  const left = backlog.length - (story._backlog ? 1 : 0);
+  if (!DRY && tg && story._backlog && left <= 3)
+    await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa. Demande un nouveau lot à Claude.`).catch(() => {});
   if (!DRY) {
     history.push(entry);
     fs.writeFileSync(histPath, JSON.stringify(history, null, 1));

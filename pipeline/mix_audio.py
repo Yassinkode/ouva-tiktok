@@ -1,5 +1,5 @@
 """
-Voice + synthesised sound design (no music), driven by an events file from build_props.mjs.
+Voice + synthesised sound design: NO music, no instrument, no pitched note (noise-based foley + soft room tone only), driven by an events file from build_props.mjs.
 Usage: python3 pipeline/mix_audio.py events.json voice.mp3 out.wav
 """
 import json, subprocess, sys
@@ -47,35 +47,47 @@ def whoosh(dur=0.45, up=True):
     return out / (np.abs(out).max() + 1e-9)
 
 
-def pop(freq=520, dur=0.16, drop=2.2):
+# All sounds below are built from filtered noise only: no pitch, no notes, no instrument.
+
+def noise_burst(dur, lo, hi, attack, decay, curve=4):
     n = int(dur * SR)
-    t = np.arange(n) / SR
-    f = freq * np.exp(-t * drop * 8) + freq * 0.55
-    s = np.sin(2 * np.pi * np.cumsum(f) / SR) * env(n, 0.002, dur * 0.35, 3)
-    return (s + hp(rng.standard_normal(n), 3000) * env(n, 0.0005, 0.006, 4) * 0.3) * 0.9
+    return bp(rng.standard_normal(n), lo, min(hi, 20000)) * env(n, attack, decay, curve)
+
+
+def pop(freq=520, dur=0.12, drop=2.2):
+    """soft finger tap: short band-limited noise click + a little low noise body"""
+    n = int(dur * SR)
+    c = noise_burst(dur, 1500, 6000, 0.0005, 0.008, 5)
+    body = lp(rng.standard_normal(n), 500) * env(n, 0.002, 0.03, 4) * 1.4
+    s = c + body
+    return s / (np.abs(s).max() + 1e-9) * 0.8
 
 
 def tick(freq=2400, dur=0.03):
-    n = int(dur * SR)
-    t = np.arange(n) / SR
-    s = np.sin(2 * np.pi * freq * t) * env(n, 0.0005, dur * 0.3, 5)
-    return s + hp(rng.standard_normal(n), 4000) * env(n, 0.0003, 0.004, 5) * 0.4
+    """dry click (like a key or a switch)"""
+    return noise_burst(dur, 2500, 9000, 0.0003, 0.004, 5)
 
 
 def blip(freq, dur=0.05):
-    n = int(dur * SR)
-    t = np.arange(n) / SR
-    s = np.sign(np.sin(2 * np.pi * freq * t)) * 0.4 + np.sin(2 * np.pi * freq * 2 * t) * 0.3
-    return lp(np.round(s * 6) / 6, 6000) * env(n, 0.001, dur * 0.4, 4)
+    """tiny keyboard-like click"""
+    c = rng.uniform(1800, 5000)
+    s = noise_burst(dur, c * 0.6, c * 1.6, 0.0004, 0.006, 5)
+    return s / (np.abs(s).max() + 1e-9) * 0.6
 
 
-def impact(freq=52, dur=1.1):
+def impact(freq=52, dur=1.0):
+    """deep thud made of low-passed noise whose cutoff falls (no tone)"""
     n = int(dur * SR)
-    t = np.arange(n) / SR
-    f = freq * (1 + 1.5 * np.exp(-t * 30))
-    body = np.sin(2 * np.pi * np.cumsum(f) / SR) * env(n, 0.003, dur * 0.45, 3.5)
-    trans = lp(rng.standard_normal(n), 1800) * env(n, 0.001, 0.05, 5) * 0.6
-    return np.tanh((body + trans) * 1.6)
+    noise = rng.standard_normal(n)
+    out = np.zeros(n)
+    seg = 16
+    for k in range(seg):
+        a, b = k * n // seg, (k + 1) * n // seg
+        fc = 60 + 900 * np.exp(-k * 0.9)
+        out[a:b] = lp(noise[max(0, a - 2000):b], fc)[-(b - a):]
+    out *= env(n, 0.002, dur * 0.3, 4)
+    out = out / (np.abs(out).max() + 1e-9)
+    return np.tanh(out * 1.8) * 0.9
 
 
 def riser(dur=0.8):
@@ -90,11 +102,25 @@ def riser(dur=0.8):
     return out * t ** 2 / (np.abs(out).max() + 1e-9)
 
 
-def chime(freq, dur=0.9):
+def sparkle(dur=1.2):
+    """airy swell + a few micro clicks, replaces the old musical chimes"""
     n = int(dur * SR)
-    t = np.arange(n) / SR
-    s = np.sin(2 * np.pi * freq * t) + 0.35 * np.sin(2 * np.pi * freq * 2.01 * t) + 0.15 * np.sin(2 * np.pi * freq * 3.98 * t)
-    return s * env(n, 0.003, dur * 0.5, 4)
+    t = np.linspace(0, 1, n)
+    air = hp(rng.standard_normal(n), 5000) * np.sin(np.pi * t) ** 2 * 0.35
+    for _ in range(10):
+        i = int(rng.uniform(0, 0.7) * n)
+        c = noise_burst(0.02, 4000, 12000, 0.0003, 0.004, 5)
+        air[i:i + len(c)] += c[: n - i] * rng.uniform(0.3, 0.7)
+    return air
+
+
+def ambience(N):
+    """very soft room/air tone under the voice (filtered noise, slowly breathing)"""
+    t = np.arange(N) / SR
+    base = lp(hp(rng.standard_normal(N), 90), 900) * 0.6 + lp(hp(rng.standard_normal(N), 1500), 5000) * 0.12
+    breath = 0.75 + 0.25 * np.sin(2 * np.pi * t / 7.3) * np.sin(2 * np.pi * t / 3.1 + 1)
+    out = base * breath
+    return out / (np.sqrt(np.mean(out ** 2)) + 1e-9)
 
 
 def main(ev_path, voice_path, out_path):
@@ -128,15 +154,14 @@ def main(ev_path, voice_path, out_path):
         elif ty == 'blips':
             ts = np.sort(rng.uniform(t, e['to'], e.get('n', 20)))
             for tt in ts:
-                place(blip(rng.choice([880, 1046, 1318, 1568, 1760, 2093]), 0.045), tt, 0.06, pan=rng.uniform(-0.7, 0.7))
+                place(blip(0, 0.04), tt, 0.08, pan=rng.uniform(-0.7, 0.7))
         elif ty == 'counter':
             n, t1 = e.get('n', 20), e['to']
             for j in range(1, n + 1):
                 x = 1 - (1 - j / n) ** (1 / 2.2)
                 place(tick(e.get('base', 1500) + j * 25, 0.022), t + (t1 - t) * x, e.get('gain', 0.12), pan=rng.uniform(-0.2, 0.2))
         elif ty == 'chimes':
-            for j, fq in enumerate([523.25, 659.25, 783.99, 987.77, 1046.5, 1318.5]):
-                place(chime(fq, 1.0), t + j * 0.2, 0.09, pan=-0.5 + j * 0.2)
+            place(sparkle(1.2), t, 0.35)
 
     if Pedalboard:
         sfx = Pedalboard([Reverb(room_size=0.3, wet_level=0.12, dry_level=0.95)])(sfx.T.astype(np.float32), SR).T
@@ -149,6 +174,14 @@ def main(ev_path, voice_path, out_path):
     rms = np.sqrt(np.mean(vbuf[np.abs(vbuf) > 1e-4] ** 2)) + 1e-9
     vbuf *= 10 ** (-20 / 20) / rms
     mix = sfx * 0.8
+    # soft non-musical background, ducked while the voice speaks
+    amb = ambience(N) * 10 ** (-41 / 20)
+    venv = np.convolve(np.abs(vbuf), np.ones(int(SR * 0.25)) / int(SR * 0.25), mode='same')
+    duck = 1 - 0.45 * np.clip(venv / (np.percentile(venv, 90) + 1e-9), 0, 1)
+    fade = np.minimum(1, np.minimum(np.arange(N) / (SR * 0.6), (N - np.arange(N)) / (SR * 1.0)))
+    amb *= duck * fade
+    mix[:, 0] += amb
+    mix[:, 1] += amb
     mix[:, 0] += vbuf
     mix[:, 1] += vbuf
     if Pedalboard:
