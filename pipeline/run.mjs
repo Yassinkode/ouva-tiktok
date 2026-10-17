@@ -91,7 +91,7 @@ async function makeOne(slot, history, histPath) {
   const used = new Set(history.map((h) => h.backlog).filter(Boolean));
   const backlog = fs.existsSync('data/backlog') ? fs.readdirSync('data/backlog').filter((f) => f.endsWith('.json') && !used.has(f)).sort() : [];
   const fromBacklog = () => {
-    if (!backlog.length) throw new Error('Plus aucune histoire en réserve (data/backlog)');
+    if (!backlog.length) throw new Error("📚 Stock d'histoires vide : plus aucune vidéo ne peut être publiée. Demande un nouveau lot d'histoires à Claude.");
     // rotation: avoid the formats of the last 2 videos, the features of the last 3 and the same opening scene
     const recent = history.filter((h) => h.status !== 'failed');
     const lastFormats = recent.slice(-2).map((h) => h.format);
@@ -229,7 +229,7 @@ async function makeOne(slot, history, histPath) {
   }
   const left = backlog.length - (story._backlog ? 1 : 0);
   if (!DRY && tg && story._backlog && [15, 10, 5, 2].includes(left))
-    await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa (≈ ${Math.ceil(left / SLOTS.length)} jour(s)). Demande un nouveau lot à Claude.`).catch(() => {});
+    await sendText(`📚 Stock d'histoires OùVa : plus que ${left} vidéo(s) en réserve, soit environ ${Math.ceil(left / SLOTS.length)} jour(s).\n👉 Demande un nouveau lot d'histoires à Claude pour que les publications continuent.`).catch(() => {});
   if (!DRY) {
     history.push(entry);
     fs.writeFileSync(histPath, JSON.stringify(history, null, 1));
