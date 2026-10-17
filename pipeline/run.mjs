@@ -17,7 +17,7 @@ import { sendText, sendVideo } from './telegram.mjs';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 process.chdir(ROOT);
 const DRY = process.env.DRY_RUN === '1' || process.env.DRY_RUN === 'true';
-const SLOTS = [12, 17, 21];
+const SLOTS = (process.env.SLOTS || '8,12,17,19,21').split(',').map(Number); // heures de Paris
 
 /* ---------- time helpers (Europe/Paris) ---------- */
 const parisParts = (d = new Date()) => {
@@ -64,7 +64,7 @@ async function main() {
   if (process.env.SLOT) slots = slots.filter((s) => s.label === `${parseInt(process.env.SLOT, 10)}h`).slice(0, 1);
   // GitHub's cron is often late or skipped: every run fills ALL the free slots of the next ~40 h,
   // and Zernio publishes each video at its exact time.
-  const todo = DRY ? slots.slice(0, 1) : slots.filter((s) => process.env.FORCE || !done(s)).slice(0, parseInt(process.env.MAX_PER_RUN || '3', 10));
+  const todo = DRY ? slots.slice(0, 1) : slots.filter((s) => process.env.FORCE || !done(s)).slice(0, parseInt(process.env.MAX_PER_RUN || '5', 10));
   log('créneaux à préparer :', todo.map((s) => `${s.date} ${s.label}`).join(', ') || 'aucun');
   if (process.env.LIST_ONLY) return;
   let failures = 0;
@@ -228,8 +228,8 @@ async function makeOne(slot, history, histPath) {
     }
   }
   const left = backlog.length - (story._backlog ? 1 : 0);
-  if (!DRY && tg && story._backlog && [9, 6, 3, 1].includes(left))
-    await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa (≈ ${Math.ceil(left / 3)} jour(s)). Demande un nouveau lot à Claude.`).catch(() => {});
+  if (!DRY && tg && story._backlog && [15, 10, 5, 2].includes(left))
+    await sendText(`Il reste ${left} histoire(s) en réserve pour OùVa (≈ ${Math.ceil(left / SLOTS.length)} jour(s)). Demande un nouveau lot à Claude.`).catch(() => {});
   if (!DRY) {
     history.push(entry);
     fs.writeFileSync(histPath, JSON.stringify(history, null, 1));

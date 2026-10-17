@@ -2,10 +2,10 @@ name: OùVa TikTok
 
 on:
   schedule:
-    # 3 vidéos par jour : 12h, 17h et 21h (heure de Paris).
+    # 5 vidéos par jour : 8h, 12h, 17h, 19h et 21h (heure de Paris).
     # Le cron de GitHub est souvent en retard (voire sauté) : chaque lancement prépare donc TOUS les créneaux
-    # libres des 40 prochaines heures et Zernio les publie pile à l'heure. 4 lancements par jour = large marge.
-    - cron: '23 1,7,13,19 * * *'
+    # libres des 40 prochaines heures et Zernio les publie pile à l'heure. 8 lancements par jour = large marge.
+    - cron: '23 */3 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
