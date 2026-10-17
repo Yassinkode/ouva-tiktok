@@ -118,7 +118,9 @@ async function makeOne(slot, history, histPath) {
   if (errs.length) log('story warnings:', errs);
   story.seed = story.seed || (Math.abs([...id].reduce((a, c) => (a * 31 + c.charCodeAt(0)) | 0, 7)) % 900) + 1;
   fs.writeFileSync(`data/stories/${id}.json`, JSON.stringify(story, null, 1));
-  const text = story.beats.map((b) => b.text.trim()).join(' ');
+  // every video ends with the same spoken call to action over the end card
+  if (story.outro === undefined) story.outro = process.env.OUTRO ?? "Lien de l'application en bio.";
+  const text = [...story.beats.map((b) => b.text.trim()), story.outro].filter(Boolean).join(' ');
   log('story:', story.title, `(${text.length} chars)`);
 
   /* 2. voice */

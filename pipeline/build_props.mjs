@@ -95,8 +95,11 @@ export function alignTokens(a, b) {
 
 export function buildProps(story, words, opts = {}) {
   const beats = story.beats;
+  // spoken outro over the end card (e.g. "Lien de l'application en bio.")
+  const outroTok = story.outro ? tokens(story.outro).map(norm) : [];
   // map every script token to an audio word with a small edit-distance alignment
   const beatTok = beats.map((b) => tokens(b.text).map(norm));
+  if (outroTok.length) beatTok.push(outroTok);
   const script = beatTok.flat();
   const audioN = words.map((w) => norm(w.w));
   const map = alignTokens(script, audioN);
@@ -118,7 +121,13 @@ export function buildProps(story, words, opts = {}) {
   const LEAD = 0.14;
   const starts = ranges.map(([a], i) => (i === 0 ? 0 : Math.max(0, words[a].s - LEAD)));
   const lastWord = words[words.length - 1];
-  const voiceEnd = lastWord.e;
+  let voiceEnd = lastWord.e;
+  if (outroTok.length) {
+    // the last beat ends where the outro starts; the end card comes in with the outro
+    const oStart = starts[beats.length];
+    ranges.length = beats.length;
+    voiceEnd = Math.max(oStart - 0.45, starts[beats.length - 1] + 0.8);
+  }
   const segEnd = (i) => (i < beats.length - 1 ? starts[i + 1] : voiceEnd + 0.45);
 
   const segments = beats.map((b, i) => {
@@ -182,7 +191,7 @@ export function buildProps(story, words, opts = {}) {
   });
 
   const endStart = +(segEnd(beats.length - 1) - 0.05).toFixed(3);
-  const duration = +(endStart + 2.75).toFixed(3);
+  const duration = +Math.max(endStart + 2.75, outroTok.length ? lastWord.e + 1.0 : 0).toFixed(3);
   const props = {
     seed: story.seed ?? Math.floor(Math.random() * 900) + 1,
     audio: opts.audio ?? '',
