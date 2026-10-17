@@ -1,0 +1,82 @@
+{
+ "format": "sedentarite",
+ "feature": "stats_lieu",
+ "title": "40 heures au bureau",
+ "caption": "Un bureau à 40 heures par semaine, c'est 8 heures assis par jour. Le seuil dont parle l'ANSES.",
+ "hashtags": [
+  "#ouva",
+  "#bureau",
+  "#sedentarite",
+  "#anses"
+ ],
+ "beats": [
+  {
+   "text": "40 heures au bureau par semaine.",
+   "scene": "counter_map",
+   "params": {
+    "value": 40,
+    "unit": "heures",
+    "bottom": "au bureau",
+    "place": "work"
+   },
+   "sync": {
+    "count": "40",
+    "bottom": "semaine."
+   }
+  },
+  {
+   "text": "Ça fait 8 heures par jour, souvent assis.",
+   "scene": "big_word",
+   "cap": "souvent assis.",
+   "accent": "assis.",
+   "sync": {}
+  },
+  {
+   "text": "C'est pile le seuil dont parle l'ANSES pour la santé.",
+   "scene": "fact",
+   "params": {
+    "value": 8,
+    "suffix": "h",
+    "label": "assis par jour : au-delà, risque pour la santé",
+    "source": "ANSES, 2022"
+   },
+   "sync": {
+    "count": "seuil"
+   }
+  },
+  {
+   "text": "OùVa te montre ton vrai temps au bureau, jour par jour.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Ta semaine"
+   },
+   "sync": {
+    "zoom": "vrai"
+   }
+  },
+  {
+   "text": "Une pause dehors à midi, et la journée change.",
+   "scene": "place_pin",
+   "params": {
+    "place": "park",
+    "label": "Parc"
+   },
+   "sync": {
+    "pin": "dehors"
+   }
+  },
+  {
+   "text": "Tu sors à midi, demain ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Tu sors à midi ?",
+   "accent": "midi",
+   "sync": {}
+  }
+ ],
+ "angle": "sedentarite/stats_lieu"
+}

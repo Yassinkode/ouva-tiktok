@@ -1,0 +1,107 @@
+{
+ "format": "pitch",
+ "feature": "stats_lieu",
+ "title": "Ton temps en pourcentage",
+ "caption": "Ta journée en pourcentages : maison, travail, café… OùVa fait le calcul pour toi.",
+ "hashtags": [
+  "#ouva",
+  "#stats",
+  "#pourcentage",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Et si tu voyais ta journée en pourcentages ?",
+   "scene": "big_word",
+   "cap": "en pourcentages ?",
+   "accent": "pourcentages",
+   "sync": {}
+  },
+  {
+   "text": "Maison 52 %, travail 30 %, café 8 %.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 52
+     },
+     {
+      "place": "work",
+      "value": 30
+     },
+     {
+      "place": "cafe",
+      "value": 8
+     },
+     {
+      "place": "gym",
+      "value": 4
+     }
+    ]
+   },
+   "cap": "Maison 52 %",
+   "accent": "52",
+   "sync": {}
+  },
+  {
+   "text": "C'est exactement ce que fait la page de chaque lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "ring",
+    "label": "% de ta journée"
+   },
+   "sync": {
+    "zoom": "exactement"
+   }
+  },
+  {
+   "text": "Calculé tout seul, à partir de tes déplacements.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "work",
+    "others": [
+     "home",
+     "cafe"
+    ]
+   },
+   "cap": "Calculé tout seul.",
+   "cap2": "Rien à faire.",
+   "accent": "seul,",
+   "sync": {
+    "line2": "déplacements."
+   }
+  },
+  {
+   "text": "Et sur la semaine, tu vois la tendance.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Ta semaine"
+   },
+   "sync": {
+    "zoom": "tendance."
+   }
+  },
+  {
+   "text": "Et sur le mois, ces pourcentages deviennent une carte.",
+   "scene": "heatmap_reveal",
+   "sync": {
+    "punch": "carte."
+   }
+  },
+  {
+   "text": "Ta vie, en chiffres simples.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "en chiffres simples.",
+   "accent": "simples.",
+   "sync": {}
+  }
+ ],
+ "angle": "pitch/stats_lieu"
+}

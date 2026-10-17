@@ -1,0 +1,93 @@
+{
+ "format": "histoire",
+ "feature": "general",
+ "title": "Mes potes et ma carte",
+ "caption": "J'ai montré ma carte de chaleur à mes potes. Ils ont tous installé l'appli dans la soirée.",
+ "hashtags": [
+  "#ouva",
+  "#potes",
+  "#amis",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai montré ma carte de chaleur à mes potes, hier soir.",
+   "scene": "big_word",
+   "cap": "à mes potes",
+   "accent": "potes",
+   "sync": {}
+  },
+  {
+   "text": "Premier réflexe : se moquer de ma case maison.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 61,
+    "place": "home",
+    "sub": "à la maison"
+   },
+   "sync": {
+    "count": "moquer",
+    "tile": "maison."
+   }
+  },
+  {
+   "text": "Deuxième réflexe : chercher leur propre carte.",
+   "scene": "heatmap_reveal",
+   "cap": "leur propre carte.",
+   "accent": "carte.",
+   "sync": {
+    "punch": "chercher"
+   }
+  },
+  {
+   "text": "Ils ont ajouté leurs lieux en quelques secondes.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "name",
+    "label": "Nouveau lieu"
+   },
+   "sync": {
+    "zoom": "ajouté"
+   }
+  },
+  {
+   "text": "Maintenant, on compare nos cartes chaque dimanche.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "friends",
+      "value": 20
+     },
+     {
+      "place": "home",
+      "value": 45
+     },
+     {
+      "place": "gym",
+      "value": 9
+     },
+     {
+      "place": "cafe",
+      "value": 8
+     }
+    ]
+   },
+   "cap": "chaque dimanche.",
+   "accent": "dimanche.",
+   "sync": {}
+  },
+  {
+   "text": "Le perdant paie le café.",
+   "scene": "big_word",
+   "params": {
+    "place": "cafe"
+   },
+   "cap": "paie le café.",
+   "accent": "café.",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/general"
+}

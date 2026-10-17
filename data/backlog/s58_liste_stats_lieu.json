@@ -1,0 +1,103 @@
+{
+ "format": "liste",
+ "feature": "stats_lieu",
+ "title": "3 chiffres chaque soir",
+ "caption": "Les 3 chiffres OùVa que je regarde chaque soir avant de dormir.",
+ "hashtags": [
+  "#ouva",
+  "#routine",
+  "#stats",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Les 3 chiffres que je regarde chaque soir sur OùVa.",
+   "scene": "big_word",
+   "cap": "3 chiffres",
+   "accent": "chiffres",
+   "sync": {}
+  },
+  {
+   "text": "Un : combien de temps au même endroit aujourd'hui.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "En ce moment"
+   },
+   "sync": {
+    "zoom": "endroit"
+   }
+  },
+  {
+   "text": "Deux : le pourcentage de ma journée à la maison.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 58,
+    "place": "home",
+    "sub": "de ma journée"
+   },
+   "sync": {
+    "count": "pourcentage",
+    "tile": "maison."
+   }
+  },
+  {
+   "text": "Trois : combien de lieux différents j'ai visités.",
+   "scene": "counter_map",
+   "params": {
+    "value": 4,
+    "unit": "lieux",
+    "bottom": "aujourd'hui",
+    "place": "cafe"
+   },
+   "sync": {
+    "count": "lieux",
+    "bottom": "visités."
+   }
+  },
+  {
+   "text": "Ça prend 10 secondes, et je sais si ma journée était équilibrée.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "équilibrée.",
+   "accent": "équilibrée.",
+   "sync": {}
+  },
+  {
+   "text": "Et si ce n'est pas le cas, je regarde la semaine entière.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Ma semaine"
+   },
+   "sync": {
+    "zoom": "semaine"
+   }
+  },
+  {
+   "text": "Trois chiffres, dix secondes, aucun effort.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "clock",
+      "title": "10 secondes"
+     },
+     {
+      "icon": "signal",
+      "title": "Aucun effort"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "secondes,",
+    "i2": "effort."
+   }
+  }
+ ],
+ "angle": "liste/stats_lieu"
+}

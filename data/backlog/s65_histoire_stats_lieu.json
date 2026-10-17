@@ -1,0 +1,110 @@
+{
+ "format": "histoire",
+ "feature": "stats_lieu",
+ "title": "La question de ma mère",
+ "caption": "Ma mère m'a demandé où je passe mes journées. Je lui ai montré mon téléphone.",
+ "hashtags": [
+  "#ouva",
+  "#famille",
+  "#humour",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Ma mère m'a demandé : mais tu passes tes journées où, en fait ?",
+   "scene": "big_word",
+   "cap": "tu passes tes journées où ?",
+   "accent": "où",
+   "sync": {}
+  },
+  {
+   "text": "Au lieu de répondre, je lui ai montré OùVa.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "OùVa",
+    "small": "je lui ai montré"
+   },
+   "sync": {
+    "word": "OùVa."
+   }
+  },
+  {
+   "text": "École : 6 heures. Café : 2 heures.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Mes lieux aujourd'hui"
+   },
+   "sync": {
+    "zoom": "École"
+   }
+  },
+  {
+   "text": "Elle a surtout retenu le café.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "school",
+     "value": 6,
+     "label": "École"
+    },
+    "b": {
+     "place": "cafe",
+     "value": 2,
+     "label": "Café"
+    }
+   },
+   "sync": {
+    "b": "café."
+   }
+  },
+  {
+   "text": "Puis elle a vu la case Chez les potes.",
+   "scene": "place_pin",
+   "params": {
+    "place": "friends",
+    "label": "Chez les potes"
+   },
+   "sync": {
+    "pin": "potes."
+   }
+  },
+  {
+   "text": "Elle a compris en 10 secondes : maison, école, café.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "home",
+      "title": "Maison"
+     },
+     {
+      "icon": "flag",
+      "title": "École"
+     },
+     {
+      "icon": "pin",
+      "title": "Café"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "maison,",
+    "i2": "école,",
+    "i3": "café."
+   }
+  },
+  {
+   "text": "Maintenant, elle veut l'appli aussi.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "elle veut l'appli",
+   "accent": "l'appli",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/stats_lieu"
+}

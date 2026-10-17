@@ -1,0 +1,85 @@
+{
+ "format": "question",
+ "feature": "stats_lieu",
+ "title": "Le supermarché",
+ "caption": "Tu passes combien de temps au supermarché par mois ? Moi j'ai eu la réponse 🛒",
+ "hashtags": [
+  "#ouva",
+  "#courses",
+  "#question",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Tu passes combien de temps au supermarché par mois ? Devine.",
+   "scene": "big_word",
+   "params": {
+    "place": "shop"
+   },
+   "cap": "combien de temps ?",
+   "accent": "temps",
+   "sync": {}
+  },
+  {
+   "text": "Moi, je pensais 2 heures. Grand maximum.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "2 heures",
+    "small": "je pensais"
+   },
+   "sync": {
+    "word": "heures."
+   }
+  },
+  {
+   "text": "OùVa m'a dit 7 heures sur le mois.",
+   "scene": "counter_map",
+   "params": {
+    "value": 7,
+    "unit": "heures",
+    "bottom": "au supermarché",
+    "place": "shop"
+   },
+   "sync": {
+    "count": "7",
+    "bottom": "mois."
+   }
+  },
+  {
+   "text": "Le samedi, à lui seul, c'est presque la moitié.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "samedi",
+    "value": 3,
+    "place": "shop",
+    "caption": "aux courses"
+   },
+   "sync": {
+    "count": "moitié."
+   }
+  },
+  {
+   "text": "Tout est compté dans la page du lieu, sans rien noter.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Le détail du lieu"
+   },
+   "sync": {
+    "zoom": "compté"
+   }
+  },
+  {
+   "text": "Et toi, tu dirais combien ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "tu dirais combien ?",
+   "accent": "combien",
+   "sync": {}
+  }
+ ],
+ "angle": "question/stats_lieu"
+}

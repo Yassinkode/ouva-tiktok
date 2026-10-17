@@ -1,0 +1,99 @@
+{
+ "format": "sedentarite",
+ "feature": "suivi_auto",
+ "title": "La pause de midi",
+ "caption": "150 minutes d'activité par semaine recommandées par l'OMS. La pause de midi peut faire une bonne partie du travail.",
+ "hashtags": [
+  "#ouva",
+  "#pausedejeuner",
+  "#oms",
+  "#bouger"
+ ],
+ "beats": [
+  {
+   "text": "L'OMS recommande au moins 150 minutes d'activité modérée par semaine.",
+   "scene": "fact",
+   "params": {
+    "value": 150,
+    "suffix": "min",
+    "label": "d'activité modérée par semaine",
+    "source": "OMS"
+   },
+   "sync": {
+    "count": "150"
+   }
+  },
+  {
+   "text": "Et si ta pause de midi faisait une partie du travail ?",
+   "scene": "big_word",
+   "cap": "ta pause de midi",
+   "accent": "midi",
+   "sync": {}
+  },
+  {
+   "text": "Manger dehors, marcher jusqu'au parc, revenir.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "work",
+      "time": "12:00"
+     },
+     {
+      "place": "park",
+      "time": "12:15"
+     },
+     {
+      "place": "work",
+      "time": "13:20"
+     }
+    ]
+   },
+   "cap": "marcher",
+   "accent": "marcher",
+   "sync": {}
+  },
+  {
+   "text": "5 pauses comme ça, et tu as déjà fait une belle partie.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "park",
+     "value": 5,
+     "label": "Pauses dehors"
+    },
+    "b": {
+     "place": "work",
+     "value": 0,
+     "label": "Pauses au bureau"
+    }
+   },
+   "sync": {
+    "b": "partie."
+   }
+  },
+  {
+   "text": "OùVa compte le parc tout seul, sans que tu lances quoi que ce soit.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Compté automatiquement"
+   },
+   "sync": {
+    "zoom": "compte"
+   }
+  },
+  {
+   "text": "Demain midi, tu sors ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "tu sors ?",
+   "accent": "sors",
+   "sync": {}
+  }
+ ],
+ "angle": "sedentarite/suivi_auto"
+}

@@ -1,0 +1,112 @@
+{
+ "format": "feature",
+ "feature": "comparer_semaines",
+ "title": "Nouveau job",
+ "caption": "J'ai changé de travail. Comparer mes semaines m'a montré tout ce qui a changé.",
+ "hashtags": [
+  "#ouva",
+  "#nouveautravail",
+  "#comparer",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "J'ai changé de travail il y a 2 semaines. Et OùVa a tout vu.",
+   "scene": "big_word",
+   "cap": "OùVa a tout vu.",
+   "accent": "vu.",
+   "sync": {}
+  },
+  {
+   "text": "Je compare l'ancienne et la nouvelle semaine, côte à côte.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "compare"
+   }
+  },
+  {
+   "text": "Moins de trajets, plus de pauses dehors.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures dehors / jour",
+    "before": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1
+    ],
+    "after": [
+     2,
+     2,
+     1,
+     2,
+     2,
+     1,
+     1
+    ],
+    "labelA": "Ancien job",
+    "labelB": "Nouveau job",
+    "rows": [
+     {
+      "place": "park",
+      "delta": "+4 h",
+      "good": true
+     },
+     {
+      "place": "work",
+      "delta": "−3 h",
+      "good": true
+     }
+    ]
+   },
+   "sync": {
+    "b": "plus",
+    "rows": "dehors."
+   }
+  },
+  {
+   "text": "Et 3 heures de travail en moins par semaine.",
+   "scene": "counter_map",
+   "params": {
+    "value": 3,
+    "unit": "heures",
+    "bottom": "en moins",
+    "place": "work"
+   },
+   "sync": {
+    "count": "3",
+    "bottom": "semaine."
+   }
+  },
+  {
+   "text": "Les chiffres confirment : bon choix.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "bon choix.",
+   "accent": "choix.",
+   "sync": {}
+  },
+  {
+   "text": "Toi aussi, compare tes semaines.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "compare",
+    "small": "toi aussi"
+   },
+   "sync": {
+    "word": "compare"
+   }
+  }
+ ],
+ "angle": "feature/comparer_semaines"
+}

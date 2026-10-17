@@ -1,0 +1,77 @@
+{
+ "format": "sedentarite",
+ "feature": "carte_chaleur",
+ "title": "Le canapé rouge vif",
+ "caption": "Au-delà de 8 h assis par jour, l'ANSES parle de risque pour la santé. Et si ta carte te le montrait ?",
+ "hashtags": [
+  "#ouva",
+  "#sedentarite",
+  "#anses",
+  "#canape"
+ ],
+ "beats": [
+  {
+   "text": "Si ton canapé était une case, elle serait de quelle couleur ?",
+   "scene": "big_word",
+   "cap": "de quelle couleur ?",
+   "accent": "couleur",
+   "sync": {}
+  },
+  {
+   "text": "L'ANSES le dit : au-delà de 8 heures assis par jour, c'est un risque pour la santé.",
+   "scene": "fact",
+   "params": {
+    "value": 8,
+    "suffix": "h",
+    "label": "assis par jour : au-delà, risque pour la santé",
+    "source": "ANSES, 2022"
+   },
+   "sync": {
+    "count": "8"
+   }
+  },
+  {
+   "text": "Sur ma carte, la maison est rouge vif.",
+   "scene": "heatmap_reveal",
+   "cap": "rouge vif.",
+   "accent": "rouge",
+   "sync": {
+    "punch": "rouge"
+   }
+  },
+  {
+   "text": "Et le détail est sans pitié : 10 h 33 à la maison.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "home",
+    "label": "10 h 33 à la maison"
+   },
+   "sync": {
+    "zoom": "détail"
+   }
+  },
+  {
+   "text": "Je ne compte pas tout changer. Juste sortir un peu plus.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "sortir un peu plus.",
+   "accent": "plus.",
+   "sync": {}
+  },
+  {
+   "text": "Une case verte de plus, c'est déjà ça.",
+   "scene": "place_pin",
+   "params": {
+    "place": "park",
+    "label": "Parc"
+   },
+   "sync": {
+    "pin": "verte"
+   }
+  }
+ ],
+ "angle": "sedentarite/carte_chaleur"
+}

@@ -1,0 +1,99 @@
+{
+ "format": "pitch",
+ "feature": "general",
+ "title": "OùVa en une phrase",
+ "caption": "OùVa en une phrase : le temps d'écran, mais pour les lieux de ta vie.",
+ "hashtags": [
+  "#ouva",
+  "#app",
+  "#iphone",
+  "#pitch"
+ ],
+ "beats": [
+  {
+   "text": "OùVa en une phrase ? Le temps d'écran, mais pour les lieux de ta vie.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "les lieux de ta vie.",
+   "accent": "vie.",
+   "sync": {}
+  },
+  {
+   "text": "Ton iPhone compte tes applis. OùVa compte tes lieux.",
+   "scene": "versus",
+   "params": {
+    "a": "Tes applis",
+    "b": "Tes lieux"
+   },
+   "sync": {
+    "b": "OùVa",
+    "reveal": "lieux."
+   }
+  },
+  {
+   "text": "Maison, travail, café, salle : tout est mesuré, tout seul.",
+   "scene": "app_tour",
+   "params": {
+    "shots": [
+     "home_now",
+     "places_heatmap",
+     "place_stats"
+    ]
+   },
+   "sync": {
+    "s2": "café,",
+    "s3": "mesuré,"
+   }
+  },
+  {
+   "text": "Avec une carte de chaleur de ton mois.",
+   "scene": "heatmap_reveal",
+   "cap": "ton mois",
+   "accent": "mois.",
+   "sync": {
+    "punch": "carte"
+   }
+  },
+  {
+   "text": "Et ta journée en replay, sur la carte.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:00"
+     },
+     {
+      "place": "work",
+      "time": "09:00"
+     },
+     {
+      "place": "gym",
+      "time": "18:00"
+     },
+     {
+      "place": "home",
+      "time": "20:00"
+     }
+    ]
+   },
+   "cap": "en replay",
+   "accent": "replay,",
+   "sync": {}
+  },
+  {
+   "text": "Une phrase, une appli.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "une appli",
+    "small": "une phrase"
+   },
+   "sync": {
+    "word": "appli."
+   }
+  }
+ ],
+ "angle": "pitch/general"
+}

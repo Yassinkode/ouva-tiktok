@@ -1,0 +1,116 @@
+{
+ "format": "histoire",
+ "feature": "dynamic_island",
+ "title": "Chez le coiffeur",
+ "caption": "Le chrono OùVa chez le coiffeur. 1 h 20 pour une coupe. Je dis ça, je dis rien 💇",
+ "hashtags": [
+  "#ouva",
+  "#coiffeur",
+  "#humour",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Le chrono en haut de mon écran : 1 heure 20. Je suis chez le coiffeur.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "shop",
+    "label": "Coiffeur",
+    "minutes": 80
+   },
+   "cap": "chez le coiffeur.",
+   "accent": "coiffeur.",
+   "sync": {
+    "expand": "chrono"
+   }
+  },
+  {
+   "text": "Pour une coupe. Une simple coupe.",
+   "scene": "big_word",
+   "params": {
+    "place": "shop"
+   },
+   "cap": "Une simple coupe.",
+   "accent": "coupe.",
+   "sync": {}
+  },
+  {
+   "text": "Dont 50 minutes à attendre mon tour.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "shop",
+     "value": 50,
+     "label": "Attente"
+    },
+    "b": {
+     "place": "shop",
+     "value": 30,
+     "label": "Coupe"
+    }
+   },
+   "sync": {
+    "b": "tour."
+   }
+  },
+  {
+   "text": "OùVa l'a détecté tout seul en arrivant.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "Détecté automatiquement"
+   },
+   "sync": {
+    "zoom": "détecté"
+   }
+  },
+  {
+   "text": "La prochaine fois, je prends rendez-vous.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "rendez-vous",
+    "small": "prochaine fois"
+   },
+   "sync": {
+    "word": "rendez-vous."
+   }
+  },
+  {
+   "text": "Arrivée 14 h, coupe à 14 h 50, sortie 15 h 20.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "clock",
+      "title": "Arrivée 14 h"
+     },
+     {
+      "icon": "flag",
+      "title": "Coupe 14 h 50"
+     },
+     {
+      "icon": "pin",
+      "title": "Sortie 15 h 20"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "Arrivée",
+    "i2": "coupe",
+    "i3": "sortie"
+   }
+  },
+  {
+   "text": "Ton record chez le coiffeur ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "ton record ?",
+   "accent": "record",
+   "sync": {}
+  }
+ ],
+ "angle": "histoire/dynamic_island"
+}

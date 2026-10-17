@@ -1,0 +1,95 @@
+{
+ "format": "liste",
+ "feature": "general",
+ "title": "3 profils OùVa",
+ "caption": "Il y a 3 profils sur OùVa : le casanier, le nomade, le sportif. Tu es lequel ?",
+ "hashtags": [
+  "#ouva",
+  "#profil",
+  "#quiz",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Sur OùVa, il y a 3 profils. Tu vas te reconnaître.",
+   "scene": "big_word",
+   "cap": "3 profils.",
+   "accent": "profils.",
+   "sync": {}
+  },
+  {
+   "text": "Le casanier : une seule case rouge, la maison.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 70,
+    "place": "home",
+    "sub": "à la maison"
+   },
+   "sync": {
+    "count": "casanier",
+    "tile": "maison."
+   }
+  },
+  {
+   "text": "Le nomade : des cases partout, café, potes, parc.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "cafe",
+      "value": 22
+     },
+     {
+      "place": "friends",
+      "value": 18
+     },
+     {
+      "place": "park",
+      "value": 12
+     },
+     {
+      "place": "home",
+      "value": 35
+     }
+    ]
+   },
+   "cap": "des cases partout",
+   "accent": "partout,",
+   "sync": {}
+  },
+  {
+   "text": "Le sportif : la salle qui remonte chaque semaine.",
+   "scene": "place_pin",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport"
+   },
+   "sync": {
+    "pin": "salle"
+   }
+  },
+  {
+   "text": "Pour savoir le tien, il suffit de regarder ta carte.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "heat",
+    "label": "Ta carte de chaleur"
+   },
+   "sync": {
+    "zoom": "regarder"
+   }
+  },
+  {
+   "text": "Alors, tu es lequel ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "tu es lequel ?",
+   "accent": "lequel",
+   "sync": {}
+  }
+ ],
+ "angle": "liste/general"
+}

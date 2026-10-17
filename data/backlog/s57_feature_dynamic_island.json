@@ -1,0 +1,86 @@
+{
+ "format": "feature",
+ "feature": "dynamic_island",
+ "title": "Le chrono à la bibliothèque",
+ "caption": "Le chrono OùVa me motive à rester à la bibliothèque. 2 heures, pas une minute de moins.",
+ "hashtags": [
+  "#ouva",
+  "#revisions",
+  "#bibliotheque",
+  "#etudiant"
+ ],
+ "beats": [
+  {
+   "text": "Mon nouveau truc pour réviser : le chrono en haut de mon écran.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "school",
+    "label": "Bibliothèque",
+    "minutes": 64
+   },
+   "cap": "le chrono",
+   "accent": "chrono",
+   "sync": {
+    "expand": "chrono"
+   }
+  },
+  {
+   "text": "Il tourne dès que j'arrive à la bibliothèque.",
+   "scene": "big_word",
+   "params": {
+    "place": "school"
+   },
+   "cap": "dès que j'arrive",
+   "accent": "j'arrive",
+   "sync": {}
+  },
+  {
+   "text": "Et je me suis fixé une règle : pas avant 2 heures.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "2 heures",
+    "small": "pas avant"
+   },
+   "sync": {
+    "word": "heures."
+   }
+  },
+  {
+   "text": "Le soir, je vois mon temps exact sur la page du lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Mon temps aujourd'hui"
+   },
+   "sync": {
+    "zoom": "exact"
+   }
+  },
+  {
+   "text": "Cette semaine : 11 heures de révisions.",
+   "scene": "counter_map",
+   "params": {
+    "value": 11,
+    "unit": "heures",
+    "bottom": "à la bibliothèque",
+    "place": "school"
+   },
+   "sync": {
+    "count": "11",
+    "bottom": "révisions."
+   }
+  },
+  {
+   "text": "Simple, et ça marche.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "ça marche.",
+   "accent": "marche.",
+   "sync": {}
+  }
+ ],
+ "angle": "feature/dynamic_island"
+}

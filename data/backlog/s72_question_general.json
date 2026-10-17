@@ -1,0 +1,87 @@
+{
+ "format": "question",
+ "feature": "general",
+ "title": "Vrai ou faux",
+ "caption": "Vrai ou faux : tu passes plus de temps au travail qu'à la maison ? Ta réponse en commentaire 👇",
+ "hashtags": [
+  "#ouva",
+  "#vraioufaux",
+  "#travail",
+  "#question"
+ ],
+ "beats": [
+  {
+   "text": "Vrai ou faux : tu passes plus de temps au travail qu'à la maison ?",
+   "scene": "big_word",
+   "cap": "Vrai ou faux ?",
+   "accent": "faux",
+   "sync": {}
+  },
+  {
+   "text": "Beaucoup répondent vrai. Ils se trompent souvent.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "faux",
+    "small": "souvent"
+   },
+   "sync": {
+    "word": "trompent"
+   }
+  },
+  {
+   "text": "Même en comptant 9 heures de travail, la maison gagne. Le sommeil compte aussi.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "home",
+     "value": 55,
+     "label": "Maison"
+    },
+    "b": {
+     "place": "work",
+     "value": 30,
+     "label": "Travail"
+    }
+   },
+   "sync": {
+    "b": "travail,"
+   }
+  },
+  {
+   "text": "Sur mon accueil, c'est clair : la maison est loin devant.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Tes lieux aujourd'hui"
+   },
+   "sync": {
+    "zoom": "clair"
+   }
+  },
+  {
+   "text": "Ce qui compte vraiment, c'est le temps qu'il reste.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 15,
+    "place": "park",
+    "sub": "pour tout le reste"
+   },
+   "sync": {
+    "count": "reste.",
+    "tile": "vraiment,"
+   }
+  },
+  {
+   "text": "Et toi, vrai ou faux ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "vrai ou faux ?",
+   "accent": "faux",
+   "sync": {}
+  }
+ ],
+ "angle": "question/general"
+}

@@ -1,0 +1,82 @@
+{
+ "format": "histoire",
+ "feature": "carte_chaleur",
+ "title": "Chez les grands-parents",
+ "caption": "Une semaine chez mes grands-parents, et ma carte de chaleur a complètement changé de couleur 🏡",
+ "hashtags": [
+  "#ouva",
+  "#famille",
+  "#vacances",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Une semaine chez mes grands-parents. Regarde ce que ça a fait à ma carte.",
+   "scene": "heatmap_reveal",
+   "cap": "ma carte",
+   "accent": "carte.",
+   "sync": {
+    "punch": "Regarde"
+   }
+  },
+  {
+   "text": "Une nouvelle case rouge, toute seule, très loin de chez moi.",
+   "scene": "place_pin",
+   "params": {
+    "place": "friends",
+    "label": "Chez mamie"
+   },
+   "sync": {
+    "pin": "loin"
+   }
+  },
+  {
+   "text": "Le jardin : 3 heures par jour. Moi qui ne sors jamais.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "mercredi",
+    "sub": "au jardin",
+    "value": 3,
+    "place": "park",
+    "caption": "dehors"
+   },
+   "sync": {
+    "count": "3"
+   }
+  },
+  {
+   "text": "Et j'ai tout retrouvé, lieu par lieu, en rentrant.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Le détail par lieu"
+   },
+   "sync": {
+    "zoom": "retrouvé,"
+   }
+  },
+  {
+   "text": "La meilleure semaine du mois, et de loin.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "de loin.",
+   "accent": "loin.",
+   "sync": {}
+  },
+  {
+   "text": "Je vais y retourner plus souvent.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "plus souvent",
+    "small": "y retourner"
+   },
+   "sync": {
+    "word": "souvent."
+   }
+  }
+ ],
+ "angle": "histoire/carte_chaleur"
+}

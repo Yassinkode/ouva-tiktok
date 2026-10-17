@@ -1,0 +1,103 @@
+{
+ "format": "defi",
+ "feature": "replay",
+ "title": "Une journée à pied",
+ "caption": "Défi : une journée entière sans transports. Mon replay sur la carte est impressionnant 🚶",
+ "hashtags": [
+  "#ouva",
+  "#marche",
+  "#defi",
+  "#replay"
+ ],
+ "beats": [
+  {
+   "text": "Défi : une journée entière sans transports. Que à pied.",
+   "scene": "big_word",
+   "cap": "Que à pied.",
+   "accent": "pied.",
+   "sync": {}
+  },
+  {
+   "text": "Maison, boulangerie, travail, parc, maison.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "07:40"
+     },
+     {
+      "place": "shop",
+      "time": "07:55",
+      "label": "Boulangerie"
+     },
+     {
+      "place": "work",
+      "time": "08:30"
+     },
+     {
+      "place": "park",
+      "time": "18:00"
+     },
+     {
+      "place": "home",
+      "time": "19:10"
+     }
+    ]
+   },
+   "cap": "à pied",
+   "accent": "maison.",
+   "sync": {}
+  },
+  {
+   "text": "Le replay de la journée, c'est une vraie balade sur la carte.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "map",
+    "label": "Ma journée sur la carte"
+   },
+   "sync": {
+    "zoom": "balade"
+   }
+  },
+  {
+   "text": "1 heure de marche en plus, sans m'en rendre compte.",
+   "scene": "counter_map",
+   "params": {
+    "value": 1,
+    "unit": "heure",
+    "bottom": "de marche",
+    "place": "park"
+   },
+   "sync": {
+    "count": "1",
+    "bottom": "compte."
+   }
+  },
+  {
+   "text": "Et j'ai gardé la vidéo en souvenir.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "download",
+    "label": "Télécharger la vidéo"
+   },
+   "sync": {
+    "zoom": "vidéo"
+   }
+  },
+  {
+   "text": "Défi validé.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "validé",
+    "small": "défi"
+   },
+   "sync": {
+    "word": "validé."
+   }
+  }
+ ],
+ "angle": "defi/replay"
+}

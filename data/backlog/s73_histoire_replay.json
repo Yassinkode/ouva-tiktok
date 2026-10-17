@@ -1,0 +1,117 @@
+{
+ "format": "histoire",
+ "feature": "replay",
+ "title": "Les clés perdues",
+ "caption": "J'ai perdu mes clés. Le replay de ma journée m'a dit où elles étaient 🔑",
+ "hashtags": [
+  "#ouva",
+  "#cles",
+  "#astuce",
+  "#replay"
+ ],
+ "beats": [
+  {
+   "text": "Hier soir, impossible de retrouver mes clés.",
+   "scene": "big_word",
+   "cap": "mes clés.",
+   "accent": "clés.",
+   "sync": {}
+  },
+  {
+   "text": "Alors j'ai ouvert le replay de ma journée.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "home",
+    "label": "Maison",
+    "minutes": 2
+   },
+   "cap": "le replay",
+   "accent": "replay",
+   "sync": {
+    "expand": "ouvert"
+   }
+  },
+  {
+   "text": "Travail, salle, café, maison.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "work",
+      "time": "09:00"
+     },
+     {
+      "place": "gym",
+      "time": "17:30"
+     },
+     {
+      "place": "cafe",
+      "time": "19:00"
+     },
+     {
+      "place": "home",
+      "time": "20:10"
+     }
+    ]
+   },
+   "cap": "café",
+   "accent": "café,",
+   "sync": {}
+  },
+  {
+   "text": "Le café : 40 minutes, juste avant de rentrer.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "timeline",
+    "label": "40 minutes au café"
+   },
+   "sync": {
+    "zoom": "café"
+   }
+  },
+  {
+   "text": "Le serveur les avait gardées derrière le comptoir.",
+   "scene": "place_pin",
+   "params": {
+    "place": "cafe",
+    "label": "Café"
+   },
+   "sync": {
+    "pin": "serveur"
+   }
+  },
+  {
+   "text": "Pas besoin de chercher partout : le replay se souvient pour toi.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "map",
+      "title": "Replay de la journée"
+     },
+     {
+      "icon": "clock",
+      "title": "Heures exactes"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "replay",
+    "i2": "souvient"
+   }
+  },
+  {
+   "text": "Merci OùVa.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "merci",
+    "small": "bref"
+   },
+   "sync": {
+    "word": "Merci"
+   }
+  }
+ ],
+ "angle": "histoire/replay"
+}

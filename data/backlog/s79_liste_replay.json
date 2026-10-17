@@ -1,0 +1,97 @@
+{
+ "format": "liste",
+ "feature": "replay",
+ "title": "3 usages du replay",
+ "caption": "3 moments où le replay de ta journée sert vraiment.",
+ "hashtags": [
+  "#ouva",
+  "#replay",
+  "#astuce",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "3 moments où le replay de ta journée sert vraiment.",
+   "scene": "big_word",
+   "cap": "sert vraiment.",
+   "accent": "vraiment.",
+   "sync": {}
+  },
+  {
+   "text": "Un : retrouver où tu as laissé un truc.",
+   "scene": "place_pin",
+   "params": {
+    "place": "cafe",
+    "label": "Café"
+   },
+   "sync": {
+    "pin": "truc."
+   }
+  },
+  {
+   "text": "Deux : revivre une super journée.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "park",
+      "time": "11:00"
+     },
+     {
+      "place": "friends",
+      "time": "15:00"
+     },
+     {
+      "place": "cafe",
+      "time": "20:00"
+     }
+    ]
+   },
+   "cap": "une super journée.",
+   "accent": "journée.",
+   "sync": {}
+  },
+  {
+   "text": "Trois : la partager en vidéo à tes potes.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "download",
+    "label": "Télécharger la vidéo"
+   },
+   "sync": {
+    "zoom": "vidéo"
+   }
+  },
+  {
+   "text": "Le tout, sans avoir jamais rien enregistré.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "park",
+    "others": [
+     "friends",
+     "cafe"
+    ]
+   },
+   "cap": "Rien enregistré.",
+   "cap2": "Tout est là.",
+   "accent": "enregistré.",
+   "sync": {
+    "line2": "tout,"
+   }
+  },
+  {
+   "text": "C'est dans Revivre ma journée, sur l'accueil.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "revivre",
+    "label": "Revivre ma journée"
+   },
+   "sync": {
+    "zoom": "Revivre"
+   }
+  }
+ ],
+ "angle": "liste/replay"
+}

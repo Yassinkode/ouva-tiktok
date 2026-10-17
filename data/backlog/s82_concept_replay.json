@@ -1,0 +1,98 @@
+{
+ "format": "concept",
+ "feature": "replay",
+ "title": "Pourquoi revivre sa journée",
+ "caption": "Pourquoi revivre sa journée sur une carte ? Parce que les bonnes journées, on les oublie trop vite.",
+ "hashtags": [
+  "#ouva",
+  "#replay",
+  "#souvenirs",
+  "#concept"
+ ],
+ "beats": [
+  {
+   "text": "Les bonnes journées, on les oublie trop vite.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "trop vite.",
+   "accent": "vite.",
+   "sync": {}
+  },
+  {
+   "text": "Dans 3 mois, tu ne te rappelleras pas où tu étais ce samedi.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "samedi",
+    "value": 5,
+    "place": "friends",
+    "caption": "chez les potes"
+   },
+   "sync": {
+    "count": "rappelleras"
+   }
+  },
+  {
+   "text": "C'est pour ça qu'on a créé le replay.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "le replay",
+    "small": "on a créé"
+   },
+   "sync": {
+    "word": "replay."
+   }
+  },
+  {
+   "text": "Ta journée rejouée, arrêt après arrêt.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "10:00"
+     },
+     {
+      "place": "park",
+      "time": "12:00"
+     },
+     {
+      "place": "friends",
+      "time": "16:00"
+     },
+     {
+      "place": "home",
+      "time": "23:30"
+     }
+    ]
+   },
+   "cap": "arrêt après arrêt.",
+   "accent": "arrêt.",
+   "sync": {}
+  },
+  {
+   "text": "Et tu peux la garder en vidéo.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "download",
+    "label": "Télécharger la vidéo"
+   },
+   "sync": {
+    "zoom": "garder"
+   }
+  },
+  {
+   "text": "Ça s'appelle Revivre ma journée, et c'est sur l'accueil.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Revivre ma journée.",
+   "accent": "Revivre",
+   "sync": {}
+  }
+ ],
+ "angle": "concept/replay"
+}

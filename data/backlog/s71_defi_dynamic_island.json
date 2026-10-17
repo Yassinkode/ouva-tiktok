@@ -1,0 +1,93 @@
+{
+ "format": "defi",
+ "feature": "dynamic_island",
+ "title": "10 minutes ailleurs",
+ "caption": "Défi : chaque jour, 10 minutes dans un lieu où je ne vais jamais. Le chrono OùVa fait foi ⏱️",
+ "hashtags": [
+  "#ouva",
+  "#defi",
+  "#explorer",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Défi : chaque jour, 10 minutes dans un endroit nouveau.",
+   "scene": "big_word",
+   "cap": "un endroit nouveau.",
+   "accent": "nouveau.",
+   "sync": {}
+  },
+  {
+   "text": "Le chrono en haut de mon écran fait foi.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "park",
+    "label": "Nouveau parc",
+    "minutes": 10
+   },
+   "cap": "fait foi.",
+   "accent": "foi.",
+   "sync": {
+    "expand": "chrono"
+   }
+  },
+  {
+   "text": "Lundi : un parc. Mardi : une librairie. Mercredi : un marché.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "park",
+      "time": "Lun"
+     },
+     {
+      "place": "shop",
+      "time": "Mar",
+      "label": "Librairie"
+     },
+     {
+      "place": "shop",
+      "time": "Mer",
+      "label": "Marché"
+     }
+    ]
+   },
+   "cap": "un marché.",
+   "accent": "marché.",
+   "sync": {}
+  },
+  {
+   "text": "Une semaine plus tard, 7 nouvelles cases sur ma carte.",
+   "scene": "heatmap_reveal",
+   "cap": "7 nouvelles cases",
+   "accent": "cases",
+   "sync": {
+    "punch": "nouvelles"
+   }
+  },
+  {
+   "text": "Je les ai ajoutées comme lieux, en quelques secondes.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "steps",
+    "label": "Ajouter un lieu"
+   },
+   "sync": {
+    "zoom": "ajoutées"
+   }
+  },
+  {
+   "text": "10 minutes par jour. Tu t'y mets ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "10 min",
+    "small": "par jour"
+   },
+   "sync": {
+    "word": "10"
+   }
+  }
+ ],
+ "angle": "defi/dynamic_island"
+}

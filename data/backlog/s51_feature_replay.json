@@ -1,0 +1,112 @@
+{
+ "format": "feature",
+ "feature": "replay",
+ "title": "Ma meilleure journée",
+ "caption": "Chaque dimanche, je revis ma meilleure journée de la semaine sur la carte 🎬",
+ "hashtags": [
+  "#ouva",
+  "#replay",
+  "#dimanche",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Chaque dimanche soir, j'ai un petit rituel.",
+   "scene": "big_word",
+   "cap": "un petit rituel.",
+   "accent": "rituel.",
+   "sync": {}
+  },
+  {
+   "text": "J'ouvre Revivre ma journée, et je choisis la meilleure de la semaine.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "revivre",
+    "label": "Revivre ma journée"
+   },
+   "sync": {
+    "zoom": "Revivre"
+   }
+  },
+  {
+   "text": "Cette semaine, c'était jeudi : parc, café, potes.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "park",
+      "time": "10:00"
+     },
+     {
+      "place": "cafe",
+      "time": "13:30"
+     },
+     {
+      "place": "friends",
+      "time": "19:00"
+     },
+     {
+      "place": "home",
+      "time": "23:00"
+     }
+    ]
+   },
+   "cap": "c'était jeudi",
+   "accent": "jeudi",
+   "sync": {}
+  },
+  {
+   "text": "Avec chaque arrivée et chaque départ.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "day_map",
+    "region": "timeline",
+    "label": "Arrivées et départs"
+   },
+   "sync": {
+    "zoom": "arrivée"
+   }
+  },
+  {
+   "text": "Ça me rappelle ce qui me fait vraiment du bien.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "vraiment du bien.",
+   "accent": "bien.",
+   "sync": {}
+  },
+  {
+   "text": "Et ma semaine prochaine, je la construis autour de ça.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "map",
+      "title": "Plus de parc"
+     },
+     {
+      "icon": "pin",
+      "title": "Plus de potes"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "prochaine,",
+    "i2": "ça."
+   }
+  },
+  {
+   "text": "Et petit à petit, ma carte se remplit de cases vertes.",
+   "scene": "heatmap_reveal",
+   "cap": "cases vertes.",
+   "accent": "vertes.",
+   "sync": {
+    "punch": "vertes."
+   }
+  }
+ ],
+ "angle": "feature/replay"
+}

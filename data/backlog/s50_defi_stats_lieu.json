@@ -1,0 +1,95 @@
+{
+ "format": "defi",
+ "feature": "stats_lieu",
+ "title": "Moins de 50 %",
+ "caption": "Défi : passer moins de 50 % de mon temps à la maison cette semaine. Résultat ?",
+ "hashtags": [
+  "#ouva",
+  "#defi",
+  "#sortir",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Défi de la semaine : moins de 50 % de mon temps à la maison.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 50,
+    "place": "home",
+    "sub": "objectif max"
+   },
+   "sync": {
+    "count": "50",
+    "tile": "maison."
+   }
+  },
+  {
+   "text": "Mon score habituel ? 64 %. Ça va être dur.",
+   "scene": "big_word",
+   "cap": "Ça va être dur.",
+   "accent": "dur.",
+   "sync": {}
+  },
+  {
+   "text": "Lundi : bibliothèque. Mercredi : salle. Vendredi : chez les potes.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "school",
+      "time": "Lun"
+     },
+     {
+      "place": "gym",
+      "time": "Mer"
+     },
+     {
+      "place": "friends",
+      "time": "Ven"
+     }
+    ]
+   },
+   "cap": "chez les potes.",
+   "accent": "potes.",
+   "sync": {}
+  },
+  {
+   "text": "Chaque jour, je vérifie ma page Maison.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Ma page Maison"
+   },
+   "sync": {
+    "zoom": "vérifie"
+   }
+  },
+  {
+   "text": "Dimanche soir : 47 %. Défi réussi.",
+   "scene": "counter_map",
+   "params": {
+    "value": 47,
+    "unit": "%",
+    "bottom": "à la maison",
+    "place": "home"
+   },
+   "sync": {
+    "count": "47",
+    "bottom": "réussi."
+   }
+  },
+  {
+   "text": "Tu tentes le même ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "à toi",
+    "small": "tu tentes ?"
+   },
+   "sync": {
+    "word": "même"
+   }
+  }
+ ],
+ "angle": "defi/stats_lieu"
+}

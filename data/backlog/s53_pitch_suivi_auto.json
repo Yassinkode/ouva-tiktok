@@ -1,0 +1,104 @@
+{
+ "format": "pitch",
+ "feature": "suivi_auto",
+ "title": "Zéro bouton",
+ "caption": "Une appli sans bouton start. Elle démarre quand tu arrives, elle s'arrête quand tu pars.",
+ "hashtags": [
+  "#ouva",
+  "#app",
+  "#automatique",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Une appli de suivi sans bouton Start. Ça existe.",
+   "scene": "big_word",
+   "cap": "sans bouton Start.",
+   "accent": "Start.",
+   "sync": {}
+  },
+  {
+   "text": "Tu arrives au travail : elle commence à compter.",
+   "scene": "place_pin",
+   "params": {
+    "place": "work",
+    "label": "Travail"
+   },
+   "sync": {
+    "pin": "travail"
+   }
+  },
+  {
+   "text": "Tu pars : elle s'arrête. Toute seule.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "work",
+    "label": "Travail",
+    "minutes": 472
+   },
+   "cap": "Toute seule.",
+   "accent": "seule.",
+   "sync": {
+    "expand": "pars"
+   }
+  },
+  {
+   "text": "Le soir, ta journée est rangée lieu par lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Ta journée"
+   },
+   "sync": {
+    "zoom": "soir,"
+   }
+  },
+  {
+   "text": "Et au bout d'un mois, ta carte de chaleur se dessine.",
+   "scene": "heatmap_reveal",
+   "cap": "ta carte de chaleur",
+   "accent": "chaleur",
+   "sync": {
+    "punch": "carte"
+   }
+  },
+  {
+   "text": "Ça s'appelle OùVa.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "OùVa",
+    "small": "ça s'appelle"
+   },
+   "sync": {
+    "word": "OùVa."
+   }
+  },
+  {
+   "text": "Ton temps, sans y penser.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "signal",
+      "title": "Détection automatique"
+     },
+     {
+      "icon": "clock",
+      "title": "Temps par lieu"
+     },
+     {
+      "icon": "map",
+      "title": "Carte de chaleur"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "temps,",
+    "i2": "sans",
+    "i3": "penser."
+   }
+  }
+ ],
+ "angle": "pitch/suivi_auto"
+}

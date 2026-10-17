@@ -1,0 +1,119 @@
+{
+ "format": "question",
+ "feature": "comparer_semaines",
+ "title": "Stage vs cours",
+ "caption": "Semaine de stage vs semaine de cours : laquelle est la plus fatigante ? Ma carte a tranché.",
+ "hashtags": [
+  "#ouva",
+  "#stage",
+  "#etudiant",
+  "#alternance"
+ ],
+ "beats": [
+  {
+   "text": "Semaine de stage ou semaine de cours : laquelle te prend le plus de temps ?",
+   "scene": "big_word",
+   "cap": "laquelle ?",
+   "accent": "laquelle",
+   "sync": {}
+  },
+  {
+   "text": "J'ai posé la question à Comparer mes semaines.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "Comparer"
+   }
+  },
+  {
+   "text": "En stage : 41 heures sur place. En cours : 28.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures sur place / jour",
+    "before": [
+     6,
+     6,
+     5,
+     6,
+     5,
+     0,
+     0
+    ],
+    "after": [
+     8,
+     9,
+     8,
+     8,
+     8,
+     0,
+     0
+    ],
+    "labelA": "Cours",
+    "labelB": "Stage",
+    "rows": [
+     {
+      "place": "work",
+      "delta": "+41 h",
+      "good": false
+     },
+     {
+      "place": "school",
+      "delta": "−28 h",
+      "good": true
+     }
+    ]
+   },
+   "sync": {
+    "b": "41",
+    "rows": "28."
+   }
+  },
+  {
+   "text": "Mais en cours, je passe 3 fois plus de temps au café.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "cafe",
+     "value": 9,
+     "label": "Cours"
+    },
+    "b": {
+     "place": "cafe",
+     "value": 3,
+     "label": "Stage"
+    }
+   },
+   "sync": {
+    "b": "3"
+   }
+  },
+  {
+   "text": "Donc la vraie réponse : ça dépend du café.",
+   "scene": "big_word",
+   "params": {
+    "place": "cafe"
+   },
+   "cap": "ça dépend du café.",
+   "accent": "café.",
+   "sync": {}
+  },
+  {
+   "text": "Et toi, team stage ou team cours ?",
+   "scene": "ring_stat",
+   "params": {
+    "value": 41,
+    "place": "work",
+    "sub": "heures en stage"
+   },
+   "sync": {
+    "count": "stage",
+    "tile": "cours"
+   }
+  }
+ ],
+ "angle": "question/comparer_semaines"
+}

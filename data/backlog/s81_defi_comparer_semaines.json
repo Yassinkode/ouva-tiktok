@@ -1,0 +1,114 @@
+{
+ "format": "defi",
+ "feature": "comparer_semaines",
+ "title": "Battre ma semaine",
+ "caption": "Défi : battre ma semaine dernière. Plus de temps dehors, moins au même endroit.",
+ "hashtags": [
+  "#ouva",
+  "#defi",
+  "#semaine",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Cette semaine, un seul adversaire : moi, la semaine dernière.",
+   "scene": "big_word",
+   "cap": "la semaine dernière.",
+   "accent": "dernière.",
+   "sync": {}
+  },
+  {
+   "text": "Le but : plus d'heures dehors, chaque jour.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures dehors / jour",
+    "before": [
+     1,
+     1,
+     2,
+     1,
+     1,
+     2,
+     2
+    ],
+    "after": [
+     2,
+     2,
+     2,
+     3,
+     2,
+     3,
+     4
+    ],
+    "labelA": "Semaine dernière",
+    "labelB": "Cette semaine",
+    "rows": [
+     {
+      "place": "park",
+      "delta": "+6 h",
+      "good": true
+     },
+     {
+      "place": "home",
+      "delta": "−7 h",
+      "good": true
+     }
+    ]
+   },
+   "sync": {
+    "b": "dehors,",
+    "rows": "jour."
+   }
+  },
+  {
+   "text": "J'ai suivi le match dans Comparer mes semaines.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "match"
+   }
+  },
+  {
+   "text": "Jeudi, j'étais derrière. Week-end : remontée.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "samedi",
+    "value": 4,
+    "place": "park",
+    "caption": "dehors"
+   },
+   "sync": {
+    "count": "remontée."
+   }
+  },
+  {
+   "text": "Score final : 6 heures de plus dehors.",
+   "scene": "counter_map",
+   "params": {
+    "value": 6,
+    "unit": "heures",
+    "bottom": "de plus dehors",
+    "place": "park"
+   },
+   "sync": {
+    "count": "6",
+    "bottom": "dehors."
+   }
+  },
+  {
+   "text": "Semaine prochaine : revanche contre moi-même.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "revanche",
+   "accent": "revanche",
+   "sync": {}
+  }
+ ],
+ "angle": "defi/comparer_semaines"
+}

@@ -1,0 +1,85 @@
+{
+ "format": "concept",
+ "feature": "suivi_auto",
+ "title": "Le temps qu'on ne voit pas",
+ "caption": "Le temps qu'on ne voit pas passer, c'est souvent celui qu'on passe au même endroit.",
+ "hashtags": [
+  "#ouva",
+  "#temps",
+  "#concept",
+  "#reflexion"
+ ],
+ "beats": [
+  {
+   "text": "Le temps qu'on ne voit pas passer, il passe toujours quelque part.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "quelque part.",
+   "accent": "part.",
+   "sync": {}
+  },
+  {
+   "text": "Une heure dans le canapé. Deux au café. Trois au bureau après l'heure.",
+   "scene": "day_timeline",
+   "params": {
+    "day": "un mardi",
+    "value": 6,
+    "place": "home",
+    "caption": "sans m'en rendre compte"
+   },
+   "sync": {
+    "count": "Trois"
+   }
+  },
+  {
+   "text": "On ne le note jamais. Alors on ne le voit jamais.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "invisible",
+    "small": "ce temps est"
+   },
+   "sync": {
+    "word": "voit"
+   }
+  },
+  {
+   "text": "OùVa, elle, le voit pour toi.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "home",
+    "others": [
+     "cafe",
+     "work"
+    ]
+   },
+   "cap": "Elle le voit.",
+   "cap2": "Pour toi.",
+   "accent": "voit",
+   "sync": {
+    "line2": "toi."
+   }
+  },
+  {
+   "text": "Et elle te le montre, lieu par lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Lieu par lieu"
+   },
+   "sync": {
+    "zoom": "montre,"
+   }
+  },
+  {
+   "text": "Le temps invisible, enfin visible.",
+   "scene": "big_word",
+   "cap": "enfin visible.",
+   "accent": "visible.",
+   "sync": {}
+  }
+ ],
+ "angle": "concept/suivi_auto"
+}

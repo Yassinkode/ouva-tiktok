@@ -1,0 +1,104 @@
+{
+ "format": "feature",
+ "feature": "stats_lieu",
+ "title": "Comparé à hier",
+ "caption": "Dans OùVa, chaque lieu te dit si tu y as passé plus ou moins de temps qu'hier.",
+ "hashtags": [
+  "#ouva",
+  "#stats",
+  "#hier",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Petit détail d'OùVa que j'adore : la comparaison avec hier.",
+   "scene": "big_word",
+   "cap": "avec hier.",
+   "accent": "hier.",
+   "sync": {}
+  },
+  {
+   "text": "Sur la page d'un lieu, tu vois ton temps d'aujourd'hui.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "today",
+    "label": "Aujourd'hui"
+   },
+   "sync": {
+    "zoom": "page"
+   }
+  },
+  {
+   "text": "Et juste à côté : plus ou moins qu'hier.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "gym",
+     "value": 2,
+     "label": "Aujourd'hui"
+    },
+    "b": {
+     "place": "gym",
+     "value": 1,
+     "label": "Hier"
+    }
+   },
+   "sync": {
+    "b": "hier."
+   }
+  },
+  {
+   "text": "C'est tout bête, mais ça motive.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "ça motive.",
+   "accent": "motive.",
+   "sync": {}
+  },
+  {
+   "text": "Et sur la semaine, la tendance saute aux yeux.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Ta semaine"
+   },
+   "sync": {
+    "zoom": "tendance"
+   }
+  },
+  {
+   "text": "Un chiffre, une flèche, et tu sais.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "chart",
+      "title": "Un chiffre"
+     },
+     {
+      "icon": "flag",
+      "title": "Une flèche"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "chiffre,",
+    "i2": "flèche,"
+   }
+  },
+  {
+   "text": "Et sur 30 jours, la carte te montre la tendance de fond.",
+   "scene": "heatmap_reveal",
+   "cap": "la tendance de fond",
+   "accent": "tendance",
+   "sync": {
+    "punch": "tendance"
+   }
+  }
+ ],
+ "angle": "feature/stats_lieu"
+}

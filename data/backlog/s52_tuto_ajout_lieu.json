@@ -1,0 +1,86 @@
+{
+ "format": "tuto",
+ "feature": "ajout_lieu",
+ "title": "Ajouter sa salle",
+ "caption": "Comment ajouter ta salle de sport dans OùVa pour suivre tes séances automatiquement 💪",
+ "hashtags": [
+  "#ouva",
+  "#salledesport",
+  "#tuto",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Suivre tes séances de sport sans rien lancer ? Voilà comment.",
+   "scene": "big_word",
+   "params": {
+    "place": "gym"
+   },
+   "cap": "sans rien lancer",
+   "accent": "lancer",
+   "sync": {}
+  },
+  {
+   "text": "Ouvre Ajouter un lieu, et pose 4 points autour de ta salle.",
+   "scene": "add_place",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport"
+   },
+   "sync": {
+    "name": "points",
+    "done": "salle."
+   }
+  },
+  {
+   "text": "Donne-lui un nom, et choisis la catégorie sport.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "category",
+    "label": "La catégorie"
+   },
+   "sync": {
+    "zoom": "catégorie"
+   }
+  },
+  {
+   "text": "À chaque séance, le compteur démarre tout seul en entrant.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport",
+    "minutes": 52
+   },
+   "cap": "tout seul",
+   "accent": "seul",
+   "sync": {
+    "expand": "compteur"
+   }
+  },
+  {
+   "text": "Et ta semaine de sport s'affiche jour par jour.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "Tes séances"
+   },
+   "sync": {
+    "zoom": "semaine"
+   }
+  },
+  {
+   "text": "Plus d'excuse pour dire « j'y suis allé ».",
+   "scene": "wipe_word",
+   "params": {
+    "word": "preuves",
+    "small": "tu as les"
+   },
+   "sync": {
+    "word": "allé"
+   }
+  }
+ ],
+ "angle": "tuto/ajout_lieu"
+}

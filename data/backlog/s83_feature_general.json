@@ -1,0 +1,89 @@
+{
+ "format": "feature",
+ "feature": "general",
+ "title": "4 écrans",
+ "caption": "OùVa en 4 écrans. Lequel tu ouvrirais en premier ?",
+ "hashtags": [
+  "#ouva",
+  "#app",
+  "#ecrans",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "OùVa, c'est 4 écrans. Voilà à quoi sert chacun.",
+   "scene": "big_word",
+   "cap": "4 écrans.",
+   "accent": "écrans.",
+   "sync": {}
+  },
+  {
+   "text": "L'accueil : où tu es, et depuis combien de temps.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "L'accueil"
+   },
+   "sync": {
+    "zoom": "accueil"
+   }
+  },
+  {
+   "text": "Mes lieux : ta carte de chaleur du mois.",
+   "scene": "heatmap_reveal",
+   "cap": "ta carte de chaleur",
+   "accent": "chaleur",
+   "sync": {
+    "punch": "lieux"
+   }
+  },
+  {
+   "text": "Un lieu : ta journée et ta semaine à cet endroit.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "place_stats",
+    "region": "week",
+    "label": "La page d'un lieu"
+   },
+   "sync": {
+    "zoom": "semaine"
+   }
+  },
+  {
+   "text": "Et ta journée sur la carte, en replay.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:00"
+     },
+     {
+      "place": "school",
+      "time": "09:00"
+     },
+     {
+      "place": "cafe",
+      "time": "17:00"
+     }
+    ]
+   },
+   "cap": "en replay.",
+   "accent": "replay.",
+   "sync": {}
+  },
+  {
+   "text": "Tu ouvrirais lequel en premier ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "lequel",
+    "small": "en premier ?"
+   },
+   "sync": {
+    "word": "lequel"
+   }
+  }
+ ],
+ "angle": "feature/general"
+}

@@ -1,0 +1,128 @@
+{
+ "format": "tuto",
+ "feature": "comparer_semaines",
+ "title": "Comparer 2 semaines",
+ "caption": "Comment comparer 2 semaines dans OùVa, en 3 étapes 📊",
+ "hashtags": [
+  "#ouva",
+  "#tuto",
+  "#comparer",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Comparer deux semaines dans OùVa, en 3 étapes.",
+   "scene": "big_word",
+   "cap": "deux semaines",
+   "accent": "semaines",
+   "sync": {}
+  },
+  {
+   "text": "Étape 1 : sur l'accueil, ouvre Comparer mes semaines.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "Comparer"
+   }
+  },
+  {
+   "text": "Étape 2 : regarde les deux courbes, jour par jour.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures dehors / jour",
+    "before": [
+     1,
+     2,
+     1,
+     1,
+     2,
+     3,
+     2
+    ],
+    "after": [
+     2,
+     3,
+     2,
+     3,
+     2,
+     4,
+     3
+    ],
+    "labelA": "Semaine 1",
+    "labelB": "Semaine 2",
+    "rows": [
+     {
+      "place": "park",
+      "delta": "+5 h",
+      "good": true
+     },
+     {
+      "place": "home",
+      "delta": "−6 h",
+      "good": true
+     }
+    ]
+   },
+   "sync": {
+    "b": "courbes,",
+    "rows": "jour."
+   }
+  },
+  {
+   "text": "Étape 3 : lis les écarts, lieu par lieu.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 42
+     },
+     {
+      "place": "park",
+      "value": 8
+     },
+     {
+      "place": "cafe",
+      "value": 7
+     },
+     {
+      "place": "gym",
+      "value": 5
+     }
+    ]
+   },
+   "cap": "les écarts",
+   "accent": "écarts,",
+   "sync": {}
+  },
+  {
+   "text": "En 20 secondes, tu sais si ta semaine était meilleure.",
+   "scene": "counter_map",
+   "params": {
+    "value": 20,
+    "unit": "secondes",
+    "bottom": "chrono",
+    "place": "home"
+   },
+   "sync": {
+    "count": "20",
+    "bottom": "meilleure."
+   }
+  },
+  {
+   "text": "Simple comme ça.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Simple comme ça.",
+   "accent": "Simple",
+   "sync": {}
+  }
+ ],
+ "angle": "tuto/comparer_semaines"
+}

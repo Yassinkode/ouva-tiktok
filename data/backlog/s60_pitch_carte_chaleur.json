@@ -1,0 +1,117 @@
+{
+ "format": "pitch",
+ "feature": "carte_chaleur",
+ "title": "Ta semaine en 3 secondes",
+ "caption": "Ta semaine résumée en 3 secondes. Pas de graphique compliqué, juste des couleurs.",
+ "hashtags": [
+  "#ouva",
+  "#cartedechaleur",
+  "#rapide",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Ta semaine résumée en 3 secondes. Prêt ?",
+   "scene": "big_word",
+   "cap": "3 secondes.",
+   "accent": "secondes.",
+   "sync": {}
+  },
+  {
+   "text": "Rouge, c'est là où tu vis. Vert, c'est là où tu passes.",
+   "scene": "heatmap_reveal",
+   "cap": "Rouge",
+   "accent": "Rouge,",
+   "sync": {
+    "punch": "Rouge,"
+   }
+  },
+  {
+   "text": "Et en bas, le temps exact de chaque endroit.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Le temps exact"
+   },
+   "sync": {
+    "zoom": "exact"
+   }
+  },
+  {
+   "text": "Moi : maison, école, café. Dans cet ordre.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 46
+     },
+     {
+      "place": "school",
+      "value": 24
+     },
+     {
+      "place": "cafe",
+      "value": 11
+     },
+     {
+      "place": "gym",
+      "value": 4
+     }
+    ]
+   },
+   "cap": "Dans cet ordre.",
+   "accent": "ordre.",
+   "sync": {}
+  },
+  {
+   "text": "Tout ça sans avoir rien noté.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "school",
+    "others": [
+     "home",
+     "cafe"
+    ]
+   },
+   "cap": "Rien noté.",
+   "cap2": "Tout compté.",
+   "accent": "noté.",
+   "sync": {
+    "line2": "sans"
+   }
+  },
+  {
+   "text": "Pas de graphique compliqué. Juste des couleurs.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "chart",
+      "title": "Pas de graphique"
+     },
+     {
+      "icon": "map",
+      "title": "Juste des couleurs"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "graphique",
+    "i2": "couleurs."
+   }
+  },
+  {
+   "text": "3 secondes. Promis tenu.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Promis tenu.",
+   "accent": "tenu.",
+   "sync": {}
+  }
+ ],
+ "angle": "pitch/carte_chaleur"
+}

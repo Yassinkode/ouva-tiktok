@@ -1,0 +1,117 @@
+{
+ "format": "histoire",
+ "feature": "comparer_semaines",
+ "title": "Rentrée vs été",
+ "caption": "Semaine d'été vs semaine de rentrée : ma carte de chaleur fait la tête 😩",
+ "hashtags": [
+  "#ouva",
+  "#rentree",
+  "#ete",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Semaine d'été contre semaine de rentrée. J'ai comparé, et ça pique.",
+   "scene": "big_word",
+   "cap": "et ça pique.",
+   "accent": "pique.",
+   "sync": {}
+  },
+  {
+   "text": "En été : 14 heures dehors. À la rentrée : 3.",
+   "scene": "week_compare",
+   "params": {
+    "metric": "Heures dehors / jour",
+    "before": [
+     2,
+     3,
+     2,
+     2,
+     3,
+     1,
+     1
+    ],
+    "after": [
+     0,
+     1,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "labelA": "Été",
+    "labelB": "Rentrée",
+    "rows": [
+     {
+      "place": "park",
+      "delta": "−11 h",
+      "good": false
+     },
+     {
+      "place": "school",
+      "delta": "+30 h",
+      "good": false
+     }
+    ]
+   },
+   "sync": {
+    "b": "rentrée",
+    "rows": "3."
+   }
+  },
+  {
+   "text": "Tout ça grâce à Comparer mes semaines.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "comparer",
+    "label": "Comparer mes semaines"
+   },
+   "sync": {
+    "zoom": "Comparer"
+   }
+  },
+  {
+   "text": "Le parc est passé de mon 2e lieu à mon 6e.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "park",
+     "value": 12,
+     "label": "Été"
+    },
+    "b": {
+     "place": "park",
+     "value": 2,
+     "label": "Rentrée"
+    }
+   },
+   "sync": {
+    "b": "6e."
+   }
+  },
+  {
+   "text": "Objectif : retrouver un peu d'été dans mes semaines.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "un peu d'été",
+   "accent": "d'été",
+   "sync": {}
+  },
+  {
+   "text": "Premier pas : le parc, mercredi.",
+   "scene": "place_pin",
+   "params": {
+    "place": "park",
+    "label": "Parc"
+   },
+   "sync": {
+    "pin": "parc,"
+   }
+  }
+ ],
+ "angle": "histoire/comparer_semaines"
+}

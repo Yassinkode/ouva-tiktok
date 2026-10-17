@@ -1,0 +1,104 @@
+{
+ "format": "question",
+ "feature": "objectifs",
+ "title": "Un seul objectif",
+ "caption": "Si tu devais fixer un seul objectif de temps dans un lieu, ce serait lequel ?",
+ "hashtags": [
+  "#ouva",
+  "#objectif",
+  "#question",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Si tu devais fixer un seul objectif de temps, ce serait pour quel lieu ?",
+   "scene": "big_word",
+   "cap": "quel lieu ?",
+   "accent": "lieu",
+   "sync": {}
+  },
+  {
+   "text": "Moi : 3 heures de salle par semaine.",
+   "scene": "goal",
+   "params": {
+    "title": "Objectif par lieu",
+    "pill": "Cette semaine",
+    "barLabel": "Salle de sport"
+   },
+   "cap": "3 h de salle / semaine.",
+   "accent": "salle",
+   "sync": {}
+  },
+  {
+   "text": "Ça se règle dans Objectifs par lieu.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_features",
+    "region": "objectifs",
+    "label": "Objectifs par lieu"
+   },
+   "sync": {
+    "zoom": "Objectifs"
+   }
+  },
+  {
+   "text": "Et OùVa compte les séances tout seul.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "gym",
+    "label": "Salle de sport",
+    "minutes": 58
+   },
+   "cap": "tout seul.",
+   "accent": "seul.",
+   "sync": {
+    "expand": "compte"
+   }
+  },
+  {
+   "text": "Cette semaine : 2 heures 40. Presque.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 89,
+    "place": "gym",
+    "sub": "de l'objectif"
+   },
+   "sync": {
+    "count": "40.",
+    "tile": "Presque."
+   }
+  },
+  {
+   "text": "Un lieu, un temps cible, et OùVa suit le reste.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "flag",
+      "title": "Un lieu"
+     },
+     {
+      "icon": "clock",
+      "title": "Un temps cible"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "lieu,",
+    "i2": "cible,"
+   }
+  },
+  {
+   "text": "Toi, ce serait quoi ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "à toi",
+    "small": "ton objectif ?"
+   },
+   "sync": {
+    "word": "quoi"
+   }
+  }
+ ],
+ "angle": "question/objectifs"
+}

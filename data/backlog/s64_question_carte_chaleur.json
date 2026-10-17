@@ -1,0 +1,78 @@
+{
+ "format": "question",
+ "feature": "carte_chaleur",
+ "title": "Ta case la plus verte",
+ "caption": "Ta case la plus verte, c'est quoi ? Le lieu où tu vas le moins… mais que tu adores.",
+ "hashtags": [
+  "#ouva",
+  "#question",
+  "#cartedechaleur",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Tout le monde parle de sa case rouge. Mais ta case la plus verte ?",
+   "scene": "big_word",
+   "cap": "ta case la plus verte ?",
+   "accent": "verte",
+   "sync": {}
+  },
+  {
+   "text": "C'est le lieu où tu vas le moins. Souvent celui que tu préfères.",
+   "scene": "heatmap_reveal",
+   "cap": "celui que tu préfères",
+   "accent": "préfères.",
+   "sync": {
+    "punch": "moins."
+   }
+  },
+  {
+   "text": "Moi, c'est la piscine. 1 % de mon temps.",
+   "scene": "ring_stat",
+   "params": {
+    "value": 1,
+    "place": "gym",
+    "label": "Piscine",
+    "sub": "de mon temps"
+   },
+   "sync": {
+    "count": "1",
+    "tile": "temps."
+   }
+  },
+  {
+   "text": "Je l'ai vu en bas de ma carte, tout en bas de la liste.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Tout en bas"
+   },
+   "sync": {
+    "zoom": "liste."
+   }
+  },
+  {
+   "text": "Ce mois-ci, je la fais remonter.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "je la fais remonter.",
+   "accent": "remonter.",
+   "sync": {}
+  },
+  {
+   "text": "Et toi, ta case verte préférée ?",
+   "scene": "place_pin",
+   "params": {
+    "place": "park",
+    "label": "Ta case verte"
+   },
+   "sync": {
+    "pin": "préférée"
+   }
+  }
+ ],
+ "angle": "question/carte_chaleur"
+}

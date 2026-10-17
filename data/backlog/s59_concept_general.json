@@ -1,0 +1,103 @@
+{
+ "format": "concept",
+ "feature": "general",
+ "title": "Pourquoi OùVa",
+ "caption": "Pourquoi l'appli s'appelle OùVa ? Parce que la vraie question, c'est : où va ton temps ?",
+ "hashtags": [
+  "#ouva",
+  "#nom",
+  "#concept",
+  "#startup"
+ ],
+ "beats": [
+  {
+   "text": "Pourquoi l'appli s'appelle OùVa ?",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Pourquoi OùVa ?",
+   "accent": "OùVa",
+   "sync": {}
+  },
+  {
+   "text": "Parce que la vraie question, c'est : où va ton temps ?",
+   "scene": "wipe_word",
+   "params": {
+    "word": "ton temps",
+    "small": "où va"
+   },
+   "sync": {
+    "word": "temps"
+   }
+  },
+  {
+   "text": "Pas ton argent, pas tes pas. Ton temps.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "chart",
+      "title": "Ton argent : déjà suivi"
+     },
+     {
+      "icon": "signal",
+      "title": "Tes pas : déjà suivis"
+     },
+     {
+      "icon": "clock",
+      "title": "Ton temps par lieu : OùVa"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "argent,",
+    "i2": "pas.",
+    "i3": "temps."
+   }
+  },
+  {
+   "text": "Et ton temps, il part toujours quelque part.",
+   "scene": "heatmap_reveal",
+   "cap": "quelque part.",
+   "accent": "part.",
+   "sync": {
+    "punch": "toujours"
+   }
+  },
+  {
+   "text": "OùVa te montre exactement où.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Exactement où"
+   },
+   "sync": {
+    "zoom": "exactement"
+   }
+  },
+  {
+   "text": "Ton temps a toujours une adresse. La mienne : la maison.",
+   "scene": "place_pin",
+   "params": {
+    "place": "home",
+    "label": "Maison"
+   },
+   "sync": {
+    "pin": "maison."
+   }
+  },
+  {
+   "text": "OùVa. Où va ton temps.",
+   "scene": "big_word",
+   "params": {
+    "place": "home"
+   },
+   "cap": "Où va ton temps.",
+   "accent": "temps.",
+   "sync": {}
+  }
+ ],
+ "angle": "concept/general"
+}

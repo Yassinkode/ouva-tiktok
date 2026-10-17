@@ -1,0 +1,92 @@
+{
+ "format": "liste",
+ "feature": "ajout_lieu",
+ "title": "5 lieux à ajouter",
+ "caption": "Les 5 lieux à ajouter en premier dans OùVa. Le 5e, tout le monde l'oublie.",
+ "hashtags": [
+  "#ouva",
+  "#astuce",
+  "#debutant",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Les 5 lieux à ajouter en premier dans OùVa.",
+   "scene": "big_word",
+   "cap": "5 lieux",
+   "accent": "lieux",
+   "sync": {}
+  },
+  {
+   "text": "Maison, travail ou école, la salle de sport.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "home",
+      "title": "Maison"
+     },
+     {
+      "icon": "flag",
+      "title": "Travail ou école"
+     },
+     {
+      "icon": "pin",
+      "title": "Salle de sport"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "Maison,",
+    "i2": "école,",
+    "i3": "sport."
+   }
+  },
+  {
+   "text": "Quatre : ton café préféré.",
+   "scene": "place_pin",
+   "params": {
+    "place": "cafe",
+    "label": "Café préféré"
+   },
+   "sync": {
+    "pin": "café"
+   }
+  },
+  {
+   "text": "Cinq : chez tes potes. Celui que tout le monde oublie.",
+   "scene": "big_word",
+   "params": {
+    "place": "friends"
+   },
+   "cap": "chez tes potes.",
+   "accent": "potes.",
+   "sync": {}
+  },
+  {
+   "text": "Chacun s'ajoute en 10 secondes : un nom, une catégorie.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "name",
+    "label": "Le nom",
+    "region2": "category",
+    "label2": "La catégorie"
+   },
+   "sync": {
+    "zoom": "nom,",
+    "zoom2": "catégorie."
+   }
+  },
+  {
+   "text": "Une semaine plus tard, ta carte est complète.",
+   "scene": "heatmap_reveal",
+   "cap": "ta carte est complète.",
+   "accent": "complète.",
+   "sync": {
+    "punch": "carte"
+   }
+  }
+ ],
+ "angle": "liste/ajout_lieu"
+}

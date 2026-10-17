@@ -1,0 +1,117 @@
+{
+ "format": "pitch",
+ "feature": "dynamic_island",
+ "title": "Sans ouvrir l'appli",
+ "caption": "Avec OùVa, tu n'as même pas besoin d'ouvrir l'appli pour savoir où part ton temps.",
+ "hashtags": [
+  "#ouva",
+  "#dynamicisland",
+  "#iphone",
+  "#app"
+ ],
+ "beats": [
+  {
+   "text": "Savoir où part ton temps, sans même ouvrir l'appli.",
+   "scene": "big_word",
+   "cap": "sans ouvrir l'appli.",
+   "accent": "l'appli.",
+   "sync": {}
+  },
+  {
+   "text": "Regarde en haut : ton lieu et ton chrono, en direct.",
+   "scene": "dynamic_island",
+   "params": {
+    "place": "cafe",
+    "label": "Café",
+    "minutes": 41
+   },
+   "cap": "en direct.",
+   "accent": "direct.",
+   "sync": {
+    "expand": "Regarde"
+   }
+  },
+  {
+   "text": "Ça marche dans chaque lieu que tu as ajouté.",
+   "scene": "bento",
+   "params": {
+    "places": [
+     {
+      "place": "home",
+      "value": 45
+     },
+     {
+      "place": "work",
+      "value": 30
+     },
+     {
+      "place": "cafe",
+      "value": 9
+     },
+     {
+      "place": "gym",
+      "value": 6
+     }
+    ]
+   },
+   "cap": "chaque lieu",
+   "accent": "lieu",
+   "sync": {}
+  },
+  {
+   "text": "Et quand tu veux le détail, l'accueil t'attend.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "now",
+    "label": "En ce moment"
+   },
+   "sync": {
+    "zoom": "détail,"
+   }
+  },
+  {
+   "text": "Simple, discret, automatique.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "signal",
+      "title": "Simple"
+     },
+     {
+      "icon": "clock",
+      "title": "Discret"
+     },
+     {
+      "icon": "map",
+      "title": "Automatique"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "Simple,",
+    "i2": "discret,",
+    "i3": "automatique."
+   }
+  },
+  {
+   "text": "Et au fil du mois, ta carte de chaleur se remplit.",
+   "scene": "heatmap_reveal",
+   "sync": {
+    "punch": "carte"
+   }
+  },
+  {
+   "text": "Ça s'appelle OùVa.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "OùVa.",
+   "accent": "OùVa.",
+   "sync": {}
+  }
+ ],
+ "angle": "pitch/dynamic_island"
+}

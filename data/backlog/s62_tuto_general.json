@@ -1,0 +1,102 @@
+{
+ "format": "tuto",
+ "feature": "general",
+ "title": "Bien démarrer",
+ "caption": "Bien démarrer avec OùVa en 3 étapes. Après, tu n'as plus rien à faire.",
+ "hashtags": [
+  "#ouva",
+  "#tuto",
+  "#debutant",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Bien démarrer avec OùVa, en 3 étapes. Après, plus rien à faire.",
+   "scene": "big_word",
+   "cap": "3 étapes.",
+   "accent": "étapes.",
+   "sync": {}
+  },
+  {
+   "text": "Étape 1 : ajoute tes lieux importants. Maison, travail, salle.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "add_place",
+    "region": "steps",
+    "label": "Ajouter un lieu"
+   },
+   "sync": {
+    "zoom": "ajoute"
+   }
+  },
+  {
+   "text": "Étape 2 : vis ta vie. L'appli compte toute seule.",
+   "scene": "phone_auto",
+   "params": {
+    "place": "work",
+    "others": [
+     "home",
+     "gym"
+    ]
+   },
+   "cap": "Vis ta vie.",
+   "cap2": "Elle compte seule.",
+   "accent": "vie.",
+   "sync": {
+    "line2": "compte"
+   }
+  },
+  {
+   "text": "Étape 3 : le soir, ouvre l'accueil.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Ta journée"
+   },
+   "sync": {
+    "zoom": "soir,"
+   }
+  },
+  {
+   "text": "Au bout d'une semaine, ta carte commence à parler.",
+   "scene": "heatmap_reveal",
+   "cap": "ta carte",
+   "accent": "carte",
+   "sync": {
+    "punch": "semaine,"
+   }
+  },
+  {
+   "text": "Pas de réglage compliqué, pas de bouton à penser.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "signal",
+      "title": "Aucun réglage"
+     },
+     {
+      "icon": "play",
+      "title": "Aucun bouton"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "réglage",
+    "i2": "bouton"
+   }
+  },
+  {
+   "text": "C'est tout. Vraiment tout.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "Vraiment tout.",
+   "accent": "tout.",
+   "sync": {}
+  }
+ ],
+ "angle": "tuto/general"
+}

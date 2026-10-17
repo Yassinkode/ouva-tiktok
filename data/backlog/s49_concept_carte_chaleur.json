@@ -1,0 +1,92 @@
+{
+ "format": "concept",
+ "feature": "carte_chaleur",
+ "title": "Pourquoi une carte",
+ "caption": "Pourquoi une carte de chaleur et pas un tableau ? Parce que ton cerveau lit les couleurs plus vite que les chiffres.",
+ "hashtags": [
+  "#ouva",
+  "#design",
+  "#concept",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Pourquoi OùVa te montre une carte, et pas un tableau de chiffres ?",
+   "scene": "big_word",
+   "cap": "pas un tableau",
+   "accent": "tableau",
+   "sync": {}
+  },
+  {
+   "text": "Parce qu'un tableau, tu le lis. Une carte, tu la comprends en une seconde.",
+   "scene": "heatmap_reveal",
+   "cap": "en une seconde",
+   "accent": "seconde.",
+   "sync": {
+    "punch": "carte,"
+   }
+  },
+  {
+   "text": "Rouge : tu y vis. Vert : tu y passes.",
+   "scene": "compare",
+   "params": {
+    "a": {
+     "place": "home",
+     "value": 48,
+     "label": "Rouge"
+    },
+    "b": {
+     "place": "park",
+     "value": 3,
+     "label": "Vert"
+    }
+   },
+   "sync": {
+    "b": "Vert"
+   }
+  },
+  {
+   "text": "Et les chiffres sont quand même là, juste en dessous.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "places_heatmap",
+    "region": "places",
+    "label": "Les chiffres"
+   },
+   "sync": {
+    "zoom": "chiffres"
+   }
+  },
+  {
+   "text": "Le meilleur des deux.",
+   "scene": "feature_list",
+   "params": {
+    "items": [
+     {
+      "icon": "map",
+      "title": "La carte pour voir"
+     },
+     {
+      "icon": "chart",
+      "title": "Les chiffres pour savoir"
+     }
+    ]
+   },
+   "sync": {
+    "i1": "meilleur",
+    "i2": "deux."
+   }
+  },
+  {
+   "text": "Ton mois, en un coup d'œil.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "en un coup d'œil.",
+   "accent": "d'œil.",
+   "sync": {}
+  }
+ ],
+ "angle": "concept/carte_chaleur"
+}

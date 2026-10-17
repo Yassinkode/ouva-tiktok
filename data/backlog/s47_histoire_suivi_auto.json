@@ -1,0 +1,92 @@
+{
+ "format": "histoire",
+ "feature": "suivi_auto",
+ "title": "Le téléphone oublié",
+ "caption": "J'ai oublié mon téléphone à la maison. Ma carte de chaleur m'a dénoncé 😅",
+ "hashtags": [
+  "#ouva",
+  "#oubli",
+  "#humour",
+  "#iphone"
+ ],
+ "beats": [
+  {
+   "text": "Ce matin, j'ai oublié mon téléphone à la maison. Toute la journée.",
+   "scene": "big_word",
+   "cap": "toute la journée.",
+   "accent": "journée.",
+   "sync": {}
+  },
+  {
+   "text": "Résultat : selon OùVa, je suis resté 11 heures chez moi.",
+   "scene": "counter_map",
+   "params": {
+    "value": 11,
+    "unit": "heures",
+    "bottom": "chez moi",
+    "place": "home"
+   },
+   "sync": {
+    "count": "11",
+    "bottom": "moi."
+   }
+  },
+  {
+   "text": "Alors qu'en vrai, j'étais au travail, puis au café.",
+   "scene": "replay_day",
+   "params": {
+    "stops": [
+     {
+      "place": "home",
+      "time": "08:00"
+     },
+     {
+      "place": "work",
+      "time": "09:00"
+     },
+     {
+      "place": "cafe",
+      "time": "18:00"
+     }
+    ]
+   },
+   "cap": "au travail",
+   "accent": "travail,",
+   "sync": {}
+  },
+  {
+   "text": "Logique : l'appli suit ton téléphone, pas toi.",
+   "scene": "big_word",
+   "params": {
+    "dark": true
+   },
+   "cap": "ton téléphone, pas toi.",
+   "accent": "toi.",
+   "sync": {}
+  },
+  {
+   "text": "Le lendemain, tout est revenu normal sur l'accueil.",
+   "scene": "app_screen",
+   "params": {
+    "shot": "home_now",
+    "region": "places",
+    "label": "Tes lieux aujourd'hui"
+   },
+   "sync": {
+    "zoom": "normal"
+   }
+  },
+  {
+   "text": "Leçon du jour : ne jamais sortir sans lui.",
+   "scene": "wipe_word",
+   "params": {
+    "word": "sans lui",
+    "small": "jamais"
+   },
+   "sync": {
+    "word": "lui."
+   }
+  }
+ ],
+ "angle": "histoire/suivi_auto"
+}
