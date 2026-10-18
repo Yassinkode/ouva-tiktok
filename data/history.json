@@ -362,5 +362,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-20_8h",
+  "date": "2026-10-20",
+  "slot": "8h",
+  "title": "7 jours",
+  "angle": "defi/dynamic_island",
+  "format": "defi",
+  "feature": "dynamic_island",
+  "hook": "J'ai laissé OùVa tourner 7 jours sans y toucher.",
+  "caption": "J'ai laissé OùVa tourner 7 jours sans y toucher. Voilà ce que j'ai appris.\n\n#ouva #test #7jours #iphone",
+  "backlog": "s12_defi_dynamic_island.json",
+  "bg": "blinded",
+  "scenes": [
+   "big_word",
+   "app_screen",
+   "dynamic_island",
+   "day_timeline",
+   "app_tour",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad4ef4c1b391918325b698a",
+  "url": null,
+  "scheduledFor": "2026-10-20T06:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
