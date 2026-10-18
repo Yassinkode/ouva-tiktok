@@ -418,5 +418,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-20_17h",
+  "date": "2026-10-20",
+  "slot": "17h",
+  "title": "Télétravail",
+  "angle": "histoire/suivi_auto",
+  "format": "histoire",
+  "feature": "suivi_auto",
+  "hook": "Mon trajet pour aller au travail ? 3 pas.",
+  "caption": "Télétravail : 3 pas entre mon lit et mon bureau. Qui est dans le même cas ? 🙋\n\n#ouva #teletravail #humour #iphone",
+  "backlog": "s13_histoire_suivi_auto.json",
+  "bg": "arches",
+  "scenes": [
+   "big_word",
+   "place_pin",
+   "ring_stat",
+   "app_screen",
+   "day_timeline",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad5578e016595f548f81bbb",
+  "url": null,
+  "scheduledFor": "2026-10-20T15:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
