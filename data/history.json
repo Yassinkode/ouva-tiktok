@@ -390,5 +390,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-20_12h",
+  "date": "2026-10-20",
+  "slot": "12h",
+  "title": "Lire sa carte de chaleur",
+  "angle": "concept/carte_chaleur",
+  "format": "concept",
+  "feature": "carte_chaleur",
+  "hook": "Voilà ma carte de chaleur des 30 derniers jours.",
+  "caption": "Rouge, jaune, vert : voilà comment lire ta carte de chaleur OùVa.\n\n#ouva #cartedechaleur #data #iphone",
+  "backlog": "s11_concept_carte_chaleur.json",
+  "bg": "losing",
+  "scenes": [
+   "app_screen",
+   "heatmap_reveal",
+   "compare",
+   "place_pin",
+   "app_screen",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad53524f9ca761c19fcb5a5",
+  "url": null,
+  "scheduledFor": "2026-10-20T10:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
