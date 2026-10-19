@@ -446,5 +446,61 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-20_19h",
+  "date": "2026-10-20",
+  "slot": "19h",
+  "title": "Le lieu mystère",
+  "angle": "question/stats_lieu",
+  "format": "question",
+  "feature": "stats_lieu",
+  "hook": "Un lieu représente 12 % de mon temps. Et ce n'est pas le travail.",
+  "caption": "Un lieu représente 12 % de mon temps et c'est pas le boulot. Devine lequel 👇\n\n#ouva #devinette #amis #iphone",
+  "backlog": "s16_question_stats_lieu.json",
+  "bg": "blinded",
+  "scenes": [
+   "ring_stat",
+   "big_word",
+   "feature_list",
+   "place_pin",
+   "app_screen",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad5a51f60705232a068df9b",
+  "url": null,
+  "scheduledFor": "2026-10-20T17:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-20_21h",
+  "date": "2026-10-20",
+  "slot": "21h",
+  "title": "Change l'icône",
+  "angle": "feature/theme_logo",
+  "format": "feature",
+  "feature": "theme_logo",
+  "hook": "Petit secret d'OùVa : tu peux changer son icône sur ton écran d'accueil.",
+  "caption": "Tu peux changer l'icône d'OùVa. Team vert, bleu, doré ou rose ?\n\n#ouva #personnalisation #iphone #homescreen",
+  "backlog": "s14_feature_theme_logo.json",
+  "bg": "arches",
+  "scenes": [
+   "big_word",
+   "app_screen",
+   "feature_list",
+   "wipe_word",
+   "app_tour",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad5a7ab9a65dc179c9496a9",
+  "url": null,
+  "scheduledFor": "2026-10-20T19:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
