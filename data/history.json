@@ -502,5 +502,61 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-21_8h",
+  "date": "2026-10-21",
+  "slot": "8h",
+  "title": "Ta vie en couleurs",
+  "angle": "pitch/carte_chaleur",
+  "format": "pitch",
+  "feature": "carte_chaleur",
+  "hook": "Voilà à quoi ressemble un mois de ma vie.",
+  "caption": "Ta vie, en couleurs, sur une carte. Rouge = là où tu passes le plus de temps.\n\n#ouva #cartedechaleur #iphone #app",
+  "backlog": "s28_pitch_carte_chaleur.json",
+  "bg": "blinded",
+  "scenes": [
+   "heatmap_reveal",
+   "big_word",
+   "app_screen",
+   "place_pin",
+   "app_screen",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad682e4d2c7d95728ec5378",
+  "url": null,
+  "scheduledFor": "2026-10-21T06:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-21_12h",
+  "date": "2026-10-21",
+  "slot": "12h",
+  "title": "3 raisons de l'installer",
+  "angle": "liste/general",
+  "format": "liste",
+  "feature": "general",
+  "hook": "3 raisons d'installer OùVa. Et la dernière, c'est ma préférée.",
+  "caption": "3 raisons d'installer OùVa. La 3e, c'est ma préférée.\n\n#ouva #app #iphone #astuce",
+  "backlog": "s21_liste_general.json",
+  "bg": "losing",
+  "scenes": [
+   "big_word",
+   "phone_auto",
+   "app_screen",
+   "replay_day",
+   "heatmap_reveal",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad685cf20fee04f8f3cfc56",
+  "url": null,
+  "scheduledFor": "2026-10-21T10:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
