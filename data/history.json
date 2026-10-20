@@ -642,5 +642,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-22_8h",
+  "date": "2026-10-22",
+  "slot": "8h",
+  "title": "Mon samedi en replay",
+  "angle": "histoire/replay",
+  "format": "histoire",
+  "feature": "replay",
+  "hook": "J'ai rejoué mon samedi sur la carte. Franchement, je ne m'attendais pas à ça.",
+  "caption": "J'ai rejoué mon samedi sur la carte. Je ne pensais pas avoir autant marché 😅\n\n#ouva #samedi #replay #weekend",
+  "backlog": "s22_histoire_replay.json",
+  "bg": "arches",
+  "scenes": [
+   "big_word",
+   "replay_day",
+   "wipe_word",
+   "app_screen",
+   "compare",
+   "app_screen"
+  ],
+  "status": "scheduled",
+  "postId": "6ad77bafaeae10f13d4e365d",
+  "url": null,
+  "scheduledFor": "2026-10-22T06:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
