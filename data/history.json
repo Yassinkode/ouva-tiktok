@@ -670,5 +670,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-22_12h",
+  "date": "2026-10-22",
+  "slot": "12h",
+  "title": "Ce que ma carte m'a appris",
+  "angle": "liste/carte_chaleur",
+  "format": "liste",
+  "feature": "carte_chaleur",
+  "hook": "3 choses que ma carte de chaleur m'a apprises sur moi.",
+  "caption": "3 choses que ma carte de chaleur m'a apprises sur moi. La 2e fait mal.\n\n#ouva #cartedechaleur #habitudes #iphone",
+  "backlog": "s30_liste_carte_chaleur.json",
+  "bg": "blinded",
+  "scenes": [
+   "heatmap_reveal",
+   "place_pin",
+   "compare",
+   "big_word",
+   "app_screen",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad7c130e86e5a399514294a",
+  "url": null,
+  "scheduledFor": "2026-10-22T10:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
