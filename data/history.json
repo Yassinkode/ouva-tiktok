@@ -558,5 +558,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-21_17h",
+  "date": "2026-10-21",
+  "slot": "17h",
+  "title": "8 heures assis",
+  "angle": "sedentarite/stats_lieu",
+  "format": "sedentarite",
+  "feature": "stats_lieu",
+  "hook": "Au-delà de 8 heures assis par jour, l'ANSES parle de risque pour la santé.",
+  "caption": "Au-delà de 8 h assis par jour, c'est un risque pour la santé (ANSES). Et toi, tu es à combien ?\n\n#ouva #sedentarite #bureau #sante",
+  "backlog": "s24_sedentarite_stats_lieu.json",
+  "bg": "losing",
+  "scenes": [
+   "fact",
+   "day_timeline",
+   "bento",
+   "app_screen",
+   "feature_list",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad6b84d9ba62bf051e7f9c8",
+  "url": null,
+  "scheduledFor": "2026-10-21T15:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
