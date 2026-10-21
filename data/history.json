@@ -811,5 +811,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-23_12h",
+  "date": "2026-10-23",
+  "slot": "12h",
+  "title": "Ta journée en story",
+  "angle": "tuto/replay",
+  "format": "tuto",
+  "feature": "replay",
+  "hook": "Partager ta journée animée en story, ça se fait en 3 étapes.",
+  "caption": "Comment partager ta journée animée en story, en 3 étapes 🎬\n\n#ouva #tuto #story #replay",
+  "backlog": "s27_tuto_replay.json",
+  "bg": "blinded",
+  "scenes": [
+   "big_word",
+   "app_screen",
+   "replay_day",
+   "app_screen",
+   "feature_list",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad9367b91629134395bbc38",
+  "url": null,
+  "scheduledFor": "2026-10-23T10:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
