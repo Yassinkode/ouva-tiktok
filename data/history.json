@@ -698,5 +698,34 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-22_17h",
+  "date": "2026-10-22",
+  "slot": "17h",
+  "title": "L'appli en 20 secondes",
+  "angle": "pitch/general",
+  "format": "pitch",
+  "feature": "general",
+  "hook": "OùVa en 20 secondes.",
+  "caption": "OùVa en 20 secondes : ton temps, lieu par lieu. Lien en bio 📍\n\n#ouva #app #iphone #decouverte",
+  "backlog": "s20_pitch_general.json",
+  "bg": "blinded",
+  "scenes": [
+   "big_word",
+   "app_screen",
+   "dynamic_island",
+   "app_screen",
+   "replay_day",
+   "app_screen",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ad80356f1a49179f11803f4",
+  "url": null,
+  "scheduledFor": "2026-10-22T15:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
