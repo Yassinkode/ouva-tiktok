@@ -783,5 +783,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "eleven_v4"
+ },
+ {
+  "id": "2026-10-23_8h",
+  "date": "2026-10-23",
+  "slot": "8h",
+  "title": "La page d'un lieu",
+  "angle": "feature/stats_lieu",
+  "format": "feature",
+  "feature": "stats_lieu",
+  "hook": "Dans OùVa, chaque lieu a sa propre page. Voilà celle de ma salle.",
+  "caption": "Chaque lieu a sa propre page dans OùVa. Voilà celle de ma salle de sport.\n\n#ouva #salledesport #stats #iphone",
+  "backlog": "s31_feature_stats_lieu.json",
+  "bg": "arches",
+  "scenes": [
+   "place_pin",
+   "app_screen",
+   "big_word",
+   "app_screen",
+   "day_timeline",
+   "feature_list"
+  ],
+  "status": "scheduled",
+  "postId": "6ad8f7436f3d4af577a74eb8",
+  "url": null,
+  "scheduledFor": "2026-10-23T06:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "eleven_v4"
  }
 ]
