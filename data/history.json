@@ -923,5 +923,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-24_8h",
+  "date": "2026-10-24",
+  "slot": "8h",
+  "title": "30 jours, 1 objectif",
+  "angle": "defi/objectifs",
+  "format": "defi",
+  "feature": "objectifs",
+  "hook": "Défi 30 jours : un seul objectif, une heure au parc par semaine.",
+  "caption": "Je me suis fixé un seul objectif dans OùVa : 1 h au parc par semaine. Résultat après 30 jours.\n\n#ouva #objectif #defi #parc",
+  "backlog": "s34_defi_objectifs.json",
+  "bg": "blinded",
+  "scenes": [
+   "goal",
+   "app_screen",
+   "wipe_word",
+   "counter_map",
+   "compare",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ada47d3cf3a6403d944bf46",
+  "url": null,
+  "scheduledFor": "2026-10-24T06:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
