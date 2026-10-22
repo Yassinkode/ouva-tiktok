@@ -951,5 +951,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-24_12h",
+  "date": "2026-10-24",
+  "slot": "12h",
+  "title": "La boulangerie",
+  "angle": "histoire/ajout_lieu",
+  "format": "histoire",
+  "feature": "ajout_lieu",
+  "hook": "J'ai ajouté ma boulangerie comme lieu dans OùVa. Grosse erreur.",
+  "caption": "J'ai ajouté ma boulangerie dans OùVa. Grosse erreur 🥐\n\n#ouva #boulangerie #humour #iphone",
+  "backlog": "s35_histoire_ajout_lieu.json",
+  "bg": "arches",
+  "scenes": [
+   "big_word",
+   "add_place",
+   "app_screen",
+   "counter_map",
+   "dynamic_island",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ada8f92ca23b2a4c530ba2f",
+  "url": null,
+  "scheduledFor": "2026-10-24T10:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
