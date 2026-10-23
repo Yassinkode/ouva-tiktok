@@ -1063,5 +1063,61 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-25_8h",
+  "date": "2026-10-25",
+  "slot": "8h",
+  "title": "Lire ses stats",
+  "angle": "tuto/stats_lieu",
+  "format": "tuto",
+  "feature": "stats_lieu",
+  "hook": "Comprendre tes stats OùVa, en 3 étapes.",
+  "caption": "Lire ses stats OùVa en 3 étapes. Simple, rapide.\n\n#ouva #tuto #stats #iphone",
+  "backlog": "s38_tuto_stats_lieu.json",
+  "bg": "blinded",
+  "scenes": [
+   "big_word",
+   "app_screen",
+   "heatmap_reveal",
+   "app_screen",
+   "ring_stat",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6adbd386f91191380432a3ad",
+  "url": null,
+  "scheduledFor": "2026-10-25T07:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
+ },
+ {
+  "id": "2026-10-25_12h",
+  "date": "2026-10-25",
+  "slot": "12h",
+  "title": "La pause de midi",
+  "angle": "sedentarite/suivi_auto",
+  "format": "sedentarite",
+  "feature": "suivi_auto",
+  "hook": "L'OMS recommande au moins 150 minutes d'activité modérée par semaine.",
+  "caption": "150 minutes d'activité par semaine recommandées par l'OMS. La pause de midi peut faire une bonne partie du travail.\n\n#ouva #pausedejeuner #oms #bouger",
+  "backlog": "s55_sedentarite_suivi_auto.json",
+  "bg": "losing",
+  "scenes": [
+   "fact",
+   "big_word",
+   "replay_day",
+   "compare",
+   "app_screen",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6adbd516a9a3ce42056ca3a8",
+  "url": null,
+  "scheduledFor": "2026-10-25T11:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
