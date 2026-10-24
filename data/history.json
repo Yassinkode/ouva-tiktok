@@ -1231,5 +1231,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-26_12h",
+  "date": "2026-10-26",
+  "slot": "12h",
+  "title": "3 trucs que l'appli fait sans toi",
+  "angle": "liste/suivi_auto",
+  "format": "liste",
+  "feature": "suivi_auto",
+  "hook": "3 trucs qu'OùVa fait pendant que toi, tu ne fais rien du tout.",
+  "caption": "3 choses qu'OùVa fait pendant que tu vis ta vie.\n\n#ouva #automatique #iphone #app",
+  "backlog": "s41_liste_suivi_auto.json",
+  "bg": "blinded",
+  "scenes": [
+   "big_word",
+   "place_pin",
+   "dynamic_island",
+   "day_timeline",
+   "app_screen",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6add1ecbe91537b2094fc88b",
+  "url": null,
+  "scheduledFor": "2026-10-26T11:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
