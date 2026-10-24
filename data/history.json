@@ -1203,5 +1203,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-26_8h",
+  "date": "2026-10-26",
+  "slot": "8h",
+  "title": "La salle d'attente",
+  "angle": "histoire/dynamic_island",
+  "format": "histoire",
+  "feature": "dynamic_island",
+  "hook": "Le chrono en haut de mon écran tourne depuis 58 minutes.",
+  "caption": "Le chrono d'OùVa m'a révélé combien de temps j'ai attendu chez le médecin 🙃\n\n#ouva #attente #humour #iphone",
+  "backlog": "s44_histoire_dynamic_island.json",
+  "bg": "losing",
+  "scenes": [
+   "dynamic_island",
+   "big_word",
+   "wipe_word",
+   "app_screen",
+   "feature_list",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6adcd853fb4edd6878d0d3e4",
+  "url": null,
+  "scheduledFor": "2026-10-26T07:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
