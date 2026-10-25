@@ -1343,5 +1343,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-27_8h",
+  "date": "2026-10-27",
+  "slot": "8h",
+  "title": "Le téléphone oublié",
+  "angle": "histoire/suivi_auto",
+  "format": "histoire",
+  "feature": "suivi_auto",
+  "hook": "Ce matin, j'ai oublié mon téléphone à la maison. Toute la journée.",
+  "caption": "J'ai oublié mon téléphone à la maison. Ma carte de chaleur m'a dénoncé 😅\n\n#ouva #oubli #humour #iphone",
+  "backlog": "s47_histoire_suivi_auto.json",
+  "bg": "losing",
+  "scenes": [
+   "big_word",
+   "counter_map",
+   "replay_day",
+   "big_word",
+   "app_screen",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ade311b6d371747f89eac2f",
+  "url": null,
+  "scheduledFor": "2026-10-27T07:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
