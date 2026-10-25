@@ -1371,5 +1371,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-27_12h",
+  "date": "2026-10-27",
+  "slot": "12h",
+  "title": "40 heures au bureau",
+  "angle": "sedentarite/stats_lieu",
+  "format": "sedentarite",
+  "feature": "stats_lieu",
+  "hook": "40 heures au bureau par semaine.",
+  "caption": "Un bureau à 40 heures par semaine, c'est 8 heures assis par jour. Le seuil dont parle l'ANSES.\n\n#ouva #bureau #sedentarite #anses",
+  "backlog": "s77_sedentarite_stats_lieu.json",
+  "bg": "losing",
+  "scenes": [
+   "counter_map",
+   "big_word",
+   "fact",
+   "app_screen",
+   "place_pin",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ade6fcfdda6d1ec6069786e",
+  "url": null,
+  "scheduledFor": "2026-10-27T11:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
