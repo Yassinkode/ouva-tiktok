@@ -7,6 +7,7 @@ fs.mkdirSync(dir, { recursive: true });
 if (spec.speed) process.env.VOICE_SPEED = String(spec.speed);
 if (spec.voice === 'edge') process.env.FORCE_VOICE = 'edge';
 if (spec.rate) process.env.EDGE_RATE = spec.rate;
+if (spec.edgeVoice) process.env.EDGE_VOICE = spec.edgeVoice;
 const out = [];
 for (const l of spec.lines) {
   const mp3 = `${dir}/${l.k}.mp3`;

@@ -40,5 +40,6 @@
   }
  ],
  "voice": "edge",
- "rate": "+10%"
+ "rate": "+12%",
+ "edgeVoice": "fr-FR-HenriNeural"
 }
