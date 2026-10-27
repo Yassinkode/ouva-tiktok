@@ -14,8 +14,8 @@ export const Whip: React.FC<{ seg: Seg; children: React.ReactNode; noEnter?: boo
 }) => {
   const f = useCurrentFrame();
   const vertical = seg.index % 3 === 2;
-  const inFn = (fr: number) => (noEnter ? 0 : kf(fr, [seg.start, seg.start + 0.36], [1, 0], EASE.out));
-  const outFn = (fr: number) => (noExit ? 0 : kf(fr, [seg.end - 0.24, seg.end + 0.06], [0, 1], EASE.in));
+  const inFn = (fr: number) => (noEnter ? 0 : kf(fr, [seg.start, seg.start + 0.24], [1, 0], EASE.out));
+  const outFn = (fr: number) => (noExit ? 0 : kf(fr, [seg.end - 0.16, seg.end + 0.04], [0, 1], EASE.in));
   const fn = (fr: number) => (inFn(fr) - outFn(fr)) * dist;
   const v = fn(f);
   const b = vel(fn, f) * 0.5;

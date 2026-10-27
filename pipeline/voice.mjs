@@ -44,7 +44,7 @@ async function elevenVoice(text, outMp3, { apiKey = process.env.ELEVENLABS_API_K
       const body = {
         text,
         model_id: model,
-        voice_settings: { stability: 0.5, similarity_boost: 0.75, speed: 1.08, style: 0, use_speaker_boost: true },
+        voice_settings: { stability: 0.5, similarity_boost: 0.75, speed: Number(process.env.VOICE_SPEED || 1.16), style: 0, use_speaker_boost: true },
         ...(withLang ? { language_code: 'fr' } : {}),
       };
       const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}/with-timestamps?output_format=mp3_44100_128`, {

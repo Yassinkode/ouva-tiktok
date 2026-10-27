@@ -11,13 +11,17 @@
     "@fontsource-variable/inter": "^5.3.0",
     "@fontsource-variable/inter-tight": "^5.3.0",
     "@huggingface/transformers": "^4.3.1",
+    "@react-three/fiber": "^8.17.10",
     "@remotion/bundler": "4.0.300",
     "@remotion/cli": "4.0.300",
     "@remotion/renderer": "4.0.300",
+    "@remotion/three": "^4.0.300",
+    "@types/three": "^0.169.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remotion": "4.0.300",
-    "sts-whisper-base": "^1.0.0"
+    "sts-whisper-base": "^1.0.0",
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@types/react": "^19.3.0",

@@ -162,10 +162,10 @@ const City: React.FC<{ m: Mood; mi: number; t: number; seed: number }> = ({ m, m
   const train = useBitmap(L.train, 750, 74);
   const rain = useBitmap(RAIN(m.rain), 1200, 2000);
   // slow "camera" (zoom + drift) on the whole picture, plus a few live elements: clouds, train, antenna lights, rain
-  const zoom = 1.04 + 0.04 * Math.sin(t * 0.12 + seed);
-  const px = Math.sin(t * 0.18 + seed) * 18;
-  const trainX = ((t * 260 + seed * 300) % 2600) - 1300;
-  const rainY = (t * 1500) % 2000;
+  const zoom = 1.06 + 0.05 * Math.sin(t * 0.35 + seed);
+  const px = Math.sin(t * 0.5 + seed) * 30;
+  const trainX = ((t * 520 + seed * 300) % 2600) - 1300;
+  const rainY = (t * 2100) % 2000;
   return (
     <AbsoluteFill style={{ overflow: 'hidden', background: m.sky[1] }}>
       <AbsoluteFill style={{ transform: `translateX(${px}px) scale(${zoom})`, transformOrigin: '50% 70%' }}>

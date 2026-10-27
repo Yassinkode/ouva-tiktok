@@ -211,6 +211,8 @@ export function sfxEvents(props) {
   props.segments.forEach((s, i) => {
     if (i > 0) add('whoosh', s.start - 0.08, { up: i % 2 === 0, gain: s.type === 'wipe_word' ? 0.8 : 0.6 });
     for (const c of [...(s.cap ?? []), ...(s.cap2 ?? [])]) add('tick', c.at, { gain: 0.14 });
+    // matches the camera "re-frame" jump in the middle of long scenes (Story.tsx)
+    if (s.end - s.start > 2.4) add('pop', s.start + (s.end - s.start) * 0.45, { f: 300, gain: 0.35 });
     switch (s.type) {
       case 'heatmap_reveal': {
         const pu = tOr(s, 'punch', 0.55);

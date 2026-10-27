@@ -6,7 +6,7 @@ import asyncio, json, os, sys
 import edge_tts
 
 VOICE = os.environ.get('EDGE_VOICE', 'fr-FR-RemyMultilingualNeural')
-RATE = os.environ.get('EDGE_RATE', '+6%')
+RATE = os.environ.get('EDGE_RATE', '+14%')
 
 
 async def main(txt, mp3, wj):
