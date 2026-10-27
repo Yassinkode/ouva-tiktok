@@ -6,6 +6,9 @@ import { Main } from './Main';
 import { Story } from './story/Story';
 import { DURATION_S, FPS, H, W } from './lib';
 import sample from './story/sample-props.json';
+import { LucasTest } from './lucas/Test';
+import { LucasVideo } from './lucas/Lucas';
+import lucasProps from '../public/lucas/props.json';
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -20,5 +23,7 @@ export const RemotionRoot: React.FC = () => (
       defaultProps={sample as any}
       calculateMetadata={({ props }: any) => ({ durationInFrames: Math.round(props.duration * FPS) })}
     />
+    <Composition id="Lucas" component={LucasVideo as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((lucasProps as any).duration * FPS)} defaultProps={lucasProps as any} />
+    <Composition id="LucasTest" component={LucasTest as any} fps={30} width={W} height={H} durationInFrames={90} defaultProps={{ shot: 0 }} />
   </>
 );
