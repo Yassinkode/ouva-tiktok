@@ -1,0 +1,15 @@
+{
+ "id": "lucas",
+ "speed": 1.12,
+ "lines": [
+  {"k": "l1", "text": "Lucas rentre chez lui, comme tous les soirs."},
+  {"k": "l2", "text": "Et son téléphone sait exactement combien de temps il a passé chez lui, au travail, à la salle."},
+  {"k": "l3", "text": "Tout ça… sans rien faire."},
+  {"k": "l4", "text": "Attends. Ce serait bien, une appli comme ça, non ?"},
+  {"k": "l5", "text": "Mais c'est fictif. Personne n'y a pensé."},
+  {"k": "l6", "text": "Alors… nous l'avons fait."},
+  {"k": "l7", "text": "OùVa. Le suivi du temps, lieu par lieu."},
+  {"k": "l8", "text": "Elle détecte tes lieux toute seule, compte ton temps, et te montre tout sur une carte."},
+  {"k": "l9", "text": "Lien de l'application en bio."}
+ ]
+}

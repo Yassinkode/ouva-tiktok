@@ -1,0 +1,24 @@
+name: One-off voice
+on:
+  push:
+    paths: ['data/oneoff/lines.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  voice:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pip install -q edge-tts
+      - env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node pipeline/oneoff_voice.mjs
+      - run: |
+          git config user.name "ouva-bot"
+          git config user.email "ouva-bot@users.noreply.github.com"
+          git add data/oneoff
+          git diff --cached --quiet || (git commit -m "one-off voice" && git pull --rebase -q && git push)
