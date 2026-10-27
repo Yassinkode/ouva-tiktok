@@ -180,7 +180,9 @@ const Quay: React.FC<{ t: number }> = ({ t }) => {
 };
 
 /* ---------------- Lucas (voxel character) ---------------- */
-export type LucasPose = { x: number; z: number; rotY: number; walk: number; phone: number; jump: number; smile: number; opacity?: number; scatter?: number };
+export const PHONE_Y = 1.9;
+export const PHONE_Z = 0.72;
+export type LucasPose = { x: number; z: number; rotY: number; walk: number; phone: number; jump: number; smile: number; opacity?: number; scatter?: number; pov?: boolean };
 
 const Lucas: React.FC<{ p: LucasPose; t: number; screen?: THREE.Texture }> = ({ p, t, screen }) => {
   const sw = Math.sin(t * 9) * 0.6 * p.walk;
@@ -202,7 +204,7 @@ const Lucas: React.FC<{ p: LucasPose; t: number; screen?: THREE.Texture }> = ({ 
         {mat('#22274A')}
       </mesh>
       {/* hoodie */}
-      <mesh position={[part(3)[0], 1.65 + part(3)[1], part(3)[2]]}>
+      <mesh position={[part(3)[0], 1.65 + part(3)[1], part(3)[2]]} visible={!p.pov}>
         <boxGeometry args={[1.0, 1.15, 0.6]} />
         {mat('#2F8F6B')}
       </mesh>
@@ -217,19 +219,20 @@ const Lucas: React.FC<{ p: LucasPose; t: number; screen?: THREE.Texture }> = ({ 
       </mesh>
       {/* phone */}
       {armUp > 0.05 && (
-        <group position={[0, 1.95 + part(6)[1], 0.75 * armUp + part(6)[2]]} rotation={[-0.35, Math.PI, 0]} scale={armUp}>
+        // screen facing Lucas (and the over-the-shoulder camera): it shows the real app
+        <group position={[0, PHONE_Y + part(6)[1], PHONE_Z * armUp + part(6)[2]]} rotation={[0.3, 0, 0]} scale={armUp}>
           <mesh>
-            <boxGeometry args={[0.42, 0.8, 0.06]} />
-            <meshLambertMaterial color={'#111'} />
+            <boxGeometry args={[0.5, 1.0, 0.06]} />
+            <meshLambertMaterial color={'#141414'} />
           </mesh>
           <mesh position={[0, 0, -0.035]} rotation={[0, Math.PI, 0]}>
-            <planeGeometry args={[0.36, 0.72]} />
-            <meshBasicMaterial color={screen ? '#ffffff' : '#52DFAF'} map={screen ?? null} />
+            <planeGeometry args={[0.44, 0.94]} />
+            <meshBasicMaterial key={screen ? 'tex' : 'none'} color={screen ? '#ffffff' : '#52DFAF'} map={screen ?? null} toneMapped={false} />
           </mesh>
         </group>
       )}
       {/* head */}
-      <group position={[part(7)[0], 2.62 + part(7)[1], part(7)[2]]}>
+      <group position={[part(7)[0], 2.62 + part(7)[1], part(7)[2]]} visible={!p.pov}>
         <mesh>
           <boxGeometry args={[0.82, 0.8, 0.78]} />
           {mat('#E2A97E')}

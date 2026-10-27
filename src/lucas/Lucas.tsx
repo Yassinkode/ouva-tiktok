@@ -5,7 +5,8 @@ import * as THREE from 'three';
 import '@fontsource/pixelify-sans/400.css';
 import '@fontsource/pixelify-sans/700.css';
 import { C, EASE, FONT, FONT_TIGHT, FPS, clamp01, kf, lerp, sp } from '../lib';
-import { Cam, HOUSES, LucasPose, PlaceId, World } from './World';
+import { Cam, HOUSES, LucasPose, PHONE_Y, PHONE_Z, PlaceId, World } from './World';
+import { continueRender, delayRender } from 'remotion';
 import { IconTile, PLACE } from '../components/UI';
 import { LogoIcon } from '../components/Icons';
 import { Phone3D, SH, SW } from '../story/AppScenes';
@@ -27,6 +28,27 @@ const wordAt = (L: Line | undefined, w: string, fb: number) => {
 
 /* ---------------- camera path of the story (story time) ---------------- */
 const lerp3 = (a: [number, number, number], b: [number, number, number], u: number): [number, number, number] => [lerp(a[0], b[0], u), lerp(a[1], b[1], u), lerp(a[2], b[2], u)];
+
+/** a point in Lucas' local frame -> world */
+const toWorld = (L: LucasPose, p: [number, number, number]): [number, number, number] => {
+  const c = Math.cos(L.rotY), sn = Math.sin(L.rotY);
+  return [L.x + p[0] * c + p[2] * sn, p[1], L.z - p[0] * sn + p[2] * c];
+};
+
+/** the real app screenshot as a texture for the phone in his hand */
+const useScreenTexture = (file: string) => {
+  const [tex, setTex] = React.useState<THREE.Texture | null>(null);
+  const [h] = React.useState(() => delayRender('phone screen'));
+  React.useEffect(() => {
+    new THREE.TextureLoader().load(staticFile(file), (tx) => {
+      tx.colorSpace = THREE.SRGBColorSpace;
+      tx.anisotropy = 4;
+      setTex(tx);
+      continueRender(h);
+    }, undefined, () => continueRender(h));
+  }, []);
+  return tex;
+};
 
 /** camera key-frames: each key holds from its time; moving to it takes `dur` (fast whip-like ease) */
 type CamKey = { at: number; cam: (st: number) => Cam; dur?: number };
@@ -65,7 +87,8 @@ const storyShot = (st: number, P: LucasProps, pinT: [PlaceId, number][]): { cam:
     // tracking shot: low, moon and houses behind him
     { at: 0, cam: (s) => { const x = lerp(6, -2.5, clamp01(s / walkEnd)); return { pos: [x + 0.9, 1.3 + s * 0.06, 9.5 - s * 0.35], look: [x + 0.1, 3.3, -3], fov: 50 }; } },
     // over the shoulder, close on the phone (the real app slides in as an overlay)
-    { at: walkEnd, cam: (s) => ({ pos: [L.x + 1.7 + (s - walkEnd) * 0.15, 3.6, L.z + 3.6], look: [L.x - 0.2, 2.0, L.z - 0.5], fov: 44 }), dur: 0.3 },
+    // over his shoulder, onto the real app on his phone
+    { at: walkEnd, cam: (s) => { const k = clamp01((s - walkEnd) / 1.6); return { pos: toWorld(L, [0.08, 2.95 - 0.08 * k, -0.75 + 0.25 * k]), look: toWorld(L, [0, PHONE_Y - 0.12, PHONE_Z]), fov: 56 - 6 * k }; }, dur: 0.32 },
     // one fast whip per place, the pin pops when we land on it
     ...pinT.map(([id, at]) => ({ at: at - 0.2, cam: (s: number) => houseCam(id, (s - at) * 1.2), dur: 0.22 })),
     // "sans rien faire": fast orbit around him
@@ -208,7 +231,10 @@ export const LucasVideo: React.FC<LucasProps> = (P) => {
   const phoneIn = L.l2.at + 0.25;
   const phoneOut = pinTimes[0][1] - 0.15;
   const phoneSeg: Seg = { index: 1, type: 'app_screen', start: phoneIn, end: Math.max(phoneOut, phoneIn + 1.5), params: {}, t: {}, cap: [] } as any;
-  const showPhone = !inRew && t >= phoneIn - 0.05 && t < phoneOut + 0.15;
+  const showPhone = false;
+  const closeUp = !inRew && t >= L.l2.at + 0.3 && t < pinTimes[0][1] - 0.2;
+  const screenTex = useScreenTexture('screens/home_now.png');
+  if (closeUp) lucas = { ...lucas, pov: true };
 
   const desat = pauseOn ? 0.75 : 0;
   const worldFilter = `${desat ? `saturate(${1 - desat}) ` : ''}${inRew ? 'hue-rotate(-12deg) contrast(1.15) ' : ''}brightness(${1 - dark * 0.75})`;
@@ -232,8 +258,8 @@ export const LucasVideo: React.FC<LucasProps> = (P) => {
       <AbsoluteFill style={{ transform: `translate(${shx}px, ${shy}px)` }}>
         {/* 3D pixel world */}
         <AbsoluteFill style={{ filter: worldFilter }}>
-          <ThreeCanvas width={1080} height={1920} dpr={0.42} style={{ imageRendering: 'pixelated' }}>
-            <World t={t >= r1 && t < logoT ? 0.55 + (t - r1) * 0.05 : t >= logoT ? t : st} cam={cam} lucas={lucas} moonGlow={t >= logoT ? 1 + 0.6 * Math.max(0, 1 - (t - logoT) / 1.2) : 1} dim={dark} />
+          <ThreeCanvas width={1080} height={1920} dpr={closeUp ? 0.85 : 0.42} style={{ imageRendering: 'pixelated' }}>
+            <World t={t >= r1 && t < logoT ? 0.55 + (t - r1) * 0.05 : t >= logoT ? t : st} cam={cam} lucas={lucas} screen={screenTex ?? undefined} moonGlow={t >= logoT ? 1 + 0.6 * Math.max(0, 1 - (t - logoT) / 1.2) : 1} dim={dark} />
           </ThreeCanvas>
         </AbsoluteFill>
 

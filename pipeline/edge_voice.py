@@ -5,7 +5,7 @@ Usage: python3 pipeline/edge_voice.py text.txt out.mp3 words.json
 import asyncio, json, os, sys
 import edge_tts
 
-VOICE = os.environ.get('EDGE_VOICE', 'fr-FR-RemyMultilingualNeural')
+VOICE = os.environ.get('EDGE_VOICE', 'fr-FR-HenriNeural')
 RATE = os.environ.get('EDGE_RATE', '+14%')
 
 
