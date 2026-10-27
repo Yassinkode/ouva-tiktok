@@ -203,7 +203,7 @@ export const PhoneAuto: React.FC<{ seg: Seg }> = ({ seg }) => {
               <PinIcon size={62} color={C.mintDeep} dot="#fff" />
             </Orb>
             <Orb at={a + 0.95} x={PW + 60} y={420} z={200} seed={2}>
-              <ClockIcon size={70} color={C.ink} stroke={4.5} />
+              <ClockIcon size={70} color={C.dark} stroke={4.5} />
             </Orb>
             <Orb at={a + 1.2} x={-220} y={860} z={90} seed={3}>
               <SignalIcon size={70} color={C.mintDeep} />
@@ -387,7 +387,7 @@ export const BigWord: React.FC<{ seg: Seg }> = ({ seg }) => {
   return (
     <AbsoluteFill>
       <Whip seg={seg}>
-        {dark && <AbsoluteFill style={{ background: 'radial-gradient(120% 80% at 50% 45%, #13241E 0%, #0A0E0C 70%)', opacity: clamp01((f / FPS - a) / 0.12) }} />}
+        {dark && <AbsoluteFill style={{ background: 'radial-gradient(120% 80% at 50% 45%, rgba(19,36,30,0.55) 0%, rgba(5,8,7,0.82) 75%)', opacity: clamp01((f / FPS - a) / 0.12) }} />}
         {kind && (
           <div style={{ position: 'absolute', left: 0, right: 0, top: 560, display: 'flex', justifyContent: 'center', transform: `scale(${Math.max(0, ic)}) rotate(${(1 - ic) * -20}deg) translateY(${float(f, 5, 10)}px)`, opacity: clamp01(ic * 2) }}>
             <div style={{ filter: 'drop-shadow(0 30px 40px rgba(10,30,22,0.25))' }}>

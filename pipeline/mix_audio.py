@@ -208,8 +208,12 @@ def main(ev_path, voice_path, out_path):
     vbuf = np.zeros(N)
     vbuf[: min(N, len(voice))] = voice[:N]
     # normalise voice to a consistent level
-    rms = np.sqrt(np.mean(vbuf[np.abs(vbuf) > 1e-4] ** 2)) + 1e-9
-    vbuf *= 10 ** (-20 / 20) / rms
+    loud = vbuf[np.abs(vbuf) > 1e-4]
+    if len(loud) > SR:  # (guard: a silent voice track must not be amplified into noise)
+        rms = np.sqrt(np.mean(loud ** 2)) + 1e-9
+        vbuf *= 10 ** (-20 / 20) / rms
+    else:
+        vbuf[:] = 0
     mix = sfx * 0.8
     venv = np.convolve(np.abs(vbuf), np.ones(int(SR * 0.25)) / int(SR * 0.25), mode='same')
     speech = np.clip(venv / (np.percentile(venv, 90) + 1e-9), 0, 1)
@@ -218,7 +222,7 @@ def main(ev_path, voice_path, out_path):
     if bg is not None:
         # background track (vocals only, chosen per video), level set on perceived loudness, not on raw RMS:
         # a bass-heavy track sounds much quieter on a phone, so we also look at it without its low end.
-        L_voice = lufs(vbuf[np.abs(venv) > 0.2 * np.percentile(venv, 90)])
+        L_voice = lufs(vbuf[np.abs(venv) > 0.2 * np.percentile(venv, 90)]) if np.any(vbuf) else -20.0
         L_full = lufs(bg)
         L_phone = lufs(hp(hp(bg.mean(1), 180), 180))
         g_db = L_voice + BG_IN_GAPS - L_full  # nominal level (in the gaps)

@@ -42,7 +42,7 @@ N'invente aucun autre chiffre « scientifique ».
 ## Structure
 - 6 à 9 « beats ». Chaque beat = 1 phrase (ou 2 très courtes) dite en **2 à 5 secondes** (25 à 95 caractères).
 - Texte total (tous les beats) : **260 à 450 caractères** (vidéo de 22 à 32 s).
-- Beat 1 = accroche immédiate (question, surprise) — compréhensible en 1,5 s.
+- Beat 1 = accroche immédiate (question, surprise) — compréhensible en 1,5 s. **Toujours en scène `big_word`** : elle est remplacée à l'écran par l'intro animée (vraie capture de l'app + lieux avec chronos + « OùVa · le suivi du temps par lieu »), pour que le but de l'app soit compris dans les 4 premières secondes. `cap` court (2 à 5 mots).
 - La structure dépend du format (pitch, tuto, liste, devinette…) : ne reprends PAS toujours l'arc « découverte → chiffres → objectif ».
 - Ne parle d'objectifs (et n'utilise la scène `goal`) QUE si la feature est `objectifs`. Ne termine pas par « on verra si la carte change de couleur ».
 - La fin peut être n'importe quelle scène. Le logo OùVa + « Disponible sur l'App Store » + « lien en bio » sont ajoutés automatiquement.

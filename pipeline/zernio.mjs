@@ -76,6 +76,11 @@ export async function publish({ file, caption, scheduledFor }) {
   };
 }
 
+/** cancel a post that is still scheduled (never touches published posts) */
+export async function deletePost(id) {
+  return api('DELETE', `/posts/${id}`);
+}
+
 // `node pipeline/zernio.mjs check` → verifies the key and the connected TikTok account
 if (process.argv[1]?.endsWith('zernio.mjs') && process.argv[2] === 'check') {
   findAccounts()

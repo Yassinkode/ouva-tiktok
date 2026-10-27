@@ -60,7 +60,7 @@ export const Disclaimer: React.FC<{ show: boolean; text?: string; dark?: boolean
       fontSize: 22,
       fontWeight: 500,
       letterSpacing: '0.02em',
-      color: dark ? 'rgba(255,255,255,0.45)' : 'rgba(13,18,16,0.38)',
+      color: 'rgba(255,255,255,0.5)',
       opacity: show ? 1 : 0,
     }}
   >

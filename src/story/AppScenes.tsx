@@ -630,7 +630,7 @@ export const FeatureList: React.FC<{ seg: Seg }> = ({ seg }) => {
           const bl = vel(fn, f) * 0.6;
           const top = 960 - (n * 190) / 2 + i * 190;
           return (
-            <div key={i} style={{ position: 'absolute', left: 80, right: 140, top: top + float(f, i * 3, 5), height: 160, borderRadius: 48, background: 'rgba(255,255,255,0.8)', border: '1.5px solid #fff', boxShadow: shadowLight, display: 'flex', alignItems: 'center', gap: 30, padding: '0 36px', transform: `translateX(${(1 - e) * 600}px)`, opacity: clamp01(e * 2), filter: bl > 0.5 ? `blur(${Math.min(16, bl)}px)` : undefined }}>
+            <div key={i} style={{ position: 'absolute', left: 80, right: 140, top: top + float(f, i * 3, 5), height: 160, borderRadius: 48, background: 'rgba(10,14,12,0.66)', border: '1.5px solid rgba(255,255,255,0.16)', boxShadow: '0 20px 50px rgba(0,0,0,0.45)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', gap: 30, padding: '0 36px', transform: `translateX(${(1 - e) * 600}px)`, opacity: clamp01(e * 2), filter: bl > 0.5 ? `blur(${Math.min(16, bl)}px)` : undefined }}>
               <div style={{ width: 100, height: 100, borderRadius: 30, background: '#0E1311', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <FIcon k={it.icon} />
               </div>

@@ -11,8 +11,10 @@ export const s = (t: number) => Math.round(t * FPS);
 export const C = {
   bg: '#F2F2EE',
   bg2: '#E9EAE5',
-  ink: '#0D1210',
-  inkSoft: '#5D6662',
+  ink: '#FFFFFF', // text on the (dark, cinematic) background
+  inkSoft: 'rgba(255,255,255,0.74)',
+  dark: '#0D1210', // text on light surfaces
+  darkSoft: '#5D6662',
   mint: '#52DFAF',
   mintDeep: '#1F9D76',
   mintInk: '#0B3B2D',

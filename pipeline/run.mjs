@@ -10,14 +10,15 @@ import { buildProps, wordsProportional } from './build_props.mjs';
 import { writeStory, validateStory } from './story.mjs';
 import { makeVoice } from './voice.mjs';
 import { publish as publishBlotato } from './publish.mjs';
-import { publish as publishZernio } from './zernio.mjs';
+import { publish as publishZernio, deletePost } from './zernio.mjs';
 import { pickBg } from './bg.mjs';
 import { sendText, sendVideo } from './telegram.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 process.chdir(ROOT);
 const DRY = process.env.DRY_RUN === '1' || process.env.DRY_RUN === 'true';
-const SLOTS = (process.env.SLOTS || '8,12,17,19,21').split(',').map(Number); // heures de Paris
+const SLOTS = (process.env.SLOTS || '12,18,21').split(',').map(Number); // heures de Paris
+const STYLE = 2; // video style version: older scheduled videos are replaced by new ones
 
 /* ---------- time helpers (Europe/Paris) ---------- */
 const parisParts = (d = new Date()) => {
@@ -59,12 +60,29 @@ async function main() {
   fs.mkdirSync('out', { recursive: true });
   const histPath = 'data/history.json';
   const history = fs.existsSync(histPath) ? JSON.parse(fs.readFileSync(histPath, 'utf8')) : [];
-  const done = (slot) => history.some((h) => h.id === `${slot.date}_${slot.label}` && h.status !== 'failed');
+  // videos still waiting in Zernio from an old slot plan or an old visual style are cancelled and redone
+  if (!DRY && process.env.ZERNIO_API_KEY) {
+    for (const h of history) {
+      if (h.status !== 'scheduled' || h.via !== 'zernio' || !h.postId || !h.scheduledFor) continue;
+      if (new Date(h.scheduledFor).getTime() - Date.now() < 15 * 60e3) continue;
+      const hour = parseInt(String(h.slot), 10);
+      if (SLOTS.includes(hour) && (h.style ?? 1) >= STYLE) continue;
+      try {
+        await deletePost(h.postId);
+        h.status = 'cancelled';
+        log('annulée (ancien créneau ou ancien style) :', h.id);
+      } catch (e) {
+        log('annulation impossible', h.id, String(e).slice(0, 200));
+      }
+    }
+    fs.writeFileSync(histPath, JSON.stringify(history, null, 1));
+  }
+  const done = (slot) => history.some((h) => h.id === `${slot.date}_${slot.label}` && !['failed', 'cancelled'].includes(h.status));
   let slots = upcomingSlots();
   if (process.env.SLOT) slots = slots.filter((s) => s.label === `${parseInt(process.env.SLOT, 10)}h`).slice(0, 1);
   // GitHub's cron is often late or skipped: every run fills ALL the free slots of the next ~40 h,
   // and Zernio publishes each video at its exact time.
-  const todo = DRY ? slots.slice(0, 1) : slots.filter((s) => process.env.FORCE || !done(s)).slice(0, parseInt(process.env.MAX_PER_RUN || '5', 10));
+  const todo = DRY ? slots.slice(0, 1) : slots.filter((s) => process.env.FORCE || !done(s)).slice(0, parseInt(process.env.MAX_PER_RUN || '2', 10));
   log('créneaux à préparer :', todo.map((s) => `${s.date} ${s.label}`).join(', ') || 'aucun');
   if (process.env.LIST_ONLY) return;
   let failures = 0;
@@ -88,12 +106,12 @@ async function makeOne(slot, history, histPath) {
 
   /* 1. story */
   let story;
-  const used = new Set(history.map((h) => h.backlog).filter(Boolean));
+  const used = new Set(history.filter((h) => h.status !== 'cancelled').map((h) => h.backlog).filter(Boolean));
   const backlog = fs.existsSync('data/backlog') ? fs.readdirSync('data/backlog').filter((f) => f.endsWith('.json') && !used.has(f)).sort() : [];
   const fromBacklog = () => {
     if (!backlog.length) throw new Error("📚 Stock d'histoires vide : plus aucune vidéo ne peut être publiée. Demande un nouveau lot d'histoires à Claude.");
     // rotation: avoid the formats of the last 2 videos, the features of the last 3 and the same opening scene
-    const recent = history.filter((h) => h.status !== 'failed');
+    const recent = history.filter((h) => !['failed', 'cancelled'].includes(h.status));
     const lastFormats = recent.slice(-2).map((h) => h.format);
     const lastFeatures = recent.slice(-3).map((h) => h.feature);
     const lastOpener = recent.slice(-1).map((h) => (h.scenes ?? [])[0])[0];
@@ -188,7 +206,7 @@ async function makeOne(slot, history, histPath) {
   /* 5. publish */
   const caption = `${story.caption ?? ''}\n\n${(story.hashtags ?? ['#ouva']).join(' ')}`.trim();
   const hook = story.beats[0].text;
-  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, format: story.format, feature: story.feature, hook, caption, backlog: story._backlog, bg: bg?.id, scenes: story.beats.map((b) => b.scene) };
+  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, format: story.format, feature: story.feature, hook, caption, backlog: story._backlog, bg: bg?.id, style: STYLE, scenes: story.beats.map((b) => b.scene) };
   const tg = !!process.env.TELEGRAM_BOT_TOKEN;
   if (DRY && !tg) {
     entry.status = 'dry-run';
