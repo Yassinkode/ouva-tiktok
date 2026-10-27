@@ -140,7 +140,7 @@ const PinChip: React.FC<{ id: PlaceId; x: number; y: number; at: number; t: numb
 
 /** retro game dialogue box with typewriter text */
 const Dialog: React.FC<{ L?: Line; t: number; name?: string; top?: number }> = ({ L, t, name = 'NARRATEUR', top = 1330 }) => {
-  if (!L || t < L.at - 0.05 || t > L.end + 0.35) return null;
+  if (!L || t < L.at - 0.05 || t > Math.min(L.end + 0.35, (L as any).next ?? 1e9)) return null;
   // reveal the written line (with its punctuation) at the pace of the spoken words
   const toks = L.text.split(/\s+/);
   const spoken = L.words.filter((w) => w.s <= t + 0.05).length;
@@ -232,7 +232,8 @@ export const LucasVideo: React.FC<LucasProps> = (P) => {
   const phoneOut = pinTimes[0][1] - 0.15;
   const phoneSeg: Seg = { index: 1, type: 'app_screen', start: phoneIn, end: Math.max(phoneOut, phoneIn + 1.5), params: {}, t: {}, cap: [] } as any;
   const showPhone = false;
-  const closeUp = !inRew && t >= L.l2.at + 0.3 && t < pinTimes[0][1] - 0.2;
+  // first-person shot on his phone (story time, so it also works while rewinding)
+  const closeUp = st >= L.l2.at + 0.3 && st < pinTimes[0][1] - 0.2 && t < r1;
   const screenTex = useScreenTexture('screens/home_now.png');
   if (closeUp) lucas = { ...lucas, pov: true };
 
@@ -339,10 +340,10 @@ export const LucasVideo: React.FC<LucasProps> = (P) => {
       </AbsoluteFill>
 
       {/* overlays: dialogue, VHS OSD */}
-      <Dialog L={L.l1} t={t} />
-      <Dialog L={L.l2} t={showPhone ? -1 : t} top={1420} />
+      <Dialog L={{ ...L.l1, next: L.l2.at - 0.08 } as any} t={t} />
+      <Dialog L={{ ...L.l2, next: L.l3.at - 0.08 } as any} t={showPhone ? -1 : t} top={1420} />
       <Dialog L={L.l3} t={t} />
-      <Dialog L={L.l4} t={t} name="TOI" />
+      <Dialog L={{ ...L.l4, next: L.l5.at - 0.08 } as any} t={t} name="TOI" />
       <Dialog L={L.l5} t={t} name="TOI" />
       {t < Math.min(1.6, r0) && <OSD text="▶ PLAY" t={t} />}
       {inRew && <OSD text="◀◀ REW" t={t} blink />}
