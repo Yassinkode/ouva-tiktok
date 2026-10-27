@@ -1541,5 +1541,33 @@
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
+ },
+ {
+  "id": "2026-10-28_17h",
+  "date": "2026-10-28",
+  "slot": "17h",
+  "title": "Ajouter sa salle",
+  "angle": "tuto/ajout_lieu",
+  "format": "tuto",
+  "feature": "ajout_lieu",
+  "hook": "Suivre tes séances de sport sans rien lancer ? Voilà comment.",
+  "caption": "Comment ajouter ta salle de sport dans OùVa pour suivre tes séances automatiquement 💪\n\n#ouva #salledesport #tuto #iphone",
+  "backlog": "s52_tuto_ajout_lieu.json",
+  "bg": "blinded",
+  "scenes": [
+   "big_word",
+   "add_place",
+   "app_screen",
+   "dynamic_island",
+   "app_screen",
+   "wipe_word"
+  ],
+  "status": "scheduled",
+  "postId": "6adff9d42b153d44a6f754ea",
+  "url": null,
+  "scheduledFor": "2026-10-28T16:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
  }
 ]
