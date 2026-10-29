@@ -176,29 +176,34 @@ def main(ev_path, voice_path, out_path):
         sfx[i:i + len(sig), 1] += sig * gain * r
 
     for k, e in enumerate(spec['events']):
-        ty, t = e['type'], e['t']
-        g = e.get('gain', 0.5)
-        if ty == 'whoosh':
-            place(whoosh(0.45, e.get('up', True)), t, g * 0.55, pan=0.4 if k % 2 else -0.4)
-        elif ty == 'pop':
-            place(pop(e.get('f', 520)), t, g * 0.5, pan=rng.uniform(-0.3, 0.3))
-        elif ty == 'tick':
-            place(tick(rng.uniform(1800, 2600)), t, g, pan=rng.uniform(-0.5, 0.5))
-        elif ty == 'impact':
-            place(impact(e.get('f', 52)), t, g * 0.62)
-        elif ty == 'riser':
-            place(riser(e.get('d', 0.7)), t, g)
-        elif ty == 'blips':
-            ts = np.sort(rng.uniform(t, e['to'], e.get('n', 20)))
-            for tt in ts:
-                place(blip(0, 0.04), tt, 0.08, pan=rng.uniform(-0.7, 0.7))
-        elif ty == 'counter':
-            n, t1 = e.get('n', 20), e['to']
-            for j in range(1, n + 1):
-                x = 1 - (1 - j / n) ** (1 / 2.2)
-                place(tick(e.get('base', 1500) + j * 25, 0.022), t + (t1 - t) * x, e.get('gain', 0.12), pan=rng.uniform(-0.2, 0.2))
-        elif ty == 'chimes':
-            place(sparkle(1.2), t, 0.35)
+        try:
+            ty, t = e['type'], e['t']
+            if 'to' in e and e['to'] <= t + 0.05:  # guard: an end time before its start never breaks a video
+                e['to'] = t + 0.4
+            g = e.get('gain', 0.5)
+            if ty == 'whoosh':
+                place(whoosh(0.45, e.get('up', True)), t, g * 0.55, pan=0.4 if k % 2 else -0.4)
+            elif ty == 'pop':
+                place(pop(e.get('f', 520)), t, g * 0.5, pan=rng.uniform(-0.3, 0.3))
+            elif ty == 'tick':
+                place(tick(rng.uniform(1800, 2600)), t, g, pan=rng.uniform(-0.5, 0.5))
+            elif ty == 'impact':
+                place(impact(e.get('f', 52)), t, g * 0.62)
+            elif ty == 'riser':
+                place(riser(e.get('d', 0.7)), t, g)
+            elif ty == 'blips':
+                ts = np.sort(rng.uniform(t, e['to'], e.get('n', 20)))
+                for tt in ts:
+                    place(blip(0, 0.04), tt, 0.08, pan=rng.uniform(-0.7, 0.7))
+            elif ty == 'counter':
+                n, t1 = e.get('n', 20), e['to']
+                for j in range(1, n + 1):
+                    x = 1 - (1 - j / n) ** (1 / 2.2)
+                    place(tick(e.get('base', 1500) + j * 25, 0.022), t + (t1 - t) * x, e.get('gain', 0.12), pan=rng.uniform(-0.2, 0.2))
+            elif ty == 'chimes':
+                place(sparkle(1.2), t, 0.35)
+        except Exception as ex:  # one broken sound effect must never block a video
+            print('sfx skipped', e.get('type'), ex)
 
     if Pedalboard:
         sfx = Pedalboard([Reverb(room_size=0.3, wet_level=0.12, dry_level=0.95)])(sfx.T.astype(np.float32), SR).T

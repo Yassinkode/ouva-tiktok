@@ -216,7 +216,7 @@ export function sfxEvents(props) {
     switch (s.type) {
       case 'heatmap_reveal': {
         const pu = tOr(s, 'punch', 0.55);
-        add('blips', s.start + 0.25, { to: pu, n: 20 });
+        add('blips', s.start + 0.25, { to: Math.max(pu, s.start + 0.8), n: 20 });
         add('impact', pu, { f: 58, gain: 0.85 });
         break;
       }
@@ -317,7 +317,7 @@ export function sfxEvents(props) {
       }
       case 'replay_day':
         (s.params.stops ?? [1, 2, 3]).forEach((_, k) => add('pop', s.start + 0.3 + k * 0.15, { f: 560 + k * 100, gain: 0.5 }));
-        add('blips', s.start + 0.7, { to: s.end - 0.5, n: 14 });
+        add('blips', s.start + 0.7, { to: Math.max(s.end - 0.5, s.start + 1.1), n: 14 });
         break;
       case 'week_compare':
         add('riser', s.start + 0.3, { d: 1.0, gain: 0.1 });

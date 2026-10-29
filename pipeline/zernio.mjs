@@ -77,6 +77,13 @@ export async function publish({ file, caption, scheduledFor }) {
 }
 
 /** cancel a post that is still scheduled (never touches published posts) */
+/** status of a post on each platform: [{platform, status, url, error}] */
+export async function postStatus(id) {
+  const r = await api('GET', `/posts/${id}`);
+  const post = r.post ?? r;
+  return (post.platforms ?? []).map((x) => ({ platform: x.platform, status: x.status, url: x.platformPostUrl ?? null, error: x.errorMessage ?? null }));
+}
+
 export async function deletePost(id) {
   return api('DELETE', `/posts/${id}`);
 }

@@ -10,7 +10,7 @@ import { buildProps, wordsProportional } from './build_props.mjs';
 import { writeStory, validateStory } from './story.mjs';
 import { makeVoice } from './voice.mjs';
 import { publish as publishBlotato } from './publish.mjs';
-import { publish as publishZernio, deletePost } from './zernio.mjs';
+import { publish as publishZernio, deletePost, postStatus } from './zernio.mjs';
 import { pickBg } from './bg.mjs';
 import { sendText, sendVideo } from './telegram.mjs';
 
@@ -76,6 +76,28 @@ async function main() {
       }
     }
     fs.writeFileSync(histPath, JSON.stringify(history, null, 1));
+  }
+  // check the videos whose time has passed: did TikTok / Instagram really publish them?
+  if (!DRY && process.env.ZERNIO_API_KEY) {
+    const due = history.filter((h) => h.via === 'zernio' && h.postId && h.status === 'scheduled' && h.scheduledFor && new Date(h.scheduledFor).getTime() < Date.now() - 20 * 60e3);
+    const problems = [];
+    for (const h of due.slice(-12)) {
+      try {
+        const st = await postStatus(h.postId);
+        h.platforms = st;
+        const bad = st.filter((x) => x.status === 'failed');
+        const ok = st.filter((x) => x.status === 'published');
+        if (ok.length && !bad.length) h.status = 'published';
+        else if (bad.length) {
+          h.status = ok.length ? 'partial' : 'publish-failed';
+          problems.push(`${h.id} — ${bad.map((x) => `${x.platform} : ${(x.error ?? 'erreur inconnue').slice(0, 160)}`).join(' | ')}`);
+        }
+      } catch (e) {
+        log('statut impossible', h.id, String(e).slice(0, 160));
+      }
+    }
+    fs.writeFileSync(histPath, JSON.stringify(history, null, 1));
+    if (problems.length && process.env.TELEGRAM_BOT_TOKEN) await sendText(`⚠️ Publications en échec :\n${problems.join('\n')}`).catch(() => {});
   }
   const done = (slot) => history.some((h) => h.id === `${slot.date}_${slot.label}` && !['failed', 'cancelled'].includes(h.status));
   let slots = upcomingSlots();
