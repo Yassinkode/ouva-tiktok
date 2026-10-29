@@ -1308,13 +1308,27 @@
    "feature_list",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6add91545125e882860ed788",
   "url": null,
   "scheduledFor": "2026-10-26T18:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701038687689182496",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/De94ZgJAUC6/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-26_21h",
@@ -1336,13 +1350,27 @@
    "counter_map",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6add93fa93df91e1c5843504",
   "url": null,
   "scheduledFor": "2026-10-26T20:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701069575634357536",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/De-GHcVFfoD/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-27_8h",
@@ -1364,13 +1392,27 @@
    "app_screen",
    "wipe_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ade311b6d371747f89eac2f",
   "url": null,
   "scheduledFor": "2026-10-27T07:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701239538110254369",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/De_Rm7XDJmZ/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-27_12h",
@@ -1392,13 +1434,27 @@
    "place_pin",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ade6fcfdda6d1ec6069786e",
   "url": null,
   "scheduledFor": "2026-10-27T11:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701301235835571489",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/De_tANYjCbd/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-27_17h",
@@ -1420,13 +1476,27 @@
    "app_screen",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6adee0fd9f2c0fcdeec354fe",
   "url": null,
   "scheduledFor": "2026-10-27T16:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701378764017536288",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfAPa9GncNw/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-27_19h",
@@ -1648,13 +1718,27 @@
    "big_word",
    "wipe_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ae0ce5441b0d3627c787574",
   "url": null,
   "scheduledFor": "2026-10-27T17:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701394167947119904",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfAWQ8HlfZ9/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-27_21h",
@@ -1678,13 +1762,27 @@
    "feature_list",
    "heatmap_reveal"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ae0d288982e2181dadf6227",
   "url": null,
   "scheduledFor": "2026-10-27T20:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701440193462570273",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfAqtHLEs70/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-28_12h",
@@ -1707,13 +1805,27 @@
    "heatmap_reveal",
    "app_tour"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ae12661ad4b0f507487024e",
   "url": null,
   "scheduledFor": "2026-10-28T11:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701672700565130528",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfCR9y6jUQV/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-28_18h",
@@ -1737,13 +1849,27 @@
    "feature_list",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ae12863ad4b0f5074870836",
   "url": null,
   "scheduledFor": "2026-10-28T17:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701765308394032417",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfC7EO_jpJ9/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-28_21h",
@@ -1766,13 +1892,27 @@
    "app_screen",
    "wipe_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ae191417730a03fe369f879",
   "url": null,
   "scheduledFor": "2026-10-28T20:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7701811474657709344",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfDPlDEnX9y/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-29_12h",
@@ -1796,13 +1936,27 @@
    "wipe_word",
    "feature_list"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ae195179e2cd42a3b9b914f",
   "url": null,
   "scheduledFor": "2026-10-29T11:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7702043781758979361",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfE20ttn2bE/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-29_18h",
@@ -1825,13 +1979,27 @@
    "app_screen",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ae1f71fd67c0b61158687a5",
   "url": null,
   "scheduledFor": "2026-10-29T17:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "edge"
+  "voice": "edge",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7702136051434802464",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfFfzhukuqK/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-29_21h",
@@ -1859,6 +2027,65 @@
   "postId": "6ae1fa764c3108f7ba9446f8",
   "url": null,
   "scheduledFor": "2026-10-29T20:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
+ },
+ {
+  "id": "2026-10-30_12h",
+  "date": "2026-10-30",
+  "slot": "12h",
+  "title": "Ta semaine en 3 secondes",
+  "angle": "pitch/carte_chaleur",
+  "format": "pitch",
+  "feature": "carte_chaleur",
+  "hook": "Ta semaine résumée en 3 secondes. Prêt ?",
+  "caption": "Ta semaine résumée en 3 secondes. Pas de graphique compliqué, juste des couleurs.\n\n#ouva #cartedechaleur #rapide #iphone",
+  "backlog": "s60_pitch_carte_chaleur.json",
+  "bg": "arches",
+  "style": 2,
+  "scenes": [
+   "big_word",
+   "heatmap_reveal",
+   "app_screen",
+   "bento",
+   "phone_auto",
+   "feature_list",
+   "big_word"
+  ],
+  "status": "scheduled",
+  "postId": "6ae3957e045b5bf01efaec94",
+  "url": null,
+  "scheduledFor": "2026-10-30T11:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram",
+  "voice": "edge"
+ },
+ {
+  "id": "2026-10-30_18h",
+  "date": "2026-10-30",
+  "slot": "18h",
+  "title": "Stage vs cours",
+  "angle": "question/comparer_semaines",
+  "format": "question",
+  "feature": "comparer_semaines",
+  "hook": "Semaine de stage ou semaine de cours : laquelle te prend le plus de temps ?",
+  "caption": "Semaine de stage vs semaine de cours : laquelle est la plus fatigante ? Ma carte a tranché.\n\n#ouva #stage #etudiant #alternance",
+  "backlog": "s56_question_comparer_semaines.json",
+  "bg": "blinded",
+  "style": 2,
+  "scenes": [
+   "big_word",
+   "app_screen",
+   "week_compare",
+   "compare",
+   "big_word",
+   "ring_stat"
+  ],
+  "status": "scheduled",
+  "postId": "6ae398eba89af72cef9a89f3",
+  "url": null,
+  "scheduledFor": "2026-10-30T17:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
   "voice": "edge"
