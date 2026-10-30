@@ -1,0 +1,74 @@
+{
+ "id": "lab27",
+ "hook": [
+  "J'ai suivi",
+  "chaque minute",
+  "de ma semaine."
+ ],
+ "s2": [
+  "Tu arrives",
+  "au taf."
+ ],
+ "s3": [
+  "Zéro bouton,",
+  "tout est auto."
+ ],
+ "s4": [
+  "Tu vois",
+  "où ça part."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "work",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Travail · 07:22"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 2 h 10 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "gym",
+  "minutes": 190,
+  "label": "à la salle cette semaine",
+  "delta": "+35 %"
+ },
+ "feed": [
+  {
+   "k": "school",
+   "text": "Arrivé · École"
+  },
+  {
+   "k": "park",
+   "text": "Parti · Parc · 1 h 05"
+  },
+  {
+   "k": "friends",
+   "text": "Arrivé · Chez les potes"
+  }
+ ],
+ "bg": [
+  "losing",
+  8.0
+ ],
+ "caption": "Et j'ai rien eu à faire ⏱️",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#astuce",
+  "#app"
+ ]
+}

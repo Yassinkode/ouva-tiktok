@@ -1,0 +1,74 @@
+{
+ "id": "lab13",
+ "hook": [
+  "Ton temps a",
+  "une adresse.",
+  ""
+ ],
+ "s2": [
+  "Tu passes",
+  "à la salle."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Ta semaine,",
+  "en chiffres."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "gym",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Salle de sport · 17:24"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 42 min aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "work",
+  "minutes": 1880,
+  "label": "au travail cette semaine",
+  "delta": "+12 %"
+ },
+ "feed": [
+  {
+   "k": "gym",
+   "text": "Arrivé · Salle de sport"
+  },
+  {
+   "k": "cafe",
+   "text": "Parti · Café · 42 min"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "arches",
+  11.4
+ ],
+ "caption": "Chaque heure se passe quelque part 📍",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#appli",
+  "#productivite"
+ ]
+}

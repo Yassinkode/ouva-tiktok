@@ -1,0 +1,74 @@
+{
+ "id": "lab28",
+ "hook": [
+  "Le temps d'écran,",
+  "mais pour",
+  "tes lieux."
+ ],
+ "s2": [
+  "Tu arrives",
+  "quelque part."
+ ],
+ "s3": [
+  "Zéro bouton,",
+  "tout est auto."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "gym",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Salle de sport · 10:39"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 3 h 05 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "friends",
+  "minutes": 260,
+  "label": "chez les potes cette semaine",
+  "delta": "+18 %"
+ },
+ "feed": [
+  {
+   "k": "gym",
+   "text": "Arrivé · Salle de sport"
+  },
+  {
+   "k": "cafe",
+   "text": "Parti · Café · 42 min"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "arches",
+  11.4
+ ],
+ "caption": "Comme Temps d'écran, mais pour la vraie vie 📍",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#app",
+  "#organisation"
+ ]
+}

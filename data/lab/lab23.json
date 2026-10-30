@@ -1,0 +1,74 @@
+{
+ "id": "lab23",
+ "hook": [
+  "Ton temps a",
+  "une adresse.",
+  ""
+ ],
+ "s2": [
+  "Tu passes",
+  "à la salle."
+ ],
+ "s3": [
+  "Rien à lancer,",
+  "rien à noter."
+ ],
+ "s4": [
+  "Ta semaine,",
+  "en chiffres."
+ ],
+ "s5": [
+  "Toute ta vie,",
+  "sur une carte."
+ ],
+ "place": "gym",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Salle de sport · 08:14"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 2 h 10 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "school",
+  "minutes": 1360,
+  "label": "à l'école cette semaine",
+  "delta": "−6 %"
+ },
+ "feed": [
+  {
+   "k": "work",
+   "text": "Parti · Travail · 8 h 02"
+  },
+  {
+   "k": "shop",
+   "text": "Arrivé · Courses"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "blinded",
+  20.0
+ ],
+ "caption": "Chaque heure se passe quelque part 📍",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#organisation",
+  "#habitudes"
+ ]
+}

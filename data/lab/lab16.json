@@ -1,0 +1,74 @@
+{
+ "id": "lab16",
+ "hook": [
+  "Combien de temps",
+  "au taf",
+  "cette semaine ?"
+ ],
+ "s2": [
+  "Tu poses ton sac.",
+  "Ça démarre."
+ ],
+ "s3": [
+  "Zéro bouton,",
+  "tout est auto."
+ ],
+ "s4": [
+  "Tu vois",
+  "où ça part."
+ ],
+ "s5": [
+  "Chaque lieu.",
+  "Chaque minute."
+ ],
+ "place": "home",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Maison · 13:15"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 3 h 05 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "friends",
+  "minutes": 260,
+  "label": "chez les potes cette semaine",
+  "delta": "+18 %"
+ },
+ "feed": [
+  {
+   "k": "gym",
+   "text": "Arrivé · Salle de sport"
+  },
+  {
+   "k": "cafe",
+   "text": "Parti · Café · 42 min"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "arches",
+  11.4
+ ],
+ "caption": "La réponse va te surprendre 💼",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#app",
+  "#organisation"
+ ]
+}

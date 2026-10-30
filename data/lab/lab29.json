@@ -1,0 +1,74 @@
+{
+ "id": "lab29",
+ "hook": [
+  "Salle de sport :",
+  "12 min",
+  "cette semaine."
+ ],
+ "s2": [
+  "Tu poses ton café.",
+  "Ça démarre."
+ ],
+ "s3": [
+  "Rien à lancer,",
+  "rien à noter."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "cafe",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Café · 13:56"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 42 min aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "school",
+  "minutes": 1360,
+  "label": "à l'école cette semaine",
+  "delta": "−6 %"
+ },
+ "feed": [
+  {
+   "k": "work",
+   "text": "Parti · Travail · 8 h 02"
+  },
+  {
+   "k": "shop",
+   "text": "Arrivé · Courses"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "blinded",
+  20.0
+ ],
+ "caption": "Aïe. Merci OùVa 😅",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#organisation",
+  "#habitudes"
+ ]
+}

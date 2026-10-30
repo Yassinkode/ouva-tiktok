@@ -1,0 +1,74 @@
+{
+ "id": "lab26",
+ "hook": [
+  "Combien de temps",
+  "au taf",
+  "cette semaine ?"
+ ],
+ "s2": [
+  "Tu poses ton sac.",
+  "Ça démarre."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Tu vois",
+  "où ça part."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "home",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Maison · 17:05"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 1 h 12 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "home",
+  "minutes": 3725,
+  "label": "à la maison cette semaine",
+  "delta": "+4 %"
+ },
+ "feed": [
+  {
+   "k": "work",
+   "text": "Parti · Travail · 8 h 02"
+  },
+  {
+   "k": "shop",
+   "text": "Arrivé · Courses"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "blinded",
+  20.0
+ ],
+ "caption": "La réponse va te surprendre 💼",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#productivite",
+  "#astuce"
+ ]
+}

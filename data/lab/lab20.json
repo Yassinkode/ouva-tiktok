@@ -1,0 +1,74 @@
+{
+ "id": "lab20",
+ "hook": [
+  "Cette appli compte",
+  "ton temps",
+  "toute seule."
+ ],
+ "s2": [
+  "Tu arrives",
+  "quelque part."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Chaque lieu.",
+  "Chaque minute."
+ ],
+ "place": "school",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "École · 12:23"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 3 h 05 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "home",
+  "minutes": 3725,
+  "label": "à la maison cette semaine",
+  "delta": "+4 %"
+ },
+ "feed": [
+  {
+   "k": "work",
+   "text": "Parti · Travail · 8 h 02"
+  },
+  {
+   "k": "shop",
+   "text": "Arrivé · Courses"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "blinded",
+  20.0
+ ],
+ "caption": "Tu arrives, ça démarre. Tu pars, c'est rangé ✅",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#productivite",
+  "#astuce"
+ ]
+}

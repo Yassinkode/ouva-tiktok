@@ -1,0 +1,74 @@
+{
+ "id": "lab02",
+ "hook": [
+  "Tu passes combien",
+  "d'heures",
+  "chez toi ?"
+ ],
+ "s2": [
+  "Tu poses ton sac.",
+  "Ça démarre."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Chaque lieu.",
+  "Chaque minute."
+ ],
+ "place": "work",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Travail · 10:17"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 1 h 12 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "home",
+  "minutes": 3725,
+  "label": "à la maison cette semaine",
+  "delta": "+4 %"
+ },
+ "feed": [
+  {
+   "k": "work",
+   "text": "Parti · Travail · 8 h 02"
+  },
+  {
+   "k": "shop",
+   "text": "Arrivé · Courses"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "blinded",
+  20.0
+ ],
+ "caption": "Spoiler : beaucoup plus que tu crois 🏠",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#productivite",
+  "#astuce"
+ ]
+}

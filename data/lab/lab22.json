@@ -1,0 +1,74 @@
+{
+ "id": "lab22",
+ "hook": [
+  "Tu passes combien",
+  "d'heures",
+  "chez toi ?"
+ ],
+ "s2": [
+  "Tu poses ton sac.",
+  "Ça démarre."
+ ],
+ "s3": [
+  "Zéro bouton,",
+  "tout est auto."
+ ],
+ "s4": [
+  "Ta semaine,",
+  "en chiffres."
+ ],
+ "s5": [
+  "Toute ta vie,",
+  "sur une carte."
+ ],
+ "place": "work",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Travail · 18:57"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 1 h 12 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "friends",
+  "minutes": 260,
+  "label": "chez les potes cette semaine",
+  "delta": "+18 %"
+ },
+ "feed": [
+  {
+   "k": "gym",
+   "text": "Arrivé · Salle de sport"
+  },
+  {
+   "k": "cafe",
+   "text": "Parti · Café · 42 min"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "arches",
+  11.4
+ ],
+ "caption": "Spoiler : beaucoup plus que tu crois 🏠",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#app",
+  "#organisation"
+ ]
+}

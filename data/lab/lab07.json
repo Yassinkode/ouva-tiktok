@@ -1,0 +1,74 @@
+{
+ "id": "lab07",
+ "hook": [
+  "J'ai suivi",
+  "chaque minute",
+  "de ma semaine."
+ ],
+ "s2": [
+  "Tu arrives",
+  "au taf."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Tu vois",
+  "où ça part."
+ ],
+ "s5": [
+  "Toute ta vie,",
+  "sur une carte."
+ ],
+ "place": "work",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Travail · 12:42"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 2 h 10 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "work",
+  "minutes": 1880,
+  "label": "au travail cette semaine",
+  "delta": "+12 %"
+ },
+ "feed": [
+  {
+   "k": "gym",
+   "text": "Arrivé · Salle de sport"
+  },
+  {
+   "k": "cafe",
+   "text": "Parti · Café · 42 min"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "arches",
+  11.4
+ ],
+ "caption": "Et j'ai rien eu à faire ⏱️",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#appli",
+  "#productivite"
+ ]
+}

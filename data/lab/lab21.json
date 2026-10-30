@@ -1,0 +1,74 @@
+{
+ "id": "lab21",
+ "hook": [
+  "L'appli qui sait",
+  "où",
+  "passe ton temps."
+ ],
+ "s2": [
+  "Tu rentres",
+  "chez toi."
+ ],
+ "s3": [
+  "Zéro bouton,",
+  "tout est auto."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Toute ta vie,",
+  "sur une carte."
+ ],
+ "place": "home",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Maison · 15:40"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 42 min aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "gym",
+  "minutes": 190,
+  "label": "à la salle cette semaine",
+  "delta": "+35 %"
+ },
+ "feed": [
+  {
+   "k": "school",
+   "text": "Arrivé · École"
+  },
+  {
+   "k": "park",
+   "text": "Parti · Parc · 1 h 05"
+  },
+  {
+   "k": "friends",
+   "text": "Arrivé · Chez les potes"
+  }
+ ],
+ "bg": [
+  "losing",
+  8.0
+ ],
+ "caption": "Tu sais vraiment où passe ton temps ? 📍",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#astuce",
+  "#app"
+ ]
+}

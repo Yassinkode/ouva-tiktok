@@ -1,0 +1,74 @@
+{
+ "id": "lab12",
+ "hook": [
+  "Tu passes combien",
+  "d'heures",
+  "chez toi ?"
+ ],
+ "s2": [
+  "Tu poses ton sac.",
+  "Ça démarre."
+ ],
+ "s3": [
+  "Rien à lancer,",
+  "rien à noter."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "work",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Travail · 14:07"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 3 h 05 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "cafe",
+  "minutes": 345,
+  "label": "au café cette semaine",
+  "delta": "+22 %"
+ },
+ "feed": [
+  {
+   "k": "school",
+   "text": "Arrivé · École"
+  },
+  {
+   "k": "park",
+   "text": "Parti · Parc · 1 h 05"
+  },
+  {
+   "k": "friends",
+   "text": "Arrivé · Chez les potes"
+  }
+ ],
+ "bg": [
+  "losing",
+  8.0
+ ],
+ "caption": "Spoiler : beaucoup plus que tu crois 🏠",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#habitudes",
+  "#appli"
+ ]
+}

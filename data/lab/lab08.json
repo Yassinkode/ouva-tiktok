@@ -1,0 +1,74 @@
+{
+ "id": "lab08",
+ "hook": [
+  "Le temps d'écran,",
+  "mais pour",
+  "tes lieux."
+ ],
+ "s2": [
+  "Tu arrives",
+  "quelque part."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Tu vois",
+  "où ça part."
+ ],
+ "s5": [
+  "Toute ta vie,",
+  "sur une carte."
+ ],
+ "place": "gym",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Salle de sport · 15:59"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 3 h 05 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "home",
+  "minutes": 3725,
+  "label": "à la maison cette semaine",
+  "delta": "+4 %"
+ },
+ "feed": [
+  {
+   "k": "work",
+   "text": "Parti · Travail · 8 h 02"
+  },
+  {
+   "k": "shop",
+   "text": "Arrivé · Courses"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "blinded",
+  20.0
+ ],
+ "caption": "Comme Temps d'écran, mais pour la vraie vie 📍",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#productivite",
+  "#astuce"
+ ]
+}

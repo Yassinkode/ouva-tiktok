@@ -1,0 +1,74 @@
+{
+ "id": "lab25",
+ "hook": [
+  "Ta semaine,",
+  "en vrai.",
+  ""
+ ],
+ "s2": [
+  "Tu arrives",
+  "en cours."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Tu vois",
+  "où ça part."
+ ],
+ "s5": [
+  "Toute ta vie,",
+  "sur une carte."
+ ],
+ "place": "school",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "École · 14:48"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 42 min aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "work",
+  "minutes": 1880,
+  "label": "au travail cette semaine",
+  "delta": "+12 %"
+ },
+ "feed": [
+  {
+   "k": "gym",
+   "text": "Arrivé · Salle de sport"
+  },
+  {
+   "k": "cafe",
+   "text": "Parti · Café · 42 min"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "arches",
+  11.4
+ ],
+ "caption": "Le vrai bilan de ta semaine, lieu par lieu 📊",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#appli",
+  "#productivite"
+ ]
+}

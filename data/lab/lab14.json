@@ -1,0 +1,74 @@
+{
+ "id": "lab14",
+ "hook": [
+  "Zéro bouton.",
+  "Zéro",
+  "effort."
+ ],
+ "s2": [
+  "Tu arrives",
+  "quelque part."
+ ],
+ "s3": [
+  "Elle fait",
+  "tout le boulot."
+ ],
+ "s4": [
+  "Ta semaine,",
+  "en chiffres."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "cafe",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Café · 07:41"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 1 h 12 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "home",
+  "minutes": 3725,
+  "label": "à la maison cette semaine",
+  "delta": "+4 %"
+ },
+ "feed": [
+  {
+   "k": "work",
+   "text": "Parti · Travail · 8 h 02"
+  },
+  {
+   "k": "shop",
+   "text": "Arrivé · Courses"
+  },
+  {
+   "k": "home",
+   "text": "Arrivé · Maison"
+  }
+ ],
+ "bg": [
+  "blinded",
+  20.0
+ ],
+ "caption": "Une appli de suivi qui démarre toute seule ⏱️",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#productivite",
+  "#astuce"
+ ]
+}

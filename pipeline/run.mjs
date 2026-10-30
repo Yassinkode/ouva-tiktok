@@ -17,8 +17,8 @@ import { sendText, sendVideo } from './telegram.mjs';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 process.chdir(ROOT);
 const DRY = process.env.DRY_RUN === '1' || process.env.DRY_RUN === 'true';
-const SLOTS = (process.env.SLOTS || '12,18,21').split(',').map(Number); // heures de Paris
-const STYLE = 2; // video style version: older scheduled videos are replaced by new ones
+const SLOTS = (process.env.SLOTS || '18').split(',').map(Number); // heures de Paris
+const STYLE = 3; // video style version: older scheduled videos are replaced by new ones
 
 /* ---------- time helpers (Europe/Paris) ---------- */
 const parisParts = (d = new Date()) => {
@@ -121,7 +121,56 @@ async function main() {
   if (failures) process.exit(1);
 }
 
+async function render(compId, props, raw) {
+  log('bundling');
+  const serveUrl = await bundle({ entryPoint: path.join(ROOT, 'src/index.ts') });
+  const browserExecutable = process.env.REMOTION_CHROME || null;
+  const composition = await selectComposition({ serveUrl, id: compId, inputProps: props, browserExecutable });
+  let last = 0;
+  await renderMedia({
+    composition, serveUrl, codec: 'h264', crf: 14, outputLocation: raw, inputProps: props, browserExecutable,
+    concurrency: Math.max(1, os.cpus().length), chromiumOptions: { gl: 'swangle' }, imageFormat: 'jpeg', jpegQuality: 92,
+    onProgress: ({ progress }) => {
+      if (progress - last > 0.1) {
+        last = progress;
+        log(`render ${Math.round(progress * 100)}%`);
+      }
+    },
+  });
+}
+
+/* « Lab » format (since 2026-10-30): light motion-design explainer, no voice, ~15 s */
+async function makeLab(slot, history, histPath) {
+  const date = slot.date;
+  const id = `${date}_${slot.label}`;
+  log('run lab', id, DRY ? '(dry run)' : '');
+  const used = new Set(history.filter((h) => !['cancelled', 'failed'].includes(h.status)).map((h) => h.backlog).filter(Boolean));
+  const stock = fs.readdirSync('data/lab').filter((f) => f.endsWith('.json') && !used.has(`lab/${f}`)).sort();
+  if (!stock.length) throw new Error("📚 Stock de vidéos OùVa vide. Demande un nouveau lot à Claude.");
+  const f = stock[0];
+  const v = JSON.parse(fs.readFileSync(path.join('data/lab', f), 'utf8'));
+  const audioRel = `runs/${id}.wav`;
+  const [bgName, bgStart] = v.bg ?? ['arches', 11.4];
+  execFileSync('python3', ['pipeline/lab_audio.py', `public/${audioRel}`, bgName, String(bgStart)], { stdio: 'inherit' });
+  const props = { ...v, audio: audioRel };
+  const raw = `out/${id}_raw.mp4`;
+  await render('Lab', props, raw);
+  const final = `out/OuVa_${id}.mp4`;
+  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', final]);
+  fs.rmSync(raw, { force: true });
+  log('video ready', final);
+  const caption = `${v.caption ?? ''}\n\n${(v.hashtags ?? ['#ouva']).join(' ')}`.trim();
+  const entry = { id, date, slot: slot.label, title: v.hook.filter(Boolean).join(' '), format: 'lab', feature: v.place, hook: v.hook.filter(Boolean).join(' '), caption, backlog: `lab/${f}`, bg: bgName, style: STYLE };
+  const status = await deliver({ slot, final, caption, entry, history, histPath });
+  const left = stock.length - 1;
+  if (!DRY && process.env.TELEGRAM_BOT_TOKEN && [10, 5, 2].includes(left))
+    await sendText(`📚 Stock de vidéos OùVa : plus que ${left} en réserve (≈ ${Math.ceil(left / SLOTS.length)} jour(s)).\n👉 Demande un nouveau lot à Claude.`).catch(() => {});
+  fs.rmSync(`public/${audioRel}`, { force: true });
+  return status;
+}
+
 async function makeOne(slot, history, histPath) {
+  if ((process.env.FORMAT || 'lab') === 'lab') return makeLab(slot, history, histPath);
   const date = slot.date;
   const id = `${date}_${slot.label}`;
   log('run', id, DRY ? '(dry run)' : '');
@@ -228,7 +277,22 @@ async function makeOne(slot, history, histPath) {
   /* 5. publish */
   const caption = `${story.caption ?? ''}\n\n${(story.hashtags ?? ['#ouva']).join(' ')}`.trim();
   const hook = story.beats[0].text;
-  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, format: story.format, feature: story.feature, hook, caption, backlog: story._backlog, bg: bg?.id, style: STYLE, scenes: story.beats.map((b) => b.scene) };
+  const entry = { id, date, slot: slot.label, title: story.title, angle: story.angle, format: story.format, feature: story.feature, hook, caption, backlog: story._backlog, bg: bg?.id, style: STYLE, scenes: story.beats.map((b) => b.scene), voice: voiceModel };
+  await deliver({ slot, final, caption, entry, history, histPath, push: false });
+  const tg = !!process.env.TELEGRAM_BOT_TOKEN;
+  const left = backlog.length - (story._backlog ? 1 : 0);
+  if (!DRY && tg && story._backlog && [15, 10, 5, 2].includes(left))
+    await sendText(`📚 Stock d'histoires OùVa : plus que ${left} vidéo(s) en réserve, soit environ ${Math.ceil(left / SLOTS.length)} jour(s).\n👉 Demande un nouveau lot d'histoires à Claude pour que les publications continuent.`).catch(() => {});
+  if (!DRY) {
+    history.push(entry);
+    fs.writeFileSync(histPath, JSON.stringify(history, null, 1));
+  }
+  fs.rmSync(`public/${audioRel}`, { force: true });
+  return entry.status;
+}
+
+/** publish (Zernio scheduled at the slot time) or send to Telegram; records the entry in the history */
+async function deliver({ slot, final, caption, entry, history, histPath, push = true }) {
   const tg = !!process.env.TELEGRAM_BOT_TOKEN;
   if (DRY && !tg) {
     entry.status = 'dry-run';
@@ -238,7 +302,7 @@ async function makeOne(slot, history, histPath) {
     try {
       const scheduledFor = slot.at && slot.at.getTime() - Date.now() > 3 * 60e3 ? slot.at.toISOString() : undefined;
       const r = await publishZernio({ file: final, caption, scheduledFor });
-      Object.assign(entry, { status: r.status, postId: r.id, url: r.publicUrl, scheduledFor, via: 'zernio', where: r.where, voice: voiceModel });
+      Object.assign(entry, { status: r.status, postId: r.id, url: r.publicUrl, scheduledFor, via: 'zernio', where: r.where });
       const isToday = slot.date === new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Paris' });
       const when = scheduledFor ? `programmée pour ${isToday ? '' : 'demain '}${slot.label}` : 'publiée';
       const warn = r.warnings?.length ? `\n⚠️ ${r.warnings.join(' | ')}` : '';
@@ -267,14 +331,10 @@ async function makeOne(slot, history, histPath) {
       log('publish failed', e);
     }
   }
-  const left = backlog.length - (story._backlog ? 1 : 0);
-  if (!DRY && tg && story._backlog && [15, 10, 5, 2].includes(left))
-    await sendText(`📚 Stock d'histoires OùVa : plus que ${left} vidéo(s) en réserve, soit environ ${Math.ceil(left / SLOTS.length)} jour(s).\n👉 Demande un nouveau lot d'histoires à Claude pour que les publications continuent.`).catch(() => {});
-  if (!DRY) {
+  if (!DRY && push) {
     history.push(entry);
     fs.writeFileSync(histPath, JSON.stringify(history, null, 1));
   }
-  fs.rmSync(`public/${audioRel}`, { force: true });
   return entry.status;
 }
 

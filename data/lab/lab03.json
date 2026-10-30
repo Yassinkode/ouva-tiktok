@@ -1,0 +1,74 @@
+{
+ "id": "lab03",
+ "hook": [
+  "Ton temps a",
+  "une adresse.",
+  ""
+ ],
+ "s2": [
+  "Tu passes",
+  "à la salle."
+ ],
+ "s3": [
+  "Zéro bouton,",
+  "tout est auto."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Chaque lieu.",
+  "Chaque minute."
+ ],
+ "place": "gym",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "Salle de sport · 13:34"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 2 h 10 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "gym",
+  "minutes": 190,
+  "label": "à la salle cette semaine",
+  "delta": "+35 %"
+ },
+ "feed": [
+  {
+   "k": "school",
+   "text": "Arrivé · École"
+  },
+  {
+   "k": "park",
+   "text": "Parti · Parc · 1 h 05"
+  },
+  {
+   "k": "friends",
+   "text": "Arrivé · Chez les potes"
+  }
+ ],
+ "bg": [
+  "losing",
+  8.0
+ ],
+ "caption": "Chaque heure se passe quelque part 📍",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#astuce",
+  "#app"
+ ]
+}

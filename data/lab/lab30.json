@@ -1,0 +1,74 @@
+{
+ "id": "lab30",
+ "hook": [
+  "Cette appli compte",
+  "ton temps",
+  "toute seule."
+ ],
+ "s2": [
+  "Tu arrives",
+  "quelque part."
+ ],
+ "s3": [
+  "Rien à lancer,",
+  "rien à noter."
+ ],
+ "s4": [
+  "Et te montre",
+  "la vérité."
+ ],
+ "s5": [
+  "Tout ça",
+  "sans rien faire."
+ ],
+ "place": "school",
+ "steps": [
+  [
+   "Arrivée détectée",
+   "École · 16:13"
+  ],
+  [
+   "Chrono lancé",
+   "dans la Dynamic Island"
+  ],
+  [
+   "Temps rangé",
+   "+ 1 h 12 aujourd’hui"
+  ],
+  [
+   "Carte mise à jour",
+   "nouvelle case colorée"
+  ]
+ ],
+ "stat": {
+  "place": "cafe",
+  "minutes": 345,
+  "label": "au café cette semaine",
+  "delta": "+22 %"
+ },
+ "feed": [
+  {
+   "k": "school",
+   "text": "Arrivé · École"
+  },
+  {
+   "k": "park",
+   "text": "Parti · Parc · 1 h 05"
+  },
+  {
+   "k": "friends",
+   "text": "Arrivé · Chez les potes"
+  }
+ ],
+ "bg": [
+  "losing",
+  8.0
+ ],
+ "caption": "Tu arrives, ça démarre. Tu pars, c'est rangé ✅",
+ "hashtags": [
+  "#ouva",
+  "#iphone",
+  "#habitudes",
+  "#appli"
+ ]
+}
