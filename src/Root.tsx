@@ -10,6 +10,7 @@ import { LucasTest } from './lucas/Test';
 import { LucasVideo } from './lucas/Lucas';
 import lucasProps from '../public/lucas/props.json';
 import { Lab, labDefault, LAB_DURATION } from './lab/Lab';
+import { Lab2, lab2Default, L2 } from './lab/Lab2';
 import { AdA, AdB, AdC, StaticA, StaticB } from './ads/Ads';
 
 export const RemotionRoot: React.FC = () => (
@@ -28,6 +29,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Lucas" component={LucasVideo as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((lucasProps as any).duration * FPS)} defaultProps={lucasProps as any} />
     <Composition id="LucasTest" component={LucasTest as any} fps={30} width={W} height={H} durationInFrames={90} defaultProps={{ shot: 0 }} />
     <Composition id="Lab" component={Lab as any} fps={FPS} width={W} height={H} durationInFrames={Math.round(LAB_DURATION * FPS)} defaultProps={labDefault as any} />
+    <Composition id="Lab2" component={Lab2 as any} fps={FPS} width={W} height={H} durationInFrames={Math.round(L2.end * FPS)} defaultProps={lab2Default as any} />
     <Composition id="AdA" component={AdA} fps={FPS} width={W} height={H} durationInFrames={15 * FPS} />
     <Composition id="AdB" component={AdB} fps={FPS} width={W} height={H} durationInFrames={15 * FPS} />
     <Composition id="AdC" component={AdC} fps={FPS} width={W} height={H} durationInFrames={13 * FPS} />
