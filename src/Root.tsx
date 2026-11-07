@@ -17,6 +17,8 @@ import { Ticket } from './ticket/Ticket';
 import ticketProps from '../public/ticket/props.json';
 import { Promo } from './ticket/Promo';
 import promoProps from '../public/promo/props.json';
+import { Promo2 } from './ticket/Promo2';
+import promo2Props from '../public/promo/props2.json';
 import { AdA, AdB, AdC, StaticA, StaticB } from './ads/Ads';
 
 export const RemotionRoot: React.FC = () => (
@@ -39,6 +41,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Lucas2" component={Lucas2 as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((lucas2Props as any).end * FPS)} defaultProps={lucas2Props as any} />
     <Composition id="Ticket" component={Ticket as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((ticketProps as any).end * FPS)} defaultProps={ticketProps as any} />
     <Composition id="Promo" component={Promo as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((promoProps as any).end * FPS)} defaultProps={promoProps as any} />
+    <Composition id="Promo2" component={Promo2 as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((promo2Props as any).end * FPS)} defaultProps={promo2Props as any} />
     <Composition id="AdA" component={AdA} fps={FPS} width={W} height={H} durationInFrames={15 * FPS} />
     <Composition id="AdB" component={AdB} fps={FPS} width={W} height={H} durationInFrames={15 * FPS} />
     <Composition id="AdC" component={AdC} fps={FPS} width={W} height={H} durationInFrames={13 * FPS} />
