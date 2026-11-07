@@ -116,7 +116,7 @@ const StatsTitle: React.FC<SP> = ({ at }) => {
         Tes stats
       </div>
       <div style={{ position: 'absolute', inset: 0, transform: `scale(${Math.max(0, jelly(f, at + 0.5))})`, transformOrigin: '880px 380px' }}>
-        <Chrono x={880} y={330} s={0.55} mood="wow" />
+
       </div>
     </>
   );

@@ -28,54 +28,49 @@ export const Warm: React.FC = () => {
 };
 
 /* ---------- mascot: the logo stopwatch, alive ---------- */
-export const Chrono: React.FC<{ x: number; y: number; s: number; mood?: 'happy' | 'wow' | 'facepalm'; walk?: boolean; hand?: number }> = ({ x, y, s, mood = 'happy', walk, hand = 0 }) => {
+/* premium stopwatch object (from the logo): glossy, no face — replaces the old cartoon mascot */
+export const Chrono: React.FC<{ x: number; y: number; s: number; mood?: 'happy' | 'wow' | 'facepalm'; walk?: boolean; hand?: number }> = ({ x, y, s }) => {
   const t = useT();
-  const blink = (t * 1.3) % 3 < 0.08;
-  const bob = walk ? Math.abs(Math.sin(t * 9)) * -14 : Math.sin(t * 2.5) * 6;
-  const leg = walk ? Math.sin(t * 9) * 26 : 0;
+  const float = Math.sin(t * 1.6) * 8;
+  const tilt = Math.sin(t * 0.9) * 4;
+  const min = t * 120;
+  const hr = t * 10;
   return (
-    <svg width={300 * s} height={340 * s} viewBox="-150 -170 300 340" style={{ position: 'absolute', left: x - 150 * s, top: y - 170 * s, overflow: 'visible' }}>
-      <ellipse cx={0} cy={160} rx={80} ry={12} fill="rgba(0,0,0,0.25)" />
-      {[leg, -leg].map((a, i) => (
-        <g key={i} transform={`rotate(${a} ${i ? 30 : -30} 95)`}>
-          <rect x={(i ? 30 : -30) - 9} y={95} width={18} height={55} rx={9} fill="#1D1D1D" />
-          <ellipse cx={(i ? 30 : -30) + 8} cy={152} rx={22} ry={11} fill="#1D1D1D" />
-        </g>
-      ))}
-      <g transform={`translate(0 ${bob})`}>
-        <rect x={-26} y={-150} width={52} height={30} rx={10} fill="#fff" />
-        <rect x={52} y={-120} width={30} height={30} rx={8} fill="#fff" transform="rotate(40 67 -105)" />
-        <ellipse cx={0} cy={0} rx={118} ry={110} fill="url(#cg)" stroke="#E7EFEA" strokeWidth={4} />
-        <defs>
-          <radialGradient id="cg" cx="35%" cy="30%" r="80%">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="100%" stopColor="#CFE2D8" />
-          </radialGradient>
-        </defs>
-        {/* clock hands become the mouth area */}
-        <path d="M-6 -70 L-14 10 L40 40" stroke="#10241A" strokeWidth={16} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity={0.18} />
-        {mood === 'facepalm' ? (
-          <>
-            <path d="M-58 -22 L-30 -10 L-58 2" stroke={INK} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M58 -22 L30 -10 L58 2" stroke={INK} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M-26 46 Q0 30 26 46" stroke={INK} strokeWidth={8} fill="none" strokeLinecap="round" />
-          </>
-        ) : (
-          <>
-            {[-42, 42].map((ex) => (
-              <g key={ex}>
-                <ellipse cx={ex} cy={-12} rx={mood === 'wow' ? 20 : 16} ry={blink ? 2 : mood === 'wow' ? 28 : 22} fill={INK} />
-                {!blink && <circle cx={ex + 6} cy={-20} r={6} fill="#fff" />}
-              </g>
-            ))}
-            {mood === 'wow' ? <ellipse cx={0} cy={48} rx={16} ry={20} fill={INK} /> : <path d="M-30 34 Q0 62 30 34" stroke={INK} strokeWidth={8} fill="none" strokeLinecap="round" />}
-            <ellipse cx={-74} cy={26} rx={14} ry={8} fill="#F4A3A3" opacity={0.7} />
-            <ellipse cx={74} cy={26} rx={14} ry={8} fill="#F4A3A3" opacity={0.7} />
-          </>
-        )}
-        {/* arm (used for the facepalm) */}
-        <path d={`M100 20 Q${lerp(150, 60, hand)} ${lerp(60, -30, hand)} ${lerp(160, 30, hand)} ${lerp(90, -20, hand)}`} stroke="#1D1D1D" strokeWidth={14} fill="none" strokeLinecap="round" />
-        <circle cx={lerp(160, 30, hand)} cy={lerp(90, -20, hand)} r={18} fill="#fff" stroke="#1D1D1D" strokeWidth={5} />
+    <svg width={320 * s} height={340 * s} viewBox="-160 -180 320 340" style={{ position: 'absolute', left: x - 160 * s, top: y - 180 * s, overflow: 'visible' }}>
+      <defs>
+        <radialGradient id="wface" cx="38%" cy="30%" r="85%">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="55%" stopColor="#E6EEEA" />
+          <stop offset="100%" stopColor="#B9C9C1" />
+        </radialGradient>
+        <linearGradient id="wrim" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#F4F6F5" />
+          <stop offset="50%" stopColor="#9DA7A2" />
+          <stop offset="100%" stopColor="#E9EDEB" />
+        </linearGradient>
+        <radialGradient id="wglow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#23A26D" stopOpacity="0.45" />
+          <stop offset="100%" stopColor="#23A26D" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <ellipse cx={0} cy={150} rx={90 - float} ry={12} fill="rgba(0,0,0,0.28)" />
+      <circle cx={0} cy={0} r={175} fill="url(#wglow)" />
+      <g transform={`translate(0 ${float - 10}) rotate(${tilt})`}>
+        <rect x={-24} y={-158} width={48} height={34} rx={10} fill="url(#wrim)" />
+        <rect x={-12} y={-130} width={24} height={14} rx={4} fill="#A9B3AE" />
+        <rect x={60} y={-128} width={30} height={26} rx={8} fill="url(#wrim)" transform="rotate(40 75 -115)" />
+        <circle cx={0} cy={0} r={120} fill="url(#wrim)" />
+        <circle cx={0} cy={0} r={106} fill="url(#wface)" />
+        {[...Array(12)].map((_, i) => {
+          const a = (i * Math.PI) / 6;
+          const r1 = i % 3 ? 88 : 80;
+          return <line key={i} x1={Math.sin(a) * r1} y1={-Math.cos(a) * r1} x2={Math.sin(a) * 96} y2={-Math.cos(a) * 96} stroke="#10241A" strokeOpacity={0.55} strokeWidth={i % 3 ? 3 : 6} strokeLinecap="round" />;
+        })}
+        <path d="M0 0 A70 70 0 0 1 60.6 35" stroke="#23A26D" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.9} />
+        <line x1={0} y1={0} x2={0} y2={-52} stroke="#10241A" strokeWidth={11} strokeLinecap="round" transform={`rotate(${hr})`} />
+        <line x1={0} y1={0} x2={0} y2={-80} stroke="#10241A" strokeWidth={7} strokeLinecap="round" transform={`rotate(${min})`} />
+        <circle cx={0} cy={0} r={9} fill="#23A26D" stroke="#10241A" strokeWidth={3} />
+        <ellipse cx={-40} cy={-55} rx={46} ry={22} fill="#fff" opacity={0.55} transform="rotate(-30 -40 -55)" />
       </g>
     </svg>
   );
@@ -302,7 +297,7 @@ export const SceneTicket: React.FC<SP & { circleAt: number; laughAt: number; pri
       )}
       {zc > 0.2 && (
         <div style={{ transform: `scale(${Math.max(0, jelly(f, p.circleAt + 0.2))})`, transformOrigin: '330px 1180px', zIndex: 6, position: 'absolute', inset: 0 }}>
-          <Chrono x={330} y={1180} s={0.6} mood="facepalm" hand={1} />
+
         </div>
       )}
     </AbsoluteFill>
@@ -332,7 +327,6 @@ export const SceneCta: React.FC<SP> = (p) => {
           pour voir <span style={{ color: '#9FF0C9' }}>le ticket du mois</span>
         </div>
       </div>
-      <Chrono x={860} y={1420} s={0.6} mood="happy" />
     </AbsoluteFill>
   );
 };
