@@ -4,6 +4,7 @@ import { EASE, FONT, FONT_TIGHT, FPS, clamp01, kf, lerp, sp } from '../lib';
 import { IconTile, PLACE, PlaceKind } from '../components/UI';
 import { Captions, Chrono, Phone, SceneCta, SceneLogo, SceneNobody, SceneScreenTime, SceneTicket, Warm, Word } from './Ticket';
 import { Detect, Map3D, Replay, Shot, Stats, Streak, Trips } from './Promo';
+import { Person } from './Person';
 
 /* Longer founder story: dream → creation → OùVa → auto → STATS (timeline, detailed, week vs week) → replay → the rest → ticket → CTA */
 
@@ -21,13 +22,13 @@ const Dream: React.FC<SP> = ({ at }) => {
   const kinds: PlaceKind[] = ['home', 'work', 'gym', 'cafe', 'friends', 'library'];
   return (
     <>
-      <div style={{ position: 'absolute', inset: 0, transform: `scale(${Math.max(0, jelly(f, at + 0.05, 0.8))})`, transformOrigin: '540px 1150px' }}>
-        <Chrono x={540} y={1100} s={1.3} mood="happy" />
+      <div style={{ position: 'absolute', inset: 0, transform: `translateY(${(1 - Math.min(1, sp(f, at, { damping: 16, stiffness: 120 }))) * 700}px)` }}>
+        <Person x={600} y={1330} s={0.95} pose="phone" />
       </div>
       {[0, 1, 2].map((i) => (
-        <div key={i} style={{ position: 'absolute', left: 600 + i * 50, top: 800 - i * 70, width: 30 + i * 20, height: 30 + i * 20, borderRadius: '50%', background: '#FFF8F0', opacity: clamp01((t - at - 0.2 - i * 0.1) / 0.15) }} />
+        <div key={i} style={{ position: 'absolute', left: 520 - i * 60, top: 560 - i * 60, width: 30 + i * 20, height: 30 + i * 20, borderRadius: '50%', background: '#FFF8F0', opacity: clamp01((t - at - 0.2 - i * 0.1) / 0.15) }} />
       ))}
-      <div style={{ position: 'absolute', left: 140, top: 230, width: 800, height: 470, borderRadius: 240, background: '#FFF8F0', transform: `scale(${b})`, boxShadow: '0 30px 70px rgba(20,6,10,0.3)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 34, padding: '60px 110px', boxSizing: 'border-box' }}>
+      <div style={{ position: 'absolute', left: 90, top: 150, width: 800, height: 420, borderRadius: 220, background: '#FFF8F0', transform: `scale(${b})`, boxShadow: '0 30px 70px rgba(20,6,10,0.3)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 34, padding: '60px 110px', boxSizing: 'border-box' }}>
         {kinds.map((k, i) => (
           <div key={k} style={{ transform: `scale(${Math.max(0, jelly(f, at + 0.6 + i * 0.12))}) translateY(${Math.sin(t * 2 + i) * 8}px)`, position: 'relative' }}>
             <IconTile kind={k} size={130} solid />
@@ -304,6 +305,16 @@ export const Promo2: React.FC<Promo2Props> = ({ audio, words, cues, marks, hi, e
       <SceneLogo {...S('logo')} />
       <SceneTicket {...S('ticket')} circleAt={marks.douze} laughAt={marks.parle} printDur={1.6} />
       <SceneCta {...S('cta')} />
+      {t > marks.douze + 0.2 && t < cues.cta + 0.1 && (
+        <div style={{ position: 'absolute', inset: 0, transform: `translateX(${(1 - Math.min(1, sp(f, marks.douze + 0.2, { damping: 15, stiffness: 140 }))) * 500}px)` }}>
+          <Person x={890} y={1560} s={0.72} pose="facepalm" />
+        </div>
+      )}
+      {t > cues.cta + 0.6 && (
+        <div style={{ position: 'absolute', inset: 0, transform: `translateX(${(1 - Math.min(1, sp(f, cues.cta + 0.6, { damping: 15, stiffness: 140 }))) * 500}px)` }}>
+          <Person x={920} y={1700} s={0.62} pose="present" />
+        </div>
+      )}
       <Captions words={words} hi={hi} stopAt={cues.cta} />
       {flash > 0 && <AbsoluteFill style={{ background: '#FFF4E8', opacity: flash * 0.3 }} />}
       <Audio src={staticFile(audio)} />
