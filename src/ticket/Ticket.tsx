@@ -177,7 +177,7 @@ const SceneNobody: React.FC<SP & { m: number[] }> = (p) => {
 };
 
 /* 3 — logo build: dashed square draws, corners pop, stopwatch drops and comes alive */
-const SceneLogo: React.FC<SP> = (p) => {
+export const SceneLogo: React.FC<SP> = (p) => {
   const { f, t, on } = useScene(p);
   if (!on) return null;
   const draw = kf(f, [p.at, p.at + 0.55], [0, 1], EASE.out);

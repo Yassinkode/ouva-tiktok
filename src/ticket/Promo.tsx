@@ -2,13 +2,13 @@ import React from 'react';
 import { AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from 'remotion';
 import { EASE, FONT, FONT_TIGHT, FPS, clamp01, kf, lerp, sp } from '../lib';
 import { IconTile, PLACE, PlaceKind } from '../components/UI';
-import { Captions, Chrono, Phone, SceneCta, SceneTicket, Warm, Word } from './Ticket';
+import { Captions, Chrono, Phone, SceneCta, SceneLogo, SceneTicket, Warm, Word } from './Ticket';
 
 /* Fast feature tour: one feature per ~1 s shot, whip transitions, energetic voice. */
 
 const GREEN = '#23A26D';
 export type PromoProps = { audio: string; words: Word[]; cues: Record<string, number>; marks: Record<string, number>; hi: string[]; end: number };
-const ORDER = ['hook', 'detect', 'chrono', 'replay', 'heat', 'trips', 'stats', 'widgets', 'streak', 'ticket', 'cta'];
+const ORDER = ['logo', 'hook', 'detect', 'chrono', 'replay', 'heat', 'trips', 'stats', 'widgets', 'streak', 'ticket', 'cta'];
 const jelly = (f: number, at: number, k = 1) => sp(f, at, { damping: 8, stiffness: 190 * k, mass: 0.8 });
 type SP = { at: number; out: number };
 
@@ -370,6 +370,7 @@ export const Promo: React.FC<PromoProps> = ({ audio, words, cues, marks, hi, end
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
       <Warm />
+      <SceneLogo {...S('logo')} />
       <Shot {...S('hook')} i={0}>
         <Hook {...S('hook')} />
       </Shot>
@@ -397,10 +398,10 @@ export const Promo: React.FC<PromoProps> = ({ audio, words, cues, marks, hi, end
       <Shot {...S('streak')} i={8}>
         <Streak {...S('streak')} />
       </Shot>
-      <SceneTicket {...S('ticket')} circleAt={marks.douze} laughAt={marks.douze + 0.6} printDur={1.0} />
+      <SceneTicket {...S('ticket')} circleAt={marks.douze} laughAt={marks.parle} printDur={1.4} />
       <SceneCta {...S('cta')} />
-      {t > cues.hook + 0.4 && t < cues.detect && (
-        <div style={{ position: 'absolute', inset: 0, transform: `scale(${Math.max(0, jelly(f, cues.hook + 0.4))})`, transformOrigin: '880px 1180px' }}>
+      {t > cues.hook + 0.6 && t < cues.detect && (
+        <div style={{ position: 'absolute', inset: 0, transform: `scale(${Math.max(0, jelly(f, cues.hook + 0.6))})`, transformOrigin: '880px 1180px' }}>
           <Chrono x={880} y={1180} s={0.55} mood="wow" />
         </div>
       )}
