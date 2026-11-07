@@ -1,0 +1,20 @@
+name: Fetch file from URL
+on:
+  push:
+    paths: ['data/fetch/request.json']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          URL=$(jq -r .url data/fetch/request.json)
+          OUT=$(jq -r .out data/fetch/request.json)
+          mkdir -p "$(dirname "$OUT")"
+          curl -fsSL -o "$OUT" "$URL"
+          ls -la "$OUT"
+          git config user.name "ouva-bot"; git config user.email "bot@users.noreply.github.com"
+          git add -f "$OUT"; git commit -m "fetch: $OUT"; git push
