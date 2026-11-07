@@ -13,11 +13,13 @@ jobs:
       - name: Transcribe
         run: |
           python3 - <<'PY'
-          import json
+          import json, subprocess, numpy as np
           from faster_whisper import WhisperModel
           req = json.load(open('data/fetch/transcribe.json'))
           m = WhisperModel('medium', device='cpu', compute_type='int8')
-          segs, _ = m.transcribe(req['in'], language='fr', word_timestamps=True, initial_prompt=req.get('prompt'))
+          raw = subprocess.run(['ffmpeg','-v','error','-i',req['in'],'-ac','1','-ar','16000','-f','f32le','-'],capture_output=True,check=True).stdout
+          audio = np.frombuffer(raw, dtype=np.float32)
+          segs, _ = m.transcribe(audio, language='fr', word_timestamps=True, initial_prompt=req.get('prompt'))
           out = [{'w': w.word.strip(), 's': round(w.start, 3), 'e': round(w.end, 3)} for s in segs for w in s.words]
           json.dump(out, open(req['out'], 'w'), ensure_ascii=False, indent=0)
           print(' '.join(x['w'] for x in out))
