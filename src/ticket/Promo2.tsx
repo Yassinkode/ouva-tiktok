@@ -3,7 +3,7 @@ import { AbsoluteFill, Audio, Img, staticFile, useCurrentFrame } from 'remotion'
 import { EASE, FONT, FONT_TIGHT, FPS, clamp01, kf, lerp, sp } from '../lib';
 import { IconTile, PLACE, PlaceKind } from '../components/UI';
 import { Captions, Chrono, Phone, SceneCta, SceneLogo, SceneNobody, SceneScreenTime, SceneTicket, Warm, Word } from './Ticket';
-import { Detect, Island, Map3D, Replay, Shot, Stats, Streak, Trips, Widgets } from './Promo';
+import { Detect, Map3D, Replay, Shot, Stats, Streak, Trips } from './Promo';
 
 /* Longer founder story: dream → creation → OùVa → auto → STATS (timeline, detailed, week vs week) → replay → the rest → ticket → CTA */
 
@@ -188,6 +188,86 @@ const Compare: React.FC<SP> = ({ at }) => {
   );
 };
 
+
+const hms = (sec: number) => `${Math.floor(sec / 3600)}:${String(Math.floor((sec % 3600) / 60)).padStart(2, '0')}:${String(Math.floor(sec % 60)).padStart(2, '0')}`;
+
+/* the real Live Activity: compact Dynamic Island, then the expanded card, both ticking */
+const LiveActivity: React.FC<SP> = ({ at, out }) => {
+  const f = useCurrentFrame();
+  const t = f / FPS;
+  const c = sp(f, at + 0.05, { damping: 12, stiffness: 160 });
+  const swap = at + 1.3;
+  const x = sp(f, swap, { damping: 12, stiffness: 140 });
+  const sec = 1 * 3600 + 21 * 60 + 4 + Math.max(0, t - at);
+  const CW = 960;
+  const CH = CW * (135 / 760);
+  const EW = 980;
+  const EH = EW * (416 / 1127);
+  return (
+    <>
+      <Phone x={540} y={1060} w={470} src="screens2/home.png" />
+      {t < swap + 0.15 && (
+        <div style={{ position: 'absolute', left: 540 - CW / 2, top: 330, width: CW, height: CH, borderRadius: CH / 2, overflow: 'hidden', transform: `scale(${Math.max(0, c) * (1 - clamp01((t - swap) / 0.15))})`, boxShadow: '0 30px 70px rgba(0,0,0,0.45)' }}>
+          <div style={{ position: 'absolute', inset: 0, background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: `0 ${CH * 0.32}px 0 ${CH * 0.18}px` }}>
+            <Img src={staticFile('screens2/la_icon.png')} style={{ height: CH * 0.7 }} />
+            <span style={{ color: '#fff', fontFamily: FONT, fontWeight: 500, fontSize: CH * 0.5, fontVariantNumeric: 'tabular-nums' }}>{hms(sec)}</span>
+          </div>
+        </div>
+      )}
+      {t >= swap && (
+        <div style={{ position: 'absolute', left: 540 - EW / 2, top: 250, width: EW, height: EH, borderRadius: 70, overflow: 'hidden', transform: `scale(${Math.max(0, x)})`, transformOrigin: '50% 30%', boxShadow: '0 40px 90px rgba(0,0,0,0.5)', background: '#000' }}>
+          <Img src={staticFile('screens2/la_expanded.png')} style={{ position: 'absolute', left: '-3%', top: '-4%', width: '106%', height: '108%' }} />
+          <div style={{ position: 'absolute', left: EW * 0.405, top: EH * 0.69, width: EW * 0.24, height: EH * 0.17, background: 'rgb(18,18,18)', color: '#fff', fontFamily: FONT, fontWeight: 600, fontSize: EH * 0.13, display: 'flex', alignItems: 'center', fontVariantNumeric: 'tabular-nums', letterSpacing: '0.02em' }}>{hms(sec + 18)}</div>
+        </div>
+      )}
+      {t < 0 && out}
+    </>
+  );
+};
+
+/* lock screen with the real Live Activity + an OùVa widget */
+const LockWidgets: React.FC<SP> = ({ at }) => {
+  const f = useCurrentFrame();
+  const t = f / FPS;
+  const e = sp(f, at, { damping: 15, stiffness: 160 });
+  const w1 = jelly(f, at + 0.15);
+  const w2 = jelly(f, at + 0.4);
+  const rows: { k: PlaceKind; m: number }[] = [
+    { k: 'home', m: 552 },
+    { k: 'library', m: 150 },
+    { k: 'gym', m: 102 },
+  ];
+  const W = 800;
+  return (
+    <div style={{ position: 'absolute', left: 140, top: 200, width: W, height: 1130, borderRadius: 90, overflow: 'hidden', background: 'linear-gradient(170deg,#B98A6E 0%,#9B5A43 45%,#5A3030 75%,#2E1C26 100%)', transform: `translateY(${(1 - e) * 600}px) rotate(${lerp(6, 2, e)}deg)`, boxShadow: '0 60px 120px rgba(20,6,10,0.55), 0 0 0 16px #0B0B0C' }}>
+      <div style={{ position: 'absolute', top: 70, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 600, fontSize: 34, color: 'rgba(255,255,255,0.8)' }}>sam. 7 nov.</div>
+      <div style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center', fontFamily: FONT_TIGHT, fontWeight: 300, fontSize: 210, color: '#E8763A', letterSpacing: '-0.02em' }}>12:47</div>
+      <div style={{ position: 'absolute', left: 30, right: 30, top: 380, height: (W - 60) * (360 / 860), borderRadius: 46, overflow: 'hidden', transform: `scale(${Math.max(0, w1)})` }}>
+        <Img src={staticFile('screens2/la_lock.png')} style={{ width: '100%', height: '100%' }} />
+      </div>
+      <div style={{ position: 'absolute', left: 30, right: 30, top: 730, height: 330, borderRadius: 46, background: 'rgba(16,18,17,0.88)', padding: '28px 32px', boxSizing: 'border-box', transform: `scale(${Math.max(0, w2)})`, fontFamily: FONT }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', color: 'rgba(255,255,255,0.6)', fontSize: 26, fontWeight: 600 }}>
+          <span>Aujourd’hui</span>
+          <span style={{ color: GREEN }}>OùVa</span>
+        </div>
+        {rows.map((r, i) => {
+          const g = kf(f, [at + 0.5 + i * 0.12, at + 1.1 + i * 0.12], [0, 1], EASE.out);
+          return (
+            <div key={r.k} style={{ display: 'flex', alignItems: 'center', gap: 18, marginTop: 20 }}>
+              <IconTile kind={r.k} size={56} solid />
+              <div style={{ flex: 1, height: 18, borderRadius: 9, background: '#2A2C2B' }}>
+                <div style={{ width: `${(r.m / 552) * 100 * g}%`, height: '100%', borderRadius: 9, background: PLACE[r.k].color }} />
+              </div>
+              <div style={{ width: 140, textAlign: 'right', color: '#fff', fontFamily: FONT_TIGHT, fontWeight: 850, fontSize: 34 }}>{`${Math.floor(r.m / 60)} h ${String(r.m % 60).padStart(2, '0')}`}</div>
+            </div>
+          );
+        })}
+      </div>
+      {t < 0 && null}
+    </div>
+  );
+};
+
 export const Promo2: React.FC<Promo2Props> = ({ audio, words, cues, marks, hi, end }) => {
   const S = (id: string) => {
     const i = ORDER.indexOf(id);
@@ -202,7 +282,7 @@ export const Promo2: React.FC<Promo2Props> = ({ audio, words, cues, marks, hi, e
     ['real', <SceneNobody {...S('real')} m={[marks.home, marks.work, marks.gym]} />],
     ['create', <Create {...S('create')} />],
     ['auto', <Detect {...S('auto')} />],
-    ['chrono', <Island {...S('chrono')} />],
+    ['chrono', <LiveActivity {...S('chrono')} />],
     ['statsTitle', <StatsTitle {...S('statsTitle')} />],
     ['timeline', <Timeline {...S('timeline')} />],
     ['detailed', <Stats {...S('detailed')} tabs={[marks.jour, marks.semaine, marks.mois]} />],
@@ -210,7 +290,7 @@ export const Promo2: React.FC<Promo2Props> = ({ audio, words, cues, marks, hi, e
     ['replay', <Replay {...S('replay')} />],
     ['heat', <Map3D {...S('heat')} mode="heat" />],
     ['trips', <Trips {...S('trips')} />],
-    ['widgets', <Widgets {...S('widgets')} />],
+    ['widgets', <LockWidgets {...S('widgets')} />],
     ['streak', <Streak {...S('streak')} />],
   ];
   return (
