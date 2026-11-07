@@ -6,7 +6,7 @@ import os from 'os';
 import { execFileSync } from 'child_process';
 import { bundle } from '@remotion/bundler';
 import { renderMedia, selectComposition } from '@remotion/renderer';
-import { buildProps, wordsProportional } from './build_props.mjs';
+import { buildProps, wordsProportional, tokens } from './build_props.mjs';
 import { writeStory, validateStory } from './story.mjs';
 import { makeVoice } from './voice.mjs';
 import { publish as publishBlotato } from './publish.mjs';
@@ -17,8 +17,8 @@ import { sendText, sendVideo } from './telegram.mjs';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 process.chdir(ROOT);
 const DRY = process.env.DRY_RUN === '1' || process.env.DRY_RUN === 'true';
-const SLOTS = (process.env.SLOTS || '18').split(',').map(Number); // heures de Paris
-const STYLE = 3; // video style version: older scheduled videos are replaced by new ones
+const SLOTS = (process.env.SLOTS || '12,18,21').split(',').map(Number); // heures de Paris
+const STYLE = 4; // video style version: older scheduled videos are replaced by new ones
 
 /* ---------- time helpers (Europe/Paris) ---------- */
 const parisParts = (d = new Date()) => {
@@ -57,6 +57,7 @@ const log = (...a) => console.log(`[${new Date().toISOString().slice(11, 19)}]`,
 async function main() {
   fs.mkdirSync('data/stories', { recursive: true });
   fs.mkdirSync('public/runs', { recursive: true });
+  fs.mkdirSync('out', { recursive: true });
   fs.mkdirSync('out', { recursive: true });
   const histPath = 'data/history.json';
   const history = fs.existsSync(histPath) ? JSON.parse(fs.readFileSync(histPath, 'utf8')) : [];
@@ -169,8 +170,85 @@ async function makeLab(slot, history, histPath) {
   return status;
 }
 
+/* « Spot » format (since 2026-11-07): founder-voice explainer, real app screens, adult character, Léo voice (ElevenLabs v4) */
+const SPOT_VOICE = process.env.SPOT_VOICE_ID || 'jsScnYkNNda9Q1NES5nn';
+const nrm = (w) => w.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+export function spotTiming(script, words) {
+  const scenes = [];
+  let idx = 0;
+  for (const l of script.lines) {
+    const w = words[Math.min(idx, words.length - 1)];
+    const at = idx === 0 ? 0 : Math.max(0, w.s - 0.08);
+    if (!scenes.length || scenes[scenes.length - 1].id !== l.s) scenes.push({ id: l.s, at: Math.round(at * 100) / 100 });
+    l._from = idx;
+    idx += tokens(l.t).length;
+    l._to = idx;
+  }
+  const marks = {};
+  const find = (keys, from = 0, to = words.length) => {
+    for (let i = from; i < to; i++) if (keys.includes(nrm(words[i].w))) return Math.round(words[i].s * 100) / 100;
+  };
+  const inScene = (sid) => script.lines.filter((l) => l.s === sid);
+  for (const l of inScene('ticket')) {
+    marks.douze ??= find(['douze', '12'], l._from, l._to);
+    marks.parle ??= find(['parle'], l._from, l._to);
+  }
+  for (const l of inScene('detailed')) {
+    marks.jour ??= find(['jour'], l._from, l._to);
+    marks.semaine ??= find(['semaine'], l._from, l._to);
+    marks.mois ??= find(['mois'], l._from, l._to);
+  }
+  for (const l of inScene('real')) {
+    marks.home ??= find(['toi', 'moi', 'maison'], l._from, l._to);
+    marks.work ??= find(['taf', 'travail'], l._from, l._to);
+    marks.gym ??= find(['salle'], l._from, l._to);
+  }
+  const ctaAt = scenes.find((s) => s.id === 'cta')?.at ?? words[words.length - 1].e;
+  const end = Math.round(Math.max(ctaAt + 4.6, words[words.length - 1].e + 1.6) * 100) / 100;
+  return { scenes, marks, end };
+}
+
+async function makeSpot(slot, history, histPath) {
+  const date = slot.date;
+  const id = `${date}_${slot.label}`;
+  log('run spot', id, DRY ? '(dry run)' : '');
+  const scripts = JSON.parse(fs.readFileSync('data/spots/scripts.json', 'utf8'));
+  const used = new Set(history.filter((h) => !['cancelled', 'failed'].includes(h.status)).map((h) => h.backlog).filter(Boolean));
+  const free = scripts.map((s, i) => i).filter((i) => !used.has(`spot/${i}`));
+  if (!free.length) throw new Error('📚 Plus de scripts de vidéos OùVa. Demande un nouveau lot à Claude.');
+  const k = free[0];
+  const script = scripts[k];
+  const text = script.lines.map((l) => l.t).join(' ');
+  fs.mkdirSync('public/runs', { recursive: true });
+  fs.mkdirSync('out', { recursive: true });
+  const mp3 = `public/runs/${id}_voice.mp3`;
+  const v = await makeVoice(text, mp3, { voiceId: SPOT_VOICE, models: ['eleven_v4', 'eleven_v3'], speed: 1.0, noFallback: true });
+  if (!v.words?.length) throw new Error('Voix sans alignement');
+  const words = v.words;
+  const { scenes, marks, end } = spotTiming(script, words);
+  const hi = ['OùVa', 'stats', 'statistiques', 'seule', 'chrono', 'ticket', 'douze', 'carte', 'chaleur', 'semaine', 'trajets', 'widgets', 'séries', 'paliers', 'vraie', 'vraiment', 'créé', 'créée'];
+  const props = { audio: `runs/${id}.wav`, words, scenes, marks, hi, end };
+  fs.writeFileSync(`out/${id}_props.json`, JSON.stringify(props));
+  execFileSync('python3', ['pipeline/spot_audio.py', `out/${id}_props.json`, mp3, `public/runs/${id}.wav`], { stdio: 'inherit' });
+  const raw = `out/${id}_raw.mp4`;
+  await render('Spot', props, raw);
+  const final = `out/OuVa_${id}.mp4`;
+  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', final]);
+  fs.rmSync(raw, { force: true });
+  log('video ready', final);
+  const caption = `${script.caption}\n\nGratuit sur l'App Store : tape « OùVa » 📲\n\n${script.hashtags.join(' ')}`;
+  const entry = { id, date, slot: slot.label, title: script.caption, format: 'spot', hook: script.lines[0].t, caption, backlog: `spot/${k}`, style: STYLE, voice: v.model };
+  const status = await deliver({ slot, final, caption, entry, history, histPath });
+  const left = free.length - 1;
+  if (!DRY && process.env.TELEGRAM_BOT_TOKEN && [15, 9, 3].includes(left))
+    await sendText(`📚 Vidéos OùVa : plus que ${left} scripts en réserve (≈ ${Math.ceil(left / SLOTS.length)} jour(s)).\n👉 Demande un nouveau lot à Claude.`).catch(() => {});
+  for (const f of [mp3, `public/runs/${id}.wav`]) fs.rmSync(f, { force: true });
+  return status;
+}
+
 async function makeOne(slot, history, histPath) {
-  if ((process.env.FORMAT || 'lab') === 'lab') return makeLab(slot, history, histPath);
+  if ((process.env.FORMAT || 'spot') === 'spot') return makeSpot(slot, history, histPath);
+  if (process.env.FORMAT === 'lab') return makeLab(slot, history, histPath);
   const date = slot.date;
   const id = `${date}_${slot.label}`;
   log('run', id, DRY ? '(dry run)' : '');

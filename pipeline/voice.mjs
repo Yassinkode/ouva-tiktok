@@ -20,13 +20,13 @@ export async function makeVoice(text, outMp3, opts = {}) {
   try {
     return await elevenVoice(text, outMp3, opts);
   } catch (e) {
-    if (process.env.VOICE_FALLBACK === '0') throw e;
+    if (process.env.VOICE_FALLBACK === '0' || opts.noFallback) throw e;
     console.warn('ElevenLabs indisponible, voix gratuite de secours :', String(e).slice(0, 200));
     return edgeVoice(text, outMp3);
   }
 }
 
-async function elevenVoice(text, outMp3, { apiKey = process.env.ELEVENLABS_API_KEY } = {}) {
+async function elevenVoice(text, outMp3, { apiKey = process.env.ELEVENLABS_API_KEY, voiceId = VOICE_ID, models = MODELS, speed } = {}) {
   let lastErr = '';
   // stop early with a clear message if the monthly character quota is too low
   try {
@@ -39,15 +39,15 @@ async function elevenVoice(text, outMp3, { apiKey = process.env.ELEVENLABS_API_K
   } catch (e) {
     if (String(e).includes('insuffisants')) throw e;
   }
-  for (const model of MODELS) {
+  for (const model of models) {
     for (const withLang of [true, false]) {
       const body = {
         text,
         model_id: model,
-        voice_settings: { stability: 0.5, similarity_boost: 0.75, speed: Number(process.env.VOICE_SPEED || 1.16), style: 0, use_speaker_boost: true },
+        voice_settings: { stability: 0.5, similarity_boost: 0.75, speed: speed ?? Number(process.env.VOICE_SPEED || 1.16), style: 0, use_speaker_boost: true },
         ...(withLang ? { language_code: 'fr' } : {}),
       };
-      const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}/with-timestamps?output_format=mp3_44100_128`, {
+      const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps?output_format=mp3_44100_128`, {
         method: 'POST',
         headers: { 'xi-api-key': apiKey, 'content-type': 'application/json' },
         body: JSON.stringify(body),

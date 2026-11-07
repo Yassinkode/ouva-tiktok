@@ -15,7 +15,7 @@ const jelly = (f: number, at: number, k = 1) => sp(f, at, { damping: 8, stiffnes
 type SP = { at: number; out: number };
 
 /* the dream: mascot with a thought bubble full of places */
-const Dream: React.FC<SP> = ({ at }) => {
+export const Dream: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const b = sp(f, at + 0.4, { damping: 12, stiffness: 140 });
@@ -41,7 +41,7 @@ const Dream: React.FC<SP> = ({ at }) => {
 };
 
 /* "pas mon temps d'écran": the screen-time card gets crossed out */
-const NotScreen: React.FC<SP> = (p) => {
+export const NotScreen: React.FC<SP> = (p) => {
   const f = useCurrentFrame();
   const x = kf(f, [p.at + 0.7, p.at + 1.0], [0, 1], EASE.out);
   return (
@@ -56,7 +56,7 @@ const NotScreen: React.FC<SP> = (p) => {
 };
 
 /* "alors je l'ai créée": a sketch of the app draws itself, then the real screen fills in */
-const Create: React.FC<SP> = ({ at, out }) => {
+export const Create: React.FC<SP> = ({ at, out }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const draw = kf(f, [at, at + 1.0], [0, 1], EASE.inOut);
@@ -101,7 +101,7 @@ const Create: React.FC<SP> = ({ at, out }) => {
 };
 
 /* big title for the stats chapter */
-const StatsTitle: React.FC<SP> = ({ at }) => {
+export const StatsTitle: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const j = jelly(f, at + 0.05, 0.9);
@@ -124,7 +124,7 @@ const StatsTitle: React.FC<SP> = ({ at }) => {
 };
 
 /* "le fil de ta journée": real timeline screen, slow scroll + highlight rows */
-const Timeline: React.FC<SP> = ({ at, out }) => {
+export const Timeline: React.FC<SP> = ({ at, out }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const e = sp(f, at, { damping: 15, stiffness: 150 });
@@ -146,7 +146,7 @@ const Timeline: React.FC<SP> = ({ at, out }) => {
 };
 
 /* week vs week comparison card (built in the app's style) */
-const Compare: React.FC<SP> = ({ at }) => {
+export const Compare: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const e = sp(f, at, { damping: 15, stiffness: 150 });
   const rows: { k: PlaceKind; a: number; b: number }[] = [
@@ -193,7 +193,7 @@ const Compare: React.FC<SP> = ({ at }) => {
 const hms = (sec: number) => `${Math.floor(sec / 3600)}:${String(Math.floor((sec % 3600) / 60)).padStart(2, '0')}:${String(Math.floor(sec % 60)).padStart(2, '0')}`;
 
 /* the real Live Activity: compact Dynamic Island, then the expanded card, both ticking */
-const LiveActivity: React.FC<SP> = ({ at, out }) => {
+export const LiveActivity: React.FC<SP> = ({ at, out }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const c = sp(f, at + 0.05, { damping: 12, stiffness: 160 });
@@ -227,7 +227,7 @@ const LiveActivity: React.FC<SP> = ({ at, out }) => {
 };
 
 /* lock screen with the real Live Activity + an OùVa widget */
-const LockWidgets: React.FC<SP> = ({ at }) => {
+export const LockWidgets: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const e = sp(f, at, { damping: 15, stiffness: 160 });
