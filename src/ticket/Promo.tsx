@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Img, staticFile, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from 'remotion';
 import { EASE, FONT, FONT_TIGHT, FPS, clamp01, kf, lerp, sp } from '../lib';
 import { IconTile, PLACE, PlaceKind } from '../components/UI';
 import { Captions, Chrono, Phone, SceneCta, SceneTicket, Warm, Word } from './Ticket';
@@ -8,7 +8,7 @@ import { Captions, Chrono, Phone, SceneCta, SceneTicket, Warm, Word } from './Ti
 
 const GREEN = '#23A26D';
 export type PromoProps = { audio: string; words: Word[]; cues: Record<string, number>; marks: Record<string, number>; hi: string[]; end: number };
-const ORDER = ['hook', 'chrono', 'replay', 'heat', 'trips', 'stats', 'streak', 'ticket', 'cta'];
+const ORDER = ['hook', 'detect', 'chrono', 'replay', 'heat', 'trips', 'stats', 'widgets', 'streak', 'ticket', 'cta'];
 const jelly = (f: number, at: number, k = 1) => sp(f, at, { damping: 8, stiffness: 190 * k, mass: 0.8 });
 type SP = { at: number; out: number };
 
@@ -237,6 +237,128 @@ const Streak: React.FC<SP> = ({ at }) => {
   );
 };
 
+
+/* places detected automatically: pins pop + notification banners */
+const Detect: React.FC<SP> = ({ at }) => {
+  const f = useCurrentFrame();
+  const t = f / FPS;
+  const e = sp(f, at, { damping: 16, stiffness: 160 });
+  const pins: { k: PlaceKind; x: number; y: number }[] = [
+    { k: 'library', x: 300, y: 330 },
+    { k: 'gym', x: 640, y: 250 },
+    { k: 'cafe', x: 520, y: 560 },
+  ];
+  return (
+    <>
+      <div style={{ position: 'absolute', left: 110, top: 420, width: 860, height: 820, borderRadius: 50, overflow: 'hidden', transform: `scale(${lerp(0.9, 1, e)})`, boxShadow: '0 50px 100px rgba(20,6,10,0.5)' }}>
+        <Img src={staticFile('screens2/places.png')} style={{ position: 'absolute', left: -60, top: -60, width: 980, filter: 'blur(10px) brightness(0.9)' }} />
+        {[0, 1].map((i) => {
+          const r = ((t - at) * 0.9 + i * 0.5) % 1;
+          return <div key={i} style={{ position: 'absolute', left: 430 - r * 420, top: 410 - r * 420, width: r * 840, height: r * 840, borderRadius: '50%', border: `4px solid ${GREEN}`, opacity: (1 - r) * 0.6 }} />;
+        })}
+        {pins.map((p, i) => {
+          const j = jelly(f, at + 0.25 + i * 0.32);
+          if (t < at + 0.25 + i * 0.32) return null;
+          return (
+            <div key={p.k} style={{ position: 'absolute', left: p.x - 60, top: p.y - 60, transform: `translateY(${(1 - Math.min(1, j)) * -120}px) scale(${Math.max(0, j)})` }}>
+              <IconTile kind={p.k} size={120} solid />
+            </div>
+          );
+        })}
+      </div>
+      {pins.map((p, i) => {
+        const a = at + 0.3 + i * 0.32;
+        if (t < a) return null;
+        const j = sp(f, a, { damping: 14, stiffness: 200 });
+        return (
+          <div key={p.k} style={{ position: 'absolute', left: 70, right: 70, top: 120 + i * 0, height: 120, borderRadius: 34, background: 'rgba(30,30,32,0.92)', display: 'flex', alignItems: 'center', gap: 20, padding: '0 24px', boxSizing: 'border-box', transform: `translateY(${(1 - j) * -200 + i * 22}px) scale(${1 - (2 - i) * 0.04})`, opacity: i < 2 && t > at + 0.3 + (i + 1) * 0.32 ? 0.5 : 1, boxShadow: '0 20px 40px rgba(0,0,0,0.35)', zIndex: 10 + i }}>
+            <Img src={staticFile('screens2/logo.png')} style={{ width: 76, height: 76, borderRadius: 18 }} />
+            <div style={{ fontFamily: FONT, lineHeight: 1.15 }}>
+              <div style={{ fontSize: 26, color: 'rgba(255,255,255,0.6)', fontWeight: 600 }}>OùVa · maintenant</div>
+              <div style={{ fontSize: 34, color: '#fff', fontWeight: 700 }}>Nouveau lieu détecté : {PLACE[p.k].name}</div>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+/* real "Revivre ma journée" recording, tilted in 3D */
+const Replay: React.FC<SP> = ({ at, out }) => {
+  const f = useCurrentFrame();
+  const e = sp(f, at, { damping: 15, stiffness: 150 });
+  const rz = kf(f, [at, out], [-6, 3], EASE.inOut);
+  return (
+    <AbsoluteFill style={{ perspective: 1800 }}>
+      <div style={{ position: 'absolute', left: 60, top: 360, width: 960, height: 824, borderRadius: 50, overflow: 'hidden', transform: `rotateX(${lerp(40, 22, e)}deg) rotateZ(${rz}deg) scale(1.05)`, boxShadow: '0 60px 120px rgba(20,6,10,0.55)' }}>
+        <Sequence from={Math.round(at * FPS)} layout="none">
+          <OffthreadVideo src={staticFile('promo/replay.mp4')} muted style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </Sequence>
+      </div>
+      <div style={{ position: 'absolute', left: 300, top: 250, padding: '14px 30px', borderRadius: 999, background: '#111', color: '#fff', fontFamily: FONT, fontWeight: 700, fontSize: 36, display: 'flex', alignItems: 'center', gap: 12, transform: `scale(${Math.max(0, jelly(f, at + 0.1))})` }}>
+        <span style={{ color: GREEN }}>▶</span> Revivre ma journée
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* iOS home screen with OùVa widgets */
+const Widgets: React.FC<SP> = ({ at }) => {
+  const f = useCurrentFrame();
+  const t = f / FPS;
+  const e = sp(f, at, { damping: 15, stiffness: 160 });
+  const w1 = jelly(f, at + 0.15);
+  const w2 = jelly(f, at + 0.35);
+  const rows: { k: PlaceKind; m: number }[] = [
+    { k: 'home', m: 552 },
+    { k: 'library', m: 150 },
+    { k: 'gym', m: 102 },
+  ];
+  const sec = 2 * 3600 + 36 * 60 + 49 + Math.floor(Math.max(0, t - at));
+  const icons = ['#3A6FD8', '#F2A33A', '#2FB36B', '#E5372B', '#8A5CF6', '#14B8A6', '#F472B6', '#64748B'];
+  return (
+    <div style={{ position: 'absolute', left: 140, top: 230, width: 800, height: 1100, borderRadius: 90, overflow: 'hidden', background: 'linear-gradient(160deg,#C9A27F 0%,#8E4E3B 55%,#3E2233 100%)', transform: `translateY(${(1 - e) * 600}px) rotate(${lerp(6, 2, e)}deg)`, boxShadow: '0 60px 120px rgba(20,6,10,0.55), 0 0 0 16px #0B0B0C' }}>
+      <div style={{ position: 'absolute', left: 50, top: 70, width: 330, height: 330, borderRadius: 50, background: 'rgba(16,18,17,0.92)', padding: 30, boxSizing: 'border-box', transform: `scale(${Math.max(0, w1)})`, fontFamily: FONT }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: GREEN, fontWeight: 700, fontSize: 24 }}>● En direct</div>
+        <div style={{ marginTop: 20 }}>
+          <IconTile kind="library" size={84} solid />
+        </div>
+        <div style={{ color: '#fff', fontWeight: 800, fontSize: 34, marginTop: 16 }}>Bibliothèque</div>
+        <div style={{ color: GREEN, fontFamily: FONT_TIGHT, fontWeight: 850, fontSize: 52, fontVariantNumeric: 'tabular-nums' }}>{`${Math.floor(sec / 3600)}:${String(Math.floor((sec % 3600) / 60)).padStart(2, '0')}:${String(sec % 60).padStart(2, '0')}`}</div>
+      </div>
+      <div style={{ position: 'absolute', left: 420, top: 70, display: 'grid', gridTemplateColumns: 'repeat(2, 130px)', gap: 40 }}>
+        {icons.slice(0, 4).map((c, i) => (
+          <div key={i} style={{ width: 130, height: 130, borderRadius: 32, background: c, opacity: 0.9 }} />
+        ))}
+      </div>
+      <div style={{ position: 'absolute', left: 50, right: 50, top: 440, height: 330, borderRadius: 50, background: 'rgba(16,18,17,0.92)', padding: '30px 34px', boxSizing: 'border-box', transform: `scale(${Math.max(0, w2)})`, fontFamily: FONT }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', color: 'rgba(255,255,255,0.6)', fontSize: 26, fontWeight: 600 }}>
+          <span>Aujourd’hui</span>
+          <span style={{ color: GREEN }}>OùVa</span>
+        </div>
+        {rows.map((r, i) => {
+          const g = kf(f, [at + 0.45 + i * 0.12, at + 1.1 + i * 0.12], [0, 1], EASE.out);
+          return (
+            <div key={r.k} style={{ display: 'flex', alignItems: 'center', gap: 18, marginTop: 20 }}>
+              <IconTile kind={r.k} size={56} solid />
+              <div style={{ flex: 1, height: 18, borderRadius: 9, background: '#2A2C2B' }}>
+                <div style={{ width: `${(r.m / 552) * 100 * g}%`, height: '100%', borderRadius: 9, background: PLACE[r.k].color }} />
+              </div>
+              <div style={{ width: 140, textAlign: 'right', color: '#fff', fontFamily: FONT_TIGHT, fontWeight: 850, fontSize: 34 }}>{`${Math.floor(r.m / 60)} h ${String(r.m % 60).padStart(2, '0')}`}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div style={{ position: 'absolute', left: 60, top: 820, display: 'grid', gridTemplateColumns: 'repeat(4, 130px)', gap: 50 }}>
+        {icons.map((c, i) => (
+          <div key={i} style={{ width: 130, height: 130, borderRadius: 32, background: c, opacity: 0.85 }} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const Promo: React.FC<PromoProps> = ({ audio, words, cues, marks, hi, end }) => {
   const S = (id: string) => {
     const i = ORDER.indexOf(id);
@@ -251,27 +373,33 @@ export const Promo: React.FC<PromoProps> = ({ audio, words, cues, marks, hi, end
       <Shot {...S('hook')} i={0}>
         <Hook {...S('hook')} />
       </Shot>
-      <Shot {...S('chrono')} i={1}>
+      <Shot {...S('detect')} i={1}>
+        <Detect {...S('detect')} />
+      </Shot>
+      <Shot {...S('chrono')} i={2}>
         <Island {...S('chrono')} />
       </Shot>
-      <Shot {...S('replay')} i={2}>
-        <Map3D {...S('replay')} mode="replay" />
+      <Shot {...S('replay')} i={3}>
+        <Replay {...S('replay')} />
       </Shot>
-      <Shot {...S('heat')} i={3}>
+      <Shot {...S('heat')} i={4}>
         <Map3D {...S('heat')} mode="heat" />
       </Shot>
-      <Shot {...S('trips')} i={4}>
+      <Shot {...S('trips')} i={5}>
         <Trips {...S('trips')} />
       </Shot>
-      <Shot {...S('stats')} i={5}>
-        <Stats {...S('stats')} tabs={[cues.stats, marks.semaine, marks.mois]} />
+      <Shot {...S('stats')} i={6}>
+        <Stats {...S('stats')} tabs={[cues.stats, cues.stats + 0.35, cues.stats + 0.7]} />
       </Shot>
-      <Shot {...S('streak')} i={6}>
+      <Shot {...S('widgets')} i={7}>
+        <Widgets {...S('widgets')} />
+      </Shot>
+      <Shot {...S('streak')} i={8}>
         <Streak {...S('streak')} />
       </Shot>
       <SceneTicket {...S('ticket')} circleAt={marks.douze} laughAt={marks.douze + 0.6} printDur={1.0} />
       <SceneCta {...S('cta')} />
-      {t > cues.hook + 0.4 && t < cues.chrono && (
+      {t > cues.hook + 0.4 && t < cues.detect && (
         <div style={{ position: 'absolute', inset: 0, transform: `scale(${Math.max(0, jelly(f, cues.hook + 0.4))})`, transformOrigin: '880px 1180px' }}>
           <Chrono x={880} y={1180} s={0.55} mood="wow" />
         </div>

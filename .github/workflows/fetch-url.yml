@@ -11,10 +11,32 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download
         run: |
-          URL=$(jq -r .url data/fetch/request.json)
-          OUT=$(jq -r .out data/fetch/request.json)
-          mkdir -p "$(dirname "$OUT")"
-          curl -fsSL -o "$OUT" "$URL"
-          ls -la "$OUT"
+          if jq -e '.items' data/fetch/request.json >/dev/null; then
+            jq -c '.items[]' data/fetch/request.json | while read -r it; do
+              U=$(echo "$it" | jq -r .url); O=$(echo "$it" | jq -r .out); mkdir -p "$(dirname "$O")"; curl -fsSL -o "$O" "$U"; ls -la "$O"
+            done
+          else
+            URL=$(jq -r .url data/fetch/request.json); OUT=$(jq -r .out data/fetch/request.json)
+            mkdir -p "$(dirname "$OUT")"; curl -fsSL -o "$OUT" "$URL"; ls -la "$OUT"
+          fi
+      - name: Transcribe (optional)
+        run: |
+          if jq -e '.transcribe' data/fetch/request.json >/dev/null; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q faster-whisper==1.2.1
+            python3 - <<'PY'
+          import json, subprocess, numpy as np
+          from faster_whisper import WhisperModel
+          req = json.load(open('data/fetch/request.json'))
+          m = WhisperModel('medium', device='cpu', compute_type='int8')
+          for job in req['transcribe']:
+              raw = subprocess.run(['ffmpeg','-v','error','-i',job['in'],'-ac','1','-ar','16000','-f','f32le','-'],capture_output=True,check=True).stdout
+              segs, _ = m.transcribe(np.frombuffer(raw, dtype=np.float32), language='fr', word_timestamps=True)
+              out = [{'w': w.word.strip(), 's': round(w.start, 3), 'e': round(w.end, 3)} for s in segs for w in s.words]
+              json.dump(out, open(job['out'], 'w'), ensure_ascii=False, indent=0)
+              print(job['in'], ' '.join(x['w'] for x in out))
+          PY
+          fi
+      - name: Commit
+        run: |
           git config user.name "ouva-bot"; git config user.email "bot@users.noreply.github.com"
-          git add -f "$OUT"; git commit -m "fetch: $OUT"; git push
+          git add -f public data || true; git commit -m "fetch files" || exit 0; git pull --rebase; git push
