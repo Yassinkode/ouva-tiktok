@@ -17,7 +17,7 @@ const jelly = (f: number, at: number, k = 1) => sp(f, at, { damping: 8, stiffnes
 const useT = () => useCurrentFrame() / FPS;
 
 /* ---------- warm backdrop (same mood as the App Store screenshots) ---------- */
-const Warm: React.FC = () => {
+export const Warm: React.FC = () => {
   const t = useT();
   return (
     <AbsoluteFill style={{ background: 'linear-gradient(180deg, #B89076 0%, #9A5F48 38%, #6E3A30 66%, #3A2131 100%)' }}>
@@ -82,7 +82,7 @@ export const Chrono: React.FC<{ x: number; y: number; s: number; mood?: 'happy' 
 };
 
 /* ---------- a crisp phone ---------- */
-const Phone: React.FC<{ x: number; y: number; w: number; rot?: number; src?: string; children?: React.ReactNode; z?: number; ox?: number; oy?: number }> = ({ x, y, w, rot = 0, src, children, z = 1, ox = 50, oy = 50 }) => (
+export const Phone: React.FC<{ x: number; y: number; w: number; rot?: number; src?: string; children?: React.ReactNode; z?: number; ox?: number; oy?: number }> = ({ x, y, w, rot = 0, src, children, z = 1, ox = 50, oy = 50 }) => (
   <div style={{ position: 'absolute', left: x - w / 2, top: y - w * 1.09, width: w, height: w * 2.18, borderRadius: w * 0.16, background: '#0B0B0C', padding: w * 0.025, boxSizing: 'border-box', transform: `rotate(${rot}deg)`, boxShadow: '0 50px 100px rgba(20,6,10,0.55), 0 0 0 3px #2A2A2C' }}>
     <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: w * 0.14, overflow: 'hidden', background: '#0D0F0E' }}>
       <div style={{ position: 'absolute', inset: 0, transform: `scale(${z})`, transformOrigin: `${ox}% ${oy}%` }}>
@@ -245,10 +245,10 @@ const LINES: [string, string][] = [
   ['CHEZ LES POTES', '4 h 20'],
   ['SALLE DE SPORT', '0 h 12'],
 ];
-const SceneTicket: React.FC<SP & { circleAt: number; laughAt: number }> = (p) => {
+export const SceneTicket: React.FC<SP & { circleAt: number; laughAt: number; printDur?: number }> = (p) => {
   const { f, t, on, e } = useScene(p);
   if (!on) return null;
-  const printDur = 2.2;
+  const printDur = p.printDur ?? 2.2;
   const pr = kf(f, [p.at + 0.35, p.at + 0.35 + printDur], [0, 1], (x: number) => x);
   const fullH = 1180;
   const visible = pr * fullH;
@@ -310,7 +310,7 @@ const SceneTicket: React.FC<SP & { circleAt: number; laughAt: number }> = (p) =>
 };
 
 /* 7 — CTA */
-const SceneCta: React.FC<SP> = (p) => {
+export const SceneCta: React.FC<SP> = (p) => {
   const { f, t, on } = useScene(p);
   if (!on) return null;
   const e = jelly(f, p.at + 0.05, 0.9);
@@ -339,7 +339,7 @@ const SceneCta: React.FC<SP> = (p) => {
 
 /* ---------- captions ---------- */
 const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
-const Captions: React.FC<{ words: Word[]; hi: string[]; stopAt: number }> = ({ words, hi, stopAt }) => {
+export const Captions: React.FC<{ words: Word[]; hi: string[]; stopAt: number }> = ({ words, hi, stopAt }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   if (t >= stopAt - 0.05) return null;
@@ -363,7 +363,7 @@ const Captions: React.FC<{ words: Word[]; hi: string[]; stopAt: number }> = ({ w
         const isHi = hi.some((h) => norm(w.w).startsWith(norm(h)));
         const said = t >= w.s - 0.03;
         return (
-          <span key={k} style={{ color: '#fff', opacity: said ? 1 : 0.5, WebkitTextStroke: '0', textShadow: '0 6px 0 rgba(0,0,0,0.25), 0 10px 30px rgba(0,0,0,0.4)', ...(isHi ? { background: GREEN, padding: '0 14px', borderRadius: 16 } : {}) }}>
+          <span key={k} style={{ color: '#fff', opacity: said ? 1 : 0.55, WebkitTextStroke: '12px rgba(28,12,14,0.75)', paintOrder: 'stroke fill', textShadow: '0 6px 0 rgba(0,0,0,0.25), 0 10px 30px rgba(0,0,0,0.4)', ...(isHi ? { background: GREEN, padding: '0 14px', borderRadius: 16 } : {}) }}>
             {w.w.replace(/[,:]$/, '')}
           </span>
         );

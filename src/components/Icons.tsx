@@ -181,3 +181,14 @@ import { Img, staticFile } from 'remotion';
 export const LogoIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = ({ size = 200, style }) => (
   <Img src={staticFile('logo.png')} style={{ width: size, height: size, borderRadius: size * 0.225, display: 'block', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)', ...style }} />
 );
+
+/** books on a shelf (library) */
+export const BooksIcon: React.FC<{ size?: number; color?: string; style?: React.CSSProperties }> = ({ size = 48, color = '#fff', style }) => (
+  <svg width={size} height={size} viewBox="0 0 48 48" style={style}>
+    <rect x="7" y="10" width="7" height="28" rx="2" fill={color} />
+    <rect x="16" y="14" width="6" height="24" rx="2" fill={color} />
+    <rect x="24.5" y="11" width="6" height="27" rx="2" fill={color} transform="rotate(-14 27 24)" />
+    <rect x="34" y="12" width="7" height="26" rx="2" fill={color} />
+    <rect x="5" y="39" width="38" height="3" rx="1.5" fill={color} />
+  </svg>
+);

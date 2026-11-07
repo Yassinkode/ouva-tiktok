@@ -1,7 +1,7 @@
 import React from 'react';
 import { C, FONT, FONT_TIGHT, clamp01 } from '../lib';
 import { GRID_N, HeatGrid, StyledMap, shadowDeep } from './Core';
-import { BagIcon, BriefcaseIcon, CapIcon, CupIcon, DumbbellIcon, HouseIcon, PeopleIcon, TreeIcon } from './Icons';
+import { BagIcon, BooksIcon, BriefcaseIcon, CapIcon, CupIcon, DumbbellIcon, HouseIcon, PeopleIcon, TreeIcon } from './Icons';
 
 export const PLACE = {
   home: { name: 'Maison', color: C.home, bg: C.homeBg, Icon: HouseIcon },
@@ -12,6 +12,7 @@ export const PLACE = {
   park: { name: 'Parc', color: '#7BD389', bg: '#1C3A22', Icon: TreeIcon },
   friends: { name: 'Chez les potes', color: '#B98CF0', bg: '#2E2342', Icon: PeopleIcon },
   shop: { name: 'Courses', color: '#F0C04B', bg: '#3D3115', Icon: BagIcon },
+  library: { name: 'Bibliothèque', color: '#A9825A', bg: '#3A2C1E', Icon: BooksIcon },
 };
 export type PlaceKind = keyof typeof PLACE;
 
