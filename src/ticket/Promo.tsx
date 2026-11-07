@@ -13,7 +13,7 @@ const jelly = (f: number, at: number, k = 1) => sp(f, at, { damping: 8, stiffnes
 type SP = { at: number; out: number };
 
 /** whip: each shot slides in fast from the side with a slight blur, alternating direction */
-const Shot: React.FC<SP & { i: number; children: React.ReactNode }> = ({ at, out, i, children }) => {
+export const Shot: React.FC<SP & { i: number; children: React.ReactNode }> = ({ at, out, i, children }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   if (t < at - 0.02 || t > out + 0.12) return null;
@@ -29,7 +29,7 @@ const Shot: React.FC<SP & { i: number; children: React.ReactNode }> = ({ at, out
 };
 
 /* hook: real home screen + place chips orbiting with live timers */
-const Hook: React.FC<SP> = ({ at }) => {
+export const Hook: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const e = sp(f, at, { damping: 15, stiffness: 150 });
@@ -64,7 +64,7 @@ const Hook: React.FC<SP> = ({ at }) => {
 };
 
 /* giant Dynamic Island */
-const Island: React.FC<SP> = ({ at }) => {
+export const Island: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const isl = sp(f, at + 0.05, { damping: 11, stiffness: 150 });
@@ -96,7 +96,7 @@ const ROUTE: [number, number][] = [
   [760, 300],
   [760, 620],
 ];
-const Map3D: React.FC<SP & { mode: 'replay' | 'heat' }> = ({ at, out, mode }) => {
+export const Map3D: React.FC<SP & { mode: 'replay' | 'heat' }> = ({ at, out, mode }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const prog = kf(f, [at, out - 0.1], [0, 1], EASE.inOut);
@@ -176,14 +176,14 @@ const Map3D: React.FC<SP & { mode: 'replay' | 'heat' }> = ({ at, out, mode }) =>
 };
 
 /* places screen with the trips (map already blurred) */
-const Trips: React.FC<SP> = ({ at }) => {
+export const Trips: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const e = sp(f, at, { damping: 15, stiffness: 160 });
   return <Phone x={540} y={780} w={500} rot={lerp(-8, -2, e)} src="screens2/places.png" z={kf(f, [at, at + 1.2], [1.05, 1.25], EASE.out)} ox={55} oy={40} />;
 };
 
 /* stats screen, tab underline jumps Jour → Semaine → Mois on the words */
-const Stats: React.FC<SP & { tabs: number[] }> = ({ at, tabs }) => {
+export const Stats: React.FC<SP & { tabs: number[] }> = ({ at, tabs }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const e = sp(f, at, { damping: 15, stiffness: 160 });
@@ -205,7 +205,7 @@ const Stats: React.FC<SP & { tabs: number[] }> = ({ at, tabs }) => {
 };
 
 /* profile: streak flame + badges popping */
-const Streak: React.FC<SP> = ({ at }) => {
+export const Streak: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const e = sp(f, at, { damping: 15, stiffness: 160 });
@@ -239,7 +239,7 @@ const Streak: React.FC<SP> = ({ at }) => {
 
 
 /* places detected automatically: pins pop + notification banners */
-const Detect: React.FC<SP> = ({ at }) => {
+export const Detect: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const e = sp(f, at, { damping: 16, stiffness: 160 });
@@ -285,7 +285,7 @@ const Detect: React.FC<SP> = ({ at }) => {
 };
 
 /* real "Revivre ma journée" recording, tilted in 3D */
-const Replay: React.FC<SP> = ({ at, out }) => {
+export const Replay: React.FC<SP> = ({ at, out }) => {
   const f = useCurrentFrame();
   const e = sp(f, at, { damping: 15, stiffness: 150 });
   const rz = kf(f, [at, out], [-6, 3], EASE.inOut);
@@ -304,7 +304,7 @@ const Replay: React.FC<SP> = ({ at, out }) => {
 };
 
 /* iOS home screen with OùVa widgets */
-const Widgets: React.FC<SP> = ({ at }) => {
+export const Widgets: React.FC<SP> = ({ at }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const e = sp(f, at, { damping: 15, stiffness: 160 });

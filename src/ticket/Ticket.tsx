@@ -102,7 +102,7 @@ const useScene = ({ at, out }: SP) => {
 };
 
 /* 1 — screen time */
-const SceneScreenTime: React.FC<SP> = (p) => {
+export const SceneScreenTime: React.FC<SP> = (p) => {
   const { f, t, on, e, push } = useScene(p);
   if (!on) return null;
   const cnt = kf(f, [p.at, p.at + 1.6], [0, 1], EASE.out);
@@ -145,7 +145,7 @@ const SceneScreenTime: React.FC<SP> = (p) => {
 };
 
 /* 2 — but nobody tells you: places with scrambling "?" timers */
-const SceneNobody: React.FC<SP & { m: number[] }> = (p) => {
+export const SceneNobody: React.FC<SP & { m: number[] }> = (p) => {
   const { f, t, on, push } = useScene(p);
   if (!on) return null;
   const items: { k: PlaceKind; n: string }[] = [
