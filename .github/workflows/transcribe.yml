@@ -1,0 +1,27 @@
+name: Word timestamps
+on:
+  push:
+    paths: ['data/fetch/transcribe.json']
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install faster-whisper==1.2.1
+      - name: Transcribe
+        run: |
+          python3 - <<'PY'
+          import json
+          from faster_whisper import WhisperModel
+          req = json.load(open('data/fetch/transcribe.json'))
+          m = WhisperModel('medium', device='cpu', compute_type='int8')
+          segs, _ = m.transcribe(req['in'], language='fr', word_timestamps=True, initial_prompt=req.get('prompt'))
+          out = [{'w': w.word.strip(), 's': round(w.start, 3), 'e': round(w.end, 3)} for s in segs for w in s.words]
+          json.dump(out, open(req['out'], 'w'), ensure_ascii=False, indent=0)
+          print(' '.join(x['w'] for x in out))
+          PY
+      - run: |
+          git config user.name "ouva-bot"; git config user.email "bot@users.noreply.github.com"
+          git add -f public/story2/*.json; git commit -m "words timestamps"; git pull --rebase; git push
