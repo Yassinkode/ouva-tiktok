@@ -214,7 +214,7 @@ async function makeSpot(slot, history, histPath) {
   log('run spot', id, DRY ? '(dry run)' : '');
   const scripts = JSON.parse(fs.readFileSync('data/spots/scripts.json', 'utf8'));
   const used = new Set(history.filter((h) => !['cancelled', 'failed'].includes(h.status)).map((h) => h.backlog).filter(Boolean));
-  const free = scripts.map((s, i) => i).filter((i) => !used.has(`spot/${i}`));
+  const free = scripts.map((s, i) => i).filter((i) => !used.has(`spot/${i}`) && !scripts[i].skip && scripts[i].lines.length >= 4);
   if (!free.length) throw new Error('📚 Plus de scripts de vidéos OùVa. Demande un nouveau lot à Claude.');
   const k = free[0];
   const script = scripts[k];
