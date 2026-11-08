@@ -216,7 +216,11 @@ async function makeSpot(slot, history, histPath) {
   const used = new Set(history.filter((h) => !['cancelled', 'failed'].includes(h.status)).map((h) => h.backlog).filter(Boolean));
   const free = scripts.map((s, i) => i).filter((i) => !used.has(`spot/${i}`) && !scripts[i].skip && scripts[i].lines.length >= 4);
   if (!free.length) throw new Error('📚 Plus de scripts de vidéos OùVa. Demande un nouveau lot à Claude.');
-  const k = free[0];
+  // never the same intro twice, and never the same opening scene as the previous video
+  const usedHooks = new Set(history.filter((h) => h.format === 'spot' && h.status !== 'cancelled').map((h) => (h.hook ?? '').trim()));
+  const lastFirst = [...history].reverse().find((h) => h.format === 'spot' && h.status !== 'cancelled')?.firstScene;
+  const ok = free.filter((i) => !usedHooks.has(scripts[i].lines[0].t.trim()));
+  const k = ok.find((i) => scripts[i].lines[0].s !== lastFirst) ?? ok[0] ?? free[0];
   const script = scripts[k];
   const text = script.lines.map((l) => l.t).join(' ');
   fs.mkdirSync('public/runs', { recursive: true });
@@ -237,7 +241,7 @@ async function makeSpot(slot, history, histPath) {
   fs.rmSync(raw, { force: true });
   log('video ready', final);
   const caption = `${script.caption}\n\nGratuit sur l'App Store : tape « OùVa » 📲\n\n${script.hashtags.join(' ')}`;
-  const entry = { id, date, slot: slot.label, title: script.caption, format: 'spot', hook: script.lines[0].t, caption, backlog: `spot/${k}`, style: STYLE, voice: v.model };
+  const entry = { id, date, slot: slot.label, title: script.caption, format: 'spot', hook: script.lines[0].t, firstScene: script.lines[0].s, caption, backlog: `spot/${k}`, style: STYLE, voice: v.model };
   const status = await deliver({ slot, final, caption, entry, history, histPath });
   const left = free.length - 1;
   if (!DRY && process.env.TELEGRAM_BOT_TOKEN && [15, 9, 3].includes(left))
