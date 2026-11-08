@@ -9,9 +9,9 @@ import { Person } from './Person';
 /* Generic automated « spot »: a list of scenes timed on the voice, same visual language as the founder video. */
 
 export type SpotScene = { id: string; at: number };
-export type SpotProps = { audio: string; words: Word[]; scenes: SpotScene[]; marks: Record<string, number>; hi: string[]; end: number };
+export type SpotProps = { audio: string; words: Word[]; scenes: SpotScene[]; marks: Record<string, number>; hi: string[]; end: number; theme?: string };
 
-export const Spot: React.FC<SpotProps> = ({ audio, words, scenes, marks, hi, end }) => {
+export const Spot: React.FC<SpotProps> = ({ audio, words, scenes, marks, hi, end, theme }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const S = (i: number) => ({ at: scenes[i].at, out: i + 1 < scenes.length ? scenes[i + 1].at : end });
@@ -42,7 +42,7 @@ export const Spot: React.FC<SpotProps> = ({ audio, words, scenes, marks, hi, end
   };
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
-      <Warm />
+      <Warm theme={theme} />
       {scenes.map((s, i) =>
         s.id === 'logo' ? <SceneLogo key={i} {...S(i)} /> : s.id === 'ticket' ? <SceneTicket key={i} {...S(i)} circleAt={marks.douze ?? s.at + 2} laughAt={marks.parle ?? s.at + 3} printDur={1.4} /> : s.id === 'cta' ? <SceneCta key={i} {...S(i)} /> : (
           <Shot key={i} {...S(i)} i={i}>

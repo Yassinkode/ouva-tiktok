@@ -18,7 +18,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 process.chdir(ROOT);
 const DRY = process.env.DRY_RUN === '1' || process.env.DRY_RUN === 'true';
 const SLOTS = (process.env.SLOTS || '12,18,21').split(',').map(Number); // heures de Paris
-const STYLE = 4; // video style version: older scheduled videos are replaced by new ones
+const STYLE = 5; // video style version: older scheduled videos are replaced by new ones
 
 /* ---------- time helpers (Europe/Paris) ---------- */
 const parisParts = (d = new Date()) => {
@@ -227,7 +227,7 @@ async function makeSpot(slot, history, histPath) {
   const words = v.words;
   const { scenes, marks, end } = spotTiming(script, words);
   const hi = ['OùVa', 'stats', 'statistiques', 'seule', 'chrono', 'ticket', 'douze', 'carte', 'chaleur', 'semaine', 'trajets', 'widgets', 'séries', 'paliers', 'vraie', 'vraiment', 'créé', 'créée'];
-  const props = { audio: `runs/${id}.wav`, words, scenes, marks, hi, end };
+  const props = { audio: `runs/${id}.wav`, words, scenes, marks, hi, end, theme: script.theme ?? 'warm' };
   fs.writeFileSync(`out/${id}_props.json`, JSON.stringify(props));
   execFileSync('python3', ['pipeline/spot_audio.py', `out/${id}_props.json`, mp3, `public/runs/${id}.wav`], { stdio: 'inherit' });
   const raw = `out/${id}_raw.mp4`;

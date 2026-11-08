@@ -17,11 +17,19 @@ const jelly = (f: number, at: number, k = 1) => sp(f, at, { damping: 8, stiffnes
 const useT = () => useCurrentFrame() / FPS;
 
 /* ---------- warm backdrop (same mood as the App Store screenshots) ---------- */
-export const Warm: React.FC = () => {
+export const THEMES: Record<string, { bg: string; glow: string }> = {
+  warm: { bg: 'linear-gradient(180deg, #B89076 0%, #9A5F48 38%, #6E3A30 66%, #3A2131 100%)', glow: 'rgba(255,226,196,0.35)' },
+  forest: { bg: 'linear-gradient(180deg, #2F6B57 0%, #1D4A3D 40%, #12302A 70%, #0A1A17 100%)', glow: 'rgba(160,240,200,0.28)' },
+  dusk: { bg: 'linear-gradient(180deg, #8E7BB8 0%, #6A5094 38%, #46336E 66%, #24193D 100%)', glow: 'rgba(230,210,255,0.32)' },
+  ocean: { bg: 'linear-gradient(180deg, #5E8FB0 0%, #3E6A8E 38%, #284A6B 66%, #142338 100%)', glow: 'rgba(200,230,255,0.3)' },
+  terracotta: { bg: 'linear-gradient(180deg, #D98E62 0%, #B9603E 40%, #7E3626 70%, #3B1A16 100%)', glow: 'rgba(255,220,190,0.35)' },
+};
+export const Warm: React.FC<{ theme?: string }> = ({ theme = 'warm' }) => {
   const t = useT();
+  const th = THEMES[theme] ?? THEMES.warm;
   return (
-    <AbsoluteFill style={{ background: 'linear-gradient(180deg, #B89076 0%, #9A5F48 38%, #6E3A30 66%, #3A2131 100%)' }}>
-      <AbsoluteFill style={{ background: `radial-gradient(70% 40% at ${50 + Math.sin(t * 0.5) * 10}% ${30 + Math.cos(t * 0.4) * 6}%, rgba(255,226,196,0.35) 0%, transparent 70%)` }} />
+    <AbsoluteFill style={{ background: th.bg }}>
+      <AbsoluteFill style={{ background: `radial-gradient(70% 40% at ${50 + Math.sin(t * 0.5) * 10}% ${30 + Math.cos(t * 0.4) * 6}%, ${th.glow} 0%, transparent 70%)` }} />
       <AbsoluteFill style={{ background: 'radial-gradient(120% 80% at 50% 50%, transparent 55%, rgba(20,8,12,0.45) 100%)' }} />
     </AbsoluteFill>
   );

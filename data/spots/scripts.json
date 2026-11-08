@@ -1,6 +1,30 @@
 [
  {
+  "caption": "(publié)",
+  "lines": [
+   {
+    "t": "x",
+    "s": "logo"
+   }
+  ],
+  "hashtags": [],
+  "theme": "warm"
+ },
+ {
+  "caption": "(publié)",
+  "lines": [
+   {
+    "t": "x",
+    "s": "logo"
+   }
+  ],
+  "hashtags": [],
+  "theme": "warm"
+ },
+ {
   "caption": "Tu sais vraiment où passe ton temps ? 👀📍",
+  "structure": "A",
+  "theme": "warm",
   "lines": [
    {
     "t": "J'ai toujours rêvé d'une appli qui me dise où passe vraiment mon temps.",
@@ -19,15 +43,238 @@
     "s": "create"
    },
    {
-    "t": "Je te présente OùVa !",
+    "t": "C'est OùVa, l'appli que j'ai créée.",
     "s": "logo"
    },
    {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
+    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
     "s": "auto"
    },
    {
-    "t": "Et dès que tu arrives quelque part, le chrono se lance.",
+    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
+    "s": "chrono"
+   },
+   {
+    "t": "Le plus fou, ce sont les stats.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Ta journée s'écrit toute seule, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tu vois tout au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Et tu compares une semaine à une autre, pour voir si tu progresses.",
+    "s": "compare"
+   },
+   {
+    "t": "Le soir, tu revis ta journée sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Avec ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries, et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appiphone",
+   "#productivite",
+   "#organisation"
+  ]
+ },
+ {
+  "caption": "Douze minutes de salle cette semaine… 💀",
+  "structure": "B",
+  "theme": "forest",
+  "lines": [
+   {
+    "t": "Douze minutes de salle cette semaine. Oui, je le sais au chrono près.",
+    "s": "ticket"
+   },
+   {
+    "t": "Parce que chaque semaine, mon appli m'imprime un ticket.",
+    "s": "ticket"
+   },
+   {
+    "t": "Voici OùVa !",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à faire : l'appli détecte tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Dès que tu arrives quelque part, le chrono se lance.",
+    "s": "chrono"
+   },
+   {
+    "t": "Et là où ça devient intéressant, c'est les statistiques.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Tu compares même ta semaine avec la précédente.",
+    "s": "compare"
+   },
+   {
+    "t": "Et le soir, ta journée se rejoue sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Avec ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#iphone",
+   "#habitudes",
+   "#startup"
+  ]
+ },
+ {
+  "caption": "Mes vraies stats de la semaine 📊",
+  "structure": "C",
+  "theme": "dusk",
+  "lines": [
+   {
+    "t": "Regarde mes vraies stats de la semaine.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Des stats détaillées : au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Tu compares même ta semaine avec la précédente.",
+    "s": "compare"
+   },
+   {
+    "t": "Tout ça, sans rien faire.",
+    "s": "timeline"
+   },
+   {
+    "t": "Voici OùVa !",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à faire : l'appli détecte tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Dès que tu arrives quelque part, le chrono se lance.",
+    "s": "chrono"
+   },
+   {
+    "t": "Le soir, tu revis ta journée sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Il y a aussi ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries, et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appli",
+   "#productivite",
+   "#etudiant"
+  ]
+ },
+ {
+  "caption": "Ma journée rejouée sur la carte 🗺️",
+  "structure": "D",
+  "theme": "ocean",
+  "lines": [
+   {
+    "t": "Regarde : c'est ma journée, rejouée sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Chaque lieu, chaque trajet, chaque minute.",
+    "s": "trips"
+   },
+   {
+    "t": "Et ça, c'est ma carte de chaleur.",
+    "s": "heat"
+   },
+   {
+    "t": "Voici OùVa !",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à faire : l'appli détecte tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Dès que tu arrives quelque part, le chrono se lance.",
     "s": "chrono"
    },
    {
@@ -43,27 +290,15 @@
     "s": "detailed"
    },
    {
-    "t": "Tu compares même ta semaine avec la précédente.",
+    "t": "Et tu compares une semaine à une autre, pour voir si tu progresses.",
     "s": "compare"
    },
    {
-    "t": "Le soir, tu revis ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
+    "t": "Et tu as aussi des widgets,",
     "s": "widgets"
    },
    {
-    "t": "des séries et des paliers à débloquer.",
+    "t": "des séries, et des paliers à débloquer.",
     "s": "streak"
    },
    {
@@ -78,122 +313,37 @@
   "hashtags": [
    "#ouva",
    "#appiphone",
-   "#productivite",
-   "#organisation"
+   "#organisation",
+   "#suividutemps"
   ]
  },
  {
-  "caption": "Le temps d'écran, mais pour la vraie vie 📍",
+  "caption": "Le chrono qui se lance tout seul ⏱️",
+  "structure": "E",
+  "theme": "terracotta",
   "lines": [
    {
-    "t": "Ton iPhone te dit combien de temps tu passes sur TikTok.",
-    "s": "screen"
-   },
-   {
-    "t": "Mais personne ne te dit combien de temps tu passes chez toi, au taf, ou à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé l'appli qui le fait.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
+    "t": "Regarde ma Dynamic Island : je viens d'arriver, et le chrono s'est lancé tout seul.",
     "s": "chrono"
    },
    {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
+    "t": "Même sur l'écran verrouillé.",
     "s": "widgets"
    },
    {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#iphone",
-   "#habitudes",
-   "#startup"
-  ]
- },
- {
-  "caption": "Où va ton temps ? 🤔",
-  "lines": [
-   {
-    "t": "Tous les soirs, je me demandais : où est passée ma journée ?",
-    "s": "dream"
-   },
-   {
-    "t": "Pas sur mon téléphone… dans la vraie vie : chez moi, au taf, à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé une appli pour le savoir.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
+    "t": "Ça s'appelle OùVa !",
     "s": "logo"
    },
    {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
+    "t": "Tu n'as rien à faire : l'appli détecte tes lieux toute seule.",
     "s": "auto"
    },
    {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
+    "t": "Le plus fou, ce sont les stats.",
     "s": "statsTitle"
    },
    {
-    "t": "Le fil de ta journée, minute par minute.",
+    "t": "Ta journée s'écrit toute seule, minute par minute.",
     "s": "timeline"
    },
    {
@@ -201,7 +351,7 @@
     "s": "detailed"
    },
    {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
+    "t": "Tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
     "s": "compare"
    },
    {
@@ -209,7 +359,7 @@
     "s": "replay"
    },
    {
-    "t": "Avec ta carte de chaleur,",
+    "t": "Tu as aussi ta carte de chaleur,",
     "s": "heat"
    },
    {
@@ -217,46 +367,44 @@
     "s": "trips"
    },
    {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
     "t": "des séries et des paliers à débloquer.",
     "s": "streak"
    },
    {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
     "s": "ticket"
    },
    {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
+    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi ce que t'en penses !",
     "s": "cta"
    }
   ],
   "hashtags": [
    "#ouva",
-   "#appli",
+   "#appiphone",
    "#productivite",
-   "#etudiant"
+   "#organisation"
   ]
  },
  {
-  "caption": "Douze minutes de salle cette semaine… 💀",
+  "caption": "Étudiant ? Combien d'heures à la bibli ? 📚",
+  "structure": "F",
+  "theme": "warm",
   "lines": [
    {
-    "t": "Cette semaine, j'ai passé douze minutes à la salle. Et je le sais grâce à mon appli.",
+    "t": "Étudiant ? Tu passes combien d'heures à la bibli, vraiment ?",
     "s": "dream"
    },
    {
-    "t": "Une appli que j'ai créée parce qu'elle n'existait pas.",
-    "s": "create"
+    "t": "Chez toi, en cours, à la salle… personne ne te le dit.",
+    "s": "real"
    },
    {
-    "t": "Ça s'appelle OùVa !",
+    "t": "Alors j'ai créé l'appli qui le fait.",
     "s": "logo"
    },
    {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
+    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
     "s": "auto"
    },
    {
@@ -268,15 +416,15 @@
     "s": "statsTitle"
    },
    {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
+    "t": "Le fil de ta journée, minute par minute.",
     "s": "timeline"
    },
    {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
+    "t": "Tu vois tout au jour, à la semaine, au mois.",
     "s": "detailed"
    },
    {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
+    "t": "Tu compares même ta semaine avec la précédente.",
     "s": "compare"
    },
    {
@@ -304,6 +452,156 @@
     "s": "ticket"
    },
    {
+    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#iphone",
+   "#habitudes",
+   "#startup"
+  ]
+ },
+ {
+  "caption": "Je l'ai codée moi-même 👨‍💻",
+  "structure": "A",
+  "theme": "forest",
+  "lines": [
+   {
+    "t": "Il y a quelques mois, j'ai eu une idée : savoir où passe vraiment mon temps.",
+    "s": "dream"
+   },
+   {
+    "t": "Chez moi, au taf, à la salle.",
+    "s": "real"
+   },
+   {
+    "t": "Je l'ai dessinée, puis je l'ai codée.",
+    "s": "create"
+   },
+   {
+    "t": "Ça s'appelle OùVa !",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à faire : l'appli détecte tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
+    "s": "chrono"
+   },
+   {
+    "t": "Le plus fou, ce sont les stats.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Des stats détaillées : au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
+    "s": "compare"
+   },
+   {
+    "t": "Tu peux même revivre ta journée sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Avec ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appli",
+   "#productivite",
+   "#etudiant"
+  ]
+ },
+ {
+  "caption": "Le ticket de caisse de ta semaine 🧾",
+  "structure": "B",
+  "theme": "dusk",
+  "lines": [
+   {
+    "t": "Et si ta semaine avait un ticket de caisse ? Maison, travail, trajets… et douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "Ça s'appelle OùVa !",
+    "s": "logo"
+   },
+   {
+    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
+    "s": "chrono"
+   },
+   {
+    "t": "Le plus fou, ce sont les stats.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tu vois tout au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Et tu compares une semaine à une autre, pour voir si tu progresses.",
+    "s": "compare"
+   },
+   {
+    "t": "Et le soir, ta journée se rejoue sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Avec ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries, et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
     "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
     "s": "cta"
    }
@@ -316,19 +614,86 @@
   ]
  },
  {
-  "caption": "Je l'ai codée moi-même 👨‍💻",
+  "caption": "Semaine vs semaine : tu progresses ou pas ? 📈",
+  "structure": "C",
+  "theme": "ocean",
   "lines": [
    {
-    "t": "Il y a quelques mois, j'ai eu une idée : savoir où passe vraiment mon temps.",
-    "s": "dream"
+    "t": "Tu veux savoir si tu progresses vraiment ?",
+    "s": "statsTitle"
    },
    {
-    "t": "Pas mon temps d'écran : mon temps chez moi, au taf, à la salle.",
-    "s": "real"
+    "t": "Moi, je compare chaque semaine avec la précédente, lieu par lieu.",
+    "s": "compare"
    },
    {
-    "t": "Je l'ai dessinée, puis je l'ai codée.",
-    "s": "create"
+    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "C'est OùVa, l'appli que j'ai créée.",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
+    "s": "auto"
+   },
+   {
+    "t": "Dès que tu arrives quelque part, le chrono se lance.",
+    "s": "chrono"
+   },
+   {
+    "t": "Tu peux même revivre ta journée sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Avec ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appiphone",
+   "#productivite",
+   "#organisation"
+  ]
+ },
+ {
+  "caption": "Ma carte de chaleur ne ment pas 🔥",
+  "structure": "D",
+  "theme": "terracotta",
+  "lines": [
+   {
+    "t": "Voici ma carte de chaleur : plus c'est rouge, plus j'y passe de temps.",
+    "s": "heat"
+   },
+   {
+    "t": "Et le soir, je revis ma journée sur la carte.",
+    "s": "replay"
    },
    {
     "t": "Ça s'appelle OùVa !",
@@ -347,7 +712,433 @@
     "s": "statsTitle"
    },
    {
+    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tu vois tout au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Et tu compares une semaine à une autre, pour voir si tu progresses.",
+    "s": "compare"
+   },
+   {
+    "t": "Et tu as aussi des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#iphone",
+   "#habitudes",
+   "#startup"
+  ]
+ },
+ {
+  "caption": "Une appli sans bouton start ⏱️",
+  "structure": "E",
+  "theme": "warm",
+  "lines": [
+   {
+    "t": "Les applis de suivi, tu les lâches au bout de trois jours.",
+    "s": "screen"
+   },
+   {
+    "t": "Celle-là, tu n'as rien à faire : le chrono se lance tout seul.",
+    "s": "chrono"
+   },
+   {
+    "t": "C'est OùVa, l'appli que j'ai créée.",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
+    "s": "auto"
+   },
+   {
+    "t": "Et le meilleur, ce sont les statistiques.",
+    "s": "statsTitle"
+   },
+   {
     "t": "Ta journée s'écrit toute seule, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Tu compares même ta semaine avec la précédente.",
+    "s": "compare"
+   },
+   {
+    "t": "Et le soir, ta journée se rejoue sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Tu as aussi ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appli",
+   "#productivite",
+   "#etudiant"
+  ]
+ },
+ {
+  "caption": "La salle : objectif vs réalité 🏋️",
+  "structure": "F",
+  "theme": "forest",
+  "lines": [
+   {
+    "t": "Objectif : trois heures de salle par semaine. Réalité ?",
+    "s": "dream"
+   },
+   {
+    "t": "Douze minutes. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "Alors j'ai créé OùVa.",
+    "s": "logo"
+   },
+   {
+    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Dès que tu arrives quelque part, le chrono se lance.",
+    "s": "chrono"
+   },
+   {
+    "t": "Le plus fou, ce sont les stats.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tu vois tout au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Et tu compares une semaine à une autre, pour voir si tu progresses.",
+    "s": "compare"
+   },
+   {
+    "t": "Et le soir, ta journée se rejoue sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Tu as aussi ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appiphone",
+   "#organisation",
+   "#suividutemps"
+  ]
+ },
+ {
+  "caption": "Où va ton temps ? 🤔",
+  "structure": "A",
+  "theme": "dusk",
+  "lines": [
+   {
+    "t": "Tous les soirs, je me demandais : où est passée ma journée ?",
+    "s": "dream"
+   },
+   {
+    "t": "Pas sur mon téléphone… dans la vraie vie : chez moi, au taf, à la salle.",
+    "s": "real"
+   },
+   {
+    "t": "Alors j'ai créé une appli pour le savoir.",
+    "s": "create"
+   },
+   {
+    "t": "C'est OùVa, l'appli que j'ai créée.",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
+    "s": "auto"
+   },
+   {
+    "t": "Tu arrives au taf ? Le chrono se lance automatiquement.",
+    "s": "chrono"
+   },
+   {
+    "t": "Et là où ça devient intéressant, c'est les statistiques.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Ta journée s'écrit toute seule, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tu vois tout au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Et tu compares une semaine à une autre, pour voir si tu progresses.",
+    "s": "compare"
+   },
+   {
+    "t": "Tu peux même revivre ta journée sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Tu as aussi ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi ce que t'en penses !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appiphone",
+   "#productivite",
+   "#organisation"
+  ]
+ },
+ {
+  "caption": "Mon appli me juge chaque semaine 😅",
+  "structure": "B",
+  "theme": "ocean",
+  "lines": [
+   {
+    "t": "Chaque dimanche, mon appli m'envoie le ticket de ma semaine. Douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "Voici OùVa !",
+    "s": "logo"
+   },
+   {
+    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
+    "s": "chrono"
+   },
+   {
+    "t": "Le plus fou, ce sont les stats.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tu vois tout au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Tu compares même ta semaine avec la précédente.",
+    "s": "compare"
+   },
+   {
+    "t": "Le soir, tu revis ta journée sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Tu as aussi ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#iphone",
+   "#habitudes",
+   "#startup"
+  ]
+ },
+ {
+  "caption": "Combien d'heures au taf, vraiment ? 💼",
+  "structure": "C",
+  "theme": "terracotta",
+  "lines": [
+   {
+    "t": "Tu passes combien d'heures au taf par semaine ? Vraiment ?",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Moi, je le sais au jour, à la semaine, au mois.",
+    "s": "detailed"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
+    "s": "timeline"
+   },
+   {
+    "t": "Tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
+    "s": "compare"
+   },
+   {
+    "t": "Je te présente OùVa !",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
+    "s": "auto"
+   },
+   {
+    "t": "Dès que tu arrives quelque part, le chrono se lance.",
+    "s": "chrono"
+   },
+   {
+    "t": "Et le soir, ta journée se rejoue sur la carte.",
+    "s": "replay"
+   },
+   {
+    "t": "Il y a aussi ta carte de chaleur,",
+    "s": "heat"
+   },
+   {
+    "t": "tes trajets,",
+    "s": "trips"
+   },
+   {
+    "t": "des widgets,",
+    "s": "widgets"
+   },
+   {
+    "t": "des séries et des paliers à débloquer.",
+    "s": "streak"
+   },
+   {
+    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
+    "s": "ticket"
+   },
+   {
+    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
+    "s": "cta"
+   }
+  ],
+  "hashtags": [
+   "#ouva",
+   "#appli",
+   "#productivite",
+   "#etudiant"
+  ]
+ },
+ {
+  "caption": "Où j'étais aujourd'hui ? 📍",
+  "structure": "D",
+  "theme": "warm",
+  "lines": [
+   {
+    "t": "Où j'étais aujourd'hui, et combien de temps ? Regarde.",
+    "s": "replay"
+   },
+   {
+    "t": "Tous mes trajets, et ma carte de chaleur.",
+    "s": "heat"
+   },
+   {
+    "t": "C'est OùVa, l'appli que j'ai créée.",
+    "s": "logo"
+   },
+   {
+    "t": "Tu n'as rien à faire : l'appli détecte tes lieux toute seule.",
+    "s": "auto"
+   },
+   {
+    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
+    "s": "chrono"
+   },
+   {
+    "t": "Le plus fou, ce sont les stats.",
+    "s": "statsTitle"
+   },
+   {
+    "t": "Le fil de ta journée, minute par minute.",
     "s": "timeline"
    },
    {
@@ -359,268 +1150,19 @@
     "s": "compare"
    },
    {
-    "t": "Tu peux même revivre ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
+    "t": "Et tu as aussi des widgets,",
     "s": "widgets"
    },
    {
-    "t": "des séries et des paliers à débloquer.",
+    "t": "des séries, et des paliers à débloquer.",
     "s": "streak"
    },
    {
     "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#productivite",
-   "#organisation"
-  ]
- },
- {
-  "caption": "POV : tu découvres où passe ton temps 😳",
-  "lines": [
-   {
-    "t": "Le jour où j'ai découvert où passait vraiment mon temps…",
-    "s": "dream"
-   },
-   {
-    "t": "Ton téléphone compte ton temps d'écran. Moi, je voulais compter ma vraie vie.",
-    "s": "screen"
-   },
-   {
-    "t": "Alors j'ai créé l'appli.",
-    "s": "create"
-   },
-   {
-    "t": "Voici OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives au taf ? Le chrono se lance automatiquement.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Le fil de ta journée, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Tu compares même ta semaine avec la précédente.",
-    "s": "compare"
-   },
-   {
-    "t": "Tu peux même revivre ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#iphone",
-   "#habitudes",
-   "#startup"
-  ]
- },
- {
-  "caption": "Étudiant ? Combien d'heures à la bibli ? 📚",
-  "lines": [
-   {
-    "t": "Étudiant ? Tu passes combien d'heures à la bibli, vraiment ?",
-    "s": "dream"
-   },
-   {
-    "t": "Chez toi, en cours, à la salle… personne ne te le dit.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé une appli qui le fait toute seule.",
-    "s": "create"
-   },
-   {
-    "t": "Ça s'appelle OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives au taf ? Le chrono se lance automatiquement.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Le fil de ta journée, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
     "s": "ticket"
    },
    {
     "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appli",
-   "#productivite",
-   "#etudiant"
-  ]
- },
- {
-  "caption": "Ton temps a une adresse 📍",
-  "lines": [
-   {
-    "t": "Ton temps a une adresse.",
-    "s": "dream"
-   },
-   {
-    "t": "Chez toi, au taf, à la salle : chaque heure se passe quelque part.",
-    "s": "real"
-   },
-   {
-    "t": "J'ai créé l'appli qui te la montre.",
-    "s": "create"
-   },
-   {
-    "t": "Voici OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Ta journée s'écrit toute seule, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Le soir, tu revis ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
     "s": "cta"
    }
   ],
@@ -632,248 +1174,9 @@
   ]
  },
  {
-  "caption": "Une appli sans bouton start ⏱️",
-  "lines": [
-   {
-    "t": "Les applis de suivi, tu les lâches au bout de trois jours.",
-    "s": "screen"
-   },
-   {
-    "t": "Moi, je voulais une appli qui fait tout toute seule.",
-    "s": "dream"
-   },
-   {
-    "t": "Alors je l'ai créée.",
-    "s": "create"
-   },
-   {
-    "t": "Ça s'appelle OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Et dès que tu arrives quelque part, le chrono se lance.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et le meilleur, ce sont les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Tu compares même ta semaine avec la précédente.",
-    "s": "compare"
-   },
-   {
-    "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries, et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#productivite",
-   "#organisation"
-  ]
- },
- {
-  "caption": "Organise ta vie avec tes vraies données 📊",
-  "lines": [
-   {
-    "t": "Pour mieux t'organiser, il faut d'abord savoir où part ton temps.",
-    "s": "dream"
-   },
-   {
-    "t": "Chez toi, au taf, à la salle : tu n'en as aucune idée.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé l'appli qui te le montre.",
-    "s": "create"
-   },
-   {
-    "t": "Voici OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives au taf ? Le chrono se lance automatiquement.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et le meilleur, ce sont les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Ta journée s'écrit toute seule, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Le soir, tu revis ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#iphone",
-   "#habitudes",
-   "#startup"
-  ]
- },
- {
-  "caption": "Tu sais vraiment où passe ton temps ? 👀📍",
-  "lines": [
-   {
-    "t": "J'ai toujours rêvé d'une appli qui me dise où passe vraiment mon temps.",
-    "s": "dream"
-   },
-   {
-    "t": "Pas mon temps d'écran… mon temps dans la vraie vie.",
-    "s": "screen"
-   },
-   {
-    "t": "Chez moi, au taf, à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Elle n'existait pas, alors je l'ai créée.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et le meilleur, ce sont les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Le fil de ta journée, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Le soir, tu revis ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Il y a aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries, et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appli",
-   "#productivite",
-   "#etudiant"
-  ]
- },
- {
   "caption": "Le temps d'écran, mais pour la vraie vie 📍",
+  "structure": "F",
+  "theme": "forest",
   "lines": [
    {
     "t": "Ton iPhone te dit combien de temps tu passes sur TikTok.",
@@ -885,14 +1188,10 @@
    },
    {
     "t": "Alors j'ai créé l'appli qui le fait.",
-    "s": "create"
-   },
-   {
-    "t": "Voici OùVa !",
     "s": "logo"
    },
    {
-    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
+    "t": "Tu n'as rien à faire : l'appli détecte tes lieux toute seule.",
     "s": "auto"
    },
    {
@@ -904,98 +1203,19 @@
     "s": "statsTitle"
    },
    {
-    "t": "Le fil de ta journée, minute par minute.",
+    "t": "Ta journée s'écrit toute seule, minute par minute.",
     "s": "timeline"
    },
    {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
+    "t": "Des stats détaillées : au jour, à la semaine, au mois.",
     "s": "detailed"
    },
    {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
+    "t": "Tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
     "s": "compare"
    },
    {
     "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#organisation",
-   "#suividutemps"
-  ]
- },
- {
-  "caption": "Où va ton temps ? 🤔",
-  "lines": [
-   {
-    "t": "Tous les soirs, je me demandais : où est passée ma journée ?",
-    "s": "dream"
-   },
-   {
-    "t": "Pas sur mon téléphone… dans la vraie vie : chez moi, au taf, à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé une appli pour le savoir.",
-    "s": "create"
-   },
-   {
-    "t": "Voici OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Et dès que tu arrives quelque part, le chrono se lance.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et le meilleur, ce sont les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Tu compares même ta semaine avec la précédente.",
-    "s": "compare"
-   },
-   {
-    "t": "Le soir, tu revis ta journée sur la carte.",
     "s": "replay"
    },
    {
@@ -1015,638 +1235,6 @@
     "s": "streak"
    },
    {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#productivite",
-   "#organisation"
-  ]
- },
- {
-  "caption": "Douze minutes de salle cette semaine… 💀",
-  "lines": [
-   {
-    "t": "Cette semaine, j'ai passé douze minutes à la salle. Et je le sais grâce à mon appli.",
-    "s": "dream"
-   },
-   {
-    "t": "Une appli que j'ai créée parce qu'elle n'existait pas.",
-    "s": "create"
-   },
-   {
-    "t": "Voici OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et là où ça devient intéressant, c'est les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Ta journée s'écrit toute seule, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Tu peux même revivre ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#iphone",
-   "#habitudes",
-   "#startup"
-  ]
- },
- {
-  "caption": "Je l'ai codée moi-même 👨‍💻",
-  "lines": [
-   {
-    "t": "Il y a quelques mois, j'ai eu une idée : savoir où passe vraiment mon temps.",
-    "s": "dream"
-   },
-   {
-    "t": "Pas mon temps d'écran : mon temps chez moi, au taf, à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Je l'ai dessinée, puis je l'ai codée.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Et dès que tu arrives quelque part, le chrono se lance.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Tu peux même revivre ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appli",
-   "#productivite",
-   "#etudiant"
-  ]
- },
- {
-  "caption": "POV : tu découvres où passe ton temps 😳",
-  "lines": [
-   {
-    "t": "Le jour où j'ai découvert où passait vraiment mon temps…",
-    "s": "dream"
-   },
-   {
-    "t": "Ton téléphone compte ton temps d'écran. Moi, je voulais compter ma vraie vie.",
-    "s": "screen"
-   },
-   {
-    "t": "Alors j'ai créé l'appli.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives au taf ? Le chrono se lance automatiquement.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Tu peux même revivre ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#organisation",
-   "#suividutemps"
-  ]
- },
- {
-  "caption": "Étudiant ? Combien d'heures à la bibli ? 📚",
-  "lines": [
-   {
-    "t": "Étudiant ? Tu passes combien d'heures à la bibli, vraiment ?",
-    "s": "dream"
-   },
-   {
-    "t": "Chez toi, en cours, à la salle… personne ne te le dit.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé une appli qui le fait toute seule.",
-    "s": "create"
-   },
-   {
-    "t": "Ça s'appelle OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Il y a aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries, et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#productivite",
-   "#organisation"
-  ]
- },
- {
-  "caption": "Ton temps a une adresse 📍",
-  "lines": [
-   {
-    "t": "Ton temps a une adresse.",
-    "s": "dream"
-   },
-   {
-    "t": "Chez toi, au taf, à la salle : chaque heure se passe quelque part.",
-    "s": "real"
-   },
-   {
-    "t": "J'ai créé l'appli qui te la montre.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives au taf ? Le chrono se lance automatiquement.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Le fil de ta journée, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Tu peux même revivre ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#iphone",
-   "#habitudes",
-   "#startup"
-  ]
- },
- {
-  "caption": "Une appli sans bouton start ⏱️",
-  "lines": [
-   {
-    "t": "Les applis de suivi, tu les lâches au bout de trois jours.",
-    "s": "screen"
-   },
-   {
-    "t": "Moi, je voulais une appli qui fait tout toute seule.",
-    "s": "dream"
-   },
-   {
-    "t": "Alors je l'ai créée.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Et dès que tu arrives quelque part, le chrono se lance.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et le meilleur, ce sont les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appli",
-   "#productivite",
-   "#etudiant"
-  ]
- },
- {
-  "caption": "Organise ta vie avec tes vraies données 📊",
-  "lines": [
-   {
-    "t": "Pour mieux t'organiser, il faut d'abord savoir où part ton temps.",
-    "s": "dream"
-   },
-   {
-    "t": "Chez toi, au taf, à la salle : tu n'en as aucune idée.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé l'appli qui te le montre.",
-    "s": "create"
-   },
-   {
-    "t": "Voici OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Tu compares même ta semaine avec la précédente.",
-    "s": "compare"
-   },
-   {
-    "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Tu as aussi ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries, et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "OùVa, c'est gratuit sur l'App Store. Teste-la, et dis-moi en commentaire !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#organisation",
-   "#suividutemps"
-  ]
- },
- {
-  "caption": "Tu sais vraiment où passe ton temps ? 👀📍",
-  "lines": [
-   {
-    "t": "J'ai toujours rêvé d'une appli qui me dise où passe vraiment mon temps.",
-    "s": "dream"
-   },
-   {
-    "t": "Pas mon temps d'écran… mon temps dans la vraie vie.",
-    "s": "screen"
-   },
-   {
-    "t": "Chez moi, au taf, à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Elle n'existait pas, alors je l'ai créée.",
-    "s": "create"
-   },
-   {
-    "t": "Ça s'appelle OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Mais le plus fou, ce sont les stats.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Ta journée s'écrit toute seule, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tout est détaillé : au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Le soir, tu revis ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries, et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
     "t": "Et chaque semaine, ton ticket. Bon… douze minutes de salle. On en parle ?",
     "s": "ticket"
    },
@@ -1660,239 +1248,6 @@
    "#appiphone",
    "#productivite",
    "#organisation"
-  ]
- },
- {
-  "caption": "Le temps d'écran, mais pour la vraie vie 📍",
-  "lines": [
-   {
-    "t": "Ton iPhone te dit combien de temps tu passes sur TikTok.",
-    "s": "screen"
-   },
-   {
-    "t": "Mais personne ne te dit combien de temps tu passes chez toi, au taf, ou à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé l'appli qui le fait.",
-    "s": "create"
-   },
-   {
-    "t": "Ça s'appelle OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Zéro effort : l'appli reconnaît tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives quelque part ? Le chrono se lance tout seul, même dans la Dynamic Island.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et le meilleur, ce sont les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Tu as le fil de ta journée, avec chaque lieu et chaque trajet.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu compares une semaine à l'autre : tu vois tout de suite si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Le soir, tu revis ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries, et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#iphone",
-   "#habitudes",
-   "#startup"
-  ]
- },
- {
-  "caption": "Où va ton temps ? 🤔",
-  "lines": [
-   {
-    "t": "Tous les soirs, je me demandais : où est passée ma journée ?",
-    "s": "dream"
-   },
-   {
-    "t": "Pas sur mon téléphone… dans la vraie vie : chez moi, au taf, à la salle.",
-    "s": "real"
-   },
-   {
-    "t": "Alors j'ai créé une appli pour le savoir.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Le principe est simple : tu n'as rien à faire. L'appli détecte tes lieux toute seule.",
-    "s": "auto"
-   },
-   {
-    "t": "Tu arrives au taf ? Le chrono se lance automatiquement.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et là où ça devient intéressant, c'est les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Ta journée s'écrit toute seule, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Et tu peux comparer une semaine à une autre, pour voir si tu progresses.",
-    "s": "compare"
-   },
-   {
-    "t": "Le soir, tu revis ta journée sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appli",
-   "#productivite",
-   "#etudiant"
-  ]
- },
- {
-  "caption": "Douze minutes de salle cette semaine… 💀",
-  "lines": [
-   {
-    "t": "Cette semaine, j'ai passé douze minutes à la salle. Et je le sais grâce à mon appli.",
-    "s": "dream"
-   },
-   {
-    "t": "Une appli que j'ai créée parce qu'elle n'existait pas.",
-    "s": "create"
-   },
-   {
-    "t": "Je te présente OùVa !",
-    "s": "logo"
-   },
-   {
-    "t": "Tu n'as rien à lancer : OùVa détecte tes lieux automatiquement.",
-    "s": "auto"
-   },
-   {
-    "t": "Et dès que tu arrives quelque part, le chrono se lance.",
-    "s": "chrono"
-   },
-   {
-    "t": "Et le meilleur, ce sont les statistiques.",
-    "s": "statsTitle"
-   },
-   {
-    "t": "Le fil de ta journée, minute par minute.",
-    "s": "timeline"
-   },
-   {
-    "t": "Tu vois tout au jour, à la semaine, au mois.",
-    "s": "detailed"
-   },
-   {
-    "t": "Tu compares même ta semaine avec la précédente.",
-    "s": "compare"
-   },
-   {
-    "t": "Et le soir, ta journée se rejoue sur la carte.",
-    "s": "replay"
-   },
-   {
-    "t": "Avec ta carte de chaleur,",
-    "s": "heat"
-   },
-   {
-    "t": "tes trajets,",
-    "s": "trips"
-   },
-   {
-    "t": "des widgets,",
-    "s": "widgets"
-   },
-   {
-    "t": "des séries, et des paliers à débloquer.",
-    "s": "streak"
-   },
-   {
-    "t": "Et chaque semaine, tu reçois ton ticket. Douze minutes de salle… On en parle ?",
-    "s": "ticket"
-   },
-   {
-    "t": "Tape OùVa sur l'App Store, c'est gratuit. Et dis-moi ce que t'en penses !",
-    "s": "cta"
-   }
-  ],
-  "hashtags": [
-   "#ouva",
-   "#appiphone",
-   "#organisation",
-   "#suividutemps"
   ]
  }
 ]
