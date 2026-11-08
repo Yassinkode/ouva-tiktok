@@ -439,13 +439,27 @@
    "day_timeline",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad5578e016595f548f81bbb",
   "url": null,
   "scheduledFor": "2026-10-20T15:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7698765750109998368",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DeuHBCoCsVF/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-20_19h",
@@ -467,13 +481,27 @@
    "app_screen",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad5a51f60705232a068df9b",
   "url": null,
   "scheduledFor": "2026-10-20T17:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7698796686327450912",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DeuUwewjbhp/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-20_21h",
@@ -495,13 +523,27 @@
    "app_tour",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad5a7ab9a65dc179c9496a9",
   "url": null,
   "scheduledFor": "2026-10-20T19:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7698827707957742881",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DeuiiDLDVfD/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-21_8h",
@@ -523,13 +565,27 @@
    "app_screen",
    "wipe_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad682e4d2c7d95728ec5378",
   "url": null,
   "scheduledFor": "2026-10-21T06:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7698997499335298337",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/Devt8OYjNGI/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-21_12h",
@@ -551,13 +607,27 @@
    "heatmap_reveal",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad685cf20fee04f8f3cfc56",
   "url": null,
   "scheduledFor": "2026-10-21T10:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699059384583736608",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DewJZ63F7cz/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-21_17h",
@@ -579,13 +649,27 @@
    "feature_list",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad6b84d9ba62bf051e7f9c8",
   "url": null,
   "scheduledFor": "2026-10-21T15:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699137111307439393",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/Dewr7ieFFi9/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-21_19h",
@@ -607,13 +691,27 @@
    "dynamic_island",
    "app_screen"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad72c33c669b8b664a63715",
   "url": null,
   "scheduledFor": "2026-10-21T17:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699167738958269729",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/Dew5iZTiIOS/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-21_21h",
@@ -635,13 +733,27 @@
    "counter_map",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad72f174d3735383df3eece",
   "url": null,
   "scheduledFor": "2026-10-21T19:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699198482099227936",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DexHNGSAivx/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-22_8h",
@@ -663,13 +775,27 @@
    "compare",
    "app_screen"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad77bafaeae10f13d4e365d",
   "url": null,
   "scheduledFor": "2026-10-22T06:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699368496488271136",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DeyStfOleW4/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-22_12h",
@@ -691,13 +817,27 @@
    "app_screen",
    "wipe_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad7c130e86e5a399514294a",
   "url": null,
   "scheduledFor": "2026-10-22T10:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699430518093253920",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DeyuPTxAHrO/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-22_17h",
@@ -720,13 +860,27 @@
    "app_screen",
    "wipe_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad80356f1a49179f11803f4",
   "url": null,
   "scheduledFor": "2026-10-22T15:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699507968533957921",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DezQrv8DIc8/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-22_19h",
@@ -748,13 +902,27 @@
    "ring_stat",
    "big_word"
   ],
-  "status": "scheduled",
+  "status": "published",
   "postId": "6ad84973d0df91545770f450",
   "url": null,
   "scheduledFor": "2026-10-22T17:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram",
-  "voice": "eleven_v4"
+  "voice": "eleven_v4",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva.fr/video/7699539352820419873",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DezekHrAW3d/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-10-22_21h",
@@ -2519,6 +2687,42 @@
   "postId": "6aefe04d697842a19cf63b14",
   "url": null,
   "scheduledFor": "2026-11-08T17:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram"
+ },
+ {
+  "id": "2026-11-08_21h",
+  "date": "2026-11-08",
+  "slot": "21h",
+  "title": "Où va ton temps ? 🤔",
+  "format": "spot",
+  "hook": "Tous les soirs, je me demandais : où est passée ma journée ?",
+  "caption": "Où va ton temps ? 🤔\n\nGratuit sur l'App Store : tape « OùVa » 📲\n\n#ouva #appli #productivite #etudiant",
+  "backlog": "spot/2",
+  "style": 4,
+  "voice": "eleven_v4",
+  "status": "scheduled",
+  "postId": "6af05bdbae1a832c62e4e8cf",
+  "url": null,
+  "scheduledFor": "2026-11-08T20:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram"
+ },
+ {
+  "id": "2026-11-09_12h",
+  "date": "2026-11-09",
+  "slot": "12h",
+  "title": "Douze minutes de salle cette semaine… 💀",
+  "format": "spot",
+  "hook": "Cette semaine, j'ai passé douze minutes à la salle. Et je le sais grâce à mon appli.",
+  "caption": "Douze minutes de salle cette semaine… 💀\n\nGratuit sur l'App Store : tape « OùVa » 📲\n\n#ouva #appiphone #organisation #suividutemps",
+  "backlog": "spot/3",
+  "style": 4,
+  "voice": "eleven_v4",
+  "status": "scheduled",
+  "postId": "6af066206182b3c5bb830a39",
+  "url": null,
+  "scheduledFor": "2026-11-09T11:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram"
  }
