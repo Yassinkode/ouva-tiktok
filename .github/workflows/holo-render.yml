@@ -11,13 +11,14 @@ jobs:
   render:
     runs-on: ubuntu-24.04
     strategy:
+      fail-fast: false
       matrix:
         part: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
-      - run: npm ci --no-audit --no-fund
+      - run: for n in 1 2 3; do npm ci --no-audit --no-fund && break; sleep 10; done
       - name: Render chunk
         run: |
           N=$(python3 -c "import json;print(round(json.load(open('public/holo/props.json'))['end']*30))")
