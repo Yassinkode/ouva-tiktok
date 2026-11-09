@@ -175,7 +175,7 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
   const { fps } = useVideoConfig();
   const t = f / fps;
   const g = useXbot();
-  const tex = useTextures(['screens2/timeline.png', 'screens2/stats.png', 'screens2/home.png', 'screens2/logo.png']);
+  const tex = useTextures(['screens2/timeline.png', 'screens2/stats.png', 'screens2/home.png', 'screens2/logo.png', 'holo/map.jpg']);
 
   const order = ['hook', 'create', 'home', 'trip', 'work', 'cafe', 'gym', 'auto', 'heat', 'stats', 'replay', 'compare', 'cta'].filter((id) => m[id] !== undefined);
   const scenes: Scene[] = order.map((id, i) => ({ id, at: m[id], out: i + 1 < order.length ? m[order[i + 1]] : end }));
@@ -291,15 +291,23 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
       pose = 'idle';
       hpos = [0, 0, 0];
       rings = [];
-      const B: [number, number, number][] = [[0, 0, 1.5], [1.4, -0.9, 1.0], [-1.3, -0.6, 0.85], [0.9, 1.2, 0.7], [-1.0, 1.3, 0.55], [2.2, 0.6, 0.45]];
+      // real map under the hologram, centred on the Centre Pompidou (0.008 m per map pixel)
+      const B: [number, number, number][] = [[0, 0, 1.3], [-0.8, -0.5, 0.85], [1.76, 1.42, 0.85], [0.48, 2.02, 0.7], [1.2, -0.69, 0.6], [-1.24, -2.76, 0.55]];
+      const mo = ease(u / 0.4);
       extra = (
         <>
+          {tex && (
+            <mesh position={[-0.28, 0.005, 0.11]} rotation={[-Math.PI / 2, 0, 0]}>
+              <planeGeometry args={[804 * 0.008, 1748 * 0.008]} />
+              <meshBasicMaterial map={tex[4]} color="#9DB8FF" transparent opacity={0.92 * mo} toneMapped={false} fog={false} />
+            </mesh>
+          )}
           {B.map(([bx, bz, r], i) => (
-            <Heat key={i} pos={[bx, bz]} r={r * (1 + 0.05 * Math.sin(t * 3 + i))} o={ease((u - 0.15 - i * 0.12) / 0.4) * 0.95} />
+            <Heat key={i} pos={[bx, bz]} r={r * (1 + 0.05 * Math.sin(t * 3 + i))} o={ease((u - 0.25 - i * 0.12) / 0.4) * 0.85} />
           ))}
         </>
       );
-      cam = { pos: orbit(mix(10, 50, k), mix(2.4, 1.6, k), mix(6.5, 5.6, k)), look: [0.2, 0, 0.1], fov: 46 };
+      cam = { pos: orbit(mix(8, 26, k), mix(2.2, 1.6, k), mix(6.6, 5.8, k)), look: [0.25, 0, 0.4], fov: 46 };
       break;
     }
     case 'stats': {
