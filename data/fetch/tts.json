@@ -1,0 +1,102 @@
+{
+ "out": "data/tts/x16",
+ "voices": [
+  {
+   "id": "remy",
+   "voice": "fr-FR-RemyMultilingualNeural",
+   "rate": "+4%"
+  },
+  {
+   "id": "henri",
+   "voice": "fr-FR-HenriNeural",
+   "rate": "+6%"
+  }
+ ],
+ "segments": [
+  {
+   "at": 0.5,
+   "end": 2.8,
+   "text": "Où passe mon temps ?"
+  },
+  {
+   "at": 3.2,
+   "end": 5.8,
+   "text": "Les journées passent…"
+  },
+  {
+   "at": 6.0,
+   "end": 7.8,
+   "text": "Et toi, tu sais où ?"
+  },
+  {
+   "at": 8.0,
+   "end": 8.9,
+   "text": "Rien."
+  },
+  {
+   "at": 9.0,
+   "end": 12.8,
+   "text": "On perd des heures quelque part, sans même le savoir."
+  },
+  {
+   "at": 13.1,
+   "end": 16.8,
+   "text": "Six heures quarante au bureau. Douze minutes à la salle. Vingt minutes au café."
+  },
+  {
+   "at": 17.0,
+   "end": 18.9,
+   "text": "Alors, j'ai créé OùVa."
+  },
+  {
+   "at": 19.0,
+   "end": 20.9,
+   "text": "Tes lieux sont détectés tout seuls."
+  },
+  {
+   "at": 21.0,
+   "end": 22.9,
+   "text": "Le chrono tourne, sans rien toucher."
+  },
+  {
+   "at": 23.0,
+   "end": 26.8,
+   "text": "Tes stats en détail : jour, semaine, mois."
+  },
+  {
+   "at": 27.0,
+   "end": 28.9,
+   "text": "Le fil de ta journée."
+  },
+  {
+   "at": 29.2,
+   "end": 31.8,
+   "text": "Ta carte de chaleur."
+  },
+  {
+   "at": 32.0,
+   "end": 34.8,
+   "text": "Même téléphone verrouillé, ça compte."
+  },
+  {
+   "at": 35.0,
+   "end": 37.0,
+   "text": "Et pendant que tu vis ta journée, OùVa compte pour toi."
+  },
+  {
+   "at": 37.6,
+   "end": 39.8,
+   "text": "Ta série continue."
+  },
+  {
+   "at": 40.0,
+   "end": 41.6,
+   "text": "Gratuit sur l'App Store."
+  },
+  {
+   "at": 42.0,
+   "end": 43.6,
+   "text": "OùVa."
+  }
+ ]
+}

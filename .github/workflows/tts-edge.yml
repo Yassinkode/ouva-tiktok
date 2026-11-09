@@ -1,0 +1,27 @@
+name: Free TTS (Microsoft neural)
+on:
+  push:
+    paths: ['data/fetch/tts.json']
+permissions:
+  contents: write
+jobs:
+  tts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q edge-tts
+      - name: Generate segments
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess
+          cfg = json.load(open('data/fetch/tts.json'))
+          os.makedirs(cfg['out'], exist_ok=True)
+          for v in cfg['voices']:
+              for i, s in enumerate(cfg['segments']):
+                  out = f"{cfg['out']}/{v['id']}_{i:02d}.mp3"
+                  subprocess.run(['edge-tts', '--voice', v['voice'], f"--rate={v.get('rate','+0%')}", f"--pitch={v.get('pitch','+0Hz')}", '--text', s['text'], '--write-media', out], check=True)
+          print('ok')
+          PY
+      - run: |
+          git config user.name "ouva-bot"; git config user.email "bot@users.noreply.github.com"
+          git add -f data/tts; git commit -m "tts segments" || exit 0; git pull --rebase; git push
