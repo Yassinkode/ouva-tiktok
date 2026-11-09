@@ -1,14 +1,22 @@
 {
  "items": [
   {
-   "url": "https://elevenlabsusercontent.com/database/workspace/ade7a54897af494a9a769af6f3a62153/content_generation/u1eYltsZnETdAyxwkEba/3j4r5nzQNQio9kTkx7lx/content.mp3?Expires=1794232800&KeyName=assets-cdn-key-1&Signature=KMcxODoTDSpIl80kX5cWBBVqaTg=",
-   "out": "public/holo/vMid.mp3"
+   "url": "https://elevenlabsusercontent.com/database/workspace/75e8667b6d6f43208a58dd05d623a5ec/content_generation/eedjCbky3Ush7vofTpw0/rR1lrYD4vao9N8giKFuM/content.mp3?Expires=1794265200&KeyName=assets-cdn-key-1&Signature=YUerXTvzKUlE_341e8TwVJzcbAg=",
+   "out": "data/tts/x16/leoA.mp3"
+  },
+  {
+   "url": "https://elevenlabsusercontent.com/database/workspace/75e8667b6d6f43208a58dd05d623a5ec/content_generation/rRrDFSNAeY3nACXzFJD5/wlSgDzOCrsSDg7KNBOvG/content.mp3?Expires=1794265200&KeyName=assets-cdn-key-1&Signature=M0WTiRIi1AUwm89ZR5X1DpNQlhQ=",
+   "out": "data/tts/x16/leoB.mp3"
   }
  ],
  "transcribe": [
   {
-   "in": "public/holo/vMid.mp3",
-   "out": "data/fetch/holoMid.json"
+   "in": "data/tts/x16/leoA.mp3",
+   "out": "data/fetch/x16A.json"
+  },
+  {
+   "in": "data/tts/x16/leoB.mp3",
+   "out": "data/fetch/x16B.json"
   }
  ]
 }
