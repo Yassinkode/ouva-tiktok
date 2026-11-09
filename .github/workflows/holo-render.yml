@@ -2,7 +2,9 @@ name: Holo parallel render
 on:
   workflow_dispatch:
     inputs:
-      parts: { description: 'number of chunks', default: '10' }
+      parts:
+        description: 'number of chunks'
+        default: '10'
 permissions:
   contents: write
 jobs:
@@ -22,7 +24,9 @@ jobs:
           P=10; i=${{ matrix.part }}; A=$(( N*i/P )); B=$(( N*(i+1)/P - 1 ))
           npx remotion render src/index.ts Holo out/part_$i.mp4 --frames=$A-$B --muted --gl=swangle --concurrency=4 --crf=18
       - uses: actions/upload-artifact@v4
-        with: { name: part-${{ matrix.part }}, path: out/part_${{ matrix.part }}.mp4 }
+        with:
+          name: part-${{ matrix.part }}
+          path: out/part_${{ matrix.part }}.mp4
   join:
     needs: render
     runs-on: ubuntu-24.04
