@@ -3049,5 +3049,43 @@
   "scheduledFor": "2026-11-09T20:00:00.000Z",
   "via": "zernio",
   "where": "TikTok + Instagram"
+ },
+ {
+  "id": "2026-11-10_12h",
+  "date": "2026-11-10",
+  "slot": "12h",
+  "title": "Ma journée rejouée en 10 secondes 🎬",
+  "format": "spot",
+  "hook": "Ma journée entière, rejouée en dix secondes.",
+  "firstScene": "replay",
+  "caption": "Ma journée rejouée en 10 secondes 🎬\n\nGratuit sur l'App Store : tape « OùVa » 📲\n\n#ouva #appiphone #productivite #organisation",
+  "backlog": "spot/6",
+  "style": 5,
+  "voice": "eleven_v4",
+  "status": "scheduled",
+  "postId": "6af174cedb12646c3548ec52",
+  "url": null,
+  "scheduledFor": "2026-11-10T11:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram"
+ },
+ {
+  "id": "2026-11-10_18h",
+  "date": "2026-11-10",
+  "slot": "18h",
+  "title": "Tu perds combien de temps en trajets ? 🚗",
+  "format": "spot",
+  "hook": "Tu perds combien de temps dans les trajets chaque semaine ?",
+  "firstScene": "trips",
+  "caption": "Tu perds combien de temps en trajets ? 🚗\n\nGratuit sur l'App Store : tape « OùVa » 📲\n\n#ouva #iphone #habitudes #startup",
+  "backlog": "spot/7",
+  "style": 5,
+  "voice": "eleven_v4",
+  "status": "scheduled",
+  "postId": "6af17a9ff7c504f812fbed17",
+  "url": null,
+  "scheduledFor": "2026-11-10T17:00:00.000Z",
+  "via": "zernio",
+  "where": "TikTok + Instagram"
  }
 ]
