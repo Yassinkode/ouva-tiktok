@@ -1,22 +1,14 @@
 {
  "items": [
   {
-   "url": "https://elevenlabsusercontent.com/database/workspace/ade7a54897af494a9a769af6f3a62153/content_generation/Ere75Adc7yEsFmCcH7lr/97BDlQSWKE3jVvas7Tpp/content.mp3?Expires=1794229200&KeyName=assets-cdn-key-1&Signature=BhfQYsdhPyJv4yxUC6RsryoJWT4=",
-   "out": "public/holo/vA.mp3"
-  },
-  {
-   "url": "https://elevenlabsusercontent.com/database/workspace/ade7a54897af494a9a769af6f3a62153/content_generation/ZtzDCCsV8NMQPCrVujay/kZnJ30BWrzehCRhEXgkH/content.mp3?Expires=1794229200&KeyName=assets-cdn-key-1&Signature=HmWtPKVGBUfYan_u3SvI253B57I=",
-   "out": "public/holo/vB.mp3"
+   "url": "https://elevenlabsusercontent.com/database/workspace/ade7a54897af494a9a769af6f3a62153/content_generation/u1eYltsZnETdAyxwkEba/3j4r5nzQNQio9kTkx7lx/content.mp3?Expires=1794232800&KeyName=assets-cdn-key-1&Signature=KMcxODoTDSpIl80kX5cWBBVqaTg=",
+   "out": "public/holo/vMid.mp3"
   }
  ],
  "transcribe": [
   {
-   "in": "public/holo/vA.mp3",
-   "out": "data/fetch/holoA.json"
-  },
-  {
-   "in": "public/holo/vB.mp3",
-   "out": "data/fetch/holoB.json"
+   "in": "public/holo/vMid.mp3",
+   "out": "data/fetch/holoMid.json"
   }
  ]
 }
