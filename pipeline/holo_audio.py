@@ -48,7 +48,7 @@ def rise(dur=1.2):
     f = 200 + 1600 * (t / dur) ** 2
     x = np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.15 + rng.normal(0, 0.05, n)
     return S._lp(x * np.minimum(1, t / 0.3) * np.exp(-np.maximum(0, t - dur * 0.8) / 0.08), 3000) if hasattr(S, '_lp') else x
-order = ['hook', 'create', 'home', 'trip', 'work', 'cafe', 'gym', 'evening', 'cta']
+order = [k for k in ['hook', 'create', 'home', 'trip', 'work', 'cafe', 'gym', 'evening', 'auto', 'heat', 'stats', 'replay', 'compare', 'cta'] if k in m]
 place(rise(1.3), 0.15, 0.6)
 for j, k in enumerate(order[1:], 1):
     a = m[k]
@@ -62,6 +62,16 @@ for j, k in enumerate(order[1:], 1):
         place(S.goo(240, 90, 0.35), m['talk'] - 0.25, 0.7); place(S.ding(990, 0.8), m['talk'] - 0.2, 0.25)
     if k == 'evening':
         for q in range(3): place(S.goo(460 + 70 * q, 190, 0.15), a + 0.5 + q * 0.45, 0.5, (q - 1) * 0.5)
+    if k == 'auto':
+        for q in range(3): place(S.bubble(600 + 120 * q, 1300, 0.1), a + 0.85 + q * 1.3, 0.5, (q - 1) * 0.5); place(S.ding(1480, 0.5), a + 0.95 + q * 1.3, 0.15)
+    if k == 'heat':
+        for q in range(6): place(S.goo(300 + 50 * q, 120, 0.2), a + 0.15 + q * 0.12, 0.4, (q % 3 - 1) * 0.5)
+    if k == 'stats':
+        for key in ('jour', 'semaine', 'mois'): place(S.key(3), m.get(key), 0.6); place(S.bubble(500, 1100, 0.08), (m.get(key) or a) + 0.1, 0.3)
+    if k == 'replay':
+        place(S.swish(1.2, True), a + 0.1, 0.3); place(S.ding(1320, 0.9), m.get('bilan'), 0.3); place(S.goo(420, 170, 0.16), m.get('bilan'), 0.5)
+    if k == 'compare':
+        for q in range(2): place(S.goo(380 + 120 * q, 160, 0.16), a + 0.1 + q * 0.35, 0.55)
     if k == 'cta': place(S.goo(300, 110, 0.3), a + 0.05, 0.8); place(S.ding(1320, 1.4), a + 0.4, 0.35)
 mix = sfx * 0.5
 mix[:, 0] += voice_out; mix[:, 1] += voice_out
