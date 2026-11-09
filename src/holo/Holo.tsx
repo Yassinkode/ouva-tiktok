@@ -267,7 +267,7 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
     case 'auto': {
       pose = 'walk';
       rotY = Math.PI / 2;
-      const x = -1.5 + u * 0.7;
+      const x = -0.9 + u * 0.6;
       hpos = [x, 0, 0];
       rings = [];
       const P: [string, number][] = [['Bureau', -0.5], ['Salle', 0.8], ['Café', 2.1]];
@@ -336,8 +336,8 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
           {[pts[0], pts[2], pts[3], pts[5]].map((p, i) => (
             <Pin key={i} pos={[p[0], 0, p[1]]} o={ease((u - 0.1 - i * 0.35) / 0.3) * 0.7} t={t} />
           ))}
-          {tex && <Screen tx={tex[0]} pos={[-0.95, 1.85 + Math.sin(t * 1.6) * 0.03, -0.9]} rotY={0.3} w={0.55} aspect={2622 / 1206} o={ease((u - bilan + 0.1) / 0.4)} />}
-          {u > bilan - 0.1 && <Chip pos={[0.55, 1.95, -0.9]} label="Ton bilan" time="Prêt ✓" live o={ease((u - bilan + 0.1) / 0.3)} s={0.85} />}
+          {tex && <Screen tx={tex[0]} pos={[-0.95, 1.35 + Math.sin(t * 1.6) * 0.03, -0.9]} rotY={0.3} w={0.55} aspect={2622 / 1206} o={ease((u - bilan + 0.1) / 0.4)} />}
+          {u > bilan - 0.1 && <Chip pos={[0.55, 1.45, -0.9]} label="Ton bilan" time="Prêt" live o={ease((u - bilan + 0.1) / 0.3)} s={0.85} />}
         </>
       );
       cam = { pos: orbit(mix(-15, 15, k), mix(4.6, 4.2, k), mix(3.4, 2.4, smooth(k))), look: [0.1, 0.6, 0.2], fov: 46 };
@@ -381,7 +381,7 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
     case 'cta': {
       pose = 'cheer';
       cam = { pos: orbit(mix(-12, 12, k), mix(4.8, 4.2, k), 1.7), look: [0, 1.55, 0], fov: 44 };
-      if (tex) extra = <Screen tx={tex[3]} pos={[0, 2.75 + Math.sin(t * 2) * 0.03, 0]} rotY={0} w={0.95} aspect={1} o={ease(u / 0.5)} />;
+      if (tex) extra = <Screen tx={tex[3]} pos={[0, 2.5 + Math.sin(t * 2) * 0.03, 0]} rotY={0} w={0.8} aspect={1} o={ease(u / 0.5)} />;
       break;
     }
   }
@@ -435,16 +435,16 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
       <AbsoluteFill style={{ background: 'radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,4,20,0.75) 100%)' }} />
 
       {/* HUD */}
-      <div style={{ position: 'absolute', top: 120, left: 70, right: 70, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: FONT_TIGHT, color: '#BFE0FF', textShadow: '0 0 18px #2F7BFF' }}>
+      <div style={{ position: 'absolute', top: 250, left: 80, right: 200, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: FONT_TIGHT, color: '#BFE0FF', textShadow: '0 0 18px #2F7BFF' }}>
         <div style={{ fontWeight: 800, fontSize: 44, letterSpacing: '0.02em' }}>OùVa<span style={{ color: '#5CFFB0' }}> ●</span></div>
         {clock && <div style={{ fontWeight: 700, fontSize: 44, fontVariantNumeric: 'tabular-nums', opacity: 0.9 }}>{clock}</div>}
       </div>
 
       {/* captions */}
       {cap && (
-        <div style={{ position: 'absolute', left: 60, right: 60, top: 1470, textAlign: 'center', transform: `scale(${mix(0.85, 1, capPop)})`, opacity: capPop }}>
+        <div style={{ position: 'absolute', left: 70, right: 200, top: 1200, textAlign: 'center', transform: `scale(${mix(0.85, 1, capPop)})`, opacity: capPop }}>
           {cap.text.split(' ').map((w, i) => [
-            <span key={i} style={{ fontFamily: FONT_TIGHT, fontWeight: 900, fontSize: 92, lineHeight: 1.1, textTransform: 'uppercase', color: HI.test(w) ? '#7FD8FF' : '#FFFFFF', textShadow: '0 0 22px rgba(47,123,255,0.95), 0 4px 0 rgba(0,10,40,0.8)', display: 'inline-block', margin: '0 12px' }}>
+            <span key={i} style={{ fontFamily: FONT_TIGHT, fontWeight: 900, fontSize: 80, lineHeight: 1.1, textTransform: 'uppercase', color: HI.test(w) ? '#7FD8FF' : '#FFFFFF', textShadow: '0 0 22px rgba(47,123,255,0.95), 0 4px 0 rgba(0,10,40,0.8)', display: 'inline-block', margin: '0 12px' }}>
               {w}
             </span>,
             ' ',
@@ -454,8 +454,8 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
 
       {/* CTA text */}
       {sc.id === 'cta' && (
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 1420, textAlign: 'center', opacity: ease((u - 0.3) / 0.4), transform: `translateY(${(1 - ease((u - 0.3) / 0.4)) * 40}px)` }}>
-          <div style={{ fontFamily: FONT_TIGHT, fontWeight: 900, fontSize: 120, color: '#fff', textShadow: '0 0 30px #2F7BFF' }}>OùVa</div>
+        <div style={{ position: 'absolute', left: 70, right: 200, top: 1130, textAlign: 'center', opacity: ease((u - 0.3) / 0.4), transform: `translateY(${(1 - ease((u - 0.3) / 0.4)) * 40}px)` }}>
+          <div style={{ fontFamily: FONT_TIGHT, fontWeight: 900, fontSize: 104, color: '#fff', textShadow: '0 0 30px #2F7BFF' }}>OùVa</div>
           <div style={{ display: 'inline-block', marginTop: 24, padding: '22px 46px', borderRadius: 60, border: '3px solid #7DC0FF', background: 'rgba(10,30,90,0.6)', fontFamily: FONT, fontWeight: 800, fontSize: 50, color: '#DDF0FF', boxShadow: '0 0 40px rgba(47,123,255,0.6)' }}>
             Gratuit sur l’App Store
           </div>

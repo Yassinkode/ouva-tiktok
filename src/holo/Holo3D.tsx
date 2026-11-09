@@ -370,16 +370,18 @@ export const HoloWorld: React.FC<{ t: number; cam: Cam; rings?: [number, number,
   </>
 );
 
+export const SAFE = { zoom: 1.22, dx: 70, dy: 40 };
 const CamRig: React.FC<{ cam: Cam }> = ({ cam }) => {
   const { camera } = useThree();
   const c = camera as THREE.PerspectiveCamera;
   c.position.set(...cam.pos);
   c.lookAt(new THREE.Vector3(...cam.look));
   if (cam.roll) c.rotateZ(cam.roll);
-  if (c.fov !== cam.fov) {
-    c.fov = cam.fov;
-    c.updateProjectionMatrix();
-  }
+  // TikTok safe zone: everything ~13% smaller and the optical centre moved left/up
+  // (away from the right-hand buttons and the bottom caption/name area)
+  c.fov = (2 * Math.atan(Math.tan((cam.fov * Math.PI) / 360) * SAFE.zoom) * 180) / Math.PI;
+  c.setViewOffset(1080, 1920, SAFE.dx, SAFE.dy, 1080, 1920);
+  c.updateProjectionMatrix();
   c.near = 0.05;
   c.far = 200;
   return null;
