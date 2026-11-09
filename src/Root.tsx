@@ -19,6 +19,9 @@ import { Promo } from './ticket/Promo';
 import promoProps from '../public/promo/props.json';
 import { Promo2 } from './ticket/Promo2';
 import { Spot } from './ticket/Spot';
+import { HoloTest } from './holo/HoloTest';
+import { Holo } from './holo/Holo';
+import holoProps from '../public/holo/props.json';
 import promo2Props from '../public/promo/props2.json';
 import { AdA, AdB, AdC, StaticA, StaticB } from './ads/Ads';
 
@@ -44,6 +47,8 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Promo" component={Promo as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((promoProps as any).end * FPS)} defaultProps={promoProps as any} />
     <Composition id="Promo2" component={Promo2 as any} fps={FPS} width={W} height={H} durationInFrames={Math.round((promo2Props as any).end * FPS)} defaultProps={promo2Props as any} />
     <Composition id="Spot" component={Spot as any} fps={FPS} width={W} height={H} durationInFrames={600} defaultProps={{ audio: 'promo/audio2.wav', words: [], scenes: [{ id: 'logo', at: 0 }], marks: {}, hi: [], end: 10 } as any} calculateMetadata={({ props }: any) => ({ durationInFrames: Math.max(30, Math.round(props.end * FPS)) })} />
+    <Composition id="Holo" component={Holo as any} fps={30} width={W} height={H} durationInFrames={300} defaultProps={holoProps as any} calculateMetadata={({ props }: any) => ({ durationInFrames: Math.round(props.end * 30) })} />
+    <Composition id="HoloTest" component={HoloTest} fps={30} width={W} height={H} durationInFrames={8} />
     <Composition id="AdA" component={AdA} fps={FPS} width={W} height={H} durationInFrames={15 * FPS} />
     <Composition id="AdB" component={AdB} fps={FPS} width={W} height={H} durationInFrames={15 * FPS} />
     <Composition id="AdC" component={AdC} fps={FPS} width={W} height={H} durationInFrames={13 * FPS} />
