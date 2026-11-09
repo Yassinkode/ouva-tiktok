@@ -340,7 +340,7 @@ const Frames: React.FC<{ z0: number; x: number }> = ({ z0, x }) => (
   </group>
 );
 
-export const HoloWorld: React.FC<{ t: number; cam: Cam; rings?: [number, number, number][]; children?: React.ReactNode }> = ({ t, cam, rings = [], children }) => (
+export const HoloWorld: React.FC<{ t: number; cam: Cam; bgx?: number; bgz?: number; rings?: [number, number, number][]; children?: React.ReactNode }> = ({ t, cam, bgx = 0, bgz = 0, rings = [], children }) => (
   <>
     <color attach="background" args={['#020617']} />
     <fog attach="fog" args={['#020617', 6, 34]} />
@@ -355,6 +355,7 @@ export const HoloWorld: React.FC<{ t: number; cam: Cam; rings?: [number, number,
         <Ring r={2.6 + Math.sin(t * 2 + i) * 0.05} pos={p} opacity={0.35} w={0.02} />
       </group>
     ))}
+    <group position={[bgx * 0.85, 0, bgz * 0.9]}>
     {[
       [-6, -8, 0.0],
       [7, -12, 0.08],
@@ -366,6 +367,7 @@ export const HoloWorld: React.FC<{ t: number; cam: Cam; rings?: [number, number,
     ))}
     <Frames z0={-6} x={-7} />
     <Frames z0={-10} x={8} />
+    </group>
     {children}
   </>
 );

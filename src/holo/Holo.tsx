@@ -179,11 +179,17 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
 
   const order = ['hook', 'create', 'home', 'trip', 'work', 'cafe', 'gym', 'auto', 'heat', 'stats', 'replay', 'compare', 'cta'].filter((id) => m[id] !== undefined);
   const scenes: Scene[] = order.map((id, i) => ({ id, at: m[id], out: i + 1 < order.length ? m[order[i + 1]] : end }));
-  const sc = [...scenes].reverse().find((s) => t >= s.at) ?? scenes[0];
+  const ci0 = Math.max(0, scenes.findIndex((s, i) => t >= s.at && (i === scenes.length - 1 || t < scenes[i + 1].at)));
+  const sc = scenes[ci0];
+  const u = t - sc.at;
+
+  type St = { cam: Cam; pose: Pose; hpos: [number, number, number]; rotY: number; lie: boolean; prop: React.ReactNode; chip?: any; extra: React.ReactNode; rings: [number, number, number][]; appear: number; clock: string };
+  // every scene lives at its own spot in the hologram world; the camera flies between them
+  const OFF = (i: number): [number, number, number] => [i % 2 ? 0.8 : -0.8, 0, -(i - 6) * 11];
+  const build = (sc: Scene, t: number): St => {
   const u = t - sc.at; // seconds into scene
   const d = sc.out - sc.at;
   const k = u / d;
-
   let cam: Cam = { pos: [0, 1.4, 4], look: [0, 1, 0], fov: 42 };
   let pose: Pose = 'idle';
   let hpos: [number, number, number] = [0, 0, 0];
@@ -394,9 +400,32 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
     }
   }
 
-  // glitch on every cut
-  const sinceCut = Math.min(...scenes.filter((s) => s.at > 0).map((s) => (t >= s.at ? t - s.at : 99)));
-  const gl = sinceCut < 0.2 ? 1 - sinceCut / 0.2 : 0;
+  return { cam, pose, hpos, rotY, lie, prop, chip, extra, rings, appear, clock };
+  };
+
+  // which scenes to draw (current + neighbours frozen at their edge) and the camera flight between them
+  const H = 0.6;
+  const idx = [ci0 - 1, ci0, ci0 + 1].filter((i) => i >= 0 && i < scenes.length);
+  const st: Record<number, St> = {};
+  for (const i of idx) st[i] = build(scenes[i], i < ci0 ? Math.min(t, scenes[i].out + H) : i > ci0 ? scenes[i].at : t);
+  const add = (a: [number, number, number], b: [number, number, number]): [number, number, number] => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+  const worldCam = (i: number, s0: St): Cam => ({ ...s0.cam, pos: add(s0.cam.pos, OFF(i)), look: add(s0.cam.look, OFF(i)) });
+  let cam = worldCam(ci0, st[ci0]);
+  let from = -1, to = -1, kk = 0;
+  if (ci0 > 0 && t < sc.at + H) { from = ci0 - 1; to = ci0; kk = 0.5 + 0.5 * ((t - sc.at) / H); }
+  else if (ci0 + 1 < scenes.length && t > sc.out - H) { from = ci0; to = ci0 + 1; kk = 0.5 * ((t - (sc.out - H)) / H); }
+  if (from >= 0) {
+    const A = worldCam(from, from === ci0 ? st[from] : build(scenes[from], t));
+    const B = worldCam(to, to === ci0 ? st[to] : build(scenes[to], scenes[to].at));
+    const e = smooth(kk);
+    const lift = Math.sin(Math.PI * e) * 2.0;
+    const pos: [number, number, number] = [mix(A.pos[0], B.pos[0], e), mix(A.pos[1], B.pos[1], e) + lift, mix(A.pos[2], B.pos[2], e)];
+    const el = smooth(Math.min(1, kk * 1.7)); // aim at the destination early so the next hologram is always in frame
+    const look: [number, number, number] = [mix(A.look[0], B.look[0], el), mix(A.look[1], B.look[1], el), mix(A.look[2], B.look[2], el)];
+    cam = { pos, look, fov: mix(A.fov, B.fov, e) + Math.sin(Math.PI * e) * 8, roll: mix(A.roll ?? 0, B.roll ?? 0, e) + Math.sin(Math.PI * e) * 0.05 * (to % 2 ? 1 : -1) };
+  }
+  const clock = st[ci0].clock;
+  const gl = 0;
   const seed = Math.floor(f / 2);
   const rnd = (i: number) => {
     const x = Math.sin(seed * 91.7 + i * 17.3) * 43758.5;
@@ -430,10 +459,17 @@ export const Holo: React.FC<HoloProps> = ({ audio, words, m, end }) => {
     <AbsoluteFill style={{ background: '#020617', overflow: 'hidden' }}>
       <AbsoluteFill style={{ transform: gl ? `translateX(${(rnd(1) - 0.5) * 40 * gl}px)` : undefined }}>
         <ThreeCanvas width={1080} height={1920} linear={false}>
-          <HoloWorld t={t} cam={cam} rings={rings.map((r) => [r[0] + (sc.id === 'trip' ? 0 : 0), 0, r[2]] as [number, number, number])}>
-            {g && <Human g={g} t={t} pose={pose} pos={hpos} rotY={rotY} lie={lie} chip={chip} o={appear} />}
-            {prop}
-            {extra}
+          <HoloWorld t={t} cam={cam} bgx={cam.look[0]} bgz={cam.look[2]} rings={idx.flatMap((i) => st[i].rings.map((r) => add(r, OFF(i))))}>
+            {idx.map((i) => {
+              const S = st[i];
+              return (
+                <group key={scenes[i].id} position={OFF(i)}>
+                  {g && <Human g={g} t={t} pose={S.pose} pos={S.hpos} rotY={S.rotY} lie={S.lie} chip={S.chip} o={S.appear} />}
+                  {S.prop}
+                  {S.extra}
+                </group>
+              );
+            })}
           </HoloWorld>
         </ThreeCanvas>
       </AbsoluteFill>

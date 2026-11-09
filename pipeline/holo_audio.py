@@ -52,7 +52,7 @@ order = [k for k in ['hook', 'create', 'home', 'trip', 'work', 'cafe', 'gym', 'e
 place(rise(1.3), 0.15, 0.6)
 for j, k in enumerate(order[1:], 1):
     a = m[k]
-    place(glitch(), a - 0.03, 0.5, (-1) ** j * 0.3); place(S.swish(0.22, j % 2 == 0), a - 0.12, 0.35, (-1) ** j * 0.4)
+    place(S.swish(0.9, j % 2 == 0), a - 0.5, 0.45, (-1) ** j * 0.4)
     if k in ('home', 'trip', 'work', 'cafe', 'gym'):
         place(S.bubble(600, 1300, 0.1), a + 0.08, 0.45)
         for q in range(14): place(S.tick(2400) * 0.5, a + 0.25 + q * 0.11, 0.12)
