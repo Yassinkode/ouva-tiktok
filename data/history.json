@@ -3104,12 +3104,26 @@
   "backlog": "spot/6",
   "style": 5,
   "voice": "eleven_v4",
-  "status": "scheduled",
+  "status": "published",
   "postId": "6af174cedb12646c3548ec52",
   "url": null,
   "scheduledFor": "2026-11-10T11:00:00.000Z",
   "via": "zernio",
-  "where": "TikTok + Instagram"
+  "where": "TikTok + Instagram",
+  "platforms": [
+   {
+    "platform": "tiktok",
+    "status": "published",
+    "url": "https://www.tiktok.com/@ouva_app/video/7706496346764709152",
+    "error": null
+   },
+   {
+    "platform": "instagram",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/DfjwGxZDIM2/",
+    "error": null
+   }
+  ]
  },
  {
   "id": "2026-11-10_18h",
